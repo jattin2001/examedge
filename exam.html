@@ -1,0 +1,402 @@
+<!doctype html>
+<html data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExamEdge — Mock Test</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Satoshi:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyAGY3cJ77N-4CF9sQS8vpziqXxkvIxvr8M",
+        authDomain: "examedge-84197.firebaseapp.com",
+        projectId: "examedge-84197",
+        storageBucket: "examedge-84197.firebasestorage.app",
+        messagingSenderId: "547588996223",
+        appId: "1:547588996223:web:c8304b0599edbeb060d34a",
+        measurementId: "G-GTKN5VEC3J",
+      };
+      try {
+        firebase.initializeApp(firebaseConfig);
+      } catch (e) {}
+    </script>
+  </head>
+
+  <body onload="loadFullMock()">
+    <!-- CONFETTI -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- TOP PROGRESS BAR -->
+    <div id="topProgress"><div id="topProgressFill"></div></div>
+
+    <!-- HEADER — exam mode (back hidden, pause shown) -->
+    <header id="examHeader">
+      <div class="header-left">
+        <!-- Back btn: hidden during exam, visible after submit -->
+        <button
+          class="back-btn"
+          id="backBtn"
+          onclick="confirmBack()"
+          title="Back to Exams"
+          style="display: none"
+        >
+          ←
+        </button>
+        <span class="logo-icon">📋</span>
+        <h2 id="examTitle">SSC CGL Tier 1</h2>
+      </div>
+      <div class="header-center">
+        <div id="timerBox">
+          <span class="timer-icon">⏱️</span>
+          <span id="timer">60:00</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <!-- Pause button: only during exam -->
+        <button
+          class="pause-btn"
+          id="pauseBtn"
+          onclick="togglePause()"
+          title="Pause exam"
+        >
+          ⏸ Pause
+        </button>
+        <button
+          class="dark-toggle"
+          onclick="toggleDark()"
+          title="Toggle dark mode"
+        >
+          🌙
+        </button>
+        <button class="submit-btn" id="submitBtn" onclick="confirmSubmit()">
+          Submit Test
+        </button>
+      </div>
+    </header>
+
+    <!-- PAUSE OVERLAY -->
+    <div id="pauseOverlay">
+      <div class="pause-card">
+        <div class="pause-icon">⏸</div>
+        <h2>Exam Paused</h2>
+        <p>Your timer is paused. Questions are hidden to prevent cheating.</p>
+        <div id="pauseTimer" class="pause-timer-display">60:00</div>
+        <button
+          class="btn-primary"
+          style="width: 100%; padding: 14px; font-size: 16px; margin-top: 8px"
+          onclick="togglePause()"
+        >
+          ▶ Resume Exam
+        </button>
+      </div>
+    </div>
+
+    <!-- SECTION TABS -->
+    <div class="section-select" id="sectionSelect">
+      <button onclick="jumpSection('Quant')" data-sec="Quant">🔢 Quant</button>
+      <button onclick="jumpSection('Reasoning')" data-sec="Reasoning">
+        🧩 Reasoning
+      </button>
+      <button onclick="jumpSection('GS')" data-sec="GS">🌍 GS</button>
+      <button onclick="jumpSection('English')" data-sec="English">
+        📖 English
+      </button>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container" id="mainContainer">
+      <!-- MOCK QUESTION PANEL -->
+      <div class="question-panel" id="mockPanel">
+        <div class="q-meta" id="qMeta">
+          <span class="q-number" id="qNumber">Q1</span>
+          <span class="q-subject" id="qSubject">—</span>
+          <span class="q-difficulty" id="qDifficulty">Medium</span>
+        </div>
+        <div id="question"></div>
+        <div id="options"></div>
+        <div class="buttons">
+          <button class="btn-secondary" onclick="prevQuestion()">← Prev</button>
+          <button class="btn-warn" onclick="markReview()">
+            🔖 Mark Review
+          </button>
+          <button class="btn-danger" onclick="clearResponse()">✖ Clear</button>
+          <button class="btn-primary" onclick="saveNext()">
+            Save & Next →
+          </button>
+        </div>
+      </div>
+
+      <!-- REVIEW MODE PANEL -->
+      <div class="review-layout" id="reviewLayout" style="display: none">
+        <div id="reviewBox">
+          <div class="review-header">
+            <h2>📖 Review Mode</h2>
+            <button class="btn-secondary" onclick="backToResult()">
+              ⬅ Back to Result
+            </button>
+          </div>
+          <div id="reviewContent"></div>
+          <div id="reviewExplanation"></div>
+          <div class="review-nav">
+            <button class="btn-secondary" onclick="reviewPrev()">
+              ← Previous
+            </button>
+            <button class="btn-primary" onclick="reviewNext()">Next →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATUS BOX -->
+      <div id="statusBox">
+        <h4>Status</h4>
+        <div class="status-item">
+          <span class="dot dot-green"></span>Answered
+          <strong id="answeredCount">0</strong>
+        </div>
+        <div class="status-item">
+          <span class="dot dot-orange"></span>Review
+          <strong id="reviewCount">0</strong>
+        </div>
+        <div class="status-item">
+          <span class="dot dot-red"></span>Not Ans
+          <strong id="notCount">0</strong>
+        </div>
+      </div>
+
+      <!-- PALETTE -->
+      <div class="palette-panel">
+        <h3>Question Palette</h3>
+        <div id="reviewFilters" class="filters" style="display: none">
+          <button onclick="setFilter('all')">All</button>
+          <button onclick="setFilter('correct')">✅ Correct</button>
+          <button onclick="setFilter('wrong')">❌ Wrong</button>
+          <button onclick="setFilter('unattempted')">⏭ Skipped</button>
+        </div>
+        <div id="palette"></div>
+        <!-- LEGEND -->
+        <div class="palette-legend" id="paletteLegend">
+          <div class="legend-item">
+            <span class="legend-dot" style="background: #10b981"></span>Answered
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot" style="background: #f59e0b"></span>Review
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot" style="background: #ef4444"></span>Not Ans
+          </div>
+          <div class="legend-item">
+            <span
+              class="legend-dot"
+              style="background: var(--border); border: 1px solid var(--text3)"
+            ></span
+            >Not Visited
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULT BOX -->
+    <div id="resultBox">
+      <div class="result-header">
+        <span class="result-trophy" id="resultTrophy">🏆</span>
+        <h1 class="result-title" id="resultTitle">Exam Complete</h1>
+        <p class="result-subtitle" id="resultSubtitle">
+          Here's how you performed
+        </p>
+        <div class="grade-badge" id="gradeBadge">A</div>
+      </div>
+      <div class="score-banner">
+        <div class="score-main">
+          <span class="score-label">TOTAL SCORE</span>
+          <span id="rScore" class="score-value">—</span>
+          <span class="score-max">/ <span id="rMax">—</span></span>
+        </div>
+        <div class="score-stats">
+          <div class="stat-chip">
+            <span class="chip-icon">✅</span
+            ><span class="chip-label">Correct</span>
+            <span class="chip-val" id="rCorrect">—</span>
+          </div>
+          <div class="stat-chip">
+            <span class="chip-icon">❌</span
+            ><span class="chip-label">Wrong</span>
+            <span class="chip-val" id="rWrong">—</span>
+          </div>
+          <div class="stat-chip">
+            <span class="chip-icon">⏭️</span
+            ><span class="chip-label">Skipped</span>
+            <span class="chip-val" id="rSkipped">—</span>
+          </div>
+          <div class="stat-chip">
+            <span class="chip-icon">📝</span
+            ><span class="chip-label">Attempted</span
+            ><span class="chip-val" id="rAttempted">—</span>
+          </div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3 class="chart-title">📊 Overall Performance</h3>
+        <div class="overall-bars">
+          <div class="bar-row">
+            <span class="bar-label">Accuracy</span>
+            <div class="bar-track">
+              <div
+                class="bar-fill accuracy-bar"
+                id="barAccuracy"
+                style="width: 0%"
+              ></div>
+            </div>
+            <span class="bar-pct" id="rAccuracy">0%</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Correct</span>
+            <div class="bar-track">
+              <div
+                class="bar-fill correct-bar"
+                id="barCorrect"
+                style="width: 0%"
+              ></div>
+            </div>
+            <span class="bar-pct" id="rCorrectPct">0/0</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Wrong</span>
+            <div class="bar-track">
+              <div
+                class="bar-fill wrong-bar"
+                id="barWrong"
+                style="width: 0%"
+              ></div>
+            </div>
+            <span class="bar-pct" id="rWrongPct">0/0</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Skipped</span>
+            <div class="bar-track">
+              <div
+                class="bar-fill skip-bar"
+                id="barSkipped"
+                style="width: 0%"
+              ></div>
+            </div>
+            <span class="bar-pct" id="rSkippedPct">0/0</span>
+          </div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3 class="chart-title">📚 Subject-wise Breakdown</h3>
+        <div id="subjectCharts"></div>
+      </div>
+      <div class="chart-card">
+        <h3 class="chart-title">🏅 Leaderboard</h3>
+        <div id="leaderboard"></div>
+      </div>
+      <div class="result-actions">
+        <button class="review-btn" onclick="showReview()">
+          🔍 Review Answers
+        </button>
+        <button class="share-btn" onclick="shareScore()">📤 Share Score</button>
+      </div>
+      <button
+        class="btn-secondary"
+        style="
+          width: 100%;
+          margin-top: 12px;
+          padding: 14px;
+          border-radius: 14px;
+        "
+        onclick="goToExams()"
+      >
+        ← Back to Exams
+      </button>
+    </div>
+
+    <!-- SHARE MODAL -->
+    <div id="shareModal" class="modal-overlay" onclick="closeShare()">
+      <div class="modal-box" onclick="event.stopPropagation()">
+        <h3>📤 Share Your Score</h3>
+        <div id="shareCard">
+          <div class="share-logo">📋 ExamEdge — SSC Mock</div>
+          <div class="share-score-big" id="shareScoreBig">—</div>
+          <div class="share-stats" id="shareStats">—</div>
+          <div class="share-date" id="shareDate">—</div>
+        </div>
+        <div class="share-actions">
+          <button onclick="copyShareText()">📋 Copy Text</button>
+          <button onclick="closeShare()">✖ Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONFIRM SUBMIT MODAL -->
+    <div id="confirmModal" class="modal-overlay" onclick="closeConfirm()">
+      <div
+        class="modal-box"
+        onclick="event.stopPropagation()"
+        style="text-align: center"
+      >
+        <div style="font-size: 48px; margin-bottom: 12px">📋</div>
+        <h3 style="margin-bottom: 8px">Submit Test?</h3>
+        <p
+          id="confirmStats"
+          style="color: var(--text2); font-size: 14px; margin-bottom: 24px"
+        ></p>
+        <div style="display: flex; gap: 10px">
+          <button
+            class="btn-secondary"
+            style="flex: 1; padding: 12px; border-radius: 12px"
+            onclick="closeConfirm()"
+          >
+            Cancel
+          </button>
+          <button
+            class="btn-primary"
+            style="flex: 1; padding: 12px; border-radius: 12px"
+            onclick="submitTest()"
+          >
+            Yes, Submit
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONFIRM BACK MODAL -->
+    <div id="backModal" class="modal-overlay" onclick="closeBackModal()">
+      <div
+        class="modal-box"
+        onclick="event.stopPropagation()"
+        style="text-align: center"
+      >
+        <div style="font-size: 48px; margin-bottom: 12px">⚠️</div>
+        <h3 style="margin-bottom: 8px">Leave the exam?</h3>
+        <p style="color: var(--text2); font-size: 14px; margin-bottom: 24px">
+          Your progress will be lost. Are you sure?
+        </p>
+        <div style="display: flex; gap: 10px">
+          <button
+            class="btn-secondary"
+            style="flex: 1; padding: 12px; border-radius: 12px"
+            onclick="closeBackModal()"
+          >
+            Stay
+          </button>
+          <button
+            class="btn-danger"
+            style="flex: 1; padding: 12px; border-radius: 12px"
+            onclick="goToExams()"
+          >
+            Leave
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
