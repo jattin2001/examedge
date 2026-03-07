@@ -1,0 +1,1149 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExamEdge — Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Satoshi:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+    <style>
+      /* ── VARIABLES ───────────────────────────── */
+      :root {
+        --bg: #f0f2f8;
+        --surface: #ffffff;
+        --border: #e2e6f0;
+        --text: #0f1117;
+        --text2: #5a607a;
+        --text3: #9099b5;
+        --primary: #2563eb;
+        --primary2: #1d4ed8;
+        --accent: #06b6d4;
+        --green: #10b981;
+        --red: #ef4444;
+        --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        --radius: 16px;
+      }
+      [data-theme="dark"] {
+        --bg: #080b14;
+        --surface: #111827;
+        --border: #1f2a40;
+        --text: #f0f4ff;
+        --text2: #8892b0;
+        --text3: #3d4a6b;
+      }
+
+      /* ── RESET ───────────────────────────────── */
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Satoshi", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        display: flex;
+        overflow: hidden;
+      }
+
+      /* ── LEFT PANEL ──────────────────────────── */
+      .left-panel {
+        flex: 1;
+        background: linear-gradient(
+          145deg,
+          #0f172a 0%,
+          #1e3a8a 50%,
+          #0e7490 100%
+        );
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 60px;
+        position: relative;
+        overflow: hidden;
+      }
+      .left-panel::before {
+        content: "";
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(6, 182, 212, 0.15) 0%,
+          transparent 70%
+        );
+        top: -100px;
+        right: -100px;
+      }
+      .left-panel::after {
+        content: "";
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(37, 99, 235, 0.2) 0%,
+          transparent 70%
+        );
+        bottom: -80px;
+        left: -80px;
+      }
+      /* Floating grid dots */
+      .dots-bg {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.06) 1px,
+          transparent 1px
+        );
+        background-size: 32px 32px;
+      }
+      .brand {
+        position: relative;
+        z-index: 2;
+        margin-bottom: 48px;
+      }
+      .brand-logo {
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 28px;
+        font-weight: 900;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 4px;
+      }
+      .brand-logo .logo-icon {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #2563eb, #06b6d4);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+      }
+      .brand-tag {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      .left-headline {
+        position: relative;
+        z-index: 2;
+      }
+      .left-headline h1 {
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: clamp(32px, 3.5vw, 52px);
+        font-weight: 900;
+        color: #fff;
+        line-height: 1.1;
+        margin-bottom: 20px;
+      }
+      .left-headline h1 span {
+        background: linear-gradient(90deg, #38bdf8, #06b6d4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .left-headline p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 16px;
+        line-height: 1.7;
+        max-width: 380px;
+        margin-bottom: 40px;
+      }
+      .stats-row {
+        display: flex;
+        gap: 32px;
+        position: relative;
+        z-index: 2;
+      }
+      .stat-item {
+        text-align: left;
+      }
+      .stat-num {
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 28px;
+        font-weight: 800;
+        color: #fff;
+      }
+      .stat-label {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.5);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* ── RIGHT PANEL ─────────────────────────── */
+      .right-panel {
+        width: 480px;
+        flex-shrink: 0;
+        background: var(--surface);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 48px 44px;
+        overflow-y: auto;
+        position: relative;
+      }
+      .theme-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 36px;
+        height: 36px;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Tabs */
+      .auth-tabs {
+        display: flex;
+        gap: 0;
+        background: var(--bg);
+        border-radius: 12px;
+        padding: 4px;
+        margin-bottom: 32px;
+      }
+      .auth-tab {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        background: transparent;
+        color: var(--text2);
+        font-family: "Satoshi", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 9px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .auth-tab.active {
+        background: var(--surface);
+        color: var(--text);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Form title */
+      .form-title {
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 26px;
+        font-weight: 800;
+        color: var(--text);
+        margin-bottom: 6px;
+      }
+      .form-sub {
+        color: var(--text2);
+        font-size: 14px;
+        margin-bottom: 28px;
+      }
+
+      /* Input */
+      .field {
+        margin-bottom: 16px;
+      }
+      .field label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text2);
+        margin-bottom: 6px;
+      }
+      .input-wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .input-wrap .icon {
+        position: absolute;
+        left: 14px;
+        font-size: 16px;
+        color: var(--text3);
+        pointer-events: none;
+      }
+      .input-wrap input {
+        width: 100%;
+        padding: 12px 14px 12px 42px;
+        border: 1.5px solid var(--border);
+        border-radius: 12px;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Satoshi", sans-serif;
+        font-size: 14px;
+        outline: none;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+      }
+      .input-wrap input:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        background: var(--surface);
+      }
+      .input-wrap .toggle-pw {
+        position: absolute;
+        right: 14px;
+        cursor: pointer;
+        font-size: 16px;
+        color: var(--text3);
+        background: none;
+        border: none;
+      }
+
+      /* OTP row */
+      .otp-row {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin: 8px 0 4px;
+      }
+      .otp-row input {
+        width: 52px;
+        height: 58px;
+        flex: 0 0 52px;
+        text-align: center;
+        padding: 0;
+        border: 2px solid var(--border);
+        border-radius: 14px;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Cabinet Grotesk", monospace;
+        font-size: 24px;
+        font-weight: 800;
+        outline: none;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s,
+          background 0.2s;
+        caret-color: var(--primary);
+      }
+      .otp-row input:focus {
+        border-color: var(--primary);
+        background: white;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
+      }
+      .otp-row input.otp-filled {
+        border-color: #10b981;
+        background: rgba(16, 185, 129, 0.06);
+        color: #10b981;
+      }
+
+      /* Buttons */
+      .btn-primary {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: #fff;
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
+        margin-top: 4px;
+      }
+      .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 22px rgba(37, 99, 235, 0.4);
+      }
+      .btn-primary:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
+      .btn-google {
+        width: 100%;
+        padding: 12px;
+        border: 1.5px solid var(--border);
+        border-radius: 12px;
+        background: var(--surface);
+        color: var(--text);
+        font-family: "Satoshi", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition:
+          background 0.2s,
+          border-color 0.2s;
+      }
+      .btn-google:hover {
+        background: var(--bg);
+        border-color: var(--primary);
+      }
+      .btn-guest {
+        width: 100%;
+        padding: 12px;
+        border: 1.5px dashed var(--border);
+        border-radius: 12px;
+        background: transparent;
+        color: var(--text2);
+        font-family: "Satoshi", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .btn-guest:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+      }
+
+      /* Divider */
+      .divider {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 20px 0;
+        color: var(--text3);
+        font-size: 12px;
+      }
+      .divider::before,
+      .divider::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+      }
+
+      /* Error / success */
+      .msg {
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 14px;
+        display: none;
+      }
+      .msg.error {
+        background: #fee2e2;
+        color: #b91c1c;
+        border: 1px solid #fca5a5;
+      }
+      .msg.success {
+        background: #d1fae5;
+        color: #065f46;
+        border: 1px solid #6ee7b7;
+      }
+      .msg.visible {
+        display: block;
+      }
+
+      /* Phone step */
+      .phone-step {
+        display: none;
+      }
+      .phone-step.active {
+        display: block;
+      }
+      .otp-step {
+        display: none;
+      }
+      .otp-step.active {
+        display: block;
+      }
+
+      /* Screens (login / signup / otp) */
+      .screen {
+        display: none;
+      }
+      .screen.active {
+        display: block;
+        animation: fadeIn 0.25s ease;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Send OTP inline */
+      .send-otp-btn {
+        position: absolute;
+        right: 8px;
+        padding: 6px 12px;
+        border: none;
+        background: var(--primary);
+        color: white;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+
+      /* Recaptcha */
+      #recaptcha-container {
+        margin: 12px 0;
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .left-panel {
+          display: none;
+        }
+        .right-panel {
+          width: 100%;
+          padding: 40px 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- LEFT DECORATIVE PANEL -->
+    <div class="left-panel">
+      <div class="dots-bg"></div>
+      <div class="brand">
+        <div class="brand-logo">
+          <div class="logo-icon">📋</div>
+          ExamEdge
+        </div>
+        <div class="brand-tag">SSC Prep Platform</div>
+      </div>
+      <div class="left-headline">
+        <h1>Crack SSC with<br /><span>Smart Practice</span></h1>
+        <p>
+          Full-length mock tests, subject-wise drills, and detailed analytics —
+          everything you need to ace SSC CGL & CHSL.
+        </p>
+      </div>
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-num">4000+</div>
+          <div class="stat-label">Questions</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Mock Tests</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">Free</div>
+          <div class="stat-label">Always</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT AUTH PANEL -->
+    <div class="right-panel">
+      <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+      <!-- TABS -->
+      <div class="auth-tabs">
+        <button class="auth-tab active" onclick="switchTab('login')">
+          Log In
+        </button>
+        <button class="auth-tab" onclick="switchTab('signup')">Sign Up</button>
+        <button class="auth-tab" onclick="switchTab('otp')">OTP</button>
+      </div>
+
+      <!-- MESSAGE BOX -->
+      <div class="msg" id="msgBox"></div>
+
+      <!-- ── LOGIN SCREEN ── -->
+      <div class="screen active" id="loginScreen">
+        <div class="form-title">Welcome back 👋</div>
+        <div class="form-sub">Log in to continue your prep</div>
+
+        <div class="field">
+          <label>Email</label>
+          <div class="input-wrap">
+            <span class="icon">📧</span>
+            <input type="email" id="loginEmail" placeholder="you@example.com" />
+          </div>
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <div class="input-wrap">
+            <span class="icon">🔒</span>
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Enter password"
+            />
+            <button class="toggle-pw" onclick="togglePw('loginPassword', this)">
+              👁️
+            </button>
+          </div>
+        </div>
+
+        <button class="btn-primary" onclick="loginEmail()">Log In</button>
+
+        <div class="divider">or continue with</div>
+
+        <button class="btn-google" onclick="loginGoogle()">
+          <svg width="18" height="18" viewBox="0 0 48 48">
+            <path
+              fill="#EA4335"
+              d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.08 17.74 9.5 24 9.5z"
+            />
+            <path
+              fill="#4285F4"
+              d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"
+            />
+            <path
+              fill="#FBBC05"
+              d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"
+            />
+            <path
+              fill="#34A853"
+              d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-3.59-13.46-8.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"
+            />
+          </svg>
+          Continue with Google
+        </button>
+
+        <div class="divider">or</div>
+
+        <button class="btn-guest" onclick="loginGuest()">
+          🎭 Continue as Guest
+        </button>
+      </div>
+
+      <!-- ── SIGNUP SCREEN ── -->
+      <div class="screen" id="signupScreen">
+        <div class="form-title">Create account ✨</div>
+        <div class="form-sub">Start your SSC prep journey today</div>
+
+        <div class="field">
+          <label>Full Name</label>
+          <div class="input-wrap">
+            <span class="icon">👤</span>
+            <input type="text" id="signupName" placeholder="Your full name" />
+          </div>
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <div class="input-wrap">
+            <span class="icon">📧</span>
+            <input
+              type="email"
+              id="signupEmail"
+              placeholder="you@example.com"
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <div class="input-wrap">
+            <span class="icon">🔒</span>
+            <input
+              type="password"
+              id="signupPassword"
+              placeholder="Min. 6 characters"
+            />
+            <button
+              class="toggle-pw"
+              onclick="togglePw('signupPassword', this)"
+            >
+              👁️
+            </button>
+          </div>
+        </div>
+        <div class="field">
+          <label>Confirm Password</label>
+          <div class="input-wrap">
+            <span class="icon">🔒</span>
+            <input
+              type="password"
+              id="signupConfirm"
+              placeholder="Re-enter password"
+            />
+          </div>
+        </div>
+
+        <button class="btn-primary" onclick="signupEmail()">
+          Create Account
+        </button>
+
+        <div class="divider">or</div>
+        <button class="btn-google" onclick="loginGoogle()">
+          <svg width="18" height="18" viewBox="0 0 48 48">
+            <path
+              fill="#EA4335"
+              d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.08 17.74 9.5 24 9.5z"
+            />
+            <path
+              fill="#4285F4"
+              d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"
+            />
+            <path
+              fill="#FBBC05"
+              d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"
+            />
+            <path
+              fill="#34A853"
+              d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-3.59-13.46-8.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"
+            />
+          </svg>
+          Sign up with Google
+        </button>
+      </div>
+
+      <!-- ── OTP SCREEN ── -->
+      <div class="screen" id="otpScreen">
+        <div id="otpPhoneStep">
+          <div class="form-title">OTP Login 📱</div>
+          <div
+            style="
+              background: rgba(37, 99, 235, 0.07);
+              border: 1px solid rgba(37, 99, 235, 0.2);
+              border-radius: 10px;
+              padding: 10px 14px;
+              margin-bottom: 14px;
+              font-size: 12px;
+              color: var(--primary);
+              line-height: 1.5;
+            "
+          >
+            📱 Uses <strong>Fast2SMS</strong> — free Indian SMS.
+            <a
+              href="https://www.fast2sms.com"
+              target="_blank"
+              style="color: var(--primary); font-weight: 700"
+              >Get API key →</a
+            ><br />
+            <span style="color: var(--text3)"
+              >🛠 No key yet? OTP shows on screen for testing.</span
+            >
+          </div>
+          <div class="form-sub">We'll send a 6-digit code to your number</div>
+          <div class="field">
+            <label>Mobile Number</label>
+            <div class="input-wrap">
+              <span class="icon">📞</span>
+              <input
+                type="tel"
+                id="phoneNumber"
+                placeholder="+91 98765 43210"
+              />
+              <button class="send-otp-btn" onclick="sendOTP()">Send OTP</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="otpVerifyStep" style="display: none">
+          <div class="form-title">Enter OTP 🔢</div>
+          <div class="form-sub" id="otpSentTo">Code sent to your number</div>
+          <div class="field">
+            <label>6-Digit Code</label>
+            <div class="otp-row">
+              <input
+                type="text"
+                maxlength="1"
+                class="otp-digit"
+                oninput="otpNext(this, 0)"
+              />
+              <input
+                type="text"
+                maxlength="1"
+                class="otp-digit"
+                oninput="otpNext(this, 1)"
+              />
+              <input
+                type="text"
+                maxlength="1"
+                class="otp-digit"
+                oninput="otpNext(this, 2)"
+              />
+              <input
+                type="text"
+                maxlength="1"
+                class="otp-digit"
+                oninput="otpNext(this, 3)"
+              />
+              <input
+                type="text"
+                maxlength="1"
+                class="otp-digit"
+                oninput="otpNext(this, 4)"
+              />
+              <input
+                type="text"
+                maxlength="1"
+                class="otp-digit"
+                oninput="otpNext(this, 5)"
+              />
+            </div>
+          </div>
+          <button class="btn-primary" onclick="verifyOTP()">
+            Verify & Login
+          </button>
+          <p
+            style="
+              text-align: center;
+              margin-top: 14px;
+              font-size: 13px;
+              color: var(--text2);
+            "
+          >
+            <a
+              href="#"
+              id="resendLink"
+              onclick="resetOTP()"
+              style="color: var(--primary)"
+              >Resend OTP</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- end right-panel -->
+
+    <script>
+      // ══════════════════════════════════════════
+      // FIREBASE CONFIG — replace with your own
+      // ══════════════════════════════════════════
+      const firebaseConfig = {
+        apiKey: "AIzaSyAGY3cJ77N-4CF9sQS8vpziqXxkvIxvr8M",
+        authDomain: "examedge-84197.firebaseapp.com",
+        projectId: "examedge-84197",
+        storageBucket: "examedge-84197.firebasestorage.app",
+        messagingSenderId: "547588996223",
+        appId: "1:547588996223:web:c8304b0599edbeb060d34a",
+        measurementId: "G-GTKN5VEC3J",
+      };
+
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+
+      // ── Auth state listener ─────────────────
+      auth.onAuthStateChanged((user) => {
+        if (user) {
+          // Already logged in → go to exams
+          window.location.href = "exams.html";
+        }
+      });
+
+      // ── TABS ────────────────────────────────
+      function switchTab(tab) {
+        document.querySelectorAll(".auth-tab").forEach((b, i) => {
+          b.classList.toggle("active", ["login", "signup", "otp"][i] === tab);
+        });
+        document
+          .querySelectorAll(".screen")
+          .forEach((s) => s.classList.remove("active"));
+        document.getElementById(tab + "Screen").classList.add("active");
+        clearMsg();
+      }
+
+      // ── THEME ───────────────────────────────
+      function toggleTheme() {
+        const html = document.documentElement;
+        const dark = html.getAttribute("data-theme") === "dark";
+        html.setAttribute("data-theme", dark ? "light" : "dark");
+        document.querySelector(".theme-toggle").textContent = dark
+          ? "🌙"
+          : "☀️";
+      }
+
+      // ── MESSAGE ─────────────────────────────
+      function showMsg(text, type = "error") {
+        const el = document.getElementById("msgBox");
+        el.textContent = text;
+        el.className = `msg ${type} visible`;
+      }
+      function clearMsg() {
+        document.getElementById("msgBox").className = "msg";
+      }
+
+      // ── TOGGLE PASSWORD ─────────────────────
+      function togglePw(id, btn) {
+        const input = document.getElementById(id);
+        if (input.type === "password") {
+          input.type = "text";
+          btn.textContent = "🙈";
+        } else {
+          input.type = "password";
+          btn.textContent = "👁️";
+        }
+      }
+
+      // ── SAVE USER PROFILE ───────────────────
+      async function saveUserProfile(user, name) {
+        await db
+          .collection("users")
+          .doc(user.uid)
+          .set(
+            {
+              name: name || user.displayName || "User",
+              email: user.email || "",
+              createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+              totalAttempts: 0,
+              bestScore: 0,
+            },
+            { merge: true },
+          );
+      }
+
+      // ── EMAIL LOGIN ─────────────────────────
+      async function loginEmail() {
+        const email = document.getElementById("loginEmail").value.trim();
+        const pass = document.getElementById("loginPassword").value;
+        if (!email || !pass) return showMsg("Please fill all fields.");
+        try {
+          const cred = await auth.signInWithEmailAndPassword(email, pass);
+          showMsg("Logged in! Redirecting...", "success");
+        } catch (e) {
+          showMsg(e.message);
+        }
+      }
+
+      // ── EMAIL SIGNUP ────────────────────────
+      async function signupEmail() {
+        const name = document.getElementById("signupName").value.trim();
+        const email = document.getElementById("signupEmail").value.trim();
+        const pass = document.getElementById("signupPassword").value;
+        const conf = document.getElementById("signupConfirm").value;
+        if (!name || !email || !pass) return showMsg("Please fill all fields.");
+        if (pass !== conf) return showMsg("Passwords do not match.");
+        if (pass.length < 6)
+          return showMsg("Password must be at least 6 characters.");
+        try {
+          const cred = await auth.createUserWithEmailAndPassword(email, pass);
+          await cred.user.updateProfile({ displayName: name });
+          await saveUserProfile(cred.user, name);
+          showMsg("Account created! Redirecting...", "success");
+        } catch (e) {
+          showMsg(e.message);
+        }
+      }
+
+      // ── GOOGLE LOGIN ────────────────────────
+      async function loginGoogle() {
+        const provider = new firebase.auth.GoogleAuthProvider();
+        try {
+          const cred = await auth.signInWithPopup(provider);
+          await saveUserProfile(cred.user);
+          showMsg("Logged in with Google! Redirecting...", "success");
+        } catch (e) {
+          showMsg(e.message);
+        }
+      }
+
+      // ── GUEST LOGIN ─────────────────────────
+      async function loginGuest() {
+        try {
+          await auth.signInAnonymously();
+          showMsg("Continuing as guest...", "success");
+        } catch (e) {
+          // If Firebase not configured, just redirect
+          sessionStorage.setItem("guestMode", "true");
+          window.location.href = "exams.html";
+        }
+      }
+
+      // ── OTP via Fast2SMS ─────────────────────
+      // Fast2SMS free API — works for Indian numbers without billing
+      // Get your API key at: https://www.fast2sms.com
+      const FAST2SMS_KEY =
+        "ouiNF3Gct2JrTlwazEX7fSDxOpyAnQ840PIshebVvMZgWB9RL1beXRxvL2InEpT4817PYfw93NzUMo0W"; // ← paste your key here
+
+      let generatedOTP = null;
+      let otpPhone = null;
+
+      async function sendOTP() {
+        const raw = document.getElementById("phoneNumber").value.trim();
+        const phone = raw.replace(/\D/g, "");
+        if (phone.length < 10)
+          return showMsg("Enter a valid 10-digit Indian mobile number.");
+
+        generatedOTP = String(Math.floor(100000 + Math.random() * 900000));
+        otpPhone = phone.slice(-10);
+
+        const sendBtn = document.querySelector(".send-otp-btn");
+        sendBtn.textContent = "Sending...";
+        sendBtn.disabled = true;
+
+        // Try Fast2SMS quick route (works after website verification)
+        // Falls back to showing OTP in alert for dev/testing
+        let sent = false;
+        try {
+          const res = await fetch(
+            `https://www.fast2sms.com/dev/bulkV2?authorization=${FAST2SMS_KEY}` +
+              `&route=q&message=Your+ExamEdge+OTP+is+${generatedOTP}.+Valid+for+5+minutes.&flash=0&numbers=${otpPhone}`,
+            { method: "GET" },
+          );
+          const data = await res.json();
+          if (data.return === true) sent = true;
+          else {
+            // Try DLT route as fallback
+            const res2 = await fetch(
+              `https://www.fast2sms.com/dev/bulkV2?authorization=${FAST2SMS_KEY}` +
+                `&route=dlt&sender_id=EXAMDG&message=Your+ExamEdge+login+OTP+is+${generatedOTP}.+Do+not+share+this+with+anyone.&variables_values=${generatedOTP}|&flash=0&numbers=${otpPhone}`,
+              { method: "GET" },
+            );
+            const data2 = await res2.json();
+            if (data2.return === true) sent = true;
+          }
+        } catch (e) {
+          /* network error */
+        }
+
+        if (sent) {
+          showOtpVerifyStep();
+          showMsg("OTP sent successfully!", "success");
+        } else if (
+          FAST2SMS_KEY ===
+          "ouiNF3Gct2JrTlwazEX7fSDxOpyAnQ840PIshebVvMZgWB9RL1beXRxvL2InEpT4817PYfw93NzUMo0W"
+        ) {
+          // Dev mode: show OTP in a visible dev banner (remove in production)
+          showOtpVerifyStep();
+          showMsg(`🛠 Dev mode — OTP: ${generatedOTP}`, "success");
+        } else {
+          // API key set but sending failed — likely needs website verification
+          // Still allow entry in dev mode
+          showOtpVerifyStep();
+          showMsg(
+            `⚠️ SMS failed. For testing, your OTP is: ${generatedOTP}`,
+            "success",
+          );
+        }
+
+        sendBtn.textContent = "Send OTP";
+        sendBtn.disabled = false;
+      }
+
+      function showOtpVerifyStep() {
+        document.getElementById("otpPhoneStep").style.display = "none";
+        document.getElementById("otpVerifyStep").style.display = "block";
+        document.getElementById("otpSentTo").textContent =
+          `Code sent to +91 ${otpPhone}`;
+        document.querySelector(".otp-digit").focus();
+        startOtpResendTimer();
+      }
+
+      let resendTimer = null;
+      function startOtpResendTimer() {
+        let secs = 30;
+        const link = document.getElementById("resendLink");
+        if (!link) return;
+        link.style.pointerEvents = "none";
+        link.style.opacity = "0.4";
+        resendTimer = setInterval(() => {
+          secs--;
+          link.textContent = `Resend OTP (${secs}s)`;
+          if (secs <= 0) {
+            clearInterval(resendTimer);
+            link.textContent = "Resend OTP";
+            link.style.pointerEvents = "auto";
+            link.style.opacity = "1";
+          }
+        }, 1000);
+      }
+
+      function otpNext(input, index) {
+        input.value = input.value.replace(/[^0-9]/g, "").slice(-1);
+        const digits = document.querySelectorAll(".otp-digit");
+        if (input.value) {
+          input.classList.add("otp-filled");
+          if (index < 5) digits[index + 1].focus();
+          else verifyOTP(); // auto-verify when last digit entered
+        } else {
+          input.classList.remove("otp-filled");
+          if (index > 0) digits[index - 1].focus();
+        }
+      }
+
+      // Handle backspace navigation
+      document.addEventListener("keydown", (e) => {
+        if (e.key !== "Backspace") return;
+        const digits = document.querySelectorAll(".otp-digit");
+        digits.forEach((d, i) => {
+          if (document.activeElement === d && !d.value && i > 0) {
+            digits[i - 1].focus();
+          }
+        });
+      });
+
+      async function verifyOTP() {
+        const digits = document.querySelectorAll(".otp-digit");
+        const code = Array.from(digits)
+          .map((d) => d.value)
+          .join("");
+        if (code.length < 6) return showMsg("Enter the full 6-digit code.");
+        if (code !== generatedOTP)
+          return showMsg("❌ Incorrect OTP. Please try again.");
+
+        // OTP verified — sign in anonymously or link phone
+        try {
+          showMsg("Verifying...", "success");
+          // Sign in as guest + store phone in profile
+          let user;
+          try {
+            const cred = await auth.signInAnonymously();
+            user = cred.user;
+          } catch (e) {
+            // Firebase not configured — just redirect
+            sessionStorage.setItem("guestMode", "true");
+            sessionStorage.setItem("userPhone", otpPhone);
+            window.location.href = "exams.html";
+            return;
+          }
+          // Update display name to phone
+          await user.updateProfile({ displayName: "+91" + otpPhone });
+          await saveUserProfile(user);
+          showMsg("✅ Phone verified! Redirecting...", "success");
+        } catch (e) {
+          showMsg("Login error: " + e.message);
+        }
+      }
+
+      function resetOTP() {
+        document.getElementById("otpPhoneStep").style.display = "block";
+        document.getElementById("otpVerifyStep").style.display = "none";
+        document.getElementById("phoneNumber").value = "";
+        document.querySelectorAll(".otp-digit").forEach((d) => {
+          d.value = "";
+          d.classList.remove("otp-filled");
+        });
+        generatedOTP = null;
+        clearMsg();
+        if (resendTimer) clearInterval(resendTimer);
+      }
+
+      // ── ENTER KEY ───────────────────────────
+      document.addEventListener("keydown", (e) => {
+        if (e.key !== "Enter") return;
+        const active = document.querySelector(".screen.active").id;
+        if (active === "loginScreen") loginEmail();
+        if (active === "signupScreen") signupEmail();
+      });
+    </script>
+  </body>
+</html>
