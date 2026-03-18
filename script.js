@@ -439,6 +439,15 @@ function updateSectionTabs() {
 // ════════════════════════════════════════════
 async function loadFullMock() {
   applyStoredTheme();
+
+  // ── ANALYSE MODE: ?analyse=attempt_XXXX ──────────────────────────────────
+  const analyseId = new URLSearchParams(window.location.search).get("analyse");
+  if (analyseId) {
+    restoreAttemptForReview(analyseId);
+    return;
+  }
+  // ─────────────────────────────────────────────────────────────────────────
+
   if (
     !sessionStorage.getItem("examType") &&
     !sessionStorage.getItem("examMode")
@@ -787,9 +796,13 @@ function initMock() {
   if (timerMode === "section") {
     initSectionTimer();
   } else {
-    // overall timer
-    const cfg = EXAM_CONFIG[examType] || EXAM_CONFIG.cgl;
-    timeLeft = cfg.timeSeconds;
+    // overall timer — only reset timeLeft for full mocks.
+    // Subject/chapter practice already set timeLeft before calling initMock();
+    // overwriting it here was the bug that always showed 25 min regardless of input.
+    if (examMode !== "subject" && examMode !== "chapter") {
+      const cfg = EXAM_CONFIG[examType] || EXAM_CONFIG.cgl;
+      timeLeft = cfg.timeSeconds;
+    }
   }
 
   buildSectionTabs();
@@ -1410,10 +1423,10 @@ function saveAttempt(score, correct, wrong, skipped, total) {
     const allKeys = Object.keys(localStorage).filter((k) =>
       k.startsWith("snapshot_"),
     );
-    if (allKeys.length > 10) {
+    if (allKeys.length > 20) {
       allKeys.sort();
       allKeys
-        .slice(0, allKeys.length - 10)
+        .slice(0, allKeys.length - 20)
         .forEach((k) => localStorage.removeItem(k));
     }
   } catch (e) {}
@@ -1459,6 +1472,26 @@ function restoreAttemptForReview(attemptId) {
     mockNumber = snap.mockNumber || 0;
     selectedSubject = snap.selectedSubject || null;
     selectedChapter = snap.selectedChapter || null;
+    const titleEl = document.getElementById("examTitle");
+    if (titleEl) {
+      const cfg = getCfg();
+
+      if (examMode === "subject" && selectedSubject) {
+        titleEl.textContent = `${cfg.sectionLabels[selectedSubject] || selectedSubject} Analysis`;
+      } else if (examMode === "chapter" && selectedSubject && selectedChapter) {
+        const chapterLabel = selectedChapter
+          .replace(/_/g, " ")
+          .replace(/\b\w/g, (c) => c.toUpperCase());
+        titleEl.textContent = `${selectedSubject} · ${chapterLabel} Analysis`;
+      } else if (mockNumber) {
+        titleEl.textContent = `${cfg.label} — Mock ${mockNumber} Analysis`;
+      } else {
+        titleEl.textContent = `${cfg.label} — Attempt Analysis`;
+      }
+    }
+
+    const timerBox = document.getElementById("timerBox");
+    if (timerBox) timerBox.style.display = "none";
 
     questionState = {};
     questions.forEach((q) => {

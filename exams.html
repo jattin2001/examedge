@@ -4,13 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ExamEdge — Choose Your Exam</title>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Satoshi:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
     <style>
       :root {
         --bg: #f0f2f8;
@@ -24,9 +27,13 @@
         --green: #10b981;
         --orange: #f59e0b;
         --red: #ef4444;
+        --purple: #8b5cf6;
+        --pink: #ec4899;
         --shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+        --shadow-lg: 0 18px 50px rgba(0, 0, 0, 0.16);
         --radius: 18px;
       }
+
       [data-theme="dark"] {
         --bg: #080b14;
         --surface: #111827;
@@ -35,14 +42,21 @@
         --text2: #8892b0;
         --text3: #3d4a6b;
         --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 18px 50px rgba(0, 0, 0, 0.35);
       }
+
       *,
       *::before,
       *::after {
-        margin: 0;
-        padding: 0;
         box-sizing: border-box;
       }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
       body {
         font-family: "Satoshi", sans-serif;
         background: var(--bg);
@@ -50,12 +64,30 @@
         min-height: 100vh;
       }
 
-      /* NAVBAR */
-      nav {
+      button,
+      input,
+      select {
+        font: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+      .muted {
+        color: var(--text3);
+      }
+
+      /* NAV */
+      .nav {
         background: var(--surface);
         border-bottom: 1px solid var(--border);
-        padding: 0 32px;
-        height: 64px;
+        padding: 0 24px;
+        min-height: 64px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -63,491 +95,564 @@
         top: 0;
         z-index: 100;
         box-shadow: var(--shadow);
+        gap: 16px;
       }
+
       .nav-brand {
-        font-family: "Cabinet Grotesk", sans-serif;
-        font-size: 22px;
-        font-weight: 900;
-        color: var(--text);
         display: flex;
         align-items: center;
         gap: 10px;
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 22px;
+        font-weight: 900;
       }
-      .nav-brand .logo-icon {
+
+      .logo-icon {
         width: 36px;
         height: 36px;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
         background: linear-gradient(135deg, #2563eb, #06b6d4);
-        border-radius: 9px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        color: #fff;
         font-size: 18px;
       }
+
       .nav-right {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
+        flex-wrap: wrap;
       }
+
       .user-chip {
         display: flex;
         align-items: center;
         gap: 8px;
         padding: 6px 14px;
+        border-radius: 999px;
         background: var(--bg);
         border: 1px solid var(--border);
-        border-radius: 999px;
-        font-size: 13px;
-        font-weight: 600;
         color: var(--text2);
+        font-size: 13px;
+        font-weight: 700;
       }
+
       .user-avatar {
         width: 28px;
         height: 28px;
         border-radius: 50%;
+        display: grid;
+        place-items: center;
         background: linear-gradient(135deg, var(--primary), var(--accent));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
+        color: #fff;
         font-size: 12px;
-        font-weight: 700;
+        font-weight: 800;
       }
-      .nav-btn {
-        padding: 8px 16px;
+
+      .nav-btn,
+      .icon-btn {
         border: 1px solid var(--border);
         background: var(--surface);
         color: var(--text2);
         border-radius: 10px;
+        transition: 0.2s ease;
+      }
+
+      .nav-btn {
+        padding: 8px 14px;
         font-size: 13px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s;
+        font-weight: 700;
       }
-      .nav-btn:hover {
-        background: var(--bg);
-      }
-      .dark-btn {
-        width: 36px;
-        height: 36px;
-        border: 1px solid var(--border);
-        background: var(--bg);
-        border-radius: 50%;
-        cursor: pointer;
+
+      .icon-btn {
+        width: 38px;
+        height: 38px;
+        display: grid;
+        place-items: center;
         font-size: 16px;
+      }
+
+      .nav-btn:hover,
+      .icon-btn:hover {
+        background: var(--bg);
+        transform: translateY(-1px);
       }
 
       /* HERO */
       .hero {
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        padding: 52px 20px 56px;
         background: linear-gradient(
           135deg,
           #0f172a 0%,
           #1e3a8a 60%,
           #0e7490 100%
         );
-        padding: 52px 32px 56px;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
       }
+
       .hero::before {
         content: "";
         position: absolute;
         inset: 0;
         background-image: radial-gradient(
           circle,
-          rgba(255, 255, 255, 0.04) 1px,
+          rgba(255, 255, 255, 0.05) 1px,
           transparent 1px
         );
         background-size: 28px 28px;
       }
-      .hero-greeting {
+
+      .hero-inner {
         position: relative;
-        font-size: 14px;
-        color: rgba(255, 255, 255, 0.6);
-        letter-spacing: 2px;
+        z-index: 1;
+      }
+
+      .hero-greeting {
+        font-size: 13px;
         text-transform: uppercase;
+        letter-spacing: 1.8px;
+        color: rgba(255, 255, 255, 0.65);
         margin-bottom: 12px;
       }
+
       .hero-title {
-        position: relative;
+        margin: 0 0 12px;
         font-family: "Cabinet Grotesk", sans-serif;
         font-size: clamp(28px, 4vw, 48px);
+        line-height: 1.1;
         font-weight: 900;
         color: #fff;
-        margin-bottom: 12px;
       }
+
       .hero-title span {
         background: linear-gradient(90deg, #38bdf8, #06b6d4);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
+
       .hero-sub {
-        position: relative;
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 16px;
-        max-width: 500px;
+        max-width: 560px;
         margin: 0 auto;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 15px;
+        line-height: 1.6;
       }
 
-      /* CONTENT */
+      /* LAYOUT */
       .content {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 40px 24px 60px;
+        padding: 36px 20px 56px;
       }
+
+      .section {
+        margin-bottom: 44px;
+      }
+
       .section-label {
         font-family: "Cabinet Grotesk", sans-serif;
         font-size: 11px;
-        font-weight: 700;
+        font-weight: 800;
         color: var(--text3);
         letter-spacing: 2px;
         text-transform: uppercase;
         margin-bottom: 16px;
       }
 
-      /* EXAM GRID */
+      /* CARDS */
       .exam-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: 20px;
-        margin-bottom: 48px;
+        grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+        gap: 18px;
       }
+
       .exam-card {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        padding: 28px;
-        cursor: pointer;
-        transition:
-          transform 0.2s,
-          box-shadow 0.2s,
-          border-color 0.2s;
         position: relative;
         overflow: hidden;
+        padding: 26px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        transition:
+          transform 0.2s ease,
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
       }
+
+      .exam-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--primary);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+      }
+
       .exam-card::before {
         content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
+        inset: 0 0 auto 0;
         height: 4px;
-        border-radius: var(--radius) var(--radius) 0 0;
+        background: var(
+          --card-gradient,
+          linear-gradient(90deg, #2563eb, #06b6d4)
+        );
       }
-      .exam-card.cgl::before {
-        background: linear-gradient(90deg, #2563eb, #06b6d4);
-      }
-      .exam-card.chsl::before {
-        background: linear-gradient(90deg, #10b981, #06b6d4);
-      }
-      .exam-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-        border-color: var(--primary);
-      }
+
       .exam-card-header {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+        gap: 12px;
         margin-bottom: 16px;
       }
+
       .exam-icon {
         width: 52px;
         height: 52px;
         border-radius: 14px;
-        display: flex;
+        display: grid;
+        place-items: center;
+        font-size: 26px;
+        background: var(--icon-bg, rgba(37, 99, 235, 0.1));
+      }
+
+      .exam-badge {
+        display: inline-flex;
         align-items: center;
         justify-content: center;
-        font-size: 26px;
-      }
-      .cgl .exam-icon {
-        background: rgba(37, 99, 235, 0.1);
-      }
-      .chsl .exam-icon {
-        background: rgba(16, 185, 129, 0.1);
-      }
-      .exam-badge {
-        font-size: 11px;
-        font-weight: 700;
         padding: 4px 10px;
         border-radius: 999px;
-        letter-spacing: 0.5px;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.4px;
       }
+
       .badge-live {
         background: #d1fae5;
         color: #065f46;
       }
+
       .badge-soon {
         background: #fef3c7;
         color: #92400e;
       }
-      .exam-card h3 {
+
+      .exam-title {
+        margin: 0 0 6px;
         font-family: "Cabinet Grotesk", sans-serif;
         font-size: 20px;
-        font-weight: 800;
-        color: var(--text);
-        margin-bottom: 6px;
-      }
-      .exam-card p {
-        font-size: 13px;
-        color: var(--text2);
-        line-height: 1.6;
-        margin-bottom: 20px;
-      }
-      .exam-meta {
-        display: flex;
-        gap: 16px;
-        margin-bottom: 20px;
-      }
-      .meta-item {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        font-size: 12px;
-        color: var(--text2);
-        font-weight: 500;
-      }
-      .exam-btn {
-        width: 100%;
-        padding: 12px;
-        border: none;
-        border-radius: 12px;
-        font-family: "Cabinet Grotesk", sans-serif;
-        font-size: 14px;
-        font-weight: 700;
-        cursor: pointer;
-        transition:
-          transform 0.15s,
-          opacity 0.15s;
-      }
-      .exam-btn:hover {
-        transform: translateY(-1px);
-        opacity: 0.9;
-      }
-      .btn-cgl {
-        background: linear-gradient(135deg, #2563eb, #06b6d4);
-        color: white;
-      }
-      .btn-chsl {
-        background: linear-gradient(135deg, #10b981, #06b6d4);
-        color: white;
-      }
-      .btn-disabled {
-        background: var(--border);
-        color: var(--text3);
-        cursor: not-allowed;
+        font-weight: 900;
       }
 
-      /* SUBJECT GRID */
+      .exam-desc {
+        margin: 0 0 18px;
+        font-size: 13px;
+        line-height: 1.65;
+        color: var(--text2);
+      }
+
+      .exam-meta {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-bottom: 14px;
+      }
+
+      .meta-item {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--text2);
+      }
+
+      .mock-count {
+        margin-bottom: 14px;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--accent);
+      }
+
+      .exam-btn {
+        width: 100%;
+        border: none;
+        border-radius: 12px;
+        padding: 12px;
+        color: #fff;
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 14px;
+        font-weight: 800;
+        background: var(
+          --btn-gradient,
+          linear-gradient(135deg, #2563eb, #06b6d4)
+        );
+        transition:
+          transform 0.15s ease,
+          opacity 0.15s ease;
+      }
+
+      .exam-btn:hover {
+        transform: translateY(-1px);
+        opacity: 0.95;
+      }
+
       .subject-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 14px;
-        margin-bottom: 48px;
       }
+
       .subject-card {
         background: var(--surface);
         border: 1px solid var(--border);
         border-radius: 14px;
         padding: 20px;
-        cursor: pointer;
-        transition:
-          transform 0.2s,
-          box-shadow 0.2s;
         text-align: center;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+        box-shadow: var(--shadow);
       }
+
       .subject-card:hover {
         transform: translateY(-3px);
         box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
       }
+
       .subj-icon {
+        display: block;
         font-size: 32px;
         margin-bottom: 10px;
-        display: block;
       }
+
       .subj-name {
         font-family: "Cabinet Grotesk", sans-serif;
         font-size: 16px;
-        font-weight: 800;
-        color: var(--text);
+        font-weight: 900;
         margin-bottom: 4px;
       }
+
       .subj-count {
         font-size: 12px;
         color: var(--text3);
       }
+
       .subj-bar {
         height: 3px;
         border-radius: 999px;
         margin-top: 12px;
       }
 
-      /* ── CHAPTER-WISE SECTION ─────────────────── */
+      /* CHAPTERS */
       .chapter-accordion {
         display: flex;
         flex-direction: column;
         gap: 12px;
-        margin-bottom: 48px;
       }
 
-      /* subject panel header */
       .chap-subject {
         background: var(--surface);
         border: 1px solid var(--border);
         border-radius: 16px;
         overflow: hidden;
-        transition: box-shadow 0.2s;
-      }
-      .chap-subject:hover {
         box-shadow: var(--shadow);
       }
+
       .chap-subject-header {
         display: flex;
         align-items: center;
         gap: 14px;
-        padding: 18px 22px;
+        padding: 18px 20px;
         cursor: pointer;
-        user-select: none;
       }
+
       .chap-subj-icon {
         font-size: 26px;
         flex-shrink: 0;
       }
+
       .chap-subj-info {
         flex: 1;
       }
+
       .chap-subj-name {
         font-family: "Cabinet Grotesk", sans-serif;
         font-size: 16px;
-        font-weight: 800;
-        color: var(--text);
+        font-weight: 900;
       }
+
       .chap-subj-hint {
+        margin-top: 2px;
         font-size: 12px;
         color: var(--text3);
-        margin-top: 2px;
       }
+
       .chap-arrow {
         font-size: 13px;
         color: var(--text3);
-        transition: transform 0.25s;
-        flex-shrink: 0;
+        transition: transform 0.25s ease;
       }
+
       .chap-subject.open .chap-arrow {
         transform: rotate(180deg);
       }
 
-      /* strip bar below header */
       .chap-subject-bar {
         height: 3px;
-        width: 100%;
       }
 
-      /* chapter grid inside */
       .chap-body {
         display: none;
         padding: 16px 20px 20px;
         border-top: 1px solid var(--border);
       }
+
       .chap-subject.open .chap-body {
         display: block;
       }
+
       .chap-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
         gap: 10px;
       }
 
-      /* individual chapter chip */
       .chap-chip {
         display: flex;
         flex-direction: column;
         gap: 4px;
         padding: 14px 16px;
-        border: 1.5px solid var(--border);
         border-radius: 12px;
+        border: 1.5px solid var(--border);
         background: var(--bg);
-        cursor: pointer;
-        transition:
-          border-color 0.18s,
-          background 0.18s,
-          transform 0.15s,
-          box-shadow 0.15s;
+        transition: 0.18s ease;
       }
+
       .chap-chip:hover {
+        transform: translateY(-2px);
         border-color: var(--primary);
         background: rgba(37, 99, 235, 0.05);
-        transform: translateY(-2px);
         box-shadow: 0 4px 16px rgba(37, 99, 235, 0.1);
       }
+
+      .chap-chip.disabled {
+        opacity: 0.45;
+        pointer-events: none;
+      }
+
       .chap-chip-name {
         font-size: 13px;
-        font-weight: 700;
-        color: var(--text);
+        font-weight: 800;
         line-height: 1.3;
       }
+
       .chap-chip-count {
         font-size: 11px;
         color: var(--text3);
-        font-weight: 500;
+        font-weight: 600;
       }
 
-      /* RECENT ATTEMPTS */
+      /* ATTEMPTS */
       .attempts-list {
         display: flex;
         flex-direction: column;
         gap: 10px;
       }
+
       .attempt-row {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 14px 18px;
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 12px;
         flex-wrap: wrap;
+        padding: 14px 18px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        box-shadow: var(--shadow);
       }
-      .attempt-exam {
-        font-weight: 700;
-        font-size: 14px;
+
+      .attempt-left {
         flex: 1;
+        min-width: 0;
       }
-      .attempt-score {
-        font-family: "Cabinet Grotesk", sans-serif;
-        font-size: 20px;
+
+      .attempt-exam {
+        font-size: 14px;
         font-weight: 800;
-        color: var(--primary);
       }
+
       .attempt-date {
+        margin-top: 2px;
         font-size: 12px;
         color: var(--text3);
       }
+
       .attempt-acc {
         font-size: 12px;
-        font-weight: 600;
-        padding: 3px 8px;
+        font-weight: 700;
+        padding: 4px 9px;
         border-radius: 999px;
         background: #d1fae5;
         color: #065f46;
       }
 
-      /* MODAL BASE */
+      .attempt-score {
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 20px;
+        font-weight: 900;
+        color: var(--primary);
+      }
+
+      .attempt-actions {
+        display: flex;
+        gap: 6px;
+      }
+
+      .mini-btn {
+        padding: 6px 14px;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .mini-btn.primary {
+        border: none;
+        background: var(--primary);
+        color: #fff;
+      }
+
+      .mini-btn.outline {
+        border: 1.5px solid var(--primary);
+        background: transparent;
+        color: var(--primary);
+      }
+
+      .mini-btn.soft {
+        border: 1.5px solid var(--border);
+        background: transparent;
+        color: var(--text2);
+      }
+
+      /* MODAL */
       .modal-overlay {
         display: none;
         position: fixed;
         inset: 0;
+        z-index: 5000;
         background: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(6px);
-        z-index: 5000;
         align-items: center;
         justify-content: center;
+        padding: 16px;
       }
+
       .modal-overlay.open {
         display: flex;
         animation: fadeIn 0.2s ease;
       }
+
       @keyframes fadeIn {
         from {
           opacity: 0;
@@ -556,645 +661,431 @@
           opacity: 1;
         }
       }
+
       .modal-box {
-        background: var(--surface);
-        border-radius: 20px;
-        padding: 36px;
-        max-width: 500px;
-        width: 92%;
+        width: min(500px, 100%);
         max-height: 90vh;
         overflow-y: auto;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        padding: 32px;
+        border-radius: 20px;
+        background: var(--surface);
         border: 1px solid var(--border);
-        animation: slideUp 0.25s ease;
+        box-shadow: var(--shadow-lg);
+        animation: slideUp 0.22s ease;
       }
+
+      .modal-box.compact {
+        max-width: 420px;
+      }
+
       @keyframes slideUp {
         from {
-          transform: translateY(20px);
           opacity: 0;
+          transform: translateY(18px);
         }
         to {
-          transform: translateY(0);
           opacity: 1;
+          transform: translateY(0);
         }
       }
+
       .modal-box h3 {
+        margin: 0 0 6px;
         font-family: "Cabinet Grotesk", sans-serif;
         font-size: 22px;
-        font-weight: 800;
-        margin-bottom: 6px;
+        font-weight: 900;
       }
+
       .modal-box > p {
-        color: var(--text2);
+        margin: 0 0 22px;
         font-size: 14px;
-        margin-bottom: 24px;
+        color: var(--text2);
       }
+
       .config-row {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 12px;
         padding: 13px 0;
         border-bottom: 1px solid var(--border);
-        font-size: 14px;
-        gap: 12px;
-      }
-      .config-label {
-        font-weight: 600;
-        color: var(--text);
-        flex-shrink: 0;
-      }
-      .config-val {
-        color: var(--primary);
-        font-weight: 700;
-        font-family: "Cabinet Grotesk", sans-serif;
-        text-align: right;
-      }
-      .mock-select {
-        flex: 1;
-        padding: 7px 12px;
-        background: var(--surface);
-        color: var(--text);
-        border: 1.5px solid var(--border);
-        border-radius: 8px;
-        font-size: 13px;
-        cursor: pointer;
-      }
-      .modal-actions {
-        display: flex;
-        gap: 10px;
-        margin-top: 24px;
-      }
-      .modal-start {
-        flex: 1;
-        padding: 14px;
-        border: none;
-        border-radius: 12px;
-        background: linear-gradient(135deg, var(--primary), var(--accent));
-        color: white;
-        font-family: "Cabinet Grotesk", sans-serif;
-        font-size: 15px;
-        font-weight: 700;
-        cursor: pointer;
-        transition: transform 0.15s;
-      }
-      .modal-start:hover {
-        transform: translateY(-1px);
-      }
-      .modal-cancel {
-        padding: 14px 20px;
-        border: 1px solid var(--border);
-        background: transparent;
-        color: var(--text2);
-        border-radius: 12px;
-        cursor: pointer;
-        font-weight: 600;
-        font-size: 14px;
       }
 
-      /* TIMER INPUT */
-      .timer-lbl {
-        font-size: 11px;
+      .config-label {
+        font-size: 14px;
         font-weight: 700;
-        color: var(--text3);
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        margin-bottom: 10px;
-        display: block;
-      }
-      .time-row {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 10px;
-      }
-      .time-input {
-        flex: 1;
-        padding: 12px 16px;
-        border: 2px solid var(--border);
-        border-radius: 12px;
-        background: var(--bg);
         color: var(--text);
-        font-size: 24px;
+      }
+
+      .config-val {
+        font-size: 14px;
         font-weight: 800;
         font-family: "Cabinet Grotesk", sans-serif;
-        text-align: center;
+        color: var(--primary);
+        text-align: right;
+      }
+
+      .mock-select,
+      .time-input {
+        width: 100%;
+        border-radius: 12px;
+        border: 1.5px solid var(--border);
+        background: var(--bg);
+        color: var(--text);
         outline: none;
-        transition: border-color 0.2s;
+        transition: border-color 0.2s ease;
+      }
+
+      .mock-select {
+        padding: 9px 12px;
+        font-size: 13px;
+      }
+
+      .time-input {
+        padding: 12px 16px;
+        font-size: 24px;
+        font-weight: 900;
+        font-family: "Cabinet Grotesk", sans-serif;
+        text-align: center;
         -moz-appearance: textfield;
       }
+
       .time-input::-webkit-inner-spin-button,
       .time-input::-webkit-outer-spin-button {
         -webkit-appearance: none;
       }
-      .time-input:focus {
+
+      .time-input:focus,
+      .mock-select:focus {
         border-color: var(--primary);
       }
-      .time-unit {
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--text2);
-        flex-shrink: 0;
+
+      .timer-lbl {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 11px;
+        font-weight: 800;
+        color: var(--text3);
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
       }
+
+      .time-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 8px;
+      }
+
+      .time-unit {
+        flex-shrink: 0;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text2);
+      }
+
       .quick-btns {
         display: flex;
         gap: 6px;
         flex-wrap: wrap;
       }
+
       .quick-btn {
         flex: 1;
         min-width: 40px;
         padding: 8px 6px;
+        border-radius: 10px;
         border: 1.5px solid var(--border);
         background: var(--bg);
         color: var(--text2);
-        border-radius: 10px;
         font-size: 12px;
-        font-weight: 700;
-        cursor: pointer;
-        transition: all 0.18s;
-        text-align: center;
+        font-weight: 800;
+        transition: 0.18s ease;
       }
+
       .quick-btn:hover,
       .quick-btn.active {
         background: var(--primary);
         border-color: var(--primary);
         color: #fff;
       }
+
       .quick-btn:disabled {
         opacity: 0.3;
-        cursor: not-allowed;
         pointer-events: none;
       }
 
+      .modal-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      .modal-cancel,
+      .modal-start {
+        border-radius: 12px;
+        padding: 14px;
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .modal-cancel {
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--text2);
+      }
+
+      .modal-start {
+        flex: 1;
+        border: none;
+        color: #fff;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+      }
+
+      .modal-start:hover,
+      .modal-cancel:hover {
+        transform: translateY(-1px);
+      }
+
+      /* TOAST */
+      .toast {
+        display: none;
+        position: fixed;
+        left: 50%;
+        bottom: 24px;
+        transform: translateX(-50%);
+        z-index: 9999;
+        background: #0f172a;
+        color: #fff;
+        border-radius: 999px;
+        padding: 12px 22px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      /* FOOTER */
+      .footer {
+        text-align: center;
+        padding: 20px 16px;
+        font-size: 12px;
+        color: var(--text3);
+        border-top: 1px solid var(--border);
+        background: var(--surface);
+      }
+
+      .footer strong {
+        color: var(--text2);
+      }
+
       /* RESPONSIVE */
-      @media (max-width: 640px) {
-        nav {
-          padding: 0 16px;
+      @media (max-width: 768px) {
+        .nav {
+          padding: 12px 16px;
+          align-items: flex-start;
+          flex-wrap: wrap;
         }
-        .content {
-          padding: 24px 16px;
+
+        .nav-right {
+          width: 100%;
+          justify-content: space-between;
         }
+
         .hero {
           padding: 36px 16px 40px;
         }
-        .exam-grid {
+
+        .hero-sub {
+          font-size: 14px;
+        }
+
+        .content {
+          padding: 24px 14px 42px;
+        }
+
+        .exam-grid,
+        .subject-grid {
           grid-template-columns: 1fr;
         }
-        .subject-grid {
+
+        .chap-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .attempt-row {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .modal-box {
+          padding: 22px 16px;
+          border-radius: 16px;
+        }
+
+        .config-row {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .config-val {
+          text-align: left;
+        }
+
+        .modal-actions {
+          flex-direction: column;
+        }
+
+        .time-input {
+          font-size: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .nav-right {
+          display: grid;
           grid-template-columns: 1fr 1fr;
         }
+
+        .user-chip {
+          grid-column: 1 / -1;
+          justify-content: center;
+        }
+
+        .nav-btn,
+        .icon-btn {
+          width: 100%;
+        }
+
+        .hero {
+          padding: 28px 12px 32px;
+        }
+
+        .hero-title {
+          font-size: 26px;
+        }
+
+        .content {
+          padding: 20px 12px 34px;
+        }
+
+        .exam-card {
+          padding: 18px 14px;
+        }
+
         .chap-grid {
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 1fr;
+        }
+
+        .quick-btn {
+          min-width: calc(50% - 6px);
+          flex: 1 1 calc(50% - 6px);
         }
       }
     </style>
   </head>
   <body>
-    <nav>
+    <nav class="nav">
       <div class="nav-brand">
         <div class="logo-icon">📋</div>
-        ExamEdge
+        <span>ExamEdge</span>
       </div>
+
       <div class="nav-right">
         <div class="user-chip">
           <div class="user-avatar" id="userAvatar">G</div>
           <span id="userName">Guest</span>
         </div>
-        <button
-          class="nav-btn"
-          onclick="window.location.href = 'profile.html'"
-          style="display: flex; align-items: center; gap: 6px"
-        >
-          👤 Profile
+        <button class="nav-btn" id="profileBtn">👤 Profile</button>
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">
+          🌙
         </button>
-        <button class="dark-btn" onclick="toggleTheme()">🌙</button>
-        <button class="nav-btn" onclick="logout()">Logout</button>
+        <button class="nav-btn" id="logoutBtn">Logout</button>
       </div>
     </nav>
 
-    <div class="hero">
-      <div class="hero-greeting">Good luck with your prep 🎯</div>
-      <h1 class="hero-title">Choose Your <span>Mock Test</span></h1>
-      <p class="hero-sub">
-        Pick an exam category and start practising with real Exam-pattern
-        questions
-      </p>
-    </div>
-
-    <div class="content">
-      <!-- FULL MOCK TESTS -->
-      <div class="section-label">📝 Full Mock Tests</div>
-      <div class="exam-grid">
-        <div class="exam-card cgl" onclick="openConfig('cgl')">
-          <div class="exam-card-header">
-            <div class="exam-icon">🏆</div>
-            <span class="exam-badge badge-live">LIVE</span>
-          </div>
-          <h3>SSC CGL Tier 1</h3>
-          <p>
-            Combined Graduate Level — 100 questions across Quant, Reasoning, GS
-            &amp; English. 60 minutes.
-          </p>
-          <div class="exam-meta">
-            <div class="meta-item">⏱️ 60 min</div>
-            <div class="meta-item">📝 100 Qs</div>
-            <div class="meta-item">⚡ +2 / -0.5</div>
-          </div>
-          <div
-            id="cglMockCount"
-            style="
-              font-size: 0.78rem;
-              color: var(--accent);
-              margin-bottom: 10px;
-              font-weight: 600;
-            "
-          >
-            🗂️ 6 Mocks Available
-          </div>
-          <button class="exam-btn btn-cgl">Select Mock →</button>
-        </div>
-
-        <div class="exam-card chsl" onclick="openConfig('chsl')">
-          <div class="exam-card-header">
-            <div class="exam-icon">📜</div>
-            <span class="exam-badge badge-live">LIVE</span>
-          </div>
-          <h3>SSC CHSL Tier 1</h3>
-          <p>
-            Combined Higher Secondary Level — 100 questions, same pattern as CGL
-            Tier 1. 60 minutes.
-          </p>
-          <div class="exam-meta">
-            <div class="meta-item">⏱️ 60 min</div>
-            <div class="meta-item">📝 100 Qs</div>
-            <div class="meta-item">⚡ +2 / -0.5</div>
-          </div>
-          <div
-            id="chslMockCount"
-            style="
-              font-size: 0.78rem;
-              color: var(--accent);
-              margin-bottom: 10px;
-              font-weight: 600;
-            "
-          >
-            🗂️ Checking mocks…
-          </div>
-          <button class="exam-btn btn-chsl">Select Mock →</button>
-        </div>
-
-        <div
-          class="exam-card"
-          onclick="openConfig('rrb_ntpc_g')"
-          style="--card-top: #f59e0b"
-        >
-          <div class="exam-card-header">
-            <div class="exam-icon" style="background: rgba(245, 158, 11, 0.1)">
-              🚂
-            </div>
-            <span class="exam-badge badge-live">LIVE</span>
-          </div>
-          <h3>RRB NTPC Graduate</h3>
-          <p>
-            CBT 1 — 100 questions, 1 mark each. General Intelligence &amp;
-            Reasoning, Mathematics &amp; General Awareness. 90 minutes.
-          </p>
-          <div class="exam-meta">
-            <div class="meta-item">⏱️ 90 min</div>
-            <div class="meta-item">📝 100 Qs · 100 marks</div>
-            <div class="meta-item">⚡ +1 / −0.33</div>
-          </div>
-          <div
-            id="rrbMockCount"
-            style="
-              font-size: 0.78rem;
-              color: var(--accent);
-              margin-bottom: 10px;
-              font-weight: 600;
-            "
-          >
-            🗂️ 1 Mock Available
-          </div>
-          <button
-            class="exam-btn"
-            style="
-              background: linear-gradient(135deg, #f59e0b, #ef4444);
-              color: white;
-            "
-          >
-            Select Mock →
-          </button>
-        </div>
-
-        <div class="exam-card" onclick="openConfig('rrb_ntpc_ug')">
-          <div class="exam-card-header">
-            <div class="exam-icon" style="background: rgba(245, 158, 11, 0.1)">
-              🚆
-            </div>
-            <span class="exam-badge badge-live">LIVE</span>
-          </div>
-          <h3>RRB NTPC Undergraduate</h3>
-          <p>
-            Railway Recruitment Board — Undergraduate level. 100 questions
-            across Maths, Reasoning & GK. No English. 90 minutes.
-          </p>
-          <div class="exam-meta">
-            <div class="meta-item">⏱️ 90 min</div>
-            <div class="meta-item">📝 100 Qs · 100 marks</div>
-            <div class="meta-item">⚡ +1 / −0.33</div>
-          </div>
-          <div
-            id="rrbUgMockCount"
-            style="
-              font-size: 0.78rem;
-              color: var(--accent);
-              margin-bottom: 10px;
-              font-weight: 600;
-            "
-          >
-            🗂️ Checking mocks…
-          </div>
-          <button
-            class="exam-btn"
-            style="
-              background: linear-gradient(135deg, #f59e0b, #ef4444);
-              color: white;
-            "
-          >
-            Select Mock →
-          </button>
-        </div>
-
-        <div
-          class="exam-card"
-          onclick="openConfig('jkp_si')"
-          style="--card-accent: #8b5cf6"
-        >
-          <div class="exam-card-header">
-            <div class="exam-icon" style="background: rgba(139, 92, 246, 0.1)">
-              🛡️
-            </div>
-            <span class="exam-badge badge-live">LIVE</span>
-          </div>
-          <h3>JKSSB Sub Inspector</h3>
-          <p>
-            J&amp;K Police — 100 Qs × 2 marks. Reasoning, GK, Quant, English,
-            Maths &amp; Computer. 120 min.
-          </p>
-          <div class="exam-meta">
-            <div class="meta-item">⏱️ 120 min</div>
-            <div class="meta-item">📝 100 Qs · 200 marks</div>
-            <div class="meta-item">⚡ +2 / −0.5</div>
-          </div>
-          <div
-            id="jkpMockCount"
-            style="
-              font-size: 0.78rem;
-              color: var(--accent);
-              margin-bottom: 10px;
-              font-weight: 600;
-            "
-          >
-            🗂️ Checking mocks…
-          </div>
-          <button
-            class="exam-btn"
-            style="
-              background: linear-gradient(135deg, #8b5cf6, #ec4899);
-              color: white;
-            "
-          >
-            Select Mock →
-          </button>
-        </div>
-
-        <div class="exam-card" onclick="openConfig('jkp_ja')">
-          <div class="exam-card-header">
-            <div class="exam-icon" style="background: rgba(139, 92, 246, 0.1)">
-              📋
-            </div>
-            <span class="exam-badge badge-live">LIVE</span>
-          </div>
-          <h3>JKSSB Junior Assistant</h3>
-          <p>
-            J&amp;K SSB — 4 sections × 20 marks. English, GK (J&amp;K),
-            Reasoning &amp; Computer. 80 questions. 80 minutes.
-          </p>
-          <div class="exam-meta">
-            <div class="meta-item">⏱️ 80 min</div>
-            <div class="meta-item">📝 80 Qs · 80 marks</div>
-            <div class="meta-item">⚡ +1 / −0.25</div>
-          </div>
-          <div
-            id="jkpJaMockCount"
-            style="
-              font-size: 0.78rem;
-              color: var(--accent);
-              margin-bottom: 10px;
-              font-weight: 600;
-            "
-          >
-            🗂️ Checking mocks…
-          </div>
-          <button
-            class="exam-btn"
-            style="
-              background: linear-gradient(135deg, #8b5cf6, #06b6d4);
-              color: white;
-            "
-          >
-            Select Mock →
-          </button>
-        </div>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-greeting">Good luck with your prep 🎯</div>
+        <h1 class="hero-title">Choose Your <span>Mock Test</span></h1>
+        <p class="hero-sub">
+          Pick an exam category and start practising with real exam-pattern
+          questions
+        </p>
       </div>
+    </section>
 
-      <!-- SUBJECT-WISE PRACTICE -->
-      <div class="section-label">🎯 Subject-wise Practice</div>
-      <div class="subject-grid">
-        <div class="subject-card" onclick="openSubjectConfig('Quant')">
-          <span class="subj-icon">🔢</span>
-          <div class="subj-name">Quantitative Aptitude</div>
-          <div class="subj-count">1000 questions</div>
-          <div
-            class="subj-bar"
-            style="background: linear-gradient(90deg, #2563eb, #06b6d4)"
-          ></div>
-        </div>
-        <div class="subject-card" onclick="openSubjectConfig('Reasoning')">
-          <span class="subj-icon">🧩</span>
-          <div class="subj-name">General Intelligence</div>
-          <div class="subj-count">1000 questions</div>
-          <div
-            class="subj-bar"
-            style="background: linear-gradient(90deg, #f093fb, #f5576c)"
-          ></div>
-        </div>
-        <div class="subject-card" onclick="openSubjectConfig('GS')">
-          <span class="subj-icon">🌍</span>
-          <div class="subj-name">General Awareness</div>
-          <div class="subj-count">1000 questions</div>
-          <div
-            class="subj-bar"
-            style="background: linear-gradient(90deg, #4facfe, #00f2fe)"
-          ></div>
-        </div>
-        <div class="subject-card" onclick="openSubjectConfig('English')">
-          <span class="subj-icon">📖</span>
-          <div class="subj-name">English Language</div>
-          <div class="subj-count">1000 questions</div>
-          <div
-            class="subj-bar"
-            style="background: linear-gradient(90deg, #43e97b, #38f9d7)"
-          ></div>
-        </div>
-      </div>
+    <main class="content">
+      <section class="section">
+        <div class="section-label">📝 Full Mock Tests</div>
+        <div class="exam-grid" id="examGrid"></div>
+      </section>
 
-      <!-- CHAPTER-WISE PRACTICE -->
-      <div class="section-label">📖 Chapter-wise Practice</div>
-      <div class="chapter-accordion">
-        <!-- Quantitative Aptitude -->
-        <div class="chap-subject" id="chapSubj-Quant">
-          <div class="chap-subject-header" onclick="toggleChapSubject('Quant')">
-            <span class="chap-subj-icon">🔢</span>
-            <div class="chap-subj-info">
-              <div class="chap-subj-name">Quantitative Aptitude</div>
-              <div class="chap-subj-hint">21 chapters · tap to expand</div>
-            </div>
-            <span class="chap-arrow">▼</span>
-          </div>
-          <div
-            class="chap-subject-bar"
-            style="background: linear-gradient(90deg, #2563eb, #06b6d4)"
-          ></div>
-          <div class="chap-body">
-            <div class="chap-grid" id="chapGrid-Quant"></div>
-          </div>
-        </div>
+      <section class="section">
+        <div class="section-label">🎯 Subject-wise Practice</div>
+        <div class="subject-grid" id="subjectGrid"></div>
+      </section>
 
-        <!-- General Intelligence -->
-        <div class="chap-subject" id="chapSubj-Reasoning">
-          <div
-            class="chap-subject-header"
-            onclick="toggleChapSubject('Reasoning')"
-          >
-            <span class="chap-subj-icon">🧩</span>
-            <div class="chap-subj-info">
-              <div class="chap-subj-name">
-                General Intelligence &amp; Reasoning
-              </div>
-              <div class="chap-subj-hint">22 chapters · tap to expand</div>
-            </div>
-            <span class="chap-arrow">▼</span>
-          </div>
-          <div
-            class="chap-subject-bar"
-            style="background: linear-gradient(90deg, #f093fb, #f5576c)"
-          ></div>
-          <div class="chap-body">
-            <div class="chap-grid" id="chapGrid-Reasoning"></div>
-          </div>
-        </div>
+      <section class="section">
+        <div class="section-label">📖 Chapter-wise Practice</div>
+        <div class="chapter-accordion" id="chapterAccordion"></div>
+      </section>
 
-        <!-- General Awareness -->
-        <div class="chap-subject" id="chapSubj-GS">
-          <div class="chap-subject-header" onclick="toggleChapSubject('GS')">
-            <span class="chap-subj-icon">🌍</span>
-            <div class="chap-subj-info">
-              <div class="chap-subj-name">General Awareness</div>
-              <div class="chap-subj-hint">8 chapters · tap to expand</div>
-            </div>
-            <span class="chap-arrow">▼</span>
-          </div>
-          <div
-            class="chap-subject-bar"
-            style="background: linear-gradient(90deg, #4facfe, #00f2fe)"
-          ></div>
-          <div class="chap-body">
-            <div class="chap-grid" id="chapGrid-GS"></div>
+      <section class="section">
+        <div class="section-label">📊 Your Recent Attempts</div>
+        <div id="recentAttempts" class="attempts-list">
+          <div class="muted" style="font-size: 14px; padding: 16px 0">
+            No attempts yet. Start your first mock test!
           </div>
         </div>
-
-        <!-- English -->
-        <div class="chap-subject" id="chapSubj-English">
-          <div
-            class="chap-subject-header"
-            onclick="toggleChapSubject('English')"
-          >
-            <span class="chap-subj-icon">📖</span>
-            <div class="chap-subj-info">
-              <div class="chap-subj-name">English Language</div>
-              <div class="chap-subj-hint">12 chapters · tap to expand</div>
-            </div>
-            <span class="chap-arrow">▼</span>
-          </div>
-          <div
-            class="chap-subject-bar"
-            style="background: linear-gradient(90deg, #43e97b, #38f9d7)"
-          ></div>
-          <div class="chap-body">
-            <div class="chap-grid" id="chapGrid-English"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- RECENT ATTEMPTS -->
-      <div class="section-label">📊 Your Recent Attempts</div>
-      <div id="recentAttempts" class="attempts-list">
-        <div style="color: var(--text3); font-size: 14px; padding: 16px 0">
-          No attempts yet. Start your first mock test!
-        </div>
-      </div>
-    </div>
+      </section>
+    </main>
 
     <!-- FULL MOCK CONFIG MODAL -->
-    <div class="modal-overlay" id="configModal" onclick="closeConfig()">
-      <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-overlay" id="configModal">
+      <div class="modal-box" role="dialog" aria-modal="true">
         <h3 id="modalTitle">SSC CGL Tier 1</h3>
         <p id="modalDesc">
           Full mock test — 25 questions per subject, 60 minutes.
         </p>
+
         <div class="config-row">
-          <span class="config-label">📝 Total Questions</span
-          ><span class="config-val" id="cfgQs">100</span>
+          <span class="config-label">📝 Total Questions</span>
+          <span class="config-val" id="cfgQs">100</span>
         </div>
         <div class="config-row">
-          <span class="config-label">⏱️ Total Time</span
-          ><span class="config-val" id="cfgTime">60 minutes</span>
+          <span class="config-label">⏱️ Total Time</span>
+          <span class="config-val" id="cfgTime">60 minutes</span>
         </div>
         <div class="config-row">
-          <span class="config-label">✅ Correct Answer</span
-          ><span class="config-val">+2 marks</span>
+          <span class="config-label">✅ Correct Answer</span>
+          <span class="config-val" id="cfgCorrect">+2 marks</span>
         </div>
         <div class="config-row">
-          <span class="config-label">❌ Wrong Answer</span
-          ><span class="config-val" style="color: var(--red)">−0.5 marks</span>
+          <span class="config-label">❌ Wrong Answer</span>
+          <span class="config-val" id="cfgWrong" style="color: var(--red)"
+            >−0.5 marks</span
+          >
         </div>
         <div class="config-row">
-          <span class="config-label">📚 Subjects</span
-          ><span class="config-val" id="cfgSubjects"
+          <span class="config-label">📚 Subjects</span>
+          <span class="config-val" id="cfgSubjects"
             >Quant · Reasoning · GS · English</span
           >
         </div>
-        <div class="config-row" id="mockSelectorRow" style="display: none">
+        <div class="config-row hidden" id="mockSelectorRow">
           <span class="config-label">🗂️ Select Mock</span>
           <select id="mockSelector" class="mock-select"></select>
         </div>
+
         <div class="modal-actions">
-          <button class="modal-cancel" onclick="closeConfig()">Cancel</button>
-          <button class="modal-start" onclick="startMock()">
-            🚀 Start Now
-          </button>
+          <button class="modal-cancel" data-close="configModal">Cancel</button>
+          <button class="modal-start" id="startMockBtn">🚀 Start Now</button>
         </div>
       </div>
     </div>
 
     <!-- SUBJECT PRACTICE MODAL -->
-    <div class="modal-overlay" id="subjectModal" onclick="closeSubjectModal()">
-      <div
-        class="modal-box"
-        onclick="event.stopPropagation()"
-        style="max-width: 420px"
-      >
+    <div class="modal-overlay" id="subjectModal">
+      <div class="modal-box compact" role="dialog" aria-modal="true">
         <div style="text-align: center; margin-bottom: 24px">
           <div
             style="font-size: 52px; margin-bottom: 10px"
@@ -1212,18 +1103,19 @@
             Random questions · Fresh shuffle every time
           </p>
         </div>
+
         <div class="config-row" style="border-top: 1px solid var(--border)">
-          <span class="config-label">✅ Correct</span
-          ><span class="config-val">+2 marks</span>
+          <span class="config-label">✅ Correct</span>
+          <span class="config-val">+2 marks</span>
         </div>
         <div class="config-row" style="border-bottom: none">
-          <span class="config-label">❌ Wrong</span
-          ><span class="config-val" style="color: var(--red)">−0.5 marks</span>
+          <span class="config-label">❌ Wrong</span>
+          <span class="config-val" style="color: var(--red)">−0.5 marks</span>
         </div>
 
         <div style="margin-top: 22px">
           <span class="timer-lbl">📝 Number of Questions</span>
-          <div class="time-row" style="margin-bottom: 8px">
+          <div class="time-row">
             <input
               type="number"
               id="subjectQInput"
@@ -1231,35 +1123,13 @@
               value="25"
               min="1"
               max="50"
-              oninput="
-                subjQCount = Math.min(
-                  50,
-                  Math.max(1, parseInt(this.value) || 1),
-                );
-                syncSubjQBtns();
-              "
-              onfocus="this.style.borderColor = 'var(--primary)'"
-              onblur="this.style.borderColor = 'var(--border)'"
             />
             <span class="time-unit">questions</span>
           </div>
-          <div class="quick-btns" id="subjQCountBtns">
-            <button class="quick-btn" onclick="setSubjectQCount(10)">10</button>
-            <button class="quick-btn" onclick="setSubjectQCount(20)">20</button>
-            <button class="quick-btn active" onclick="setSubjectQCount(25)">
-              25
-            </button>
-            <button class="quick-btn" onclick="setSubjectQCount(30)">30</button>
-            <button class="quick-btn" onclick="setSubjectQCount(40)">40</button>
-            <button class="quick-btn" onclick="setSubjectQCount(50)">50</button>
-          </div>
+          <div class="quick-btns" id="subjQCountBtns"></div>
           <p
-            style="
-              font-size: 11px;
-              color: var(--text3);
-              margin-top: 5px;
-              text-align: center;
-            "
+            class="muted"
+            style="font-size: 11px; margin-top: 5px; text-align: center"
           >
             Or type any number 1–50
           </p>
@@ -1267,7 +1137,7 @@
 
         <div style="margin-top: 18px">
           <span class="timer-lbl">⏱ Set Your Timer</span>
-          <div class="time-row" style="margin-bottom: 8px">
+          <div class="time-row">
             <input
               type="number"
               id="subjectTimeInput"
@@ -1275,38 +1145,21 @@
               value="25"
               min="1"
               max="30"
-              oninput="syncSubjTimeBtns()"
-              onfocus="this.style.borderColor = 'var(--primary)'"
-              onblur="this.style.borderColor = 'var(--border)'"
             />
             <span class="time-unit">minutes</span>
           </div>
-          <div class="quick-btns" id="subjTimeBtns">
-            <button class="quick-btn" onclick="setSubjectTime(5)">5</button>
-            <button class="quick-btn" onclick="setSubjectTime(10)">10</button>
-            <button class="quick-btn" onclick="setSubjectTime(15)">15</button>
-            <button class="quick-btn" onclick="setSubjectTime(20)">20</button>
-            <button class="quick-btn active" onclick="setSubjectTime(25)">
-              25
-            </button>
-            <button class="quick-btn" onclick="setSubjectTime(30)">30</button>
-          </div>
+          <div class="quick-btns" id="subjTimeBtns"></div>
           <p
-            style="
-              font-size: 11px;
-              color: var(--text3);
-              margin-top: 5px;
-              text-align: center;
-            "
+            class="muted"
+            style="font-size: 11px; margin-top: 5px; text-align: center"
           >
             Or type any number 1–30 min
           </p>
         </div>
+
         <div class="modal-actions">
-          <button class="modal-cancel" onclick="closeSubjectModal()">
-            Cancel
-          </button>
-          <button class="modal-start" onclick="startSubjectPractice()">
+          <button class="modal-cancel" data-close="subjectModal">Cancel</button>
+          <button class="modal-start" id="startSubjectBtn">
             🚀 Start Practice
           </button>
         </div>
@@ -1314,12 +1167,8 @@
     </div>
 
     <!-- CHAPTER PRACTICE MODAL -->
-    <div class="modal-overlay" id="chapterModal" onclick="closeChapterModal()">
-      <div
-        class="modal-box"
-        onclick="event.stopPropagation()"
-        style="max-width: 420px"
-      >
+    <div class="modal-overlay" id="chapterModal">
+      <div class="modal-box compact" role="dialog" aria-modal="true">
         <div style="text-align: center; margin-bottom: 24px">
           <div style="font-size: 48px; margin-bottom: 8px" id="chapModalIcon">
             📖
@@ -1331,22 +1180,23 @@
             All available questions from this chapter
           </p>
         </div>
+
         <div class="config-row" style="border-top: 1px solid var(--border)">
           <span class="config-label">📦 Available</span>
           <span class="config-val" id="chapModalCount">—</span>
         </div>
         <div class="config-row">
-          <span class="config-label">✅ Correct</span
-          ><span class="config-val">+2 marks</span>
+          <span class="config-label">✅ Correct</span>
+          <span class="config-val">+2 marks</span>
         </div>
         <div class="config-row" style="border-bottom: none">
-          <span class="config-label">❌ Wrong</span
-          ><span class="config-val" style="color: var(--red)">−0.5 marks</span>
+          <span class="config-label">❌ Wrong</span>
+          <span class="config-val" style="color: var(--red)">−0.5 marks</span>
         </div>
 
         <div style="margin-top: 22px">
           <span class="timer-lbl">📝 Number of Questions</span>
-          <div class="time-row" style="margin-bottom: 8px">
+          <div class="time-row">
             <input
               type="number"
               id="chapQInput"
@@ -1354,41 +1204,20 @@
               value="10"
               min="1"
               max="50"
-              oninput="
-                chapQCount = Math.min(
-                  currentChapterCount || 50,
-                  Math.max(1, parseInt(this.value) || 1),
-                );
-                syncChapQBtns();
-              "
-              onfocus="this.style.borderColor = 'var(--primary)'"
-              onblur="this.style.borderColor = 'var(--border)'"
             />
             <span class="time-unit">questions</span>
           </div>
-          <div class="quick-btns" id="chapQCountBtns">
-            <button class="quick-btn active" onclick="setChapQCount(5)">
-              5
-            </button>
-            <button class="quick-btn" onclick="setChapQCount(10)">10</button>
-            <button class="quick-btn" onclick="setChapQCount(15)">15</button>
-            <button class="quick-btn" onclick="setChapQCount(20)">20</button>
-            <button class="quick-btn" onclick="setChapQCount(30)">30</button>
-          </div>
+          <div class="quick-btns" id="chapQCountBtns"></div>
           <p
             id="chapQCountNote"
-            style="
-              font-size: 11px;
-              color: var(--text3);
-              margin-top: 5px;
-              text-align: center;
-            "
+            class="muted"
+            style="font-size: 11px; margin-top: 5px; text-align: center"
           ></p>
         </div>
 
         <div style="margin-top: 18px">
           <span class="timer-lbl">⏱ Set Your Timer</span>
-          <div class="time-row" style="margin-bottom: 8px">
+          <div class="time-row">
             <input
               type="number"
               id="chapTimeInput"
@@ -1396,62 +1225,32 @@
               value="10"
               min="1"
               max="30"
-              oninput="syncChapTimeBtns()"
-              onfocus="this.style.borderColor = 'var(--primary)'"
-              onblur="this.style.borderColor = 'var(--border)'"
             />
             <span class="time-unit">minutes</span>
           </div>
-          <div class="quick-btns" id="chapTimeBtns">
-            <button class="quick-btn" onclick="setChapTime(1)">1</button>
-            <button class="quick-btn" onclick="setChapTime(2)">2</button>
-            <button class="quick-btn" onclick="setChapTime(5)">5</button>
-            <button class="quick-btn active" onclick="setChapTime(10)">
-              10
-            </button>
-            <button class="quick-btn" onclick="setChapTime(15)">15</button>
-            <button class="quick-btn" onclick="setChapTime(20)">20</button>
-            <button class="quick-btn" onclick="setChapTime(30)">30</button>
-          </div>
+          <div class="quick-btns" id="chapTimeBtns"></div>
           <p
-            style="
-              font-size: 11px;
-              color: var(--text3);
-              margin-top: 5px;
-              text-align: center;
-            "
+            class="muted"
+            style="font-size: 11px; margin-top: 5px; text-align: center"
           >
             Or type any number 1–30 min
           </p>
         </div>
+
         <div class="modal-actions">
-          <button class="modal-cancel" onclick="closeChapterModal()">
-            Cancel
-          </button>
-          <button class="modal-start" onclick="startChapterPractice()">
+          <button class="modal-cancel" data-close="chapterModal">Cancel</button>
+          <button class="modal-start" id="startChapterBtn">
             🚀 Start Practice
           </button>
         </div>
       </div>
     </div>
 
-    <div
-      id="toast"
-      style="
-        position: fixed;
-        bottom: 24px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #0f172a;
-        color: #fff;
-        padding: 12px 24px;
-        border-radius: 999px;
-        font-size: 14px;
-        font-weight: 600;
-        display: none;
-        z-index: 9999;
-      "
-    ></div>
+    <div id="toast" class="toast"></div>
+
+    <footer class="footer">
+      Made with ❤️ by <strong>Jattin Khajuria</strong>
+    </footer>
 
     <script>
       const firebaseConfig = {
@@ -1463,65 +1262,55 @@
         appId: "1:547588996223:web:c8304b0599edbeb060d34a",
         measurementId: "G-GTKN5VEC3J",
       };
+
       firebase.initializeApp(firebaseConfig);
-      const auth = firebase.auth(),
-        db = firebase.firestore();
-      let currentExamType = "cgl",
-        currentSubject = null,
-        currentChapter = null,
-        currentChapterCount = 0;
-      let subjQCount = 25,
-        chapQCount = 15;
+      const auth = firebase.auth();
+      const db = firebase.firestore();
 
-      // ── AUTH ──────────────────────────────────────
-      auth.onAuthStateChanged((user) => {
-        const guest = sessionStorage.getItem("guestMode");
-        if (!user && !guest) {
-          window.location.href = "login.html";
-          return;
-        }
-        if (user) {
-          const name = user.displayName || user.email || "User";
-          document.getElementById("userName").textContent = name.split(" ")[0];
-          document.getElementById("userAvatar").textContent =
-            name[0].toUpperCase();
-          loadRecentAttempts(user.uid);
-        } else {
-          // Guest mode — load from localStorage only
-          loadRecentAttempts(null);
-        }
-      });
+      const state = {
+        currentExamType: "cgl",
+        currentSubject: null,
+        currentChapter: null,
+        currentChapterCount: 0,
+        subjQCount: 25,
+        chapQCount: 10,
+        jsonCache: {},
+      };
 
-      // ── THEME ─────────────────────────────────────
-      function toggleTheme() {
-        const html = document.documentElement,
-          dark = html.getAttribute("data-theme") === "dark";
-        html.setAttribute("data-theme", dark ? "light" : "dark");
-        document.querySelector(".dark-btn").textContent = dark ? "🌙" : "☀️";
-        localStorage.setItem("ssc-theme", dark ? "light" : "dark");
-      }
-      if (localStorage.getItem("ssc-theme") === "dark") {
-        document.documentElement.setAttribute("data-theme", "dark");
-        const b = document.querySelector(".dark-btn");
-        if (b) b.textContent = "☀️";
-      }
+      const QUICK_VALUES = {
+        subjQuestions: [10, 20, 25, 30, 40, 50],
+        subjTimes: [5, 10, 15, 20, 25, 30],
+        chapQuestions: [5, 10, 15, 20, 30],
+        chapTimes: [1, 2, 5, 10, 15, 20, 30],
+      };
 
-      // ── LOGOUT ────────────────────────────────────
-      function logout() {
-        auth
-          .signOut()
-          .then(() => {
-            sessionStorage.removeItem("guestMode");
-            window.location.href = "login.html";
-          })
-          .catch(() => {
-            sessionStorage.removeItem("guestMode");
-            window.location.href = "login.html";
-          });
-      }
+      const subjectMeta = {
+        Quant: {
+          icon: "🔢",
+          name: "Quantitative Aptitude",
+          grad: "linear-gradient(135deg,#2563eb,#06b6d4)",
+          strip: "linear-gradient(90deg,#2563eb,#06b6d4)",
+        },
+        Reasoning: {
+          icon: "🧩",
+          name: "General Intelligence",
+          grad: "linear-gradient(135deg,#f093fb,#f5576c)",
+          strip: "linear-gradient(90deg,#f093fb,#f5576c)",
+        },
+        GS: {
+          icon: "🌍",
+          name: "General Awareness",
+          grad: "linear-gradient(135deg,#4facfe,#00f2fe)",
+          strip: "linear-gradient(90deg,#4facfe,#00f2fe)",
+        },
+        English: {
+          icon: "📖",
+          name: "English Language",
+          grad: "linear-gradient(135deg,#43e97b,#38f9d7)",
+          strip: "linear-gradient(90deg,#43e97b,#38f9d7)",
+        },
+      };
 
-      // ── FULL MOCK ─────────────────────────────────
-      // Exam config — add mocks[] as you create new files; auto-count detects available files
       const examConfig = {
         cgl: {
           title: "SSC CGL Tier 1",
@@ -1529,7 +1318,7 @@
           time: 60,
           subjects: "Quant · Reasoning · GS · English",
           desc: "Full mock — 25 Qs per subject, 60 min. +2/−0.5 marking.",
-          marking: "+2 / −0.5",
+          marking: { correct: "+2 marks", wrong: "−0.5 marks" },
           prefix: "mock",
           mocks: [
             { num: 1, label: "Mock 1" },
@@ -1539,6 +1328,13 @@
             { num: 5, label: "Mock 5" },
             { num: 6, label: "Mock 6" },
           ],
+          icon: "🏆",
+          badge: "LIVE",
+          badgeClass: "badge-live",
+          cardGradient: "linear-gradient(90deg, #2563eb, #06b6d4)",
+          iconBg: "rgba(37, 99, 235, 0.1)",
+          btnGradient: "linear-gradient(135deg, #2563eb, #06b6d4)",
+          countId: "cglMockCount",
         },
         chsl: {
           title: "SSC CHSL Tier 1",
@@ -1546,9 +1342,16 @@
           time: 60,
           subjects: "Quant · Reasoning · GS · English",
           desc: "Full mock — 25 Qs per subject, 60 min. +2/−0.5 marking.",
-          marking: "+2 / −0.5",
+          marking: { correct: "+2 marks", wrong: "−0.5 marks" },
           prefix: "chsl_mock",
           mocks: [],
+          icon: "📜",
+          badge: "LIVE",
+          badgeClass: "badge-live",
+          cardGradient: "linear-gradient(90deg, #10b981, #06b6d4)",
+          iconBg: "rgba(16, 185, 129, 0.1)",
+          btnGradient: "linear-gradient(135deg, #10b981, #06b6d4)",
+          countId: "chslMockCount",
         },
         rrb_ntpc_g: {
           title: "RRB NTPC Graduate",
@@ -1556,19 +1359,16 @@
           time: 90,
           subjects: "Reasoning · Mathematics · General Awareness",
           desc: "CBT 1 — 100 Qs, 1 mark each. No English section. 90 min.",
-          marking: "+1 / −0.33",
+          marking: { correct: "+1 mark", wrong: "−0.33 marks" },
           prefix: "rrb_ntpc_g_mock",
           mocks: [{ num: 1, label: "Mock 1" }],
-        },
-        jkp_si: {
-          title: "JKSSB Sub Inspector",
-          qs: 100,
-          time: 120,
-          subjects: "Reasoning · GK · Quant · English · Maths · Computer",
-          desc: "J&K Police SI — 6 sections, 100 Qs, 200 marks. 120 min.",
-          marking: "+2 / −0.5",
-          prefix: "jkp_si_mock",
-          mocks: [{ num: 1, label: "Mock 1" }],
+          icon: "🚂",
+          badge: "LIVE",
+          badgeClass: "badge-live",
+          cardGradient: "linear-gradient(90deg, #f59e0b, #ef4444)",
+          iconBg: "rgba(245, 158, 11, 0.1)",
+          btnGradient: "linear-gradient(135deg, #f59e0b, #ef4444)",
+          countId: "rrbMockCount",
         },
         rrb_ntpc_ug: {
           title: "RRB NTPC Undergraduate",
@@ -1576,9 +1376,33 @@
           time: 90,
           subjects: "Reasoning · Mathematics · General Awareness",
           desc: "CBT 1 — 100 Qs, 1 mark each. Reasoning, Maths & GK. No English. 90 min.",
-          marking: "+1 / −0.33",
+          marking: { correct: "+1 mark", wrong: "−0.33 marks" },
           prefix: "rrb_ntpc_ug_mock",
           mocks: [],
+          icon: "🚆",
+          badge: "LIVE",
+          badgeClass: "badge-live",
+          cardGradient: "linear-gradient(90deg, #f59e0b, #ef4444)",
+          iconBg: "rgba(245, 158, 11, 0.1)",
+          btnGradient: "linear-gradient(135deg, #f59e0b, #ef4444)",
+          countId: "rrbUgMockCount",
+        },
+        jkp_si: {
+          title: "JKSSB Sub Inspector",
+          qs: 100,
+          time: 120,
+          subjects: "Reasoning · GK · Quant · English · Maths · Computer",
+          desc: "J&K Police SI — 6 sections, 100 Qs, 200 marks. 120 min.",
+          marking: { correct: "+2 marks", wrong: "−0.5 marks" },
+          prefix: "jkp_si_mock",
+          mocks: [{ num: 1, label: "Mock 1" }],
+          icon: "🛡️",
+          badge: "LIVE",
+          badgeClass: "badge-live",
+          cardGradient: "linear-gradient(90deg, #8b5cf6, #ec4899)",
+          iconBg: "rgba(139, 92, 246, 0.1)",
+          btnGradient: "linear-gradient(135deg, #8b5cf6, #ec4899)",
+          countId: "jkpMockCount",
         },
         jkp_ja: {
           title: "JKSSB Junior Assistant",
@@ -1586,209 +1410,19 @@
           time: 80,
           subjects: "English · GK (J&K) · Reasoning · Computer",
           desc: "J&K SSB JA — 4 sections × 20 marks, 80 Qs, 80 marks. 80 min.",
-          marking: "+1 / −0.25",
+          marking: { correct: "+1 mark", wrong: "−0.25 marks" },
           prefix: "jkp_ja_mock",
           mocks: [],
+          icon: "📋",
+          badge: "LIVE",
+          badgeClass: "badge-live",
+          cardGradient: "linear-gradient(90deg, #8b5cf6, #06b6d4)",
+          iconBg: "rgba(139, 92, 246, 0.1)",
+          btnGradient: "linear-gradient(135deg, #8b5cf6, #06b6d4)",
+          countId: "jkpJaMockCount",
         },
       };
 
-      // Auto-detect how many mock files exist for each exam and update counters
-      async function autoCountMocks() {
-        const entries = Object.entries(examConfig);
-        for (const [key, cfg] of entries) {
-          if (!cfg.prefix) continue;
-          let count = cfg.mocks.length;
-          // Try to find more files beyond what's declared
-          for (let i = count + 1; i <= 30; i++) {
-            try {
-              const r = await fetch(`data/${cfg.prefix}${i}.json`, {
-                method: "HEAD",
-              });
-              if (!r.ok) break;
-              cfg.mocks.push({ num: i, label: `Mock ${i}` });
-              count++;
-            } catch (e) {
-              break;
-            }
-          }
-          // Update badge on card
-          const badges = {
-            cgl: "cglMockCount",
-            rrb_ntpc_g: "rrbMockCount",
-            rrb_ntpc_ug: "rrbUgMockCount",
-            jkp_si: "jkpMockCount",
-            jkp_ja: "jkpJaMockCount",
-            chsl: "chslMockCount",
-          };
-          if (badges[key]) {
-            const el = document.getElementById(badges[key]);
-            if (el)
-              el.textContent = `🗂️ ${count} Mock${count !== 1 ? "s" : ""} Available`;
-          }
-        }
-      }
-      autoCountMocks();
-      function openConfig(type) {
-        currentExamType = type;
-        const c = examConfig[type];
-        if (!c) return;
-        document.getElementById("modalTitle").textContent = c.title;
-        document.getElementById("modalDesc").textContent = c.desc;
-        document.getElementById("cfgQs").textContent = c.qs;
-        document.getElementById("cfgTime").textContent = c.time + " minutes";
-        document.getElementById("cfgSubjects").textContent = c.subjects;
-        // Update marking display
-        const markRows = document.querySelectorAll(".config-row");
-        markRows.forEach((row) => {
-          const lbl = row.querySelector(".config-label");
-          if (lbl && lbl.textContent.includes("Correct")) {
-            const val = row.querySelector(".config-val");
-            if (val && c.marking)
-              val.textContent =
-                "+" +
-                c.marking.split("/")[0].trim().replace("+", "") +
-                " marks";
-          }
-          if (lbl && lbl.textContent.includes("Wrong")) {
-            const val = row.querySelector(".config-val");
-            if (val && c.marking)
-              val.textContent =
-                "−" +
-                c.marking.split("/")[1].trim().replace("−", "") +
-                " marks";
-          }
-        });
-        const sel = document.getElementById("mockSelector");
-        const row = document.getElementById("mockSelectorRow");
-        if (sel && c.mocks && c.mocks.length > 0) {
-          sel.innerHTML = c.mocks
-            .map((m) => `<option value="${m.num}">${m.label}</option>`)
-            .join("");
-          sel.value = String(c.mocks[0].num);
-          if (row) row.style.display = "flex";
-        } else {
-          if (row) row.style.display = "none";
-        }
-        document.getElementById("configModal").classList.add("open");
-      }
-      function closeConfig() {
-        document.getElementById("configModal").classList.remove("open");
-      }
-      function startMock() {
-        const sel = document.getElementById("mockSelector");
-        const mockNum = sel ? parseInt(sel.value) || 1 : 1;
-        sessionStorage.setItem("examType", currentExamType);
-        sessionStorage.setItem("examMode", "full");
-        sessionStorage.setItem("mockNumber", mockNum);
-        sessionStorage.setItem("timerMode", "overall");
-        sessionStorage.removeItem("sectionTimes");
-        window.location.href = "exam.html";
-      }
-
-      // ── SUBJECT PRACTICE ─────────────────────────
-      const subjectMeta = {
-        Quant: {
-          icon: "🔢",
-          name: "Quantitative Aptitude",
-          grad: "linear-gradient(135deg,#2563eb,#06b6d4)",
-        },
-        Reasoning: {
-          icon: "🧩",
-          name: "General Intelligence",
-          grad: "linear-gradient(135deg,#f093fb,#f5576c)",
-        },
-        GS: {
-          icon: "🌍",
-          name: "General Awareness",
-          grad: "linear-gradient(135deg,#4facfe,#00f2fe)",
-        },
-        English: {
-          icon: "📖",
-          name: "English Language",
-          grad: "linear-gradient(135deg,#43e97b,#38f9d7)",
-        },
-      };
-      function openSubjectConfig(subject) {
-        currentSubject = subject;
-        const meta = subjectMeta[subject] || {
-          icon: "📚",
-          name: subject,
-          grad: "var(--primary)",
-        };
-        document.getElementById("subjectModalIcon").textContent = meta.icon;
-        const t = document.getElementById("subjectModalTitle");
-        t.textContent = meta.name;
-        t.style.background = meta.grad;
-        t.style.webkitBackgroundClip = "text";
-        t.style.webkitTextFillColor = "transparent";
-        t.style.backgroundClip = "text";
-        setSubjectQCount(25);
-        setSubjectTime(25);
-        const sqInp = document.getElementById("subjectQInput");
-        if (sqInp) sqInp.value = 25;
-        document.getElementById("subjectModal").classList.add("open");
-      }
-      function closeSubjectModal() {
-        document.getElementById("subjectModal").classList.remove("open");
-      }
-
-      function setSubjectQCount(n) {
-        subjQCount = n;
-        const inp = document.getElementById("subjectQInput");
-        if (inp) inp.value = n;
-        syncSubjQBtns();
-      }
-      function syncSubjQBtns() {
-        document
-          .querySelectorAll("#subjQCountBtns .quick-btn")
-          .forEach((btn) => {
-            btn.classList.toggle(
-              "active",
-              parseInt(btn.textContent) === subjQCount,
-            );
-          });
-      }
-      function setSubjectTime(mins) {
-        document.getElementById("subjectTimeInput").value = mins;
-        syncSubjTimeBtns();
-      }
-      function syncSubjTimeBtns() {
-        const mins =
-          parseInt(document.getElementById("subjectTimeInput").value) || 25;
-        document.querySelectorAll("#subjTimeBtns .quick-btn").forEach((btn) => {
-          btn.classList.toggle("active", parseInt(btn.textContent) === mins);
-        });
-      }
-      function startSubjectPractice() {
-        const qEl = document.getElementById("subjectQInput");
-        if (qEl)
-          subjQCount = Math.min(50, Math.max(1, parseInt(qEl.value) || 25));
-        const mins =
-          parseInt(document.getElementById("subjectTimeInput").value) || 25;
-        if (mins < 1 || mins > 30) {
-          showToast("Please enter a timer between 1 and 30 minutes.");
-          return;
-        }
-        if (subjQCount < 1 || subjQCount > 50) {
-          showToast("Please enter between 1 and 50 questions.");
-          return;
-        }
-        sessionStorage.setItem("examType", "subject");
-        sessionStorage.setItem("examMode", "subject");
-        sessionStorage.setItem("selectedSubject", currentSubject);
-        sessionStorage.setItem("practiceExamType", "cgl"); // pull questions from CGL mocks
-        sessionStorage.setItem("mockNumber", "0");
-        sessionStorage.setItem("timerMode", "overall");
-        sessionStorage.setItem("subjectTimeMins", String(mins));
-        sessionStorage.setItem("practiceQCount", String(subjQCount));
-        sessionStorage.removeItem("sectionTimes");
-        sessionStorage.removeItem("selectedChapter");
-        window.location.href = "exam.html";
-      }
-
-      // ── CHAPTER-WISE ─────────────────────────────
-
-      // Chapter definitions sourced from the JSON topic keys
       const CHAPTERS = {
         Quant: [
           { key: "algebra", label: "Algebra" },
@@ -1863,400 +1497,921 @@
         ],
       };
 
-      // Cache fetched JSON pools
-      const jsonCache = {};
-      const SUBJECT_FILE = {
-        Quant: "quant",
-        Reasoning: "reasoning",
-        GS: "gs",
-        English: "english",
-      };
-
-      // Fetch all mocks for a given exam prefix and return merged+deduped pool
-      async function fetchMockPool(prefix, maxMocks = 20) {
-        const cacheKey = "mockpool_" + prefix;
-        if (jsonCache[cacheKey]) return jsonCache[cacheKey];
-        const pool = [];
-        const seen = new Set();
-        for (let i = 1; i <= maxMocks; i++) {
-          try {
-            const r = await fetch(`data/${prefix}${i}.json`);
-            if (!r.ok) break;
-            const arr = await r.json();
-            if (!Array.isArray(arr) || arr.length < 5) break;
-            arr.forEach((q) => {
-              const key = (q.question || "").trim().slice(0, 60).toLowerCase();
-              if (!seen.has(key)) {
-                seen.add(key);
-                pool.push(q);
-              }
-            });
-          } catch (e) {
-            break;
-          }
-        }
-        // Also try dedicated subject JSON if it exists (has topic tags)
-        const subjectFiles = {
-          Quant: "quant",
-          Reasoning: "reasoning",
-          GS: "gs",
-          English: "english",
-        };
-        for (const [subj, file] of Object.entries(subjectFiles)) {
-          try {
-            const r = await fetch(`data/${file}.json`);
-            if (r.ok) {
-              const arr = await r.json();
-              arr.forEach((q) => {
-                const key = (q.question || "")
-                  .trim()
-                  .slice(0, 60)
-                  .toLowerCase();
-                if (!seen.has(key)) {
-                  seen.add(key);
-                  pool.push({ ...q, subject: subj });
-                }
-              });
-            }
-          } catch (e) {}
-        }
-        jsonCache[cacheKey] = pool;
-        return pool;
+      function $(id) {
+        return document.getElementById(id);
       }
 
-      // Toggle accordion open/close
+      function showToast(msg) {
+        const t = $("toast");
+        t.textContent = msg;
+        t.style.display = "block";
+        clearTimeout(showToast._timer);
+        showToast._timer = setTimeout(() => {
+          t.style.display = "none";
+        }, 3000);
+      }
+
+      function openModal(id) {
+        $(id).classList.add("open");
+      }
+
+      function closeModal(id) {
+        $(id).classList.remove("open");
+      }
+
+      function initTheme() {
+        const saved = localStorage.getItem("ssc-theme");
+        if (saved === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+          $("themeBtn").textContent = "☀️";
+        }
+      }
+
+      function toggleTheme() {
+        const html = document.documentElement;
+        const isDark = html.getAttribute("data-theme") === "dark";
+        html.setAttribute("data-theme", isDark ? "light" : "dark");
+        $("themeBtn").textContent = isDark ? "🌙" : "☀️";
+        localStorage.setItem("ssc-theme", isDark ? "light" : "dark");
+      }
+
+      function logout() {
+        auth
+          .signOut()
+          .then(() => {
+            sessionStorage.removeItem("guestMode");
+            window.location.href = "login.html";
+          })
+          .catch(() => {
+            sessionStorage.removeItem("guestMode");
+            window.location.href = "login.html";
+          });
+      }
+
+      function safeFirstLetter(name) {
+        return (
+          name && String(name).trim()[0] ? String(name).trim()[0] : "G"
+        ).toUpperCase();
+      }
+
+      function renderExamCards() {
+        const examGrid = $("examGrid");
+        examGrid.innerHTML = "";
+
+        Object.entries(examConfig).forEach(([key, cfg]) => {
+          const card = document.createElement("div");
+          card.className = "exam-card";
+          card.style.setProperty("--card-gradient", cfg.cardGradient);
+          card.style.setProperty("--icon-bg", cfg.iconBg);
+          card.style.setProperty("--btn-gradient", cfg.btnGradient);
+
+          const header = document.createElement("div");
+          header.className = "exam-card-header";
+
+          const icon = document.createElement("div");
+          icon.className = "exam-icon";
+          icon.textContent = cfg.icon;
+
+          const badge = document.createElement("span");
+          badge.className = `exam-badge ${cfg.badgeClass}`;
+          badge.textContent = cfg.badge;
+
+          header.append(icon, badge);
+
+          const title = document.createElement("h3");
+          title.className = "exam-title";
+          title.textContent = cfg.title;
+
+          const desc = document.createElement("p");
+          desc.className = "exam-desc";
+          desc.textContent = describeExamCard(cfg);
+
+          const meta = document.createElement("div");
+          meta.className = "exam-meta";
+          [
+            `⏱️ ${cfg.time} min`,
+            `📝 ${cfg.qs} Qs${cfg.qs === 100 && cfg.title.includes("RRB") ? " · 100 marks" : cfg.title.includes("Junior Assistant") ? " · 80 marks" : cfg.title.includes("Sub Inspector") ? " · 200 marks" : ""}`,
+            `⚡ ${cfg.marking.correct.replace(" marks", "").replace(" mark", "")} / ${cfg.marking.wrong}`,
+          ].forEach((txt) => {
+            const item = document.createElement("div");
+            item.className = "meta-item";
+            item.textContent = txt;
+            meta.appendChild(item);
+          });
+
+          const count = document.createElement("div");
+          count.className = "mock-count";
+          count.id = cfg.countId;
+          count.textContent = `🗂️ ${cfg.mocks.length || 0} Mock${cfg.mocks.length === 1 ? "" : "s"} Available`;
+
+          const btn = document.createElement("button");
+          btn.className = "exam-btn";
+          btn.textContent = "Select Mock →";
+
+          card.append(header, title, desc, meta, count, btn);
+          card.addEventListener("click", () => openConfig(key));
+
+          examGrid.appendChild(card);
+        });
+      }
+
+      function describeExamCard(cfg) {
+        if (cfg.title.includes("CGL")) {
+          return "Combined Graduate Level — 100 questions across Quant, Reasoning, GS & English. 60 minutes.";
+        }
+        if (cfg.title.includes("CHSL")) {
+          return "Combined Higher Secondary Level — 100 questions, same pattern as CGL Tier 1. 60 minutes.";
+        }
+        if (cfg.title.includes("RRB NTPC Graduate")) {
+          return "CBT 1 — 100 questions, 1 mark each. General Intelligence & Reasoning, Mathematics & General Awareness. 90 minutes.";
+        }
+        if (cfg.title.includes("RRB NTPC Undergraduate")) {
+          return "Railway Recruitment Board — Undergraduate level. 100 questions across Maths, Reasoning & GK. No English. 90 minutes.";
+        }
+        if (cfg.title.includes("Sub Inspector")) {
+          return "J&K Police — 100 Qs × 2 marks. Reasoning, GK, Quant, English, Maths & Computer. 120 min.";
+        }
+        if (cfg.title.includes("Junior Assistant")) {
+          return "J&K SSB — 4 sections × 20 marks. English, GK (J&K), Reasoning & Computer. 80 questions. 80 minutes.";
+        }
+        return cfg.desc;
+      }
+
+      function renderSubjectCards() {
+        const grid = $("subjectGrid");
+        grid.innerHTML = "";
+
+        const data = [
+          { key: "Quant", count: "1000 questions" },
+          { key: "Reasoning", count: "1000 questions" },
+          { key: "GS", count: "1000 questions" },
+          { key: "English", count: "1000 questions" },
+        ];
+
+        data.forEach(({ key, count }) => {
+          const meta = subjectMeta[key];
+          const card = document.createElement("div");
+          card.className = "subject-card";
+
+          const icon = document.createElement("span");
+          icon.className = "subj-icon";
+          icon.textContent = meta.icon;
+
+          const name = document.createElement("div");
+          name.className = "subj-name";
+          name.textContent = meta.name;
+
+          const countEl = document.createElement("div");
+          countEl.className = "subj-count";
+          countEl.textContent = count;
+
+          const bar = document.createElement("div");
+          bar.className = "subj-bar";
+          bar.style.background = meta.strip;
+
+          card.append(icon, name, countEl, bar);
+          card.addEventListener("click", () => openSubjectConfig(key));
+          grid.appendChild(card);
+        });
+      }
+
+      function renderChapterAccordion() {
+        const root = $("chapterAccordion");
+        root.innerHTML = "";
+
+        Object.entries(CHAPTERS).forEach(([subject, chapters]) => {
+          const meta = subjectMeta[subject];
+          const wrap = document.createElement("div");
+          wrap.className = "chap-subject";
+          wrap.id = `chapSubj-${subject}`;
+
+          const header = document.createElement("div");
+          header.className = "chap-subject-header";
+
+          const icon = document.createElement("span");
+          icon.className = "chap-subj-icon";
+          icon.textContent = meta.icon;
+
+          const info = document.createElement("div");
+          info.className = "chap-subj-info";
+
+          const name = document.createElement("div");
+          name.className = "chap-subj-name";
+          name.textContent =
+            subject === "Reasoning"
+              ? "General Intelligence & Reasoning"
+              : meta.name;
+
+          const hint = document.createElement("div");
+          hint.className = "chap-subj-hint";
+          hint.textContent = `${chapters.length} chapters · tap to expand`;
+
+          info.append(name, hint);
+
+          const arrow = document.createElement("span");
+          arrow.className = "chap-arrow";
+          arrow.textContent = "▼";
+
+          header.append(icon, info, arrow);
+
+          const bar = document.createElement("div");
+          bar.className = "chap-subject-bar";
+          bar.style.background = meta.strip;
+
+          const body = document.createElement("div");
+          body.className = "chap-body";
+
+          const grid = document.createElement("div");
+          grid.className = "chap-grid";
+          grid.id = `chapGrid-${subject}`;
+          body.appendChild(grid);
+
+          header.addEventListener("click", () => toggleChapSubject(subject));
+          wrap.append(header, bar, body);
+          root.appendChild(wrap);
+        });
+      }
+
+      async function autoCountMocks() {
+        for (const [key, cfg] of Object.entries(examConfig)) {
+          if (!cfg.prefix) continue;
+
+          let count = cfg.mocks.length;
+          for (let i = count + 1; i <= 30; i++) {
+            try {
+              const res = await fetch(`data/${cfg.prefix}${i}.json`, {
+                method: "HEAD",
+              });
+              if (!res.ok) break;
+              cfg.mocks.push({ num: i, label: `Mock ${i}` });
+              count++;
+            } catch {
+              break;
+            }
+          }
+
+          const el = $(cfg.countId);
+          if (el) {
+            el.textContent = `🗂️ ${count} Mock${count === 1 ? "" : "s"} Available`;
+          }
+        }
+      }
+
+      function openConfig(type) {
+        const cfg = examConfig[type];
+        if (!cfg) return;
+
+        state.currentExamType = type;
+
+        $("modalTitle").textContent = cfg.title;
+        $("modalDesc").textContent = cfg.desc;
+        $("cfgQs").textContent = cfg.qs;
+        $("cfgTime").textContent = `${cfg.time} minutes`;
+        $("cfgCorrect").textContent = cfg.marking.correct;
+        $("cfgWrong").textContent = cfg.marking.wrong;
+        $("cfgSubjects").textContent = cfg.subjects;
+
+        const row = $("mockSelectorRow");
+        const select = $("mockSelector");
+        select.innerHTML = "";
+
+        if (cfg.mocks && cfg.mocks.length > 0) {
+          cfg.mocks.forEach((m) => {
+            const opt = document.createElement("option");
+            opt.value = m.num;
+            opt.textContent = m.label;
+            select.appendChild(opt);
+          });
+          row.classList.remove("hidden");
+        } else {
+          row.classList.add("hidden");
+        }
+
+        openModal("configModal");
+      }
+
+      function startMock() {
+        const select = $("mockSelector");
+        const mockNum = Number(select.value) || 1;
+
+        sessionStorage.setItem("examType", state.currentExamType);
+        sessionStorage.setItem("examMode", "full");
+        sessionStorage.setItem("mockNumber", String(mockNum));
+        sessionStorage.setItem("timerMode", "overall");
+        sessionStorage.removeItem("sectionTimes");
+
+        window.location.href = "exam.html";
+      }
+
+      function buildQuickButtons(
+        containerId,
+        values,
+        activeValue,
+        onClick,
+        disableCheck = null,
+      ) {
+        const container = $(containerId);
+        container.innerHTML = "";
+
+        values.forEach((value) => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "quick-btn";
+          btn.textContent = String(value);
+
+          if (disableCheck && disableCheck(value)) {
+            btn.disabled = true;
+          }
+
+          if (!btn.disabled && value === activeValue) {
+            btn.classList.add("active");
+          }
+
+          btn.addEventListener("click", () => onClick(value));
+          container.appendChild(btn);
+        });
+      }
+
+      function openSubjectConfig(subject) {
+        state.currentSubject = subject;
+        const meta = subjectMeta[subject];
+
+        $("subjectModalIcon").textContent = meta.icon;
+        const title = $("subjectModalTitle");
+        title.textContent = meta.name;
+        title.style.background = meta.grad;
+        title.style.webkitBackgroundClip = "text";
+        title.style.webkitTextFillColor = "transparent";
+        title.style.backgroundClip = "text";
+
+        state.subjQCount = 25;
+        $("subjectQInput").value = "25";
+        $("subjectTimeInput").value = "25";
+
+        renderSubjectQuickButtons();
+        openModal("subjectModal");
+      }
+
+      function renderSubjectQuickButtons() {
+        buildQuickButtons(
+          "subjQCountBtns",
+          QUICK_VALUES.subjQuestions,
+          state.subjQCount,
+          (n) => {
+            state.subjQCount = n;
+            $("subjectQInput").value = String(n);
+            renderSubjectQuickButtons();
+          },
+        );
+
+        buildQuickButtons(
+          "subjTimeBtns",
+          QUICK_VALUES.subjTimes,
+          Number($("subjectTimeInput").value) || 25,
+          (n) => {
+            $("subjectTimeInput").value = String(n);
+            renderSubjectQuickButtons();
+          },
+        );
+      }
+
+      function startSubjectPractice() {
+        const qCount = Math.min(
+          50,
+          Math.max(1, Number($("subjectQInput").value) || 25),
+        );
+        const mins = Math.min(
+          30,
+          Math.max(1, Number($("subjectTimeInput").value) || 25),
+        );
+
+        if (qCount < 1 || qCount > 50) {
+          showToast("Please enter between 1 and 50 questions.");
+          return;
+        }
+
+        if (mins < 1 || mins > 30) {
+          showToast("Please enter a timer between 1 and 30 minutes.");
+          return;
+        }
+
+        sessionStorage.setItem("examType", "subject");
+        sessionStorage.setItem("examMode", "subject");
+        sessionStorage.setItem("selectedSubject", state.currentSubject);
+        sessionStorage.setItem("practiceExamType", "cgl");
+        sessionStorage.setItem("mockNumber", "0");
+        sessionStorage.setItem("timerMode", "overall");
+        sessionStorage.setItem("subjectTimeMins", String(mins));
+        sessionStorage.setItem("practiceQCount", String(qCount));
+        sessionStorage.removeItem("sectionTimes");
+        sessionStorage.removeItem("selectedChapter");
+
+        window.location.href = "exam.html";
+      }
+
       function toggleChapSubject(subject) {
-        const panel = document.getElementById("chapSubj-" + subject);
+        const panel = $(`chapSubj-${subject}`);
         const wasOpen = panel.classList.contains("open");
+
         document
           .querySelectorAll(".chap-subject")
-          .forEach((p) => p.classList.remove("open"));
+          .forEach((el) => el.classList.remove("open"));
+
         if (!wasOpen) {
           panel.classList.add("open");
           buildChapGrid(subject);
         }
       }
 
-      // Build chapter chip grid — counts from mock pool (no separate JSON files needed)
-      function buildChapGrid(subject) {
-        const grid = document.getElementById("chapGrid-" + subject);
-        if (grid.dataset.built) return;
-        const chapters = CHAPTERS[subject] || [];
+      async function fetchMockPool(prefix, maxMocks = 20) {
+        const cacheKey = `mockpool_${prefix}`;
+        if (state.jsonCache[cacheKey]) return state.jsonCache[cacheKey];
 
-        // Render chips immediately with loading state
-        grid.innerHTML = chapters
-          .map(
-            (ch) => `
-          <div class="chap-chip" onclick="openChapterConfig('${subject}','${ch.key}',this)">
-            <div class="chap-chip-name">${ch.label}</div>
-            <div class="chap-chip-count" id="chapCount-${subject}-${ch.key}">Loading…</div>
-          </div>`,
-          )
-          .join("");
+        const pool = [];
+        const seen = new Set();
 
-        // Fetch mock pool and compute topic counts
-        fetchMockPool("mock", 20)
-          .then((pool) => {
-            const subjectPool = pool.filter((q) => {
-              // Normalize subject names to match
-              const s = q.subject || "";
-              const norm = {
-                "General Intelligence and Reasoning": "Reasoning",
-                "General Intelligence & Reasoning": "Reasoning",
-                "General Knowledge": "GS",
-                "General Awareness": "GS",
-                "Quantitative Aptitude": "Quant",
-                Mathematics: "Quant",
-                "English Comprehension": "English",
-                "English Language": "English",
-              };
-              return (norm[s] || s) === subject;
-            });
-            const countMap = {};
-            subjectPool.forEach((q) => {
-              const t = q.topic || "";
-              if (t) countMap[t] = (countMap[t] || 0) + 1;
-            });
-            chapters.forEach((ch) => {
-              const el = document.getElementById(
-                `chapCount-${subject}-${ch.key}`,
-              );
-              if (el) {
-                const n = countMap[ch.key] || 0;
-                el.textContent =
-                  n > 0
-                    ? `${n} question${n === 1 ? "" : "s"}`
-                    : "No questions yet";
-                if (n === 0) el.closest(".chap-chip").style.opacity = "0.45";
+        for (let i = 1; i <= maxMocks; i++) {
+          try {
+            const res = await fetch(`data/${prefix}${i}.json`);
+            if (!res.ok) break;
+            const arr = await res.json();
+            if (!Array.isArray(arr) || arr.length < 5) break;
+
+            arr.forEach((q) => {
+              const key = String(q.question || "")
+                .trim()
+                .slice(0, 80)
+                .toLowerCase();
+              if (!seen.has(key)) {
+                seen.add(key);
+                pool.push(q);
               }
             });
-          })
-          .catch(() => {
-            grid
-              .querySelectorAll(".chap-chip-count")
-              .forEach((el) => (el.textContent = "—"));
+          } catch {
+            break;
+          }
+        }
+
+        const subjectFiles = {
+          Quant: "quant",
+          Reasoning: "reasoning",
+          GS: "gs",
+          English: "english",
+        };
+
+        for (const [subject, file] of Object.entries(subjectFiles)) {
+          try {
+            const res = await fetch(`data/${file}.json`);
+            if (!res.ok) continue;
+            const arr = await res.json();
+
+            arr.forEach((q) => {
+              const key = String(q.question || "")
+                .trim()
+                .slice(0, 80)
+                .toLowerCase();
+              if (!seen.has(key)) {
+                seen.add(key);
+                pool.push({ ...q, subject });
+              }
+            });
+          } catch {}
+        }
+
+        state.jsonCache[cacheKey] = pool;
+        return pool;
+      }
+
+      async function buildChapGrid(subject) {
+        const grid = $(`chapGrid-${subject}`);
+        if (!grid || grid.dataset.built === "1") return;
+
+        const chapters = CHAPTERS[subject] || [];
+        grid.innerHTML = "";
+
+        chapters.forEach((ch) => {
+          const chip = document.createElement("div");
+          chip.className = "chap-chip";
+          chip.dataset.subject = subject;
+          chip.dataset.chapter = ch.key;
+
+          const name = document.createElement("div");
+          name.className = "chap-chip-name";
+          name.textContent = ch.label;
+
+          const count = document.createElement("div");
+          count.className = "chap-chip-count";
+          count.id = `chapCount-${subject}-${ch.key}`;
+          count.textContent = "Loading…";
+
+          chip.append(name, count);
+          chip.addEventListener("click", () =>
+            openChapterConfig(subject, ch.key),
+          );
+          grid.appendChild(chip);
+        });
+
+        try {
+          const pool = await fetchMockPool("mock", 20);
+          const subjectPool = pool.filter((q) => {
+            const s = q.subject || "";
+            const norm = {
+              "General Intelligence and Reasoning": "Reasoning",
+              "General Intelligence & Reasoning": "Reasoning",
+              "General Knowledge": "GS",
+              "General Awareness": "GS",
+              "Quantitative Aptitude": "Quant",
+              Mathematics: "Quant",
+              "English Comprehension": "English",
+              "English Language": "English",
+            };
+            return (norm[s] || s) === subject;
           });
+
+          const countMap = {};
+          subjectPool.forEach((q) => {
+            const topic = q.topic || "";
+            if (topic) countMap[topic] = (countMap[topic] || 0) + 1;
+          });
+
+          chapters.forEach((ch) => {
+            const countEl = $(`chapCount-${subject}-${ch.key}`);
+            const chip = countEl?.closest(".chap-chip");
+            const n = countMap[ch.key] || 0;
+
+            if (!countEl || !chip) return;
+
+            if (n > 0) {
+              countEl.textContent = `${n} question${n === 1 ? "" : "s"}`;
+            } else {
+              countEl.textContent = "No questions yet";
+              chip.classList.add("disabled");
+            }
+          });
+        } catch {
+          grid.querySelectorAll(".chap-chip-count").forEach((el) => {
+            el.textContent = "—";
+          });
+        }
 
         grid.dataset.built = "1";
       }
 
-      // Open chapter config modal
-      function openChapterConfig(subject, chapterKey, chipEl) {
-        const countEl = chipEl
-          ? chipEl.querySelector(".chap-chip-count")
-          : null;
-        const countTxt = countEl ? countEl.textContent : "";
-        if (countTxt === "No questions yet") {
+      function openChapterConfig(subject, chapterKey) {
+        const countEl = $(`chapCount-${subject}-${chapterKey}`);
+        if (!countEl || countEl.textContent === "No questions yet") {
           showToast("No questions available for this chapter yet.");
           return;
         }
 
-        currentSubject = subject;
-        currentChapter = chapterKey;
+        state.currentSubject = subject;
+        state.currentChapter = chapterKey;
 
-        const meta = subjectMeta[subject] || { icon: "📚", name: subject };
-        const chaps = CHAPTERS[subject] || [];
-        const chapDef = chaps.find((c) => c.key === chapterKey) || {
-          label: chapterKey,
-        };
+        const meta = subjectMeta[subject];
+        const chapDef = (CHAPTERS[subject] || []).find(
+          (c) => c.key === chapterKey,
+        ) || { label: chapterKey };
+        const countNumber = Number.parseInt(countEl.textContent, 10) || 0;
 
-        document.getElementById("chapModalIcon").textContent = meta.icon;
-        const title = document.getElementById("chapModalTitle");
+        state.currentChapterCount = countNumber;
+
+        $("chapModalIcon").textContent = meta.icon;
+        const title = $("chapModalTitle");
         title.textContent = chapDef.label;
-        title.style.background = meta.grad || "var(--primary)";
+        title.style.background = meta.grad;
         title.style.webkitBackgroundClip = "text";
         title.style.webkitTextFillColor = "transparent";
         title.style.backgroundClip = "text";
-        document.getElementById("chapModalSub").textContent =
-          meta.name + " · Chapter Practice";
 
-        // Parse available count
-        const n = countEl ? parseInt(countEl.textContent) || 0 : 0;
-        currentChapterCount = n;
-        document.getElementById("chapModalCount").textContent =
-          n > 0 ? `${n} question${n === 1 ? "" : "s"}` : "—";
+        $("chapModalSub").textContent = `${meta.name} · Chapter Practice`;
+        $("chapModalCount").textContent =
+          countNumber > 0
+            ? `${countNumber} question${countNumber === 1 ? "" : "s"}`
+            : "—";
 
-        // Default Q count = min(available, 10); let user type any value up to available
-        const defaultQ = Math.min(n || 5, 10);
-        setChapQCount(defaultQ);
-        // Note shows available count; input max is set dynamically
-        const inp = document.getElementById("chapQInput");
-        if (inp) {
-          inp.max = n || 50;
-          inp.value = defaultQ;
-        }
-        const note = document.getElementById("chapQCountNote");
-        if (note)
-          note.textContent =
-            n > 0
-              ? `${n} question${n === 1 ? "" : "s"} available — type any number 1–${n}`
-              : "Type how many questions to attempt";
+        const defaultQ = Math.min(countNumber || 5, 10);
+        state.chapQCount = defaultQ;
+        $("chapQInput").max = String(countNumber || 50);
+        $("chapQInput").value = String(defaultQ);
+        $("chapTimeInput").value = String(
+          Math.max(1, Math.min(10, Math.ceil(defaultQ / 2))),
+        );
+        $("chapQCountNote").textContent =
+          countNumber > 0
+            ? `${countNumber} question${countNumber === 1 ? "" : "s"} available — type any number 1–${countNumber}`
+            : "Type how many questions to attempt";
 
-        setChapTime(Math.max(1, Math.min(10, Math.ceil(defaultQ / 2))));
-        document.getElementById("chapterModal").classList.add("open");
-      }
-      function closeChapterModal() {
-        document.getElementById("chapterModal").classList.remove("open");
+        renderChapterQuickButtons();
+        openModal("chapterModal");
       }
 
-      function setChapQCount(n) {
-        const max = currentChapterCount || 50;
-        chapQCount = Math.min(max, Math.max(1, n));
-        const inp = document.getElementById("chapQInput");
-        if (inp) inp.value = chapQCount;
-        syncChapQBtns();
+      function renderChapterQuickButtons() {
+        buildQuickButtons(
+          "chapQCountBtns",
+          QUICK_VALUES.chapQuestions,
+          Number($("chapQInput").value) || state.chapQCount,
+          (n) => {
+            const max = state.currentChapterCount || 50;
+            const finalValue = Math.min(max, Math.max(1, n));
+            state.chapQCount = finalValue;
+            $("chapQInput").value = String(finalValue);
+            renderChapterQuickButtons();
+          },
+          (n) => n > (state.currentChapterCount || 50),
+        );
+
+        buildQuickButtons(
+          "chapTimeBtns",
+          QUICK_VALUES.chapTimes,
+          Number($("chapTimeInput").value) || 10,
+          (n) => {
+            $("chapTimeInput").value = String(n);
+            renderChapterQuickButtons();
+          },
+        );
       }
-      function syncChapQBtns() {
-        const max = currentChapterCount || 50;
-        document
-          .querySelectorAll("#chapQCountBtns .quick-btn")
-          .forEach((btn) => {
-            const v = parseInt(btn.textContent);
-            btn.disabled = v > max;
-            btn.style.opacity = v > max ? "0.3" : "1";
-            btn.classList.toggle("active", !btn.disabled && v === chapQCount);
-          });
-      }
-      function setChapTime(mins) {
-        document.getElementById("chapTimeInput").value = mins;
-        syncChapTimeBtns();
-      }
-      function syncChapTimeBtns() {
-        const mins =
-          parseInt(document.getElementById("chapTimeInput").value) || 10;
-        document.querySelectorAll("#chapTimeBtns .quick-btn").forEach((btn) => {
-          btn.classList.toggle("active", parseInt(btn.textContent) === mins);
-        });
-      }
+
       function startChapterPractice() {
-        const qEl = document.getElementById("chapQInput");
-        if (qEl)
-          chapQCount = Math.min(
-            currentChapterCount || 50,
-            Math.max(1, parseInt(qEl.value) || 5),
-          );
-        const mins =
-          parseInt(document.getElementById("chapTimeInput").value) || 10;
+        const max = state.currentChapterCount || 50;
+        const qCount = Math.min(
+          max,
+          Math.max(1, Number($("chapQInput").value) || 5),
+        );
+        const mins = Math.min(
+          30,
+          Math.max(1, Number($("chapTimeInput").value) || 10),
+        );
+
         if (mins < 1 || mins > 30) {
           showToast("Please enter a timer between 1 and 30 minutes.");
           return;
         }
-        if (chapQCount < 1) {
+
+        if (qCount < 1) {
           showToast("Please enter at least 1 question.");
           return;
         }
+
         sessionStorage.setItem("examType", "subject");
         sessionStorage.setItem("examMode", "chapter");
-        sessionStorage.setItem("selectedSubject", currentSubject);
-        sessionStorage.setItem("selectedChapter", currentChapter);
+        sessionStorage.setItem("selectedSubject", state.currentSubject);
+        sessionStorage.setItem("selectedChapter", state.currentChapter);
         sessionStorage.setItem("mockNumber", "0");
         sessionStorage.setItem("timerMode", "overall");
         sessionStorage.setItem("subjectTimeMins", String(mins));
-        sessionStorage.setItem("practiceQCount", String(chapQCount));
+        sessionStorage.setItem("practiceQCount", String(qCount));
         sessionStorage.removeItem("sectionTimes");
+
         window.location.href = "exam.html";
       }
 
-      function comingSoon() {
-        showToast("Coming soon! Stay tuned 🚀");
-      }
-
-      // ── RECENT ATTEMPTS ───────────────────────────
-      function loadRecentAttempts(uid) {
-        // Always load from localStorage first (works for guest and logged-in)
-        try {
-          const a = JSON.parse(localStorage.getItem("ssc-attempts") || "[]");
-          renderAttempts(a);
-        } catch (e) {}
-        // Firestore sync only if logged in
-        if (uid) {
-          try {
-            db.collection("users")
-              .doc(uid)
-              .collection("attempts")
-              .orderBy("createdAt", "desc")
-              .limit(10)
-              .get()
-              .then((s) => {
-                if (!s.empty) {
-                  const local = JSON.parse(
-                    localStorage.getItem("ssc-attempts") || "[]",
-                  );
-                  if (s.docs.length > local.length)
-                    renderAttempts(s.docs.map((d) => d.data()));
-                }
-              })
-              .catch(() => {});
-          } catch (e) {}
-        }
-      }
       function renderAttempts(attempts) {
-        const el = document.getElementById("recentAttempts");
+        const el = $("recentAttempts");
+
         if (!attempts || !attempts.length) {
           el.innerHTML =
-            '<div style="color:var(--text3);font-size:14px;padding:16px 0">No attempts yet. Start your first mock test!</div>';
+            '<div class="muted" style="font-size:14px; padding:16px 0;">No attempts yet. Start your first mock test!</div>';
           return;
         }
-        el.innerHTML = attempts
-          .slice(0, 10)
-          .map((a) => {
-            const hasSnapshot = !!localStorage.getItem("snapshot_" + a.id);
-            const sc =
-              typeof a.score === "number"
-                ? a.score % 1 === 0
-                  ? a.score
-                  : a.score.toFixed(1)
-                : a.score;
-            const modeLabel =
-              a.examMode === "subject"
-                ? ` · ${a.selectedSubject || ""} Practice`
-                : a.examMode === "chapter"
-                  ? ` · ${(a.selectedChapter || "").replace(/_/g, " ")}`
-                  : a.mockNumber
-                    ? ` · Mock ${a.mockNumber}`
-                    : "";
-            return `<div class="attempt-row">
-          <div style="flex:1;min-width:0">
-            <div class="attempt-exam">${a.examType || "SSC CGL"}${modeLabel}</div>
-            <div class="attempt-date">${a.date || ""} ${a.time || ""}</div>
-          </div>
-          <span class="attempt-acc">${a.accuracy || 0}% acc</span>
-          <div class="attempt-score">${sc !== undefined ? sc : "—"}</div>
-          <div style="display:flex;gap:6px;flex-shrink:0">
-            ${
-              hasSnapshot
-                ? `<button onclick="analyseAttempt('${a.id}')" style="padding:6px 14px;border:1.5px solid var(--primary);background:transparent;color:var(--primary);border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap">🔍 Analyse</button>
-                 <button onclick="retryAttempt('${a.id}')" style="padding:6px 14px;border:none;background:var(--primary);color:#fff;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap">🔄 Retry</button>`
-                : `<button onclick="retryOld('${JSON.stringify(a).replace(/'/g, "&#39;")}')" style="padding:6px 14px;border:1.5px solid var(--border);background:transparent;color:var(--text2);border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap">🔄 Retry</button>`
-            }
-          </div>
-        </div>`;
-          })
-          .join("");
+
+        el.innerHTML = "";
+
+        attempts.slice(0, 10).forEach((a) => {
+          const row = document.createElement("div");
+          row.className = "attempt-row";
+
+          const left = document.createElement("div");
+          left.className = "attempt-left";
+
+          const exam = document.createElement("div");
+          exam.className = "attempt-exam";
+
+          const modeLabel =
+            a.examMode === "subject"
+              ? ` · ${a.selectedSubject || ""} Practice`
+              : a.examMode === "chapter"
+                ? ` · ${String(a.selectedChapter || "").replace(/_/g, " ")}`
+                : a.mockNumber
+                  ? ` · Mock ${a.mockNumber}`
+                  : "";
+
+          exam.textContent = `${a.examType || "SSC CGL"}${modeLabel}`;
+
+          const date = document.createElement("div");
+          date.className = "attempt-date";
+          date.textContent = `${a.date || ""} ${a.time || ""}`.trim();
+
+          left.append(exam, date);
+
+          const acc = document.createElement("span");
+          acc.className = "attempt-acc";
+          acc.textContent = `${a.accuracy || 0}% acc`;
+
+          const score = document.createElement("div");
+          score.className = "attempt-score";
+          const sc =
+            typeof a.score === "number"
+              ? a.score % 1 === 0
+                ? a.score
+                : a.score.toFixed(1)
+              : (a.score ?? "—");
+          score.textContent = sc;
+
+          const actions = document.createElement("div");
+          actions.className = "attempt-actions";
+
+          const hasSnapshot = !!(
+            a.id && localStorage.getItem(`snapshot_${a.id}`)
+          );
+          if (hasSnapshot) {
+            const analyseBtn = document.createElement("button");
+            analyseBtn.className = "mini-btn outline";
+            analyseBtn.textContent = "🔍 Analyse";
+            analyseBtn.addEventListener("click", () => {
+              window.location.href = `exam.html?analyse=${a.id}`;
+            });
+
+            const retryBtn = document.createElement("button");
+            retryBtn.className = "mini-btn primary";
+            retryBtn.textContent = "🔄 Retry";
+            retryBtn.addEventListener("click", () => retryAttempt(a.id));
+
+            actions.append(analyseBtn, retryBtn);
+          } else {
+            const retryBtn = document.createElement("button");
+            retryBtn.className = "mini-btn soft";
+            retryBtn.textContent = "🔄 Retry";
+            retryBtn.addEventListener("click", () => retryOld(a));
+            actions.appendChild(retryBtn);
+          }
+
+          row.append(left, acc, score, actions);
+          el.appendChild(row);
+        });
       }
 
-      function analyseAttempt(id) {
-        window.location.href = "exam.html?analyse=" + id;
-      }
       function retryAttempt(id) {
-        const raw = localStorage.getItem("snapshot_" + id);
+        const raw = localStorage.getItem(`snapshot_${id}`);
         if (!raw) {
           showToast("Snapshot not available.");
           return;
         }
+
         const snap = JSON.parse(raw);
         sessionStorage.setItem("examType", snap.examType || "cgl");
         sessionStorage.setItem("examMode", snap.examMode || "full");
         sessionStorage.setItem("mockNumber", String(snap.mockNumber || 0));
-        if (snap.selectedSubject)
+
+        // Always clear first so stale values from a previous attempt never bleed in
+        sessionStorage.removeItem("selectedSubject");
+        sessionStorage.removeItem("selectedChapter");
+        if (snap.selectedSubject) {
           sessionStorage.setItem("selectedSubject", snap.selectedSubject);
-        if (snap.selectedChapter)
+        }
+        if (snap.selectedChapter) {
           sessionStorage.setItem("selectedChapter", snap.selectedChapter);
+        }
+
         sessionStorage.setItem("timerMode", "overall");
         sessionStorage.removeItem("sectionTimes");
         window.location.href = "exam.html";
       }
-      function retryOld(aStr) {
-        // For old attempts without snapshot — reconstruct session from stored metadata
+
+      function retryOld(a) {
         try {
-          const a = JSON.parse(aStr.replace(/&#39;/g, "'"));
           sessionStorage.setItem("examType", a.examTypeKey || "cgl");
           sessionStorage.setItem("examMode", a.examMode || "full");
           sessionStorage.setItem("mockNumber", String(a.mockNumber || 0));
-          if (a.selectedSubject)
+
+          // Always clear first so stale values never bleed in
+          sessionStorage.removeItem("selectedSubject");
+          sessionStorage.removeItem("selectedChapter");
+          if (a.selectedSubject) {
             sessionStorage.setItem("selectedSubject", a.selectedSubject);
-          if (a.selectedChapter)
+          }
+          if (a.selectedChapter) {
             sessionStorage.setItem("selectedChapter", a.selectedChapter);
+          }
+
           sessionStorage.setItem("timerMode", "overall");
           sessionStorage.removeItem("sectionTimes");
           window.location.href = "exam.html";
-        } catch (e) {
+        } catch {
           showToast("Could not retry this attempt.");
         }
       }
 
-      // ── TOAST ─────────────────────────────────────
-      function showToast(msg) {
-        const t = document.getElementById("toast");
-        t.textContent = msg;
-        t.style.display = "block";
-        setTimeout(() => (t.style.display = "none"), 3000);
+      function loadRecentAttempts(uid) {
+        try {
+          const localAttempts = JSON.parse(
+            localStorage.getItem("ssc-attempts") || "[]",
+          );
+          renderAttempts(localAttempts);
+        } catch {}
+
+        if (!uid) return;
+
+        db.collection("users")
+          .doc(uid)
+          .collection("attempts")
+          .orderBy("createdAt", "desc")
+          .limit(10)
+          .get()
+          .then((snapshot) => {
+            if (!snapshot.empty) {
+              const firestoreAttempts = snapshot.docs.map((doc) => doc.data());
+              const localAttempts = JSON.parse(
+                localStorage.getItem("ssc-attempts") || "[]",
+              );
+              if (firestoreAttempts.length > localAttempts.length) {
+                renderAttempts(firestoreAttempts);
+              }
+            }
+          })
+          .catch(() => {});
       }
+
+      function attachEvents() {
+        $("themeBtn").addEventListener("click", toggleTheme);
+        $("logoutBtn").addEventListener("click", logout);
+        $("profileBtn").addEventListener("click", () => {
+          window.location.href = "profile.html";
+        });
+
+        document.querySelectorAll("[data-close]").forEach((btn) => {
+          btn.addEventListener("click", () => closeModal(btn.dataset.close));
+        });
+
+        document.querySelectorAll(".modal-overlay").forEach((overlay) => {
+          overlay.addEventListener("click", (e) => {
+            if (e.target === overlay) overlay.classList.remove("open");
+          });
+        });
+
+        $("startMockBtn").addEventListener("click", startMock);
+        $("startSubjectBtn").addEventListener("click", startSubjectPractice);
+        $("startChapterBtn").addEventListener("click", startChapterPractice);
+
+        $("subjectQInput").addEventListener("input", () => {
+          state.subjQCount = Math.min(
+            50,
+            Math.max(1, Number($("subjectQInput").value) || 1),
+          );
+          renderSubjectQuickButtons();
+        });
+
+        $("subjectTimeInput").addEventListener(
+          "input",
+          renderSubjectQuickButtons,
+        );
+
+        $("chapQInput").addEventListener("input", () => {
+          state.chapQCount = Math.min(
+            state.currentChapterCount || 50,
+            Math.max(1, Number($("chapQInput").value) || 1),
+          );
+          renderChapterQuickButtons();
+        });
+
+        $("chapTimeInput").addEventListener("input", renderChapterQuickButtons);
+      }
+
+      function initAuth() {
+        auth.onAuthStateChanged((user) => {
+          const guest = sessionStorage.getItem("guestMode");
+
+          if (!user && !guest) {
+            window.location.href = "login.html";
+            return;
+          }
+
+          if (user) {
+            const name = user.displayName || user.email || "User";
+            const firstName = String(name).split(" ")[0];
+            $("userName").textContent = firstName;
+            $("userAvatar").textContent = safeFirstLetter(firstName);
+            loadRecentAttempts(user.uid);
+          } else {
+            $("userName").textContent = "Guest";
+            $("userAvatar").textContent = "G";
+            loadRecentAttempts(null);
+          }
+        });
+      }
+
+      function init() {
+        initTheme();
+        renderExamCards();
+        renderSubjectCards();
+        renderChapterAccordion();
+        renderSubjectQuickButtons();
+        renderChapterQuickButtons();
+        attachEvents();
+        initAuth();
+        autoCountMocks();
+      }
+
+      init();
     </script>
-    <!-- FOOTER -->
-    <footer
-      style="
-        text-align: center;
-        padding: 20px 16px;
-        font-size: 12px;
-        color: var(--text3);
-        border-top: 1px solid var(--border);
-        background: var(--surface);
-        font-family: &quot;DM Sans&quot;, sans-serif;
-      "
-    >
-      Made with ❤️ by
-      <strong style="color: var(--text2)">Jattin Khajuria</strong>
-    </footer>
   </body>
 </html>
