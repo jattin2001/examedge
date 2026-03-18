@@ -5,36 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ExamEdge — My Profile</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Satoshi:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap");
       :root {
-        --bg: #f0f2f8;
-        --surface: #ffffff;
-        --border: #e2e6f0;
-        --text: #0f1117;
-        --text2: #5a607a;
-        --text3: #9099b5;
+        --bg: #f4f6fb;
+        --surface: #fff;
+        --surface2: #f8f9fe;
+        --border: #e4e7f2;
+        --text: #0d1117;
+        --text2: #4b5473;
+        --text3: #8e97b8;
         --primary: #2563eb;
         --accent: #06b6d4;
         --green: #10b981;
         --orange: #f59e0b;
         --red: #ef4444;
-        --shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+        --shadow: 0 4px 20px rgba(13, 17, 63, 0.07);
         --radius: 16px;
       }
       [data-theme="dark"] {
-        --bg: #080b14;
-        --surface: #111827;
-        --border: #1f2a40;
-        --text: #f0f4ff;
-        --text2: #8892b0;
-        --text3: #3d4a6b;
-        --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+        --bg: #080c18;
+        --surface: #111828;
+        --surface2: #161f35;
+        --border: #1e2a42;
+        --text: #eef0fa;
+        --text2: #8892b8;
+        --text3: #3d4a6e;
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
       }
       *,
       *::before,
@@ -44,18 +47,23 @@
         box-sizing: border-box;
       }
       body {
-        font-family: "Satoshi", sans-serif;
+        font-family: "DM Sans", sans-serif;
         background: var(--bg);
         color: var(--text);
         min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+      }
+      button {
+        font-family: inherit;
+        cursor: pointer;
       }
 
       /* NAV */
       nav {
         background: var(--surface);
         border-bottom: 1px solid var(--border);
-        padding: 0 32px;
-        height: 64px;
+        padding: 0 24px;
+        height: 58px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -65,8 +73,8 @@
         box-shadow: var(--shadow);
       }
       .nav-brand {
-        font-family: "Cabinet Grotesk", sans-serif;
-        font-size: 22px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 20px;
         font-weight: 900;
         color: var(--text);
         display: flex;
@@ -75,65 +83,66 @@
         text-decoration: none;
       }
       .nav-brand .logo-icon {
-        width: 36px;
-        height: 36px;
+        width: 34px;
+        height: 34px;
         background: linear-gradient(135deg, #2563eb, #06b6d4);
         border-radius: 9px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 18px;
+        font-size: 17px;
       }
       .nav-right {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 8px;
       }
       .nav-btn {
-        padding: 8px 16px;
+        padding: 7px 14px;
         border: 1px solid var(--border);
         background: var(--surface);
         color: var(--text2);
-        border-radius: 10px;
+        border-radius: 9px;
         font-size: 13px;
         font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s;
+        transition: all 0.18s;
       }
       .nav-btn:hover {
         background: var(--bg);
       }
       .dark-btn {
-        width: 36px;
-        height: 36px;
+        width: 34px;
+        height: 34px;
         border: 1px solid var(--border);
         background: var(--bg);
         border-radius: 50%;
-        cursor: pointer;
-        font-size: 16px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       /* PAGE */
       .page {
-        max-width: 960px;
+        max-width: 980px;
         margin: 0 auto;
-        padding: 36px 24px 60px;
+        padding: 28px 20px 60px;
       }
 
-      /* PROFILE HERO */
+      /* HERO */
       .profile-hero {
         background: linear-gradient(
-          135deg,
-          #0f172a 0%,
-          #1e3a8a 60%,
-          #0e7490 100%
+          145deg,
+          #0d1628 0%,
+          #1a3470 55%,
+          #0b6b80 100%
         );
         border-radius: 20px;
-        padding: 36px;
-        margin-bottom: 28px;
+        padding: 32px;
+        margin-bottom: 24px;
         display: flex;
         align-items: center;
-        gap: 28px;
+        gap: 24px;
         position: relative;
         overflow: hidden;
       }
@@ -146,116 +155,119 @@
           rgba(255, 255, 255, 0.04) 1px,
           transparent 1px
         );
-        background-size: 24px 24px;
+        background-size: 22px 22px;
         pointer-events: none;
       }
-      .profile-avatar-wrap {
-        position: relative;
-        flex-shrink: 0;
-      }
       .profile-avatar {
-        width: 80px;
-        height: 80px;
+        width: 76px;
+        height: 76px;
         border-radius: 50%;
         background: linear-gradient(135deg, #2563eb, #06b6d4);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: "Cabinet Grotesk", sans-serif;
-        font-size: 32px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 28px;
         font-weight: 900;
         color: white;
-        border: 3px solid rgba(255, 255, 255, 0.25);
+        border: 3px solid rgba(255, 255, 255, 0.2);
+        flex-shrink: 0;
+        position: relative;
       }
       .profile-info {
         flex: 1;
         position: relative;
+        min-width: 0;
       }
       .profile-name {
-        font-family: "Cabinet Grotesk", sans-serif;
-        font-size: 26px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 24px;
         font-weight: 900;
         color: #fff;
-        margin-bottom: 4px;
+        margin-bottom: 3px;
       }
       .profile-email {
-        font-size: 13px;
-        color: rgba(255, 255, 255, 0.55);
-        margin-bottom: 16px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 14px;
       }
-      .profile-stat-row {
+      .hero-stats {
         display: flex;
-        gap: 24px;
+        gap: 20px;
         flex-wrap: wrap;
       }
-      .profile-stat {
+      .hero-stat-item {
         text-align: left;
       }
-      .profile-stat-num {
-        font-family: "Cabinet Grotesk", sans-serif;
-        font-size: 22px;
-        font-weight: 800;
+      .hero-stat-num {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 20px;
+        font-weight: 900;
         color: #fff;
       }
-      .profile-stat-lbl {
-        font-size: 11px;
-        color: rgba(255, 255, 255, 0.45);
+      .hero-stat-lbl {
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.4);
         text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-top: 2px;
+        letter-spacing: 1.2px;
+        margin-top: 1px;
       }
-
-      /* STREAK BADGE */
       .streak-badge {
         background: rgba(245, 158, 11, 0.15);
         border: 1px solid rgba(245, 158, 11, 0.3);
         border-radius: 12px;
-        padding: 10px 16px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
+        padding: 10px 14px;
         flex-shrink: 0;
+        text-align: center;
         position: relative;
       }
       .streak-num {
-        font-family: "Cabinet Grotesk", sans-serif;
-        font-size: 28px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 26px;
         font-weight: 900;
         color: #fbbf24;
       }
       .streak-lbl {
-        font-size: 11px;
-        color: rgba(255, 255, 255, 0.5);
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.45);
         text-transform: uppercase;
         letter-spacing: 1px;
+        margin-top: 1px;
       }
 
       /* SECTION HEADER */
       .sec-hdr {
-        font-family: "Cabinet Grotesk", sans-serif;
-        font-size: 11px;
-        font-weight: 700;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 10px;
+        font-weight: 800;
         color: var(--text3);
         letter-spacing: 2px;
         text-transform: uppercase;
-        margin-bottom: 14px;
-        margin-top: 32px;
+        margin-bottom: 12px;
+        margin-top: 28px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
       }
 
-      /* STAT CARDS ROW */
+      /* OVERVIEW CARDS */
       .stat-cards {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-        gap: 14px;
-        margin-bottom: 28px;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 12px;
+        margin-bottom: 4px;
       }
       .stat-card {
         background: var(--surface);
         border: 1px solid var(--border);
         border-radius: var(--radius);
-        padding: 20px;
+        padding: 18px;
         position: relative;
         overflow: hidden;
+        transition: box-shadow 0.18s;
+      }
+      .stat-card:hover {
+        box-shadow: var(--shadow);
       }
       .stat-card::before {
         content: "";
@@ -278,45 +290,104 @@
       .stat-card.purple::before {
         background: linear-gradient(90deg, #8b5cf6, #ec4899);
       }
+      .stat-card.teal::before {
+        background: linear-gradient(90deg, #06b6d4, #0ea5e9);
+      }
       .stat-card-icon {
-        font-size: 24px;
-        margin-bottom: 10px;
+        font-size: 22px;
+        margin-bottom: 9px;
       }
       .stat-card-val {
-        font-family: "Cabinet Grotesk", sans-serif;
-        font-size: 28px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 26px;
         font-weight: 900;
         color: var(--text);
         line-height: 1;
       }
       .stat-card-lbl {
-        font-size: 12px;
+        font-size: 11px;
         color: var(--text3);
         margin-top: 4px;
         font-weight: 500;
       }
 
-      /* ACCURACY CHART */
+      /* PER-EXAM BEST */
+      .exam-best-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 12px;
+        margin-bottom: 4px;
+      }
+      .exam-best-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        transition: box-shadow 0.18s;
+      }
+      .exam-best-card:hover {
+        box-shadow: var(--shadow);
+      }
+      .exam-best-icon {
+        font-size: 28px;
+        flex-shrink: 0;
+      }
+      .exam-best-info {
+        flex: 1;
+        min-width: 0;
+      }
+      .exam-best-name {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 13px;
+        font-weight: 800;
+        color: var(--text);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .exam-best-sub {
+        font-size: 11px;
+        color: var(--text3);
+        margin-top: 2px;
+      }
+      .exam-best-score {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 22px;
+        font-weight: 900;
+        color: var(--primary);
+        flex-shrink: 0;
+        text-align: right;
+      }
+      .exam-best-max {
+        font-size: 11px;
+        color: var(--text3);
+        font-weight: 500;
+      }
+
+      /* ACCURACY TREND CHART */
       .chart-card {
         background: var(--surface);
         border: 1px solid var(--border);
         border-radius: var(--radius);
-        padding: 24px;
-        margin-bottom: 20px;
+        padding: 22px;
+        margin-bottom: 4px;
       }
       .chart-card h4 {
-        font-family: "Cabinet Grotesk", sans-serif;
-        font-size: 15px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 14px;
         font-weight: 800;
-        margin-bottom: 18px;
+        margin-bottom: 16px;
         color: var(--text);
       }
       .acc-chart {
         display: flex;
         align-items: flex-end;
-        gap: 8px;
-        height: 120px;
-        padding-bottom: 24px;
+        gap: 6px;
+        height: 110px;
+        padding-bottom: 22px;
         position: relative;
         border-bottom: 1px solid var(--border);
       }
@@ -325,23 +396,26 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 4px;
+        gap: 3px;
         min-width: 0;
+        cursor: pointer;
+      }
+      .acc-bar-wrap:hover .acc-bar-inner {
+        filter: brightness(1.1);
       }
       .acc-bar-outer {
         width: 100%;
-        background: var(--bg);
-        border-radius: 6px;
+        background: var(--surface2);
+        border-radius: 5px;
         overflow: hidden;
         display: flex;
         align-items: flex-end;
-        height: 90px;
+        height: 82px;
       }
       .acc-bar-inner {
         width: 100%;
-        border-radius: 6px;
+        border-radius: 5px;
         transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        background: linear-gradient(180deg, #38bdf8, #2563eb);
       }
       .acc-bar-inner.good {
         background: linear-gradient(180deg, #10b981, #059669);
@@ -353,7 +427,7 @@
         background: linear-gradient(180deg, #ef4444, #dc2626);
       }
       .acc-bar-lbl {
-        font-size: 10px;
+        font-size: 9px;
         font-weight: 700;
         color: var(--text3);
         white-space: nowrap;
@@ -364,56 +438,109 @@
       }
       .acc-bar-pct {
         font-size: 10px;
-        font-weight: 700;
+        font-weight: 800;
         color: var(--text2);
         text-align: center;
       }
       .chart-empty {
         text-align: center;
-        padding: 40px 0;
+        padding: 32px 0;
         color: var(--text3);
-        font-size: 14px;
+        font-size: 13px;
+      }
+
+      /* SCORE TREND */
+      .score-trend {
+        display: flex;
+        align-items: flex-end;
+        gap: 6px;
+        height: 90px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--border);
+      }
+      .st-bar-wrap {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+        min-width: 0;
+      }
+      .st-bar-outer {
+        width: 100%;
+        background: var(--surface2);
+        border-radius: 5px;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+        height: 64px;
+      }
+      .st-bar-inner {
+        width: 100%;
+        background: linear-gradient(180deg, #2563eb, #06b6d4);
+        border-radius: 5px;
+        transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .st-bar-lbl {
+        font-size: 9px;
+        color: var(--text3);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+        text-align: center;
+      }
+      .st-bar-val {
+        font-size: 10px;
+        font-weight: 800;
+        color: var(--text2);
+        text-align: center;
       }
 
       /* SUBJECT BREAKDOWN */
       .subj-breakdown {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 14px;
-        margin-bottom: 20px;
+        gap: 12px;
+        margin-bottom: 4px;
       }
       .subj-acc-card {
         background: var(--surface);
         border: 1px solid var(--border);
         border-radius: var(--radius);
-        padding: 18px;
+        padding: 16px;
+        transition: box-shadow 0.18s;
+      }
+      .subj-acc-card:hover {
+        box-shadow: var(--shadow);
       }
       .subj-acc-header {
         display: flex;
         align-items: center;
-        gap: 10px;
-        margin-bottom: 12px;
+        gap: 8px;
+        margin-bottom: 10px;
       }
       .subj-acc-icon {
-        font-size: 22px;
+        font-size: 20px;
       }
       .subj-acc-name {
-        font-family: "Cabinet Grotesk", sans-serif;
-        font-size: 14px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 13px;
         font-weight: 800;
         color: var(--text);
       }
       .subj-acc-pct {
         margin-left: auto;
-        font-family: "Cabinet Grotesk", sans-serif;
-        font-size: 18px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 17px;
         font-weight: 900;
       }
       .subj-bar-track {
-        height: 8px;
-        background: var(--bg);
+        height: 7px;
+        background: var(--surface2);
         border-radius: 999px;
         overflow: hidden;
+        margin-bottom: 8px;
       }
       .subj-bar-fill {
         height: 100%;
@@ -422,8 +549,7 @@
       }
       .subj-mini-stats {
         display: flex;
-        gap: 12px;
-        margin-top: 10px;
+        gap: 10px;
       }
       .subj-mini-stat {
         font-size: 11px;
@@ -434,7 +560,92 @@
         color: var(--text2);
       }
 
-      /* HISTORY TABLE */
+      /* WEAK / STRONG TOPICS */
+      .topics-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 4px;
+      }
+      .topics-col h5 {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .topic-list {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+      .topic-chip {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 11px;
+        padding: 11px 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        transition: box-shadow 0.15s;
+      }
+      .topic-chip:hover {
+        box-shadow: var(--shadow);
+      }
+      .topic-chip-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+      }
+      .topic-chip-name {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--text);
+        text-transform: capitalize;
+      }
+      .topic-chip-pct {
+        font-size: 12px;
+        font-weight: 900;
+      }
+      .topic-chip-meta {
+        font-size: 10px;
+        color: var(--text3);
+        font-weight: 500;
+      }
+      .topic-bar {
+        height: 4px;
+        background: var(--surface2);
+        border-radius: 999px;
+        overflow: hidden;
+      }
+      .topic-bar-fill {
+        height: 100%;
+        border-radius: 999px;
+        transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .weak .topic-bar-fill {
+        background: linear-gradient(90deg, #ef4444, #f59e0b);
+      }
+      .weak .topic-chip-pct {
+        color: var(--red);
+      }
+      .strong .topic-bar-fill {
+        background: linear-gradient(90deg, #10b981, #06b6d4);
+      }
+      .strong .topic-chip-pct {
+        color: var(--green);
+      }
+      .topics-empty {
+        color: var(--text3);
+        font-size: 12px;
+        padding: 12px 0;
+        text-align: center;
+      }
+
+      /* ATTEMPT HISTORY */
       .history-card {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -444,46 +655,46 @@
       .history-row {
         display: flex;
         align-items: center;
-        gap: 14px;
-        padding: 14px 20px;
+        gap: 12px;
+        padding: 13px 18px;
         border-bottom: 1px solid var(--border);
         transition: background 0.15s;
-        cursor: default;
       }
       .history-row:last-child {
         border-bottom: none;
       }
       .history-row:hover {
-        background: var(--bg);
+        background: var(--surface2);
       }
       .hist-rank {
-        width: 28px;
-        height: 28px;
+        width: 26px;
+        height: 26px;
         border-radius: 50%;
-        background: var(--bg);
+        background: var(--surface2);
         border: 1.5px solid var(--border);
         display: flex;
         align-items: center;
         justify-content: center;
+        font-family: "Plus Jakarta Sans", sans-serif;
         font-size: 11px;
         font-weight: 800;
         color: var(--text3);
         flex-shrink: 0;
       }
       .hist-rank.gold {
-        background: #fef3c7;
-        border-color: #fbbf24;
-        color: #92400e;
+        background: linear-gradient(135deg, #fbbf24, #f59e0b);
+        color: white;
+        border: none;
       }
       .hist-rank.silver {
-        background: #f1f5f9;
-        border-color: #94a3b8;
-        color: #475569;
+        background: linear-gradient(135deg, #94a3b8, #64748b);
+        color: white;
+        border: none;
       }
       .hist-rank.bronze {
-        background: #fef3c7;
-        border-color: #d97706;
-        color: #78350f;
+        background: linear-gradient(135deg, #d97706, #b45309);
+        color: white;
+        border: none;
       }
       .hist-info {
         flex: 1;
@@ -503,10 +714,11 @@
         margin-top: 2px;
       }
       .hist-acc {
-        padding: 3px 9px;
+        padding: 3px 8px;
         border-radius: 999px;
         font-size: 11px;
         font-weight: 700;
+        flex-shrink: 0;
       }
       .hist-acc.hi {
         background: #d1fae5;
@@ -521,86 +733,72 @@
         color: #991b1b;
       }
       .hist-score {
-        font-family: "Cabinet Grotesk", sans-serif;
-        font-size: 18px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 17px;
         font-weight: 900;
         color: var(--primary);
         flex-shrink: 0;
-        min-width: 48px;
         text-align: right;
+        min-width: 56px;
       }
 
-      /* WEAK TOPICS */
-      .weak-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-        gap: 10px;
-        margin-bottom: 28px;
-      }
-      .weak-chip {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 14px 16px;
+      /* FILTER TABS */
+      .filter-tabs {
         display: flex;
-        flex-direction: column;
         gap: 4px;
+        background: var(--surface2);
+        border-radius: 10px;
+        padding: 3px;
+        margin-bottom: 12px;
+        overflow-x: auto;
+        scrollbar-width: none;
       }
-      .weak-chip-top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+      .filter-tabs::-webkit-scrollbar {
+        display: none;
       }
-      .weak-chip-name {
-        font-size: 13px;
+      .filter-tab {
+        padding: 6px 12px;
+        border: none;
+        border-radius: 8px;
+        background: transparent;
+        color: var(--text3);
+        font-size: 12px;
         font-weight: 700;
-        color: var(--text);
+        white-space: nowrap;
+        transition: all 0.15s;
       }
-      .weak-chip-pct {
-        font-size: 13px;
-        font-weight: 800;
-        color: var(--red);
-      }
-      .weak-chip-bar {
-        height: 5px;
-        background: var(--bg);
-        border-radius: 999px;
-        overflow: hidden;
-        margin-top: 4px;
-      }
-      .weak-chip-fill {
-        height: 100%;
-        border-radius: 999px;
-        background: linear-gradient(90deg, #ef4444, #f59e0b);
+      .filter-tab.active {
+        background: var(--surface);
+        color: var(--primary);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
       }
 
-      /* EMPTY STATE */
+      /* EMPTY */
       .empty-state {
         text-align: center;
-        padding: 48px 20px;
+        padding: 40px 20px;
         color: var(--text3);
       }
       .empty-state .emo {
-        font-size: 48px;
-        margin-bottom: 12px;
+        font-size: 40px;
+        margin-bottom: 10px;
       }
       .empty-state p {
-        font-size: 14px;
-        margin-bottom: 20px;
+        font-size: 13px;
+        margin-bottom: 16px;
       }
       .btn-go {
         display: inline-block;
-        padding: 12px 28px;
+        padding: 10px 24px;
         background: linear-gradient(135deg, #2563eb, #06b6d4);
         color: white;
         border: none;
-        border-radius: 12px;
-        font-family: "Cabinet Grotesk", sans-serif;
-        font-size: 14px;
+        border-radius: 10px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 13px;
         font-weight: 700;
-        cursor: pointer;
         text-decoration: none;
-        transition: opacity 0.2s;
+        transition: opacity 0.18s;
       }
       .btn-go:hover {
         opacity: 0.88;
@@ -608,24 +806,29 @@
 
       @media (max-width: 640px) {
         nav {
-          padding: 0 16px;
+          padding: 0 14px;
         }
         .page {
-          padding: 24px 16px 48px;
+          padding: 16px 12px 48px;
         }
         .profile-hero {
           flex-direction: column;
           align-items: flex-start;
-          gap: 16px;
+          gap: 14px;
+          padding: 22px;
         }
         .streak-badge {
           align-self: flex-start;
         }
-        .subj-breakdown {
+        .subj-breakdown,
+        .topics-row {
           grid-template-columns: 1fr;
         }
         .stat-cards {
           grid-template-columns: 1fr 1fr;
+        }
+        .exam-best-grid {
+          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -645,38 +848,38 @@
     </nav>
 
     <div class="page">
-      <!-- PROFILE HERO -->
+      <!-- HERO -->
       <div class="profile-hero">
-        <div class="profile-avatar-wrap">
-          <div class="profile-avatar" id="profileAvatar">?</div>
-        </div>
+        <div class="profile-avatar" id="profileAvatar">?</div>
         <div class="profile-info">
           <div class="profile-name" id="profileName">Loading…</div>
           <div class="profile-email" id="profileEmail"></div>
-          <div class="profile-stat-row">
-            <div class="profile-stat">
-              <div class="profile-stat-num" id="heroAttempts">—</div>
-              <div class="profile-stat-lbl">Attempts</div>
+          <div class="hero-stats">
+            <div class="hero-stat-item">
+              <div class="hero-stat-num" id="heroAttempts">—</div>
+              <div class="hero-stat-lbl">Attempts</div>
             </div>
-            <div class="profile-stat">
-              <div class="profile-stat-num" id="heroBestScore">—</div>
-              <div class="profile-stat-lbl">Best Score</div>
+            <div class="hero-stat-item">
+              <div class="hero-stat-num" id="heroBestAcc">—</div>
+              <div class="hero-stat-lbl">Best Accuracy</div>
             </div>
-            <div class="profile-stat">
-              <div class="profile-stat-num" id="heroAvgAcc">—</div>
-              <div class="profile-stat-lbl">Avg Accuracy</div>
+            <div class="hero-stat-item">
+              <div class="hero-stat-num" id="heroAvgAcc">—</div>
+              <div class="hero-stat-lbl">Avg Accuracy</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="hero-stat-num" id="heroCorrect">—</div>
+              <div class="hero-stat-lbl">Total Correct</div>
             </div>
           </div>
         </div>
         <div class="streak-badge">
-          <div>
-            <div class="streak-num" id="streakNum">🔥 0</div>
-            <div class="streak-lbl">Day Streak</div>
-          </div>
+          <div class="streak-num" id="streakNum">🔥 0</div>
+          <div class="streak-lbl">Day Streak</div>
         </div>
       </div>
 
-      <!-- STAT CARDS -->
+      <!-- OVERVIEW -->
       <div class="sec-hdr">📊 Overview</div>
       <div class="stat-cards">
         <div class="stat-card blue">
@@ -685,39 +888,78 @@
           <div class="stat-card-lbl">Total Attempts</div>
         </div>
         <div class="stat-card green">
-          <div class="stat-card-icon">🏆</div>
-          <div class="stat-card-val" id="statBest">—</div>
-          <div class="stat-card-lbl">Best Score</div>
-        </div>
-        <div class="stat-card orange">
           <div class="stat-card-icon">🎯</div>
           <div class="stat-card-val" id="statAvgAcc">—</div>
           <div class="stat-card-lbl">Avg Accuracy</div>
         </div>
-        <div class="stat-card purple">
+        <div class="stat-card orange">
           <div class="stat-card-icon">✅</div>
           <div class="stat-card-val" id="statTotalCorrect">—</div>
           <div class="stat-card-lbl">Total Correct Qs</div>
         </div>
+        <div class="stat-card purple">
+          <div class="stat-card-icon">⚡</div>
+          <div class="stat-card-val" id="statImprovement">—</div>
+          <div class="stat-card-lbl">Accuracy Trend</div>
+        </div>
+        <div class="stat-card teal">
+          <div class="stat-card-icon">🔥</div>
+          <div class="stat-card-val" id="statStreak">—</div>
+          <div class="stat-card-lbl">Day Streak</div>
+        </div>
+      </div>
+
+      <!-- PER-EXAM BEST SCORES -->
+      <div class="sec-hdr">🏆 Best Score per Exam</div>
+      <div class="exam-best-grid" id="examBestGrid">
+        <div
+          style="
+            color: var(--text3);
+            font-size: 13px;
+            padding: 8px 0;
+            grid-column: 1/-1;
+          "
+        >
+          No attempts yet.
+        </div>
       </div>
 
       <!-- ACCURACY TREND -->
-      <div class="sec-hdr">📈 Accuracy Trend (Last 10 Attempts)</div>
+      <div class="sec-hdr">📈 Accuracy Trend (Last 10)</div>
       <div class="chart-card">
         <h4>Accuracy per Attempt</h4>
         <div id="accChart" class="acc-chart"></div>
+      </div>
+
+      <!-- SCORE TREND -->
+      <div class="sec-hdr">📉 Score Trend (Last 10 Full Mocks)</div>
+      <div class="chart-card">
+        <h4>Score per Attempt</h4>
+        <div id="scoreTrend" class="score-trend"></div>
       </div>
 
       <!-- SUBJECT BREAKDOWN -->
       <div class="sec-hdr">📚 Subject-wise Accuracy</div>
       <div class="subj-breakdown" id="subjBreakdown"></div>
 
-      <!-- WEAK TOPICS -->
-      <div class="sec-hdr">⚠️ Weak Topics</div>
-      <div class="weak-grid" id="weakTopics"></div>
+      <!-- WEAK + STRONG TOPICS -->
+      <div class="sec-hdr">🧠 Topic Analysis</div>
+      <div class="topics-row">
+        <div class="topics-col weak">
+          <h5>⚠️ Needs Work</h5>
+          <div class="topic-list" id="weakTopics"></div>
+        </div>
+        <div class="topics-col strong">
+          <h5>💪 Strong Topics</h5>
+          <div class="topic-list" id="strongTopics"></div>
+        </div>
+      </div>
 
       <!-- ATTEMPT HISTORY -->
-      <div class="sec-hdr">🕓 Attempt History</div>
+      <div class="sec-hdr" style="justify-content: space-between">
+        <span>🕓 Attempt History</span>
+      </div>
+      <div class="filter-tabs" id="historyFilterTabs"></div>
       <div class="history-card" id="historyList">
         <div class="empty-state">
           <div class="emo">📭</div>
@@ -741,7 +983,10 @@
       const auth = firebase.auth(),
         db = firebase.firestore();
 
-      // ── THEME ───────────────────────────────────
+      let allAttempts = [];
+      let historyFilter = "All";
+
+      // ── THEME ────────────────────────────────────
       function toggleTheme() {
         const html = document.documentElement,
           dark = html.getAttribute("data-theme") === "dark";
@@ -755,14 +1000,13 @@
         if (b) b.textContent = "☀️";
       }
 
-      // ── AUTH ────────────────────────────────────
+      // ── AUTH ─────────────────────────────────────
       auth.onAuthStateChanged((user) => {
         const guest = sessionStorage.getItem("guestMode");
         if (!user && !guest) {
           window.location.href = "login.html";
           return;
         }
-
         if (user) {
           const name = user.displayName || user.email || "User";
           const initials = name
@@ -784,20 +1028,17 @@
         }
       });
 
-      // ── LOAD FROM FIRESTORE ──────────────────────
+      // ── LOAD DATA ────────────────────────────────
       async function loadProfile(uid) {
-        // Always render localStorage first (instant)
-        const localAttempts = getLocalAttempts();
-        renderAll(localAttempts);
-
-        // Then try Firestore for richer data
+        const local = getLocalAttempts();
+        if (local.length) renderAll(local);
         try {
           const snap = await db
             .collection("users")
             .doc(uid)
             .collection("attempts")
             .orderBy("createdAt", "desc")
-            .limit(50)
+            .limit(100)
             .get();
           if (!snap.empty) {
             const data = snap.docs.map((d) => {
@@ -814,20 +1055,18 @@
                   hour: "2-digit",
                   minute: "2-digit",
                 }),
-                ts: ts,
+                ts,
               };
             });
             renderAll(data);
           }
         } catch (e) {
-          console.warn("Firestore load error", e);
+          console.warn("Firestore:", e);
         }
       }
-
       function loadProfileLocal() {
         renderAll(getLocalAttempts());
       }
-
       function getLocalAttempts() {
         try {
           return JSON.parse(localStorage.getItem("ssc-attempts") || "[]");
@@ -836,73 +1075,164 @@
         }
       }
 
-      // ── RENDER EVERYTHING ────────────────────────
+      // ── RENDER ALL ───────────────────────────────
       function renderAll(attempts) {
         if (!attempts || !attempts.length) {
           renderEmpty();
           return;
         }
+        allAttempts = attempts;
         renderHero(attempts);
         renderStatCards(attempts);
+        renderExamBest(attempts);
         renderAccChart(attempts);
+        renderScoreTrend(attempts);
         renderSubjectBreakdown(attempts);
-        renderWeakTopics(attempts);
-        renderHistory(attempts);
+        renderTopics(attempts);
+        buildHistoryTabs(attempts);
+        renderHistory(attempts, historyFilter);
       }
 
       function renderEmpty() {
         setText("heroAttempts", "0");
-        setText("heroBestScore", "—");
+        setText("heroBestAcc", "—");
         setText("heroAvgAcc", "—");
+        setText("heroCorrect", "—");
         setText("statTotal", "0");
-        setText("statBest", "—");
         setText("statAvgAcc", "—");
         setText("statTotalCorrect", "0");
+        setText("statImprovement", "—");
+        setText("statStreak", "0");
         document.getElementById("accChart").innerHTML =
-          '<div class="chart-empty">📭 No attempts yet — take a mock test to see your stats!</div>';
+          '<div class="chart-empty">📭 No attempts yet — take a mock test!</div>';
+        document.getElementById("scoreTrend").innerHTML =
+          '<div class="chart-empty">No data yet</div>';
         document.getElementById("subjBreakdown").innerHTML =
-          '<div style="color:var(--text3);font-size:14px;padding:16px 0;grid-column:1/-1">No data yet.</div>';
+          '<div style="color:var(--text3);font-size:13px;padding:12px 0;grid-column:1/-1">No data yet.</div>';
         document.getElementById("weakTopics").innerHTML =
-          '<div style="color:var(--text3);font-size:14px;padding:16px 0">No data yet.</div>';
+          '<div class="topics-empty">Complete more tests to see weak topics</div>';
+        document.getElementById("strongTopics").innerHTML =
+          '<div class="topics-empty">No strong topics yet</div>';
       }
 
+      // ── HERO ─────────────────────────────────────
       function renderHero(attempts) {
         const total = attempts.length;
-        const bestScore = Math.max(...attempts.map((a) => +(a.score || 0)));
-        const avgAcc = (
-          attempts.reduce((s, a) => s + (parseFloat(a.accuracy) || 0), 0) /
-          total
-        ).toFixed(1);
-        const streak = calcStreak(attempts);
-        setText("heroAttempts", total);
-        setText(
-          "heroBestScore",
-          bestScore % 1 === 0 ? bestScore : bestScore.toFixed(1),
-        );
-        setText("heroAvgAcc", avgAcc + "%");
-        document.getElementById("streakNum").textContent = "🔥 " + streak;
-      }
-
-      function renderStatCards(attempts) {
-        const total = attempts.length;
-        const bestScore = Math.max(...attempts.map((a) => +(a.score || 0)));
-        const avgAcc = (
-          attempts.reduce((s, a) => s + (parseFloat(a.accuracy) || 0), 0) /
-          total
-        ).toFixed(1);
+        const accs = attempts.map((a) => parseFloat(a.accuracy) || 0);
+        const bestAcc = Math.max(...accs);
+        const avgAcc = (accs.reduce((s, v) => s + v, 0) / total).toFixed(1);
         const totalCorrect = attempts.reduce(
           (s, a) => s + (parseInt(a.correct) || 0),
           0,
         );
-        setText("statTotal", total);
-        setText(
-          "statBest",
-          bestScore % 1 === 0 ? bestScore : bestScore.toFixed(1),
-        );
-        setText("statAvgAcc", avgAcc + "%");
-        setText("statTotalCorrect", totalCorrect);
+        setText("heroAttempts", total);
+        setText("heroBestAcc", bestAcc.toFixed(1) + "%");
+        setText("heroAvgAcc", avgAcc + "%");
+        setText("heroCorrect", totalCorrect);
+        document.getElementById("streakNum").textContent =
+          "🔥 " + calcStreak(attempts);
       }
 
+      // ── STAT CARDS ───────────────────────────────
+      function renderStatCards(attempts) {
+        const total = attempts.length;
+        const accs = attempts.map((a) => parseFloat(a.accuracy) || 0);
+        const avgAcc = (accs.reduce((s, v) => s + v, 0) / total).toFixed(1);
+        const totalCorrect = attempts.reduce(
+          (s, a) => s + (parseInt(a.correct) || 0),
+          0,
+        );
+        const streak = calcStreak(attempts);
+        // Improvement: compare last 3 avg vs prev 3 avg
+        let improvement = "—";
+        if (attempts.length >= 4) {
+          const last3 = accs.slice(0, 3);
+          const prev3 = accs.slice(3, 6);
+          if (prev3.length) {
+            const diff = (
+              last3.reduce((s, v) => s + v, 0) / last3.length -
+              prev3.reduce((s, v) => s + v, 0) / prev3.length
+            ).toFixed(1);
+            improvement =
+              (diff > 0 ? "↑ +" : diff < 0 ? "↓ " : "→ ") +
+              Math.abs(diff) +
+              "%";
+          }
+        }
+        setText("statTotal", total);
+        setText("statAvgAcc", avgAcc + "%");
+        setText("statTotalCorrect", totalCorrect);
+        setText("statImprovement", improvement);
+        setText("statStreak", streak + " day" + (streak !== 1 ? "s" : ""));
+      }
+
+      // ── PER-EXAM BEST SCORES ─────────────────────
+      function renderExamBest(attempts) {
+        const examBest = {};
+        const examIcons = {
+          "SSC CGL": "🏆",
+          "SSC CHSL": "📜",
+          "RRB NTPC": "🚂",
+          JKSSB: "🛡️",
+          Subject: "🎯",
+          Chapter: "📖",
+        };
+        attempts.forEach((a) => {
+          if (a.examMode === "subject" || a.examMode === "chapter") return; // skip practice for this widget
+          const key = a.examType || a.examTypeKey || "SSC CGL";
+          const sc = parseFloat(a.score) || 0;
+          const max = parseInt(a.maxScore || a.total * 2) || 200;
+          const acc = parseFloat(a.accuracy) || 0;
+          if (!examBest[key] || sc > examBest[key].score) {
+            examBest[key] = {
+              score: sc,
+              maxScore: max,
+              accuracy: acc,
+              date: a.date || "",
+              mockNumber: a.mockNumber || 0,
+            };
+          }
+        });
+        const el = document.getElementById("examBestGrid");
+        const entries = Object.entries(examBest);
+        if (!entries.length) {
+          el.innerHTML =
+            '<div style="color:var(--text3);font-size:13px;padding:8px 0;grid-column:1/-1">Complete a full mock test to see per-exam rankings.</div>';
+          return;
+        }
+        el.innerHTML = entries
+          .map(([name, d]) => {
+            const icon =
+              Object.entries(examIcons).find(([k]) => name.includes(k))?.[1] ||
+              "📋";
+            const sc = d.score % 1 === 0 ? d.score : d.score.toFixed(1);
+            const pct =
+              d.maxScore > 0 ? Math.round((d.score / d.maxScore) * 100) : 0;
+            const col =
+              pct >= 70
+                ? "var(--green)"
+                : pct >= 50
+                  ? "var(--orange)"
+                  : "var(--red)";
+            return `<div class="exam-best-card">
+        <div class="exam-best-icon">${icon}</div>
+        <div class="exam-best-info">
+          <div class="exam-best-name">${name}</div>
+          <div class="exam-best-sub">${d.accuracy}% accuracy · ${d.date}</div>
+          <div style="height:5px;background:var(--surface2);border-radius:999px;margin-top:6px;overflow:hidden">
+            <div style="height:100%;width:${Math.min(pct, 100)}%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:999px;transition:width .6s ease"></div>
+          </div>
+        </div>
+        <div>
+          <div class="exam-best-score" style="color:${col}">${sc}</div>
+          <div class="exam-best-max">/${d.maxScore}</div>
+        </div>
+      </div>`;
+          })
+          .join("");
+      }
+
+      // ── ACCURACY CHART ───────────────────────────
       function renderAccChart(attempts) {
         const last10 = [...attempts].slice(0, 10).reverse();
         const chart = document.getElementById("accChart");
@@ -913,11 +1243,13 @@
         chart.innerHTML = last10
           .map((a, i) => {
             const pct = parseFloat(a.accuracy) || 0;
-            const h = Math.max(4, Math.round(pct * 0.9));
+            const h = Math.max(4, Math.round(pct * 0.82));
             const cls = pct >= 70 ? "good" : pct >= 50 ? "ok" : "bad";
             const lbl = (a.examType || "Mock")
               .replace("SSC ", "")
-              .replace(" Tier 1", "");
+              .replace(" Tier 1", "")
+              .replace(" Graduate", "")
+              .replace("JKSSB ", "");
             return `<div class="acc-bar-wrap">
         <div class="acc-bar-pct">${pct.toFixed(0)}%</div>
         <div class="acc-bar-outer"><div class="acc-bar-inner ${cls}" style="height:${h}px"></div></div>
@@ -927,87 +1259,143 @@
           .join("");
       }
 
+      // ── SCORE TREND ──────────────────────────────
+      function renderScoreTrend(attempts) {
+        const fullMocks = [...attempts]
+          .filter((a) => a.examMode === "full" || !a.examMode)
+          .slice(0, 10)
+          .reverse();
+        const el = document.getElementById("scoreTrend");
+        if (!fullMocks.length) {
+          el.innerHTML =
+            '<div class="chart-empty">No full mock attempts yet</div>';
+          return;
+        }
+        const maxSc = Math.max(
+          ...fullMocks.map((a) => parseFloat(a.score) || 0),
+          1,
+        );
+        el.innerHTML = fullMocks
+          .map((a, i) => {
+            const sc = parseFloat(a.score) || 0;
+            const h = Math.max(4, Math.round((sc / maxSc) * 60));
+            const lbl = (a.examType || "Mock")
+              .replace("SSC ", "")
+              .replace(" Tier 1", "")
+              .replace(" Graduate", "")
+              .replace("JKSSB ", "");
+            return `<div class="st-bar-wrap">
+        <div class="st-bar-val">${sc % 1 === 0 ? sc : sc.toFixed(1)}</div>
+        <div class="st-bar-outer"><div class="st-bar-inner" style="height:${h}px"></div></div>
+        <div class="st-bar-lbl">#${i + 1}</div>
+      </div>`;
+          })
+          .join("");
+      }
+
+      // ── SUBJECT BREAKDOWN ────────────────────────
       function renderSubjectBreakdown(attempts) {
-        // Aggregate subject stats from attempts that have subjectStats, or fall back to overall
-        const subjs = [
-          {
-            key: "Quant",
-            icon: "🔢",
-            name: "Quant",
-            grad: "linear-gradient(90deg,#2563eb,#06b6d4)",
-          },
-          {
-            key: "Reasoning",
+        // Collect all unique subjects from subjectStats or fall back to default
+        const subjMap = {};
+        const subjectMeta = {
+          Quant: { icon: "🔢", grad: "linear-gradient(90deg,#2563eb,#06b6d4)" },
+          Reasoning: {
             icon: "🧩",
-            name: "Reasoning",
             grad: "linear-gradient(90deg,#f093fb,#f5576c)",
           },
-          {
-            key: "GS",
-            icon: "🌍",
-            name: "GS",
-            grad: "linear-gradient(90deg,#4facfe,#00f2fe)",
-          },
-          {
-            key: "English",
+          GS: { icon: "🌍", grad: "linear-gradient(90deg,#4facfe,#00f2fe)" },
+          English: {
             icon: "📖",
-            name: "English",
             grad: "linear-gradient(90deg,#43e97b,#38f9d7)",
           },
-        ];
-        // Try to get subject-level stats stored in attempts
-        const subjStats = {};
-        subjs.forEach((s) => {
-          subjStats[s.key] = { correct: 0, wrong: 0, total: 0 };
-        });
+          "General Awareness": {
+            icon: "🌍",
+            grad: "linear-gradient(90deg,#4facfe,#00f2fe)",
+          },
+          "Quantitative Aptitude": {
+            icon: "🔢",
+            grad: "linear-gradient(90deg,#2563eb,#06b6d4)",
+          },
+          Mathematics: {
+            icon: "🔢",
+            grad: "linear-gradient(90deg,#2563eb,#06b6d4)",
+          },
+          "Computer Proficiency": {
+            icon: "💻",
+            grad: "linear-gradient(90deg,#8b5cf6,#ec4899)",
+          },
+          "Mathematical Abilities": {
+            icon: "📐",
+            grad: "linear-gradient(90deg,#f59e0b,#ef4444)",
+          },
+        };
         attempts.forEach((a) => {
-          if (a.subjectStats) {
-            try {
-              const ss =
-                typeof a.subjectStats === "string"
-                  ? JSON.parse(a.subjectStats)
-                  : a.subjectStats;
-              subjs.forEach((s) => {
-                if (ss[s.key]) {
-                  subjStats[s.key].correct += ss[s.key].correct || 0;
-                  subjStats[s.key].wrong += ss[s.key].wrong || 0;
-                  subjStats[s.key].total += ss[s.key].total || 0;
-                }
-              });
-            } catch (e) {}
-          }
+          if (!a.subjectStats) return;
+          try {
+            const ss =
+              typeof a.subjectStats === "string"
+                ? JSON.parse(a.subjectStats)
+                : a.subjectStats;
+            Object.entries(ss).forEach(([subj, st]) => {
+              if (!subjMap[subj])
+                subjMap[subj] = { correct: 0, wrong: 0, total: 0 };
+              subjMap[subj].correct += st.correct || 0;
+              subjMap[subj].wrong += st.wrong || 0;
+              subjMap[subj].total += st.total || 0;
+            });
+          } catch (e) {}
         });
-        const hasSubjData = subjs.some((s) => subjStats[s.key].total > 0);
+
         const el = document.getElementById("subjBreakdown");
-        if (!hasSubjData) {
-          // Estimate from overall — split evenly (approximation until subjectStats is logged)
+        const entries = Object.entries(subjMap).filter(([, v]) => v.total > 0);
+
+        if (!entries.length) {
+          // Estimate from overall
+          const defaults = ["Quant", "Reasoning", "GS", "English"];
+          defaults.forEach((s) => {
+            subjMap[s] = { correct: 0, wrong: 0, total: 0 };
+          });
           attempts.forEach((a) => {
             const c = parseInt(a.correct) || 0,
               w = parseInt(a.wrong) || 0,
               t = parseInt(a.total) || 100;
-            const perSubj = Math.round(t / 4);
-            subjs.forEach((s) => {
-              subjStats[s.key].correct += Math.round(c / 4);
-              subjStats[s.key].wrong += Math.round(w / 4);
-              subjStats[s.key].total += perSubj;
+            defaults.forEach((s) => {
+              subjMap[s].correct += Math.round(c / 4);
+              subjMap[s].wrong += Math.round(w / 4);
+              subjMap[s].total += Math.round(t / 4);
             });
           });
+          const est = Object.entries(subjMap).filter(([, v]) => v.total > 0);
+          if (!est.length) {
+            el.innerHTML =
+              '<div style="color:var(--text3);font-size:13px;padding:12px 0;grid-column:1/-1">No subject data yet.</div>';
+            return;
+          }
+          entries.push(...est);
         }
-        el.innerHTML = subjs
-          .map((s) => {
-            const st = subjStats[s.key];
+
+        el.innerHTML = entries
+          .map(([name, st]) => {
             const acc =
               st.total > 0 ? ((st.correct / st.total) * 100).toFixed(0) : 0;
             const pct = Math.min(100, parseInt(acc));
+            const meta = subjectMeta[name] || {
+              icon: "📋",
+              grad: "linear-gradient(90deg,var(--primary),var(--accent))",
+            };
             const col =
-              pct >= 70 ? "#10b981" : pct >= 50 ? "#f59e0b" : "#ef4444";
+              pct >= 70
+                ? "var(--green)"
+                : pct >= 50
+                  ? "var(--orange)"
+                  : "var(--red)";
             return `<div class="subj-acc-card">
         <div class="subj-acc-header">
-          <span class="subj-acc-icon">${s.icon}</span>
-          <span class="subj-acc-name">${s.name}</span>
+          <span class="subj-acc-icon">${meta.icon}</span>
+          <span class="subj-acc-name">${name}</span>
           <span class="subj-acc-pct" style="color:${col}">${acc}%</span>
         </div>
-        <div class="subj-bar-track"><div class="subj-bar-fill" style="width:${pct}%;background:${s.grad}"></div></div>
+        <div class="subj-bar-track"><div class="subj-bar-fill" style="width:${pct}%;background:${meta.grad}"></div></div>
         <div class="subj-mini-stats">
           <div class="subj-mini-stat">✅ <span>${st.correct}</span></div>
           <div class="subj-mini-stat">❌ <span>${st.wrong}</span></div>
@@ -1018,60 +1406,115 @@
           .join("");
       }
 
-      function renderWeakTopics(attempts) {
-        // Use topicStats if available, else show placeholder message
+      // ── TOPIC ANALYSIS (WEAK + STRONG) ───────────
+      function renderTopics(attempts) {
         const topicMap = {};
         attempts.forEach((a) => {
-          if (a.topicStats) {
-            try {
-              const ts =
-                typeof a.topicStats === "string"
-                  ? JSON.parse(a.topicStats)
-                  : a.topicStats;
-              Object.entries(ts).forEach(([topic, stats]) => {
-                if (!topicMap[topic])
-                  topicMap[topic] = { correct: 0, total: 0 };
-                topicMap[topic].correct += stats.correct || 0;
-                topicMap[topic].total += stats.total || 0;
-              });
-            } catch (e) {}
-          }
+          if (!a.topicStats) return;
+          try {
+            const ts =
+              typeof a.topicStats === "string"
+                ? JSON.parse(a.topicStats)
+                : a.topicStats;
+            Object.entries(ts).forEach(([topic, st]) => {
+              if (!topicMap[topic])
+                topicMap[topic] = {
+                  correct: 0,
+                  wrong: 0,
+                  total: 0,
+                  subject: st.subject || "",
+                };
+              topicMap[topic].correct += st.correct || 0;
+              topicMap[topic].wrong += st.wrong || 0;
+              topicMap[topic].total += st.total || 0;
+            });
+          } catch (e) {}
         });
-        const el = document.getElementById("weakTopics");
-        const topics = Object.entries(topicMap)
-          .filter(([, v]) => v.total >= 3)
+
+        const topicList = Object.entries(topicMap)
+          .filter(([, v]) => v.total >= 2)
           .map(([k, v]) => ({
             name: k.replace(/_/g, " "),
             acc: Math.round((v.correct / v.total) * 100),
-          }))
-          .sort((a, b) => a.acc - b.acc)
-          .slice(0, 8);
-        if (!topics.length) {
-          el.innerHTML = `<div style="color:var(--text3);font-size:13px;padding:8px 0;grid-column:1/-1">
-        Topic-level breakdown will appear here once your question bank includes topic tags and you've completed more attempts.
-      </div>`;
+            total: v.total,
+            correct: v.correct,
+            wrong: v.wrong,
+            subject: v.subject,
+          }));
+
+        const weakEl = document.getElementById("weakTopics");
+        const strongEl = document.getElementById("strongTopics");
+
+        if (!topicList.length) {
+          weakEl.innerHTML =
+            '<div class="topics-empty">Complete tests with topic-tagged questions to see analysis</div>';
+          strongEl.innerHTML = '<div class="topics-empty">No data yet</div>';
           return;
         }
-        el.innerHTML = topics
+
+        const sorted = [...topicList].sort((a, b) => a.acc - b.acc);
+        const weak = sorted.slice(0, 6);
+        const strong = [...topicList].sort((a, b) => b.acc - a.acc).slice(0, 6);
+
+        const chipHtml = (t, type) => `
+      <div class="topic-chip">
+        <div class="topic-chip-row">
+          <span class="topic-chip-name">${t.name}</span>
+          <span class="topic-chip-pct">${t.acc}%</span>
+        </div>
+        <div class="topic-chip-meta">${t.correct}✅ ${t.wrong}❌ of ${t.total} attempts${t.subject ? " · " + t.subject : ""}</div>
+        <div class="topic-bar"><div class="topic-bar-fill" style="width:${t.acc}%"></div></div>
+      </div>`;
+
+        weakEl.innerHTML =
+          weak.map((t) => chipHtml(t, "weak")).join("") ||
+          '<div class="topics-empty">No weak topics — great job!</div>';
+        strongEl.innerHTML =
+          strong
+            .filter((t) => t.acc >= 60)
+            .map((t) => chipHtml(t, "strong"))
+            .join("") ||
+          '<div class="topics-empty">Keep practising to build strengths</div>';
+      }
+
+      // ── HISTORY TABS ─────────────────────────────
+      function buildHistoryTabs(attempts) {
+        const examTypes = [
+          "All",
+          ...new Set(
+            attempts.map((a) => a.examType || "SSC CGL").filter(Boolean),
+          ),
+        ];
+        const el = document.getElementById("historyFilterTabs");
+        el.innerHTML = examTypes
           .map(
             (t) => `
-      <div class="weak-chip">
-        <div class="weak-chip-top"><span class="weak-chip-name">${t.name}</span><span class="weak-chip-pct">${t.acc}%</span></div>
-        <div class="weak-chip-bar"><div class="weak-chip-fill" style="width:${t.acc}%"></div></div>
-      </div>`,
+      <button class="filter-tab ${t === historyFilter ? "active" : ""}" onclick="setHistoryFilter('${t.replace(/'/g, "&#39;")}')">
+        ${t}
+      </button>`,
           )
           .join("");
       }
+      function setHistoryFilter(type) {
+        historyFilter = type;
+        buildHistoryTabs(allAttempts);
+        renderHistory(allAttempts, type);
+      }
 
-      function renderHistory(attempts) {
+      // ── HISTORY LIST ─────────────────────────────
+      function renderHistory(attempts, filter = "All") {
         const el = document.getElementById("historyList");
-        if (!attempts.length) {
+        let filtered =
+          filter === "All"
+            ? attempts
+            : attempts.filter((a) => (a.examType || "SSC CGL") === filter);
+        if (!filtered.length) {
           el.innerHTML =
             '<div class="empty-state"><div class="emo">📭</div><p>No attempts yet</p><a href="exams.html" class="btn-go">Start a Mock Test</a></div>';
           return;
         }
-        el.innerHTML = attempts
-          .slice(0, 20)
+        el.innerHTML = filtered
+          .slice(0, 30)
           .map((a, i) => {
             const rc =
               i === 0 ? "gold" : i === 1 ? "silver" : i === 2 ? "bronze" : "";
@@ -1083,24 +1526,31 @@
                   ? a.score
                   : a.score.toFixed(1)
                 : a.score || "—";
-            const maxSc = parseInt(a.total || 100) * 2;
+            const maxSc = parseInt(a.maxScore || a.total * 2) || 200;
+            const modeTag =
+              a.examMode === "subject"
+                ? ` · ${a.selectedSubject || ""} Practice`
+                : a.examMode === "chapter"
+                  ? ` · ${(a.selectedChapter || "").replace(/_/g, " ")}`
+                  : a.mockNumber > 0
+                    ? ` · Mock #${a.mockNumber}`
+                    : "";
             return `<div class="history-row">
         <div class="hist-rank ${rc}">${i + 1}</div>
         <div class="hist-info">
-          <div class="hist-exam">${a.examType || "SSC CGL"} ${a.mockNumber > 0 ? "Mock #" + a.mockNumber : ""}</div>
-          <div class="hist-meta">${a.date || ""} ${a.time || ""} &nbsp;·&nbsp; ✅ ${a.correct || 0} &nbsp; ❌ ${a.wrong || 0} &nbsp; ⏭ ${a.skipped || 0}</div>
+          <div class="hist-exam">${a.examType || "SSC CGL"}${modeTag}</div>
+          <div class="hist-meta">${a.date || ""} ${a.time || ""} &nbsp;·&nbsp; ✅${a.correct || 0} ❌${a.wrong || 0} ⏭${a.skipped || 0}</div>
         </div>
         <span class="hist-acc ${accCls}">${acc.toFixed(1)}%</span>
-        <div class="hist-score">${sc}<span style="font-size:11px;color:var(--text3);font-weight:500">/${maxSc}</span></div>
+        <div class="hist-score">${sc}<span style="font-size:10px;color:var(--text3);font-weight:500">/${maxSc}</span></div>
       </div>`;
           })
           .join("");
       }
 
-      // ── STREAK CALC ──────────────────────────────
+      // ── STREAK ───────────────────────────────────
       function calcStreak(attempts) {
         if (!attempts.length) return 0;
-        // Get unique attempt dates sorted descending
         const dates = new Set();
         attempts.forEach((a) => {
           if (a.date) dates.add(a.date);
@@ -1114,8 +1564,6 @@
             );
         });
         const sorted = [...dates].sort((a, b) => new Date(b) - new Date(a));
-        if (!sorted.length) return 0;
-        // Simple streak: consecutive days from today
         let streak = 0;
         const today = new Date();
         for (let i = 0; i < sorted.length; i++) {
@@ -1132,8 +1580,6 @@
         if (el) el.textContent = v;
       }
     </script>
-
-    <!-- FOOTER -->
     <footer
       style="
         text-align: center;
