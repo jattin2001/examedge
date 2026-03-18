@@ -26,6 +26,110 @@
         firebase.initializeApp(firebaseConfig);
       } catch (e) {}
     </script>
+    <style>
+      /* ── SECTION TIMER STRIP ─────────────── */
+      #sectionTimerStrip {
+        display: none;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        padding: 0 20px;
+        gap: 0;
+        overflow-x: auto;
+      }
+      #sectionTimerStrip.visible {
+        display: flex;
+      }
+
+      .sec-timer-chip {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 8px 18px;
+        gap: 2px;
+        cursor: default;
+        border-bottom: 2px solid transparent;
+        transition: all 0.2s;
+        min-width: 90px;
+        flex-shrink: 0;
+      }
+      .sec-timer-chip.active-sec {
+        border-bottom-color: var(--primary);
+      }
+      .sec-timer-chip.expired-sec {
+        opacity: 0.45;
+      }
+      .sec-chip-name {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--text3);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .sec-chip-time {
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--text);
+        transition: color 0.3s;
+      }
+      .sec-chip-time.warning {
+        color: var(--orange);
+      }
+      .sec-chip-time.danger {
+        color: var(--red);
+        animation: pulse 1s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+
+      /* section-locked overlay */
+      #sectionLockedBanner {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.65);
+        backdrop-filter: blur(8px);
+        z-index: 900;
+        align-items: center;
+        justify-content: center;
+      }
+      #sectionLockedBanner.visible {
+        display: flex;
+      }
+      .slb-card {
+        background: var(--surface);
+        border-radius: 20px;
+        padding: 40px 36px;
+        text-align: center;
+        max-width: 380px;
+        width: 90%;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+        border: 1px solid var(--border);
+      }
+      .slb-icon {
+        font-size: 52px;
+        margin-bottom: 12px;
+      }
+      .slb-title {
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+        margin-bottom: 8px;
+      }
+      .slb-sub {
+        color: var(--text2);
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+    </style>
   </head>
 
   <body onload="loadFullMock()">
@@ -35,10 +139,9 @@
     <!-- TOP PROGRESS BAR -->
     <div id="topProgress"><div id="topProgressFill"></div></div>
 
-    <!-- HEADER — exam mode (back hidden, pause shown) -->
+    <!-- HEADER -->
     <header id="examHeader">
       <div class="header-left">
-        <!-- Back btn: hidden during exam, visible after submit -->
         <button
           class="back-btn"
           id="backBtn"
@@ -58,7 +161,6 @@
         </div>
       </div>
       <div class="header-right">
-        <!-- Pause button: only during exam -->
         <button
           class="pause-btn"
           id="pauseBtn"
@@ -80,6 +182,11 @@
       </div>
     </header>
 
+    <!-- SECTION TIMER STRIP (visible only in section-timer mode) -->
+    <div id="sectionTimerStrip">
+      <!-- populated by JS -->
+    </div>
+
     <!-- PAUSE OVERLAY -->
     <div id="pauseOverlay">
       <div class="pause-card">
@@ -97,26 +204,32 @@
       </div>
     </div>
 
-    <!-- SECTION TABS -->
-    <div class="section-select" id="sectionSelect">
-      <button onclick="jumpSection('Quant')" data-sec="Quant">🔢 Quant</button>
-      <button onclick="jumpSection('Reasoning')" data-sec="Reasoning">
-        🧩 Reasoning
-      </button>
-      <button onclick="jumpSection('GS')" data-sec="GS">🌍 GS</button>
-      <button onclick="jumpSection('English')" data-sec="English">
-        📖 English
-      </button>
+    <!-- SECTION TABS — built dynamically by buildSectionTabs() in script.js -->
+    <div class="section-select" id="sectionSelect"></div>
+
+    <!-- SECTION LOCKED BANNER -->
+    <div id="sectionLockedBanner">
+      <div class="slb-card">
+        <div class="slb-icon">⏰</div>
+        <div class="slb-title" id="slbTitle">Time's Up!</div>
+        <div class="slb-sub" id="slbSub">Moving to the next section…</div>
+        <button
+          class="btn-primary"
+          style="width: 100%; padding: 14px; font-size: 15px"
+          onclick="advanceToNextSection()"
+        >
+          Continue →
+        </button>
+      </div>
     </div>
 
     <!-- MAIN CONTAINER -->
     <div class="container" id="mainContainer">
-      <!-- MOCK QUESTION PANEL -->
+      <!-- QUESTION PANEL -->
       <div class="question-panel" id="mockPanel">
         <div class="q-meta" id="qMeta">
           <span class="q-number" id="qNumber">Q1</span>
           <span class="q-subject" id="qSubject">—</span>
-          <span class="q-difficulty" id="qDifficulty">Medium</span>
         </div>
         <div id="question"></div>
         <div id="options"></div>
@@ -127,12 +240,12 @@
           </button>
           <button class="btn-danger" onclick="clearResponse()">✖ Clear</button>
           <button class="btn-primary" onclick="saveNext()">
-            Save & Next →
+            Save &amp; Next →
           </button>
         </div>
       </div>
 
-      <!-- REVIEW MODE PANEL -->
+      <!-- REVIEW PANEL -->
       <div class="review-layout" id="reviewLayout" style="display: none">
         <div id="reviewBox">
           <div class="review-header">
@@ -179,7 +292,6 @@
           <button onclick="setFilter('unattempted')">⏭ Skipped</button>
         </div>
         <div id="palette"></div>
-        <!-- LEGEND -->
         <div class="palette-legend" id="paletteLegend">
           <div class="legend-item">
             <span class="legend-dot" style="background: #10b981"></span>Answered
@@ -211,37 +323,135 @@
         </p>
         <div class="grade-badge" id="gradeBadge">A</div>
       </div>
-      <div class="score-banner">
-        <div class="score-main">
-          <span class="score-label">TOTAL SCORE</span>
-          <span id="rScore" class="score-value">—</span>
-          <span class="score-max">/ <span id="rMax">—</span></span>
+      <div class="score-rank-card">
+        <div class="src-left">
+          <span class="src-label">TOTAL SCORE</span>
+          <div class="src-score-row">
+            <span id="rScore" class="src-score">—</span>
+            <span class="src-max">/ <span id="rMax">—</span></span>
+          </div>
+          <div class="score-stats">
+            <div class="stat-chip">
+              <span class="chip-icon">✅</span
+              ><span class="chip-label">Correct</span>
+              <span class="chip-val" id="rCorrect">—</span>
+            </div>
+            <div class="stat-chip">
+              <span class="chip-icon">❌</span
+              ><span class="chip-label">Wrong</span>
+              <span class="chip-val" id="rWrong">—</span>
+            </div>
+            <div class="stat-chip">
+              <span class="chip-icon">⏭️</span
+              ><span class="chip-label">Skipped</span>
+              <span class="chip-val" id="rSkipped">—</span>
+            </div>
+            <div class="stat-chip">
+              <span class="chip-icon">📝</span
+              ><span class="chip-label">Attempted</span
+              ><span class="chip-val" id="rAttempted">—</span>
+            </div>
+          </div>
         </div>
-        <div class="score-stats">
-          <div class="stat-chip">
-            <span class="chip-icon">✅</span
-            ><span class="chip-label">Correct</span>
-            <span class="chip-val" id="rCorrect">—</span>
+        <div class="src-divider"></div>
+        <div class="src-right">
+          <div class="rank-ring-wrap">
+            <svg class="rank-ring" viewBox="0 0 120 120">
+              <defs>
+                <linearGradient
+                  id="rankGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="0%"
+                >
+                  <stop offset="0%" stop-color="#38bdf8" />
+                  <stop offset="100%" stop-color="#2563eb" />
+                </linearGradient>
+              </defs>
+              <circle
+                class="ring-bg"
+                cx="60"
+                cy="60"
+                r="50"
+                stroke-dasharray="314"
+                stroke-dashoffset="0"
+              />
+              <circle
+                class="ring-fill"
+                id="rankRingFill"
+                cx="60"
+                cy="60"
+                r="50"
+                stroke-dasharray="314"
+                stroke-dashoffset="314"
+              />
+            </svg>
+            <div class="rank-ring-text">
+              <span class="rank-ring-num" id="globalRankNum">#—</span
+              ><span class="rank-ring-lbl">Rank</span>
+            </div>
           </div>
-          <div class="stat-chip">
-            <span class="chip-icon">❌</span
-            ><span class="chip-label">Wrong</span>
-            <span class="chip-val" id="rWrong">—</span>
-          </div>
-          <div class="stat-chip">
-            <span class="chip-icon">⏭️</span
-            ><span class="chip-label">Skipped</span>
-            <span class="chip-val" id="rSkipped">—</span>
-          </div>
-          <div class="stat-chip">
-            <span class="chip-icon">📝</span
-            ><span class="chip-label">Attempted</span
-            ><span class="chip-val" id="rAttempted">—</span>
+          <div class="rank-sub-stats">
+            <div class="rss-item">
+              <span class="rss-label">Topper</span
+              ><span class="rss-val" id="topperScoreVal">—</span>
+            </div>
+            <div class="rss-item">
+              <span class="rss-label">Average</span
+              ><span class="rss-val" id="avgScoreVal">—</span>
+            </div>
+            <div class="rss-item">
+              <span class="rss-label">Percentile</span
+              ><span class="rss-val" id="percentileVal">—</span>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Comparison bars -->
+      <div class="chart-card" id="comparisonCard" style="display: none">
+        <h3 class="chart-title">📊 You vs Topper vs Average</h3>
+        <div class="overall-bars">
+          <div class="bar-row">
+            <span class="bar-label">You</span>
+            <div class="bar-track">
+              <div
+                class="bar-fill you-bar"
+                id="cmpYouBar"
+                style="width: 0%"
+              ></div>
+            </div>
+            <span class="bar-pct" id="cmpYouLbl">—</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Topper</span>
+            <div class="bar-track">
+              <div
+                class="bar-fill top-bar"
+                id="cmpTopBar"
+                style="width: 0%"
+              ></div>
+            </div>
+            <span class="bar-pct" id="cmpTopLbl">—</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Average</span>
+            <div class="bar-track">
+              <div
+                class="bar-fill avg-bar"
+                id="cmpAvgBar"
+                style="width: 0%"
+              ></div>
+            </div>
+            <span class="bar-pct" id="cmpAvgLbl">—</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overall performance -->
       <div class="chart-card">
-        <h3 class="chart-title">📊 Overall Performance</h3>
+        <h3 class="chart-title">📈 Overall Performance</h3>
         <div class="overall-bars">
           <div class="bar-row">
             <span class="bar-label">Accuracy</span>
@@ -289,14 +499,37 @@
           </div>
         </div>
       </div>
+
+      <!-- Subject breakdown -->
       <div class="chart-card">
         <h3 class="chart-title">📚 Subject-wise Breakdown</h3>
         <div id="subjectCharts"></div>
       </div>
+
+      <!-- Leaderboard -->
       <div class="chart-card">
-        <h3 class="chart-title">🏅 Leaderboard</h3>
-        <div id="leaderboard"></div>
+        <div class="lb-header-row">
+          <h3 class="chart-title" style="margin-bottom: 0">🏅 Leaderboard</h3>
+          <div class="lb-exam-tabs">
+            <button
+              class="lb-exam-tab active"
+              id="lbTabCgl"
+              onclick="switchLbExam('cgl', this)"
+            >
+              CGL Tier 1
+            </button>
+            <button
+              class="lb-exam-tab"
+              id="lbTabChsl"
+              onclick="switchLbExam('chsl', this)"
+            >
+              CHSL Tier 1
+            </button>
+          </div>
+        </div>
+        <div style="margin-top: 14px" id="leaderboard"></div>
       </div>
+
       <div class="result-actions">
         <button class="review-btn" onclick="showReview()">
           🔍 Review Answers

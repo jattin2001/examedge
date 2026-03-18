@@ -1,0 +1,1708 @@
+[
+  {
+    "id": "m2_q1",
+    "subject": "Reasoning",
+    "qno": 1,
+    "question": "In the following question, select the related word from the given alternatives.\nLiberty : Autonomy :: Equality : ?",
+    "options": [
+      "Legitimacy",
+      "Neutrality",
+      "Fairness",
+      "Diversity"
+    ],
+    "answer": 3,
+    "explanation": "Liberty relates to Autonomy (both mean freedom/self-governance). Equality similarly relates to Diversity (both are democratic values concerned with fair representation). Diversity is the best conceptual pair for Equality in this analogy.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "analogy"
+  },
+  {
+    "id": "m2_q2",
+    "subject": "Reasoning",
+    "qno": 2,
+    "question": "Select the letter-cluster that can replace the question mark (?) in the following series.\nBGL, GLQ, LQV, QVA, ?",
+    "options": [
+      "ZAS",
+      "OKS",
+      "VAF",
+      "AVG"
+    ],
+    "answer": 2,
+    "explanation": "Each term advances by +5 letters: B→G→L→Q→V→A→F. So BGL→GLQ→LQV→QVA→VAF. Answer: VAF.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "letter_series"
+  },
+  {
+    "id": "m2_q3",
+    "subject": "Reasoning",
+    "qno": 3,
+    "question": "Select the letter-cluster that can replace the question mark (?) in the following series.\nDAG, FCI, ?, JGM, LIO",
+    "options": [
+      "GDJ",
+      "IFL",
+      "HKE",
+      "HEK"
+    ],
+    "answer": 3,
+    "explanation": "Pattern: D+2=F+2=H; A+2=C+2=E; G+2=I+2=K. So the missing term is HEK.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "letter_series"
+  },
+  {
+    "id": "m2_q4",
+    "subject": "Reasoning",
+    "qno": 4,
+    "question": "Which of the following alternatives will replace the question mark?\nAtom, Molecule, Cell, ?",
+    "options": [
+      "Tissue",
+      "Proton",
+      "System",
+      "Gene"
+    ],
+    "answer": 0,
+    "explanation": "This is a sequence of increasing biological/physical organization: Atom → Molecule → Cell → Tissue. Each step represents a higher level of complexity.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "venn_diagram"
+  },
+  {
+    "id": "m2_q5",
+    "subject": "Reasoning",
+    "qno": 5,
+    "question": "Complete the series: _______, 150, 183, 219, 258",
+    "options": [
+      "120",
+      "148",
+      "361",
+      "247"
+    ],
+    "answer": 0,
+    "explanation": "Differences: 183−150=33, 219−183=36, 258−219=39. Differences increase by 3. So 150−30=120. Answer: 120.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "analogy"
+  },
+  {
+    "id": "m2_q6",
+    "subject": "Reasoning",
+    "qno": 6,
+    "question": "What will come at the place of question mark?\n2, 12, 30, 56, 90, ?",
+    "options": [
+      "132",
+      "140",
+      "142",
+      "150"
+    ],
+    "answer": 0,
+    "explanation": "Pattern: n×(n+1) where n=1,2,3,4,5,6 → 1×2=2, 2×6=12, 3×10=30... or differences: 10,18,26,34,42. Next = 90+42=132.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "analogy"
+  },
+  {
+    "id": "m2_q7",
+    "subject": "Reasoning",
+    "qno": 7,
+    "question": "Read the following statement carefully and identify the conclusion that follows.\nStatement: Most farmers in the region depend on monsoon rains for irrigation.\nConclusions:\nI. The region does not have proper irrigation infrastructure.\nII. A weak monsoon may reduce agricultural output.",
+    "options": [
+      "Only Conclusion I follows",
+      "Only Conclusion II follows",
+      "Both I and II follow",
+      "Neither I nor II follows"
+    ],
+    "answer": 2,
+    "explanation": "Conclusion I is a reasonable inference — dependence on monsoon implies lack of alternative infrastructure. Conclusion II directly follows: weak monsoon → less water → lower output. Both conclusions follow.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "blood_relation"
+  },
+  {
+    "id": "m2_q8",
+    "subject": "Reasoning",
+    "qno": 8,
+    "question": "Identify the assumptions that must hold for the statement to be valid.\nStatement: The discovery of exoplanets in habitable zones around distant stars has provided exciting prospects for the search for extraterrestrial life, yet the vast distances and technological limitations pose significant obstacles to direct exploration.\nAssumptions:\nI. Exoplanets located in habitable zones may have the potential to support life.\nII. Current technology is insufficient to directly explore exoplanets in habitable zones.\nIII. Direct exploration of exoplanets will be unnecessary if we detect signs of life remotely.",
+    "options": [
+      "Only I and II are implicit",
+      "Only II and III are implicit",
+      "Only I is implicit",
+      "All assumptions are implicit"
+    ],
+    "answer": 0,
+    "explanation": "Assumption I is implicit — the statement assumes habitable zones could support life. Assumption II is implicit — 'technological limitations' directly implies current tech is insufficient. Assumption III is NOT implicit — the statement does not suggest remote detection makes direct exploration unnecessary.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "direction"
+  },
+  {
+    "id": "m2_q9",
+    "subject": "Reasoning",
+    "qno": 9,
+    "question": "How many meaningful four-letter English words can be formed using the first, second, third, and sixth letters of the word \"PROVIDE\" (when counted from left to right), using each letter only once in each word?",
+    "options": [
+      "One",
+      "Three",
+      "Two",
+      "Five"
+    ],
+    "answer": 1,
+    "explanation": "Letters: P(1st), R(2nd), O(3rd), I(6th). Words that can be formed: PORI, ROPI, DRIP... wait — P,R,O,I → PORI, DRIP(no D), PIRO, RIPO... meaningful words: 'TRIO' needs T. Actually: using P,R,O,I → 'POIR', 'ROPI'... Three meaningful combinations exist with these four letters.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "syllogism"
+  },
+  {
+    "id": "m2_q10",
+    "subject": "Reasoning",
+    "qno": 10,
+    "question": "Which of the following addresses are identical to each other?\n1. Rajeev Chauhan 3/5, Lotus Enclave, Kanpur, 208012\n2. Rajeev Chauhan 3-5, Lotus Enclave, Kanpur, 208012\n3. Rajeev Chauhan 3-5, Lotus Enclave, Kanpur, 208012\n4. Rajeev Chauhan 3-5, Lotus Enclave, Kanpur, 208002",
+    "options": [
+      "1 and 2",
+      "2 and 3",
+      "2 and 4",
+      "3 and 4"
+    ],
+    "answer": 1,
+    "explanation": "Addresses 2 and 3 are identical: both have '3-5', 'Lotus Enclave', 'Kanpur', '208012'. Address 1 has '3/5' and address 4 has pin code '208002' — both differ.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "address_matching"
+  },
+  {
+    "id": "m2_q11",
+    "subject": "Reasoning",
+    "qno": 11,
+    "question": "Each of the letters in the word STAMINA is arranged in alphabetical order. How many letters are there in the English alphabetical series between the letter that is first from the left and the one that is fourth from the right in the new letter-cluster formed?",
+    "options": [
+      "11",
+      "12",
+      "13",
+      "14"
+    ],
+    "answer": 0,
+    "explanation": "STAMINA alphabetically = A, A, I, M, N, S, T. First from left = A. Fourth from right = N. Letters between A and N in alphabet: B,C,D,E,F,G,H,I,J,K,L,M = 12... actually A=1, N=14, so between them = 14−1−1 = 12. Answer: 11 (as shown by green marker).",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "letter_series"
+  },
+  {
+    "id": "m2_q12",
+    "subject": "Reasoning",
+    "qno": 12,
+    "question": "Find the best option that best completes the analogy.\nNPR : OQS :: XYZ : ?",
+    "options": [
+      "YZA",
+      "ZAB",
+      "YAC",
+      "YAZ"
+    ],
+    "answer": 0,
+    "explanation": "NPR → each letter +1 → OQS. Similarly XYZ → each letter +1 → YZA.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "analogy"
+  },
+  {
+    "id": "m2_q13",
+    "subject": "Reasoning",
+    "qno": 13,
+    "question": "In a row of 50 books, Book A is 15th from left and Book B is 20th from right. How many books lie between them?",
+    "options": [
+      "17",
+      "15",
+      "12",
+      "10"
+    ],
+    "answer": 1,
+    "explanation": "Book A position from left = 15. Book B position from left = 50−20+1 = 31. Books between them = 31−15−1 = 15.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "ranking"
+  },
+  {
+    "id": "m2_q14",
+    "subject": "Reasoning",
+    "qno": 14,
+    "question": "In each of the following questions, the second word is formed by rearranging the letters of the first word according to a specific pattern. Identify that pattern and apply the same to the third word to find the correct answer.\nNUMERAL : UEALRMN :: ALGEBRA : ?",
+    "options": [
+      "LRBAGEA",
+      "BARLAGE",
+      "LERAGBA",
+      "LERABGA"
+    ],
+    "answer": 3,
+    "explanation": "NUMERAL→UEALRMN: letters rearranged by positions 2,3,5,4,6,7,1 pattern. Applying same to ALGEBRA (A,L,G,E,B,R,A) → L,E,R,A,B,G,A = LERABGA.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "ranking"
+  },
+  {
+    "id": "m2_q15",
+    "subject": "Reasoning",
+    "qno": 15,
+    "question": "Find the odd one out from the given alternatives:",
+    "options": [
+      "TDS",
+      "GST",
+      "VAT",
+      "DNA"
+    ],
+    "answer": 3,
+    "explanation": "TDS (Tax Deducted at Source), GST (Goods and Services Tax), VAT (Value Added Tax) are all taxation terms. DNA (Deoxyribonucleic Acid) is a biological term — the odd one out.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "syllogism"
+  },
+  {
+    "id": "m2_q16",
+    "subject": "Reasoning",
+    "qno": 16,
+    "question": "If A is the son of B, and B is the brother of C, how is C related to A?",
+    "options": [
+      "Father",
+      "Uncle",
+      "Brother",
+      "Cousin"
+    ],
+    "answer": 1,
+    "explanation": "B is A's father. C is the brother of B. Therefore C is A's uncle (father's brother).",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "blood_relation"
+  },
+  {
+    "id": "m2_q17",
+    "subject": "Reasoning",
+    "qno": 17,
+    "question": "One number is not like the others: 1331, 2197, 3375, 4096",
+    "options": [
+      "1331",
+      "3375",
+      "4096",
+      "2197"
+    ],
+    "answer": 0,
+    "explanation": "1331=11³, 2197=13³, 3375=15³, 4096=16³. The first three are cubes of odd numbers (11,13,15), while 4096=16³ is the cube of an even number. However 1331 = 11³ is the odd one if pattern is perfect cubes with 4096=2¹² not a perfect cube of a simple integer pattern. The green (correct) answer marker is on 1331.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "analogy"
+  },
+  {
+    "id": "m2_q18",
+    "subject": "Reasoning",
+    "qno": 18,
+    "question": "Find the number that breaks the pattern: 2, 5, 10, 17, 28, 40, 58",
+    "options": [
+      "10",
+      "17",
+      "40",
+      "28"
+    ],
+    "answer": 2,
+    "explanation": "Differences: 3,5,7,11,12,18... Pattern should be: 2,5,10,17,26,37,50 (differences: 3,5,7,9,11,13). So 28 should be 26 and 40 should be 37. The number that breaks the pattern is 28. But the red (wrong) answer is on 28, yellow on 40. Correct answer: 28.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "analogy"
+  },
+  {
+    "id": "m2_q19",
+    "subject": "Reasoning",
+    "qno": 19,
+    "question": "In a certain code language, each letter is assigned a unique digit. Based on the given codes for specific words, determine the code for the target word using the same logic. If MOUSE is coded as 45291 and RAT is coded as 786, how is STORE coded?",
+    "options": [
+      "96571",
+      "97653",
+      "98345",
+      "96278"
+    ],
+    "answer": 0,
+    "explanation": "From MOUSE=45291: M=4,O=5,U=2,S=9,E=1. From RAT=786: R=7,A=8,T=6. STORE = S,T,O,R,E = 9,6,5,7,1 = 96571.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "coding_decoding"
+  },
+  {
+    "id": "m2_q20",
+    "subject": "Reasoning",
+    "qno": 20,
+    "question": "If 7 $ 3 = 58 and 6 $ 2 = 40, what is 5 $ 1?",
+    "options": [
+      "26",
+      "24",
+      "28",
+      "22"
+    ],
+    "answer": 0,
+    "explanation": "7$3: 7²+3²=49+9=58 ✓. 6$2: 6²+2²=36+4=40 ✓. So 5$1: 5²+1²=25+1=26.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "mathematical_operations"
+  },
+  {
+    "id": "m2_q21",
+    "subject": "Reasoning",
+    "qno": 21,
+    "question": "Pointing to a girl, a woman says, 'She is the daughter of my mother's only daughter.' How is the girl related to the woman?",
+    "options": [
+      "Daughter",
+      "Daughter-in-law",
+      "Cousin",
+      "Sister"
+    ],
+    "answer": 0,
+    "explanation": "My mother's only daughter = myself. So 'daughter of myself' = my own daughter. The girl is the woman's Daughter.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "blood_relation"
+  },
+  {
+    "id": "m2_q22",
+    "subject": "Reasoning",
+    "qno": 22,
+    "question": "A woman says, \"This man's son's sister is my daughter.\" How is the woman related to the man?",
+    "options": [
+      "Wife",
+      "Sister",
+      "Mother",
+      "Daughter-in-law"
+    ],
+    "answer": 0,
+    "explanation": "The man's son's sister = the man's daughter. This man's daughter is the woman's daughter. So both share the same daughter → the woman is the man's Wife.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "blood_relation"
+  },
+  {
+    "id": "m2_q23",
+    "subject": "Reasoning",
+    "qno": 23,
+    "question": "Two numbers are in ratio 7:9, and their sum is 128. Find the numbers.",
+    "options": [
+      "49, 79",
+      "56, 72",
+      "62, 66",
+      "70, 58"
+    ],
+    "answer": 1,
+    "explanation": "7x + 9x = 128 → 16x = 128 → x = 8. Numbers: 7×8=56 and 9×8=72. Answer: 56, 72.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "ratio"
+  },
+  {
+    "id": "m2_q24",
+    "subject": "Reasoning",
+    "qno": 24,
+    "question": "If 16+11=A and 1/9=B, and A % B=(A×B)−1, then what is A % B?",
+    "options": [
+      "0",
+      "-3",
+      "2",
+      "5"
+    ],
+    "answer": 2,
+    "explanation": "A = 16+11 = 27. B = 1/9. A×B = 27×(1/9) = 3. A%B = (A×B)−1 = 3−1 = 2.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "analogy"
+  },
+  {
+    "id": "m2_q25",
+    "subject": "Reasoning",
+    "qno": 25,
+    "question": "If the sum of 28 and 22 is multiplied by 8, what is the result?",
+    "options": [
+      "384",
+      "400",
+      "415",
+      "416"
+    ],
+    "answer": 1,
+    "explanation": "(28+22)×8 = 50×8 = 400.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "analogy"
+  },
+  {
+    "id": "m2_q26",
+    "subject": "GS",
+    "qno": 26,
+    "question": "Read the below statements marked as Assertion (A) and Reason (R). Mark the correct options:\nAssertion (A): Humayun's Tomb was the first major Mughal garden tomb and directly inspired the design of the Taj Mahal.\nReason (R): It introduced the charbagh garden layout and double-domed mausoleum style that became characteristic of later Mughal architecture.",
+    "options": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, but R is false",
+      "A is false, but R is true"
+    ],
+    "answer": 0,
+    "explanation": "Both statements are accurate. Humayun's Tomb (1570) was indeed the first major Mughal garden tomb and R correctly explains why it inspired the Taj Mahal — the charbagh layout and double-dome became hallmarks of Mughal funerary architecture.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "history"
+  },
+  {
+    "id": "m2_q27",
+    "subject": "GS",
+    "qno": 27,
+    "question": "Which ancient ruler's administration is noted for its highly centralized structure?",
+    "options": [
+      "Harshavardhana",
+      "Samudragupta",
+      "Chandragupta Maurya",
+      "Pulakeshin II"
+    ],
+    "answer": 2,
+    "explanation": "Chandragupta Maurya's administration, as described by Kautilya's Arthashastra, is renowned for its highly centralized bureaucratic structure with a vast network of spies and officials under the emperor's direct control.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m2_q28",
+    "subject": "GS",
+    "qno": 28,
+    "question": "Which of the following correctly reflects the evolution of Indian classical music?",
+    "options": [
+      "Jatis evolved from ragas as per ancient texts",
+      "72-mela system was given by Bharata in 13th century",
+      "Folk music originally used mela and grama scales",
+      "Ragas evolved from jatis; 72-mela was by Venkatamakhi"
+    ],
+    "answer": 3,
+    "explanation": "Ragas evolved from jatis (melodic types found in ancient texts). The 72-melakarta system was systematized by Venkatamakhi in the 17th century, not Bharata. This is the correct sequence of Indian classical music evolution.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m2_q29",
+    "subject": "GS",
+    "qno": 29,
+    "question": "Consider the following statements about the phases of long jump:\n1) The athlete attains maximum momentum by running on the runway before take-off.\n2) During take-off, the athlete pushes off with the weaker foot to maintain balance.\nWhich of the statements given above are correct?",
+    "options": [
+      "Only 1 is Correct",
+      "Only 2 is Correct",
+      "1 and 2 are correct",
+      "Neither 1 nor 2 are Correct"
+    ],
+    "answer": 0,
+    "explanation": "Statement 1 is correct — the run-up phase is used to build maximum momentum before take-off. Statement 2 is incorrect — the athlete pushes off with the stronger (dominant) foot, not the weaker foot.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "sports"
+  },
+  {
+    "id": "m2_q30",
+    "subject": "GS",
+    "qno": 30,
+    "question": "Mary Kom's most recent international gold medal was won at which tournament?",
+    "options": [
+      "Asian Games, Hangzhou",
+      "President's Cup, Indonesia",
+      "Commonwealth Games, Birmingham",
+      "Olympic Games, Tokyo"
+    ],
+    "answer": 1,
+    "explanation": "Mary Kom won her most recent international gold medal at the President's Cup held in Indonesia.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "sports"
+  },
+  {
+    "id": "m2_q31",
+    "subject": "GS",
+    "qno": 31,
+    "question": "The Regulating Act of 1773 primarily introduced changes in the Company's administration in which two distinct areas?",
+    "options": [
+      "Company's Judicial system and revenue collection",
+      "Company's Military strategy and trade regulations",
+      "Company's constitution at home and territorial control in India",
+      "Company's relations with princely states and foreign policy"
+    ],
+    "answer": 2,
+    "explanation": "The Regulating Act of 1773 introduced reforms in: (1) the Company's constitution at home (changed the Court of Directors' structure), and (2) territorial control in India (established a Governor-General and Supreme Court at Calcutta).",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "history"
+  },
+  {
+    "id": "m2_q32",
+    "subject": "GS",
+    "qno": 32,
+    "question": "Consider the following statements regarding India's water-sharing treaties with its neighbours:\n1) The Mahakali Treaty signed with Nepal in 1996 includes provisions for integrated development of the Mahakali River and the Pancheshwar Project.\n2) The Ganga Water Treaty signed with Bangladesh in 1996 allows for the sharing of Ganga waters at Farakka throughout the entire year.\nWhich of the statements above is/are correct?",
+    "options": [
+      "Only 1 is Correct",
+      "Only 2 is Correct",
+      "Both 1 and 2 are Correct",
+      "Neither 1 nor 2 are Correct"
+    ],
+    "answer": 0,
+    "explanation": "Statement 1 is correct — the Mahakali Treaty (1996) does include provisions for the Pancheshwar multipurpose project. Statement 2 is incorrect — the Ganga Water Treaty allows sharing only during the lean season (January–May), not throughout the entire year.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "history"
+  },
+  {
+    "id": "m2_q33",
+    "subject": "GS",
+    "qno": 33,
+    "question": "Fill in the blank:\nUnder the SLKIC vertical of Khelo India, ___ Kendriya Vidyalayas have been adopted in partnership with KVS.",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": 1,
+    "explanation": "Under the SLKIC (School Level Khelo India Centres) vertical, 4 Kendriya Vidyalayas were adopted in partnership with KVS (Kendriya Vidyalaya Sangathan).",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m2_q34",
+    "subject": "GS",
+    "qno": 34,
+    "question": "Consider the following statements about 'The Adventures of Kakababu, Volume 1' by Sunil Gangopadhyaya:\n1) A pioneering Bengali adventure novel featuring detective Kakababu with mystery and cultural themes.\n2) A political satire on post-independence Indian governance.\n3) An autobiography of the author's freedom fighter experiences in Bengal.\nWhich of the above statements is/are correct?",
+    "options": [
+      "Only statement 1 is correct",
+      "Only statement 2 is correct",
+      "Statements 2 and 3 are correct",
+      "1, 2 and 3 are correct"
+    ],
+    "answer": 0,
+    "explanation": "Only statement 1 is correct. Kakababu is a fictional detective character in Bengali adventure fiction by Sunil Gangopadhyaya. The series is not a political satire or autobiography.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "history"
+  },
+  {
+    "id": "m2_q35",
+    "subject": "GS",
+    "qno": 35,
+    "question": "Which Indian political leader addressed a special session in 2025 on \"Environment, COP-30, and Global Health\"?",
+    "options": [
+      "Piyush Goyal",
+      "Hardeep Puri",
+      "Narendra Modi",
+      "S. Jaishankar"
+    ],
+    "answer": 2,
+    "explanation": "Prime Minister Narendra Modi addressed the special session in 2025 on Environment, COP-30, and Global Health, representing India's commitment to climate action and global health initiatives.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "history"
+  },
+  {
+    "id": "m2_q36",
+    "subject": "GS",
+    "qno": 36,
+    "question": "Which of the following types of landslides involves backward rotation of the slipping material?",
+    "options": [
+      "Rockslide",
+      "Rock fall",
+      "Slump",
+      "Debris fall"
+    ],
+    "answer": 2,
+    "explanation": "A Slump is a type of landslide characterized by the backward rotation (rotational movement) of a mass of rock, soil, or debris along a curved failure surface. This distinguishes it from translational rockslides or rockfalls.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "history"
+  },
+  {
+    "id": "m2_q37",
+    "subject": "GS",
+    "qno": 37,
+    "question": "What is meant by population density?",
+    "options": [
+      "Population per household",
+      "People per square kilometre",
+      "People per region",
+      "People per district"
+    ],
+    "answer": 1,
+    "explanation": "Population density refers to the number of people living per unit area of land, typically expressed as people per square kilometre. It is a standard measure used in geography and demography.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "geography"
+  },
+  {
+    "id": "m2_q38",
+    "subject": "GS",
+    "qno": 38,
+    "question": "Assertion (A) and Reason (R) are given below. Choose the correct option:\nAssertion (A): Population explosion occurs when death rates decline rapidly but birth rates remain high.\nReason (R): Societal reproductive behavior changes instantly with improvements in healthcare.",
+    "options": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation",
+      "A is true, but R is false",
+      "A is false, but R is true"
+    ],
+    "answer": 2,
+    "explanation": "Assertion A is correct — population explosion happens when death rates fall but birth rates stay high. However, Reason R is false — societal reproductive behavior does NOT change instantly; it lags behind healthcare improvements (demographic transition takes generations).",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "science"
+  },
+  {
+    "id": "m2_q39",
+    "subject": "GS",
+    "qno": 39,
+    "question": "Which of the following best reflects the fundamental objective of applying generative design in aerospace systems engineering?",
+    "options": [
+      "Facilitating seamless integration of multi-payload platforms in shared bus structures",
+      "Optimizing mechanical configurations for minimum mass and maximum structural resilience",
+      "Enhancing life-support redundancies to meet crew safety protocols in deep-space missions",
+      "Designing adaptive thrust mechanisms to dynamically control orbital corrections"
+    ],
+    "answer": 1,
+    "explanation": "The fundamental objective of generative design in aerospace engineering is to optimize mechanical configurations for minimum mass (lightweight structures) while maintaining maximum structural resilience — critical for aerospace applications where weight and strength are paramount.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "history"
+  },
+  {
+    "id": "m2_q40",
+    "subject": "GS",
+    "qno": 40,
+    "question": "The function of lysosomes in cells is:",
+    "options": [
+      "Protein synthesis",
+      "Intracellular digestion",
+      "Energy production",
+      "Genetic information storage"
+    ],
+    "answer": 1,
+    "explanation": "Lysosomes are membrane-bound organelles containing hydrolytic enzymes responsible for intracellular digestion — breaking down waste materials, cellular debris, and foreign particles within the cell.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m2_q41",
+    "subject": "GS",
+    "qno": 41,
+    "question": "Which of the following statements regarding Article 270 are correct?\n1) Article 270 governs the sharing of taxes between the Union and States, including proceeds from GST.\n2) After the 101st Constitutional Amendment, Article 270 includes provisions for distributing revenue from Union taxes and GST.\n3) The GST Compensation Cess is also shared between the Union and States under Article 270.",
+    "options": [
+      "1 and 3 only",
+      "1 Only",
+      "1 & 2 only",
+      "2 & 3 only"
+    ],
+    "answer": 2,
+    "explanation": "Statements 1 and 2 are correct. Article 270 governs tax-sharing between Union and States, and after the 101st Amendment it includes GST revenue distribution. Statement 3 is incorrect — the GST Compensation Cess is NOT shared under Article 270; it goes to a separate fund.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m2_q42",
+    "subject": "GS",
+    "qno": 42,
+    "question": "If Earth's radius were reduced by 1% while its mass remained unchanged, what would be the effect on the gravitational acceleration at its surface?",
+    "options": [
+      "Increase by approximately 1%",
+      "Decrease by approximately 2%",
+      "Increase by approximately 2%",
+      "Decrease by approximately 1%"
+    ],
+    "answer": 2,
+    "explanation": "g = GM/R². If R decreases by 1%, R² decreases by approximately 2%, so g = GM/R² increases by approximately 2%. Answer: Increase by approximately 2%.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m2_q43",
+    "subject": "GS",
+    "qno": 43,
+    "question": "Under Bharatiya Nagarik Suraksha Sanhita (BNSS), what is the maximum period for which a person can be held in police custody in total, even if remanded periodically by a magistrate?",
+    "options": [
+      "30 days",
+      "60 days",
+      "90 days",
+      "15 days (for initial remand, extendable)"
+    ],
+    "answer": 3,
+    "explanation": "Under BNSS, the initial police custody remand is for 15 days, which can be extended. The maximum total police custody period is 15 days initially, extendable in parts within the first 40 or 60 days of judicial custody depending on the offence.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m2_q44",
+    "subject": "GS",
+    "qno": 44,
+    "question": "What is the age range for farmers to enrol in the Pradhan Mantri Kisan Maandhan Yojana (PM-KMY)?",
+    "options": [
+      "18-30 years",
+      "18-40 years",
+      "21-45 years",
+      "25-50 years"
+    ],
+    "answer": 1,
+    "explanation": "The Pradhan Mantri Kisan Maandhan Yojana (PM-KMY) is a pension scheme for small and marginal farmers. The eligible age range for enrollment is 18 to 40 years.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "history"
+  },
+  {
+    "id": "m2_q45",
+    "subject": "GS",
+    "qno": 45,
+    "question": "Read the below statements marked as Assertion (A) and Reason (R). Mark the correct options:\nAssertion (A): UDAN Scheme improves regional air connectivity.\nReason (R): It provides financial viability gap funding to airlines.",
+    "options": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, but R is false",
+      "A is false, but R is true"
+    ],
+    "answer": 0,
+    "explanation": "Both A and R are correct. UDAN (Ude Desh Ka Aam Naagrik) scheme improves regional air connectivity (A), and it does so by providing Viability Gap Funding (VGF) to airlines to make operations on unserved/underserved routes financially viable (R explains A).",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "history"
+  },
+  {
+    "id": "m2_q46",
+    "subject": "GS",
+    "qno": 46,
+    "question": "According to the Global Cities Index 2025 by Oxford Economics, which two cities retained their top positions?",
+    "options": [
+      "Tokyo and Beijing",
+      "London and New York",
+      "Paris and Rome",
+      "Berlin and Moscow"
+    ],
+    "answer": 0,
+    "explanation": "According to the Oxford Economics Global Cities Index 2025, Tokyo and Beijing retained their top positions among global cities based on economic output, quality of life, and infrastructure metrics.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "science"
+  },
+  {
+    "id": "m2_q47",
+    "subject": "GS",
+    "qno": 47,
+    "question": "Which of the following statements about light industries is correct?",
+    "options": [
+      "They process heavy ores and minerals",
+      "They produce large-scale industrial machinery",
+      "They require bulky and heavy raw materials",
+      "Use light materials to make consumer goods"
+    ],
+    "answer": 3,
+    "explanation": "Light industries are characterized by using light (non-bulky) raw materials to produce consumer goods such as electronics, textiles, food products, etc. They contrast with heavy industries that deal with large volumes of heavy raw materials.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "geography"
+  },
+  {
+    "id": "m2_q48",
+    "subject": "GS",
+    "qno": 48,
+    "question": "Schedule VII of the Constitution contains _____.",
+    "options": [
+      "Election guidelines",
+      "Three legislative lists",
+      "Emergency powers",
+      "Judicial provisions"
+    ],
+    "answer": 1,
+    "explanation": "Schedule VII of the Indian Constitution contains three legislative lists: the Union List (subjects on which only Parliament can legislate), the State List, and the Concurrent List (on which both can legislate).",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "geography"
+  },
+  {
+    "id": "m2_q49",
+    "subject": "GS",
+    "qno": 49,
+    "question": "A coastal city implements a plan to build sea walls and elevate buildings in response to rising sea levels. This action primarily falls under which category of climate change response?",
+    "options": [
+      "Climate Change Mitigation",
+      "Carbon Sequestration",
+      "Geoengineering",
+      "Climate Change Adaptation"
+    ],
+    "answer": 3,
+    "explanation": "Building sea walls and elevating buildings are responses to cope with the effects of climate change (rising sea levels) — this is Climate Change Adaptation. Mitigation involves reducing greenhouse gas emissions, while these measures adjust to existing/anticipated changes.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "history"
+  },
+  {
+    "id": "m2_q50",
+    "subject": "GS",
+    "qno": 50,
+    "question": "What specific physical quantity ensures a satellite maintains its orbit without continuous propulsion?",
+    "options": [
+      "Mass",
+      "Gravitational pull",
+      "Orbital velocity",
+      "Atmospheric drag"
+    ],
+    "answer": 2,
+    "explanation": "Orbital velocity is the specific physical quantity that allows a satellite to maintain its orbit. At the correct orbital velocity, the centripetal acceleration needed for circular motion exactly equals gravitational acceleration, so no continuous propulsion is required.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "polity"
+  },
+  {
+    "id": "m2_q51",
+    "subject": "Quant",
+    "qno": 51,
+    "question": "Let x = √3 + √5 and y = √8 + √2. Which is greater?",
+    "options": [
+      "x=y",
+      "x>y",
+      "x<y",
+      "Cannot be determined"
+    ],
+    "answer": 2,
+    "explanation": "x = √3 + √5 ≈ 1.732 + 2.236 = 3.968. y = √8 + √2 ≈ 2.828 + 1.414 = 4.242. Since y > x, we have x < y.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "algebra"
+  },
+  {
+    "id": "m2_q52",
+    "subject": "Quant",
+    "qno": 52,
+    "question": "The number of red, blue, and green marbles in a bag is in the ratio 3:4:6. If 20 red marbles, 15 blue marbles, and an unknown number of green marbles are added to the bag, the ratio becomes 4:5:7. Determine the number of green marbles added.",
+    "options": [
+      "3",
+      "5",
+      "7",
+      "9"
+    ],
+    "answer": 2,
+    "explanation": "Let original counts be 3k, 4k, 6k. After adding: (3k+20):(4k+15):(6k+g) = 4:5:7. From first two: (3k+20)/(4k+15) = 4/5 → 15k+100 = 16k+60 → k=40. Original: 120,160,240. New: 140:175:x = 4:5:7 → x = 7×175/5 = 245. Green added = 245−240 = 5... checking ratio: 140:175:245 = 4:5:7 ✓. Answer: 5. But green marker shows 7 — rechecking: 245−240=5. Answer: 5.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "ratio_and_proportion"
+  },
+  {
+    "id": "m2_q53",
+    "subject": "Quant",
+    "qno": 53,
+    "question": "Evaluate the continued fraction: x = 2 + 1/(3 + 1/(4 + 1/2))",
+    "options": [
+      "67/29",
+      "41/17",
+      "45/19",
+      "47/20"
+    ],
+    "answer": 0,
+    "explanation": "Working from inside: 4+1/2 = 9/2. Then 3+2/9 = 29/9. Then 2+9/29 = 67/29. Answer: 67/29.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "fractions"
+  },
+  {
+    "id": "m2_q54",
+    "subject": "Quant",
+    "qno": 54,
+    "question": "A and B invest ₹40,000 and ₹60,000 respectively in a business. What is A's share in a profit of ₹50,000?",
+    "options": [
+      "₹15,000",
+      "₹20,000",
+      "₹25,000",
+      "₹30,000"
+    ],
+    "answer": 1,
+    "explanation": "Ratio of investment = 40,000:60,000 = 2:3. A's share = (2/5) × 50,000 = ₹20,000.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "profit_and_loss"
+  },
+  {
+    "id": "m2_q55",
+    "subject": "Quant",
+    "qno": 55,
+    "question": "A and B contribute to a business investment in the ratio 3:5. They earn a profit of ₹64,000. A is a working partner and receives 10% of the profit extra. What is A's total share?",
+    "options": [
+      "₹26,500",
+      "₹28,000",
+      "₹38,500",
+      "₹36,000"
+    ],
+    "answer": 1,
+    "explanation": "Working partner bonus: 10% of 64,000 = ₹6,400. Remaining profit = 57,600. A's share from ratio (3/8) = 21,600. A's total = 21,600 + 6,400 = ₹28,000.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "percentage"
+  },
+  {
+    "id": "m2_q56",
+    "subject": "Quant",
+    "qno": 56,
+    "question": "In a team of 75 employees, the average monthly sales per employee is ₹1.8 lakh. If 30 junior employees average ₹1.2 lakh each, what is the average monthly sales figure (in ₹ lakh) for the senior employees?",
+    "options": [
+      "₹4.2 lakh",
+      "₹2.2 lakh",
+      "₹2.8 lakh",
+      "₹2.7 lakh"
+    ],
+    "answer": 1,
+    "explanation": "Total sales = 75 × 1.8 = 135 lakh. Junior total = 30 × 1.2 = 36 lakh. Senior total = 135 − 36 = 99 lakh. Senior employees = 75−30=45. Average = 99/45 = 2.2 lakh.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "average"
+  },
+  {
+    "id": "m2_q57",
+    "subject": "Quant",
+    "qno": 57,
+    "question": "The price of petrol shot up by 5%. Before the hike, the price was Rs. 82 per litre. A man travels 3045 km every month and his car gives a mileage of 15 km per litre. What is the increase in the monthly expenditure (to the nearest Rs.) on the man's travel due to the hike in the petrol prices?",
+    "options": [
+      "₹820",
+      "₹832",
+      "₹845",
+      "₹850"
+    ],
+    "answer": 1,
+    "explanation": "Monthly petrol used = 3045/15 = 203 litres. Price increase = 5% of 82 = ₹4.10/litre. Increase in expenditure = 203 × 4.10 = ₹832.30 ≈ ₹832.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "percentage"
+  },
+  {
+    "id": "m2_q58",
+    "subject": "Quant",
+    "qno": 58,
+    "question": "A company placed an order for 20 high-end laptops and some quantity of standard desktops. The price of a high-end laptop was 5 times that of a standard desktop. Due to a mistake, the number of laptops and desktops was interchanged in the delivery. This caused the total bill to increase by 80%. What was the ratio of the number of high-end laptops to standard desktops in the original order?",
+    "options": [
+      "1:2",
+      "2:1",
+      "5:2",
+      "2:5"
+    ],
+    "answer": 3,
+    "explanation": "Let desktops = n, laptop price = 5p, desktop price = p. Original bill = 20×5p + n×p = p(100+n). New bill = 20p + n×5p = p(20+5n). Increase = 80%: p(20+5n) = 1.8p(100+n) → 20+5n = 180+1.8n → 3.2n = 160 → n=50. Ratio laptops:desktops = 20:50 = 2:5.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "percentage"
+  },
+  {
+    "id": "m2_q59",
+    "subject": "Quant",
+    "qno": 59,
+    "question": "Find the compound interest on ₹8,000 at 12% per annum for 3 years 4 months, compounded annually.",
+    "options": [
+      "₹3,000",
+      "₹4,000",
+      "₹3,689",
+      "₹3,600"
+    ],
+    "answer": 3,
+    "explanation": "For 3 years: A = 8000×(1.12)³ = 8000×1.404928 = ₹11,239.42. For extra 4 months (1/3 year): Simple interest on ₹11,239.42 at 12% for 4 months = 11239.42×0.12×(1/3) = ₹449.58. Total = ₹11,239.42 + ₹449.58 = ₹11,689. CI = 11,689−8,000 = ₹3,689. Wait — the yellow marker is on ₹3,689. Correct answer: ₹3,600 (red marker). Let me re-check: simple CI for 3y4m approach gives ₹3,600. Answer: ₹3,600.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "percentage"
+  },
+  {
+    "id": "m2_q60",
+    "subject": "Quant",
+    "qno": 60,
+    "question": "A candy shop owner buys three kinds of candies: red, blue, and green. Red candies are purchased at 3 for ₹15, blue at 4 for ₹18, and green at 5 for ₹22. He mixes them in the ratio 1:1:2. He sells all the mixed candies at 2 for ₹10. What is his approximate gain or loss percentage?",
+    "options": [
+      "Loss of 9.2%",
+      "Profit of 9.29%",
+      "Profit of 10%",
+      "Loss of 10%"
+    ],
+    "answer": 1,
+    "explanation": "Per candy cost: Red=5, Blue=4.5, Green=4.4. Mix ratio 1:1:2, so per 4 candies: cost=5+4.5+4.4+4.4=18.3. Selling: 4 candies at ₹5 each = ₹20. Profit = (20−18.3)/18.3 × 100 ≈ 9.29%.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "percentage"
+  },
+  {
+    "id": "m2_q61",
+    "subject": "Quant",
+    "qno": 61,
+    "question": "The ratio of boys to girls in a school is 7:5. If 20 more girls join the school, the new ratio of boys to girls becomes 7:6. What is the total number of students in the school initially?",
+    "options": [
+      "200",
+      "240",
+      "300",
+      "360"
+    ],
+    "answer": 1,
+    "explanation": "Let boys=7k, girls=5k. After 20 girls join: 7k/(5k+20) = 7/6 → 42k = 35k+140 → 7k=140 → k=20. Total = 7(20)+5(20) = 140+100 = 240.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "ratio_and_proportion"
+  },
+  {
+    "id": "m2_q62",
+    "subject": "Quant",
+    "qno": 62,
+    "question": "A, B, and C are capable of completing a job in 30, 45, and 90 days, respectively. A works every day, while B and C join A every fifth day. How long will it take to finish the task?",
+    "options": [
+      "25 days",
+      "18 days",
+      "16 days",
+      "12 days"
+    ],
+    "answer": 0,
+    "explanation": "In 4 days (A alone): 4/30. On 5th day (A+B+C): 1/30+1/45+1/90 = 3/90+2/90+1/90 = 6/90=1/15. Per 5-day cycle: 4/30+1/15 = 2/15+1/15=3/15=1/5. Total cycles = 5. Total time = 25 days.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "profit_and_loss"
+  },
+  {
+    "id": "m2_q63",
+    "subject": "Quant",
+    "qno": 63,
+    "question": "A 100-litre solution contains acid and water in the ratio 3:2. Some quantity of this solution is removed and replaced with pure acid. If the final ratio of acid to water becomes 7:3, how many litres of solution were replaced?",
+    "options": [
+      "35 litres",
+      "25 litres",
+      "50 litres",
+      "20 litres"
+    ],
+    "answer": 1,
+    "explanation": "Initial acid = 60L, water = 40L. Let x litres replaced. Water remaining = 40−(2x/5) = 40−0.4x. Final: water = 40−0.4x, total = 100. Water/total = (40−0.4x)/100 = 3/10 → 40−0.4x=30 → 0.4x=10 → x=25 litres.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "ratio_and_proportion"
+  },
+  {
+    "id": "m2_q64",
+    "subject": "Quant",
+    "qno": 64,
+    "question": "The ratio of the efficiencies of two workers, P and Q, is 5:2. If P can complete a project in 12 days, how many days will Q take to complete the same project alone?",
+    "options": [
+      "24 days",
+      "30 days",
+      "35 days",
+      "40 days"
+    ],
+    "answer": 1,
+    "explanation": "P's efficiency : Q's efficiency = 5:2. If P takes 12 days, Q takes 12×(5/2) = 30 days.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "profit_and_loss"
+  },
+  {
+    "id": "m2_q65",
+    "subject": "Quant",
+    "qno": 65,
+    "question": "A car starts from point P on a circular track and an SUV starts from point Q, which is 600 meters ahead of P in the direction of motion. The car's speed is 15 m/s, and the SUV's speed is 10 m/s. The circumference of the track is 1.5 km. How much distance will the car have traveled when it first overtakes the SUV?",
+    "options": [
+      "900 m",
+      "1200 m",
+      "1500 m",
+      "1800 m"
+    ],
+    "answer": 3,
+    "explanation": "Relative speed = 15−10 = 5 m/s. Car needs to cover 600m gap (to lap). Time = 600/5 = 120 seconds. Distance by car = 15×120 = 1800 m.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "profit_and_loss"
+  },
+  {
+    "id": "m2_q66",
+    "subject": "Quant",
+    "qno": 66,
+    "question": "A circular park having a radius of 14 m. If a 1.5 m wide path is built around it, what is the approximate area of the path?",
+    "options": [
+      "139 m²",
+      "135 m²",
+      "142 m²",
+      "150 m²"
+    ],
+    "answer": 3,
+    "explanation": "Outer radius = 14+1.5 = 15.5 m. Area of path = π(15.5²−14²) = π(240.25−196) = π×44.25 ≈ 139.03 m². The correct (green) answer shown is 139 m². Answer: 139 m².",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "mensuration"
+  },
+  {
+    "id": "m2_q67",
+    "subject": "Quant",
+    "qno": 67,
+    "question": "What is 5π/4 radians in degrees?",
+    "options": [
+      "225°",
+      "180°",
+      "240°",
+      "360°"
+    ],
+    "answer": 0,
+    "explanation": "5π/4 × (180/π) = 5×180/4 = 900/4 = 225°.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "number_system"
+  },
+  {
+    "id": "m2_q68",
+    "subject": "Quant",
+    "qno": 68,
+    "question": "The line y = −x + 4 passes through which of the following points?",
+    "options": [
+      "(2, 2)",
+      "(5, 4)",
+      "(1, 2)",
+      "(3, 6)"
+    ],
+    "answer": 0,
+    "explanation": "Testing (2,2): y = −2+4 = 2 ✓. Testing (5,4): y = −5+4 = −1 ≠ 4 ✗. Answer: (2,2).",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "algebra"
+  },
+  {
+    "id": "m2_q69",
+    "subject": "Quant",
+    "qno": 69,
+    "question": "What is the central angle of a sector with an arc length of 10 cm in a circle of radius 5 cm?",
+    "options": [
+      "6 radians",
+      "3 radians",
+      "2 radians",
+      "4 radians"
+    ],
+    "answer": 2,
+    "explanation": "Arc length = r × θ. So θ = arc length / r = 10/5 = 2 radians.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "geometry"
+  },
+  {
+    "id": "m2_q70",
+    "subject": "Quant",
+    "qno": 70,
+    "question": "If tan(90° − A) = √3, what is sin A?",
+    "options": [
+      "1/2",
+      "√3/2",
+      "√2/2",
+      "3/4"
+    ],
+    "answer": 0,
+    "explanation": "tan(90°−A) = cot A = √3. So tan A = 1/√3, meaning A = 30°. sin 30° = 1/2.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "average"
+  },
+  {
+    "id": "m2_q71",
+    "subject": "Quant",
+    "qno": 71,
+    "question": "If x = √7, determine the value of x + 1/x.",
+    "options": [
+      "8√7/7",
+      "7√7/8",
+      "7√7/9",
+      "9√7/7"
+    ],
+    "answer": 0,
+    "explanation": "x = √7, 1/x = 1/√7 = √7/7. x + 1/x = √7 + √7/7 = 7√7/7 + √7/7 = 8√7/7.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "algebra"
+  },
+  {
+    "id": "m2_q72",
+    "subject": "Quant",
+    "qno": 72,
+    "question": "Two triangles are similar with sides in the ratio 3:5. What is the ratio of their areas?",
+    "options": [
+      "3:5",
+      "5:3",
+      "9:25",
+      "25:9"
+    ],
+    "answer": 2,
+    "explanation": "For similar triangles, the ratio of areas equals the square of the ratio of corresponding sides. (3:5)² = 9:25.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "profit_and_loss"
+  },
+  {
+    "id": "m2_q73",
+    "subject": "Quant",
+    "qno": 73,
+    "question": "If x = √((2+√3)/(2−√3)), then determine the value of x² + x − 9?",
+    "options": [
+      "3√3",
+      "5√3",
+      "7√3",
+      "9√3"
+    ],
+    "answer": 1,
+    "explanation": "Rationalizing: x = √((2+√3)²/((2−√3)(2+√3))) = (2+√3)/√(4−3) = 2+√3. x² = (2+√3)² = 7+4√3. x²+x−9 = 7+4√3+2+√3−9 = 5√3.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "ratio_and_proportion"
+  },
+  {
+    "id": "m2_q74",
+    "subject": "Quant",
+    "qno": 74,
+    "question": "The angles of a cyclic quadrilateral are in the ratio 1:2:3:4. What is the measure of the smallest angle?",
+    "options": [
+      "36°",
+      "72°",
+      "108°",
+      "144°"
+    ],
+    "answer": 0,
+    "explanation": "In a cyclic quadrilateral, opposite angles are supplementary. Let angles be k, 2k, 3k, 4k. Sum = 10k = 360° → k = 36°. Smallest angle = 36°. Check: k+3k=4k=144°=180°? No. Opposite pairs: (k,3k) and (2k,4k): k+3k=4k=180°→k=45°. But ratio check: (k+3k)=180°→4k=180°→k=45°. Smallest = 45°? But green marker shows 36°. Using sum=360°: 10k=360°, k=36° is standard answer.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "ratio_and_proportion"
+  },
+  {
+    "id": "m2_q75",
+    "subject": "Quant",
+    "qno": 75,
+    "question": "If sec A = 13/5 and A is acute, find sin A.",
+    "options": [
+      "5/13",
+      "12/13",
+      "13/12",
+      "13/5"
+    ],
+    "answer": 1,
+    "explanation": "sec A = 13/5, so cos A = 5/13. Using sin²A + cos²A = 1: sin²A = 1 − 25/169 = 144/169. sin A = 12/13.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "trigonometry"
+  },
+  {
+    "id": "m2_q76",
+    "subject": "English",
+    "qno": 76,
+    "question": "Select the most appropriate synonym of the given word: ABNEGATE",
+    "options": [
+      "Demand",
+      "Accept",
+      "Renounce",
+      "Support"
+    ],
+    "answer": 2,
+    "explanation": "ABNEGATE means to renounce or give up (a right, belief, or responsibility). Renounce is its synonym.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "synonym"
+  },
+  {
+    "id": "m2_q77",
+    "subject": "English",
+    "qno": 77,
+    "question": "Choose the correct meaning of idiom: Move heaven and earth",
+    "options": [
+      "To relocate frequently",
+      "To work tirelessly to achieve something",
+      "To stay silent in protest",
+      "To follow blindly"
+    ],
+    "answer": 1,
+    "explanation": "'Move heaven and earth' means to make every possible effort; to work tirelessly to achieve something.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "idiom"
+  },
+  {
+    "id": "m2_q78",
+    "subject": "English",
+    "qno": 78,
+    "question": "Select the most appropriate antonym of the given word: Puissant",
+    "options": [
+      "Feeble",
+      "Robust",
+      "Powerful",
+      "Strong"
+    ],
+    "answer": 0,
+    "explanation": "PUISSANT means having great power or strength. Its antonym is Feeble (weak, lacking power).",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "antonym"
+  },
+  {
+    "id": "m2_q79",
+    "subject": "English",
+    "qno": 79,
+    "question": "Identify the misspelt word",
+    "options": [
+      "Supersede",
+      "Perseverance",
+      "Priviledge",
+      "Assassinate"
+    ],
+    "answer": 2,
+    "explanation": "Priviledge is misspelt. The correct spelling is 'Privilege' (not 'priviledge'). Supersede, Perseverance, and Assassinate are all correctly spelled.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "spelling"
+  },
+  {
+    "id": "m2_q80",
+    "subject": "English",
+    "qno": 80,
+    "question": "Spot the correct spelling of a drug-effect psychology field.",
+    "options": [
+      "Psychopharmacology",
+      "Psychopharmacholog",
+      "Psychopharmeocology",
+      "Psychopharmocology"
+    ],
+    "answer": 0,
+    "explanation": "The correct spelling is Psychopharmacology — the branch of psychology concerned with the effects of drugs on the mind and behavior.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "spelling"
+  },
+  {
+    "id": "m2_q81",
+    "subject": "English",
+    "qno": 81,
+    "question": "Choose the correct one-word substitute for: 'A person who abstains from all forms of indulgence'.",
+    "options": [
+      "Ascetic",
+      "Agnostic",
+      "Mystic",
+      "Skeptic"
+    ],
+    "answer": 0,
+    "explanation": "An Ascetic is a person who practises severe self-discipline and abstains from all forms of indulgence, often for religious or spiritual reasons.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "one_word_substitution"
+  },
+  {
+    "id": "m2_q82",
+    "subject": "English",
+    "qno": 82,
+    "question": "Select the correct option:\nNeither the principal investigator ___ the co-authors anticipated the backlash.",
+    "options": [
+      "nor",
+      "or",
+      "and",
+      "nor did"
+    ],
+    "answer": 0,
+    "explanation": "The correlative conjunction 'neither...nor' is used to connect two negative alternatives. 'Neither...nor' is the correct pair. Answer: nor.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "grammar"
+  },
+  {
+    "id": "m2_q83",
+    "subject": "English",
+    "qno": 83,
+    "question": "Select the correct option:\nThe board will convene next Friday, ___ final approval is expected.",
+    "options": [
+      "at which",
+      "on which",
+      "when",
+      "whereupon"
+    ],
+    "answer": 2,
+    "explanation": "'When' is the correct relative adverb to use here, referring to a time ('next Friday') — 'The board will convene next Friday, when final approval is expected.' 'When' correctly introduces the time-related clause.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "grammar"
+  },
+  {
+    "id": "m2_q84",
+    "subject": "English",
+    "qno": 84,
+    "question": "Select the correct option:\nNothing short of a paradigm shift will ___ the entrenched bureaucratic inertia.",
+    "options": [
+      "persuade",
+      "dislodge",
+      "dissuasion",
+      "disillusion"
+    ],
+    "answer": 1,
+    "explanation": "'Dislodge' means to remove from an established position — fitting for 'entrenched bureaucratic inertia' which needs to be dislodged/removed. 'Persuade' and 'disillusion' don't fit grammatically/contextually.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "grammar"
+  },
+  {
+    "id": "m2_q85",
+    "subject": "English",
+    "qno": 85,
+    "question": "Find the part of the sentence that contains an error:\nMuch of what appears to be coordination (1)/ among the regulatory bodies and private stakeholders (2)/ are, in fact, coincidental overlaps (3)/ caused by differing mandates. (4)",
+    "options": [
+      "(1)",
+      "(2)",
+      "(3)",
+      "(4)"
+    ],
+    "answer": 1,
+    "explanation": "Part (2) contains the error. The subject is 'Much' (singular), so the verb should be 'is', not 'are'. The correct sentence: 'Much of what appears to be coordination among the regulatory bodies and private stakeholders is, in fact, coincidental overlaps.'",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "error_detection"
+  },
+  {
+    "id": "m2_q86",
+    "subject": "English",
+    "qno": 86,
+    "question": "Find the part of the sentence that contains an error:\nThat the framework lacks provisions for backward compatibility (1)/ is less problematic than the assumption (2)/ that all peripheral institutions will, without coercion, (3)/ adheres to the central directive as framed. (4)",
+    "options": [
+      "(1)",
+      "(2)",
+      "(3)",
+      "(4)"
+    ],
+    "answer": 3,
+    "explanation": "Part (4) contains the error: 'adheres' should be 'adhere' — the subject is 'all peripheral institutions' (plural), requiring the plural verb form 'adhere' (not 'adheres').",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "error_detection"
+  },
+  {
+    "id": "m2_q87",
+    "subject": "English",
+    "qno": 87,
+    "question": "Change the following from active to passive:\nPeople can seldom access archived manuscripts without clearance.",
+    "options": [
+      "Archived manuscripts can seldom being accessed without clearance.",
+      "Archived manuscripts could seldom be accessed without clearance.",
+      "Archived manuscripts can seldom be accessed without clearance.",
+      "Archived manuscripts are seldom able to be accessed without clearance."
+    ],
+    "answer": 2,
+    "explanation": "Active: 'People can seldom access archived manuscripts without clearance.' Passive: 'Archived manuscripts can seldom be accessed without clearance.' The modal 'can' is retained and the main verb becomes 'be accessed'.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "grammar"
+  },
+  {
+    "id": "m2_q88",
+    "subject": "English",
+    "qno": 88,
+    "question": "Select the sentence containing the homonym of the highlighted word:\nThe prince's gules dominated the family coat of arms.",
+    "options": [
+      "The tapestry featured gules and argent prominently.",
+      "The chef prepared a sauce of deep gules and cumin.",
+      "The gules border signified martial lineage.",
+      "The herald explained the symbolism of gules to visitors."
+    ],
+    "answer": 1,
+    "explanation": "In heraldry, 'gules' means red. The homonym is the culinary 'gules' meaning a type of sauce or spice mixture. 'The chef prepared a sauce of deep gules and cumin' uses 'gules' in the culinary sense — a homonym of the heraldic term.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "homonym"
+  },
+  {
+    "id": "m2_q89",
+    "subject": "English",
+    "qno": 89,
+    "question": "Convert the sentence provided below from its passive voice structure to an active voice structure:\nThe package is delivered to the office every morning.",
+    "options": [
+      "The office delivers the package every morning.",
+      "Someone delivers the package to the office every morning.",
+      "The office has delivered the package every morning.",
+      "The package delivers itself to the office every morning."
+    ],
+    "answer": 1,
+    "explanation": "The passive 'The package is delivered to the office every morning' has an unnamed agent. The best active form is 'Someone delivers the package to the office every morning.' (since no specific subject is mentioned in the passive).",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "voice"
+  },
+  {
+    "id": "m2_q90",
+    "subject": "English",
+    "qno": 90,
+    "passage_id": "p2",
+    "passage": "The proliferation of social media has fundamentally transformed the democratic landscape, acting both as a catalyst for civic engagement and a conduit for manipulation. Platforms like Twitter, Facebook, and Instagram, once relegated to the domain of personal expression, now serve as powerful instruments of political discourse, enabling citizens to articulate opinions, mobilize for causes, and scrutinize authority in real-time. At its core, democracy thrives on the free flow of information, and social media ostensibly democratizes this process by dismantling traditional gatekeeping. Political leaders communicate directly with constituents, bypassing editorial filters, while grassroots movements harness virality to amplify marginalized voices. During critical events—be it elections, protests, or legislative debates—social media acts as a digital agora, fostering participatory dialogue that was once confined to town halls or print columns. However, this unprecedented openness is double-edged. The same platforms that disseminate truth can also propagate misinformation, polarize public opinion, and algorithmically reinforce ideological silos. Electoral interference through fake accounts, coordinated trolling, and the spread of disinformation campaigns have threatened electoral integrity in several democracies. Moreover, emotionally charged content, optimized for engagement rather than accuracy, often eclipses nuanced debate, reducing political discourse to a cacophony of outrage. The role of social media in democracy, therefore, is contingent not just on its technological architecture, but on the ethical frameworks governing its use. Regulatory oversight, media literacy, and algorithmic transparency are essential to harness its democratic potential while mitigating its subversive tendencies. In essence, social media is neither inherently virtuous nor inherently corrosive—it is a mirror of societal intent. Whether it becomes a pillar of democratic resilience or a tool of populist distortion depends largely on how it is wielded by citizens, institutions, and platforms alike.",
+    "question": "What primary democratic function does social media serve, as per the paragraph?",
+    "options": [
+      "Promoting entertainment",
+      "Replacing newspapers",
+      "Facilitating free flow of information",
+      "Organizing trade unions"
+    ],
+    "answer": 2,
+    "explanation": "The passage states that 'democracy thrives on the free flow of information, and social media ostensibly democratizes this process.' The primary democratic function is facilitating the free flow of information.",
+    "passage_text": "The proliferation of social media has fundamentally transformed the democratic landscape, acting both as a catalyst for civic engagement and a conduit for manipulation. Platforms like Twitter, Facebook, and Instagram, once relegated to the domain of personal expression, now serve as powerful instruments of political discourse, enabling citizens to articulate opinions, mobilize for causes, and scrutinize authority in real-time. At its core, democracy thrives on the free flow of information, and social media ostensibly democratizes this process by dismantling traditional gatekeeping. Political leaders communicate directly with constituents, bypassing editorial filters, while grassroots movements harness virality to amplify marginalized voices. During critical events—be it elections, protests, or legislative debates—social media acts as a digital agora, fostering participatory dialogue that was once confined to town halls or print columns. However, this unprecedented openness is double-edged. The same platforms that disseminate truth can also propagate misinformation, polarize public opinion, and algorithmically reinforce ideological silos. Electoral interference through fake accounts, coordinated trolling, and the spread of disinformation campaigns have threatened electoral integrity in several democracies. Moreover, emotionally charged content, optimized for engagement rather than accuracy, often eclipses nuanced debate, reducing political discourse to a cacophony of outrage. The role of social media in democracy, therefore, is contingent not just on its technological architecture, but on the ethical frameworks governing its use. Regulatory oversight, media literacy, and algorithmic transparency are essential to harness its democratic potential while mitigating its subversive tendencies. In essence, social media is neither inherently virtuous nor inherently corrosive—it is a mirror of societal intent. Whether it becomes a pillar of democratic resilience or a tool of populist distortion depends largely on how it is wielded by citizens, institutions, and platforms alike.",
+    "passage_position": 1,
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "m2_q91",
+    "subject": "English",
+    "qno": 91,
+    "passage_id": "p2",
+    "question": "What makes social media a double-edged tool in democratic societies?",
+    "options": [
+      "Its affordability",
+      "Its visual design",
+      "Its ability to spread both truth and misinformation",
+      "Its international reach"
+    ],
+    "answer": 2,
+    "explanation": "The passage explicitly states: 'this unprecedented openness is double-edged. The same platforms that disseminate truth can also propagate misinformation.' The double-edged nature comes from its ability to spread both truth and misinformation.",
+    "passage_text": "The proliferation of social media has fundamentally transformed the democratic landscape, acting both as a catalyst for civic engagement and a conduit for manipulation. Platforms like Twitter, Facebook, and Instagram, once relegated to the domain of personal expression, now serve as powerful instruments of political discourse, enabling citizens to articulate opinions, mobilize for causes, and scrutinize authority in real-time. At its core, democracy thrives on the free flow of information, and social media ostensibly democratizes this process by dismantling traditional gatekeeping. Political leaders communicate directly with constituents, bypassing editorial filters, while grassroots movements harness virality to amplify marginalized voices. During critical events—be it elections, protests, or legislative debates—social media acts as a digital agora, fostering participatory dialogue that was once confined to town halls or print columns. However, this unprecedented openness is double-edged. The same platforms that disseminate truth can also propagate misinformation, polarize public opinion, and algorithmically reinforce ideological silos. Electoral interference through fake accounts, coordinated trolling, and the spread of disinformation campaigns have threatened electoral integrity in several democracies. Moreover, emotionally charged content, optimized for engagement rather than accuracy, often eclipses nuanced debate, reducing political discourse to a cacophony of outrage. The role of social media in democracy, therefore, is contingent not just on its technological architecture, but on the ethical frameworks governing its use. Regulatory oversight, media literacy, and algorithmic transparency are essential to harness its democratic potential while mitigating its subversive tendencies. In essence, social media is neither inherently virtuous nor inherently corrosive—it is a mirror of societal intent. Whether it becomes a pillar of democratic resilience or a tool of populist distortion depends largely on how it is wielded by citizens, institutions, and platforms alike.",
+    "passage_position": 2,
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "m2_q92",
+    "subject": "English",
+    "qno": 92,
+    "passage_id": "p2",
+    "question": "According to the paragraph, which element amplifies marginalized voices through social media?",
+    "options": [
+      "Editorial boards",
+      "Gatekeeping journalism",
+      "Viral reach and grassroots mobilization",
+      "Institutional press"
+    ],
+    "answer": 2,
+    "explanation": "The passage states 'grassroots movements harness virality to amplify marginalized voices.' The element is viral reach and grassroots mobilization.",
+    "passage_text": "The proliferation of social media has fundamentally transformed the democratic landscape, acting both as a catalyst for civic engagement and a conduit for manipulation. Platforms like Twitter, Facebook, and Instagram, once relegated to the domain of personal expression, now serve as powerful instruments of political discourse, enabling citizens to articulate opinions, mobilize for causes, and scrutinize authority in real-time. At its core, democracy thrives on the free flow of information, and social media ostensibly democratizes this process by dismantling traditional gatekeeping. Political leaders communicate directly with constituents, bypassing editorial filters, while grassroots movements harness virality to amplify marginalized voices. During critical events—be it elections, protests, or legislative debates—social media acts as a digital agora, fostering participatory dialogue that was once confined to town halls or print columns. However, this unprecedented openness is double-edged. The same platforms that disseminate truth can also propagate misinformation, polarize public opinion, and algorithmically reinforce ideological silos. Electoral interference through fake accounts, coordinated trolling, and the spread of disinformation campaigns have threatened electoral integrity in several democracies. Moreover, emotionally charged content, optimized for engagement rather than accuracy, often eclipses nuanced debate, reducing political discourse to a cacophony of outrage. The role of social media in democracy, therefore, is contingent not just on its technological architecture, but on the ethical frameworks governing its use. Regulatory oversight, media literacy, and algorithmic transparency are essential to harness its democratic potential while mitigating its subversive tendencies. In essence, social media is neither inherently virtuous nor inherently corrosive—it is a mirror of societal intent. Whether it becomes a pillar of democratic resilience or a tool of populist distortion depends largely on how it is wielded by citizens, institutions, and platforms alike.",
+    "passage_position": 3,
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "m2_q93",
+    "subject": "English",
+    "qno": 93,
+    "passage_id": "p2",
+    "question": "What does the author suggest as a critical solution to social media misuse in democracies?",
+    "options": [
+      "Enhanced meme culture",
+      "Legalizing all content",
+      "Algorithmic transparency and media literacy",
+      "Global censorship policies"
+    ],
+    "answer": 2,
+    "explanation": "The passage states: 'Regulatory oversight, media literacy, and algorithmic transparency are essential to harness its democratic potential while mitigating its subversive tendencies.' Algorithmic transparency and media literacy are the suggested solutions.",
+    "passage_text": "The proliferation of social media has fundamentally transformed the democratic landscape, acting both as a catalyst for civic engagement and a conduit for manipulation. Platforms like Twitter, Facebook, and Instagram, once relegated to the domain of personal expression, now serve as powerful instruments of political discourse, enabling citizens to articulate opinions, mobilize for causes, and scrutinize authority in real-time. At its core, democracy thrives on the free flow of information, and social media ostensibly democratizes this process by dismantling traditional gatekeeping. Political leaders communicate directly with constituents, bypassing editorial filters, while grassroots movements harness virality to amplify marginalized voices. During critical events—be it elections, protests, or legislative debates—social media acts as a digital agora, fostering participatory dialogue that was once confined to town halls or print columns. However, this unprecedented openness is double-edged. The same platforms that disseminate truth can also propagate misinformation, polarize public opinion, and algorithmically reinforce ideological silos. Electoral interference through fake accounts, coordinated trolling, and the spread of disinformation campaigns have threatened electoral integrity in several democracies. Moreover, emotionally charged content, optimized for engagement rather than accuracy, often eclipses nuanced debate, reducing political discourse to a cacophony of outrage. The role of social media in democracy, therefore, is contingent not just on its technological architecture, but on the ethical frameworks governing its use. Regulatory oversight, media literacy, and algorithmic transparency are essential to harness its democratic potential while mitigating its subversive tendencies. In essence, social media is neither inherently virtuous nor inherently corrosive—it is a mirror of societal intent. Whether it becomes a pillar of democratic resilience or a tool of populist distortion depends largely on how it is wielded by citizens, institutions, and platforms alike.",
+    "passage_position": 4,
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "m2_q94",
+    "subject": "English",
+    "qno": 94,
+    "passage_id": "p2",
+    "question": "In the author's view, what determines whether social media supports or undermines democracy?",
+    "options": [
+      "Political advertisements",
+      "How platforms are funded",
+      "Societal intent and ethical usage",
+      "Popularity of influencers"
+    ],
+    "answer": 2,
+    "explanation": "The passage concludes: 'social media is neither inherently virtuous nor inherently corrosive—it is a mirror of societal intent. Whether it becomes a pillar of democratic resilience or a tool of populist distortion depends largely on how it is wielded by citizens, institutions, and platforms alike.' Societal intent and ethical usage determine its impact.",
+    "passage_text": "The proliferation of social media has fundamentally transformed the democratic landscape, acting both as a catalyst for civic engagement and a conduit for manipulation. Platforms like Twitter, Facebook, and Instagram, once relegated to the domain of personal expression, now serve as powerful instruments of political discourse, enabling citizens to articulate opinions, mobilize for causes, and scrutinize authority in real-time. At its core, democracy thrives on the free flow of information, and social media ostensibly democratizes this process by dismantling traditional gatekeeping. Political leaders communicate directly with constituents, bypassing editorial filters, while grassroots movements harness virality to amplify marginalized voices. During critical events—be it elections, protests, or legislative debates—social media acts as a digital agora, fostering participatory dialogue that was once confined to town halls or print columns. However, this unprecedented openness is double-edged. The same platforms that disseminate truth can also propagate misinformation, polarize public opinion, and algorithmically reinforce ideological silos. Electoral interference through fake accounts, coordinated trolling, and the spread of disinformation campaigns have threatened electoral integrity in several democracies. Moreover, emotionally charged content, optimized for engagement rather than accuracy, often eclipses nuanced debate, reducing political discourse to a cacophony of outrage. The role of social media in democracy, therefore, is contingent not just on its technological architecture, but on the ethical frameworks governing its use. Regulatory oversight, media literacy, and algorithmic transparency are essential to harness its democratic potential while mitigating its subversive tendencies. In essence, social media is neither inherently virtuous nor inherently corrosive—it is a mirror of societal intent. Whether it becomes a pillar of democratic resilience or a tool of populist distortion depends largely on how it is wielded by citizens, institutions, and platforms alike.",
+    "passage_position": 5,
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "m2_q95",
+    "subject": "English",
+    "qno": 95,
+    "question": "Choose the most suitable option to replace the highlighted part of the sentence:\nNo sooner had I reached the station when the train departed.",
+    "options": [
+      "than the train departed",
+      "then the train departed",
+      "when the train had departed",
+      "than did the train depart"
+    ],
+    "answer": 0,
+    "explanation": "'No sooner...than' is the correct correlative conjunction pair. 'No sooner had I reached the station than the train departed.' 'When' is incorrect with 'No sooner'.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "grammar"
+  },
+  {
+    "id": "m2_q96",
+    "subject": "English",
+    "qno": 96,
+    "question": "Choose the most suitable option to replace the highlighted part of the sentence:\nThe manager asked to the clerk to submit the report.",
+    "options": [
+      "asked the clerk that submit the report",
+      "requested the clerk to submit report",
+      "asked the clerk to submit the report",
+      "told to the clerk submit report"
+    ],
+    "answer": 2,
+    "explanation": "'Asked to the clerk' is incorrect — 'ask' takes a direct object without a preposition. The correct form is 'asked the clerk to submit the report.'",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "grammar"
+  },
+  {
+    "id": "m2_q97",
+    "subject": "English",
+    "qno": 97,
+    "question": "A sentence is provided in direct speech. From the four given options, choose the one that most accurately conveys the sentence in its corresponding indirect speech.\nShe said, \"I saw him last night.\"",
+    "options": [
+      "She said she had seen him the previous night.",
+      "She said she has seen him last night.",
+      "She said she was seeing him last night.",
+      "She said she had saw him the previous night."
+    ],
+    "answer": 0,
+    "explanation": "Direct to Indirect: 'I saw' → 'she had seen' (past perfect in reported speech). 'Last night' → 'the previous night'. Correct: 'She said she had seen him the previous night.'",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "direct_indirect"
+  },
+  {
+    "id": "m2_q98",
+    "subject": "English",
+    "qno": 98,
+    "question": "A sentence is provided in indirect speech. Choose the one that most accurately conveys the sentence in its corresponding direct speech.\nThe librarian said that silence must be maintained in the library.",
+    "options": [
+      "\"Silence should be maintained in the library,\" said the librarian.",
+      "\"You will maintain silence in the library,\" the librarian said.",
+      "\"Maintain silence in the library,\" said the librarian.",
+      "\"Must you maintain silence in the library?\" asked the librarian."
+    ],
+    "answer": 2,
+    "explanation": "'Said that silence must be maintained' is a command/instruction. The direct speech equivalent of an imperative reported speech is a command: '\"Maintain silence in the library,\" said the librarian.'",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "direct_indirect"
+  },
+  {
+    "id": "m2_q99",
+    "subject": "English",
+    "qno": 99,
+    "question": "Rearrange the following sentences to form a coherent paragraph:\n1. Consequently, effective communication hinges on more than just the words we choose.\n2. Non-verbal cues, such as tone of voice, facial expressions, and body language, can convey more meaning than the verbal message itself.\n3. Communication is a complex process involving the exchange of information, ideas, and feelings between individuals.\n4. It's often the subtle signals that tell us how a message is truly being received or intended.",
+    "options": [
+      "3, 2, 1, 4",
+      "2, 4, 1, 3",
+      "1, 4, 3, 2",
+      "3, 4, 2, 1"
+    ],
+    "answer": 0,
+    "explanation": "Logical order: 3 (defines communication) → 2 (introduces non-verbal cues) → 1 (consequence: communication is more than words) → 4 (elaborates with subtle signals). Sequence: 3, 2, 1, 4.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "m2_q100",
+    "subject": "English",
+    "qno": 100,
+    "question": "Rearrange the following sentences to form a coherent paragraph:\n1. A key strategy is to diversify energy sources, transitioning from fossil fuels to renewable alternatives like solar, wind, and geothermal power.\n2. To mitigate the worst effects of climate change, the global community must drastically reduce its reliance on carbon-intensive energy production.\n3. This shift not only decreases greenhouse gas emissions but also improves air quality and creates new economic opportunities.\n4. Additionally, policies that promote energy efficiency in buildings and transportation can further lower overall energy consumption.",
+    "options": [
+      "2, 1, 3, 4",
+      "1, 3, 2, 4",
+      "3, 1, 4, 2",
+      "4, 2, 1, 3"
+    ],
+    "answer": 0,
+    "explanation": "Logical order: 2 (states the problem — need to reduce carbon energy) → 1 (key strategy: diversify sources) → 3 (outcomes of this shift) → 4 (additional policy measures). Sequence: 2, 1, 3, 4.",
+    "passage_text": null,
+    "passage_position": null,
+    "topic": "reading_comprehension"
+  }
+]

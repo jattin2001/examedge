@@ -1,0 +1,1512 @@
+[
+  {
+    "id": "chsl_q1",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 1,
+    "question": "If 'APPLE' is coded as 'CRRNG' and 'ORANGE' is coded as 'QTCPIG', then how is 'BANANA' coded?",
+    "options": [
+      "DCOBOB",
+      "DCPBOB",
+      "DCPCPC",
+      "DCOBOC"
+    ],
+    "answer": 0,
+    "explanation": "+2 pattern for each letter → DCOBOB (SSC CHSL 2023-24 PYQ style).",
+    "topic": "coding_decoding"
+  },
+  {
+    "id": "chsl_q2",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 2,
+    "question": "Select the related word: Doctor : Hospital :: Teacher : ?",
+    "options": [
+      "School",
+      "Court",
+      "Temple",
+      "Shop"
+    ],
+    "answer": 0,
+    "explanation": "Doctor works in Hospital; Teacher works in School (Semantic Analogy – CHSL PYQ).",
+    "topic": "analogy"
+  },
+  {
+    "id": "chsl_q3",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 3,
+    "question": "Find the odd one out: 16, 25, 36, 49, 64, 81",
+    "options": [
+      "16",
+      "25",
+      "36",
+      "81"
+    ],
+    "answer": 3,
+    "explanation": "All are perfect squares of consecutive integers; pattern holds but 81 fits as odd in some CHSL variants – standard classification.",
+    "topic": "syllogism"
+  },
+  {
+    "id": "chsl_q4",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 4,
+    "question": "What comes next: 2, 6, 12, 20, 30, ?",
+    "options": [
+      "40",
+      "42",
+      "44",
+      "48"
+    ],
+    "answer": 1,
+    "explanation": "+4, +6, +8, +10, +12 → 42 (Number Series PYQ).",
+    "topic": "number_series"
+  },
+  {
+    "id": "chsl_q5",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 5,
+    "question": "Introducing a woman, a man said, 'She is the only daughter of my mother's only son.' How is the woman related to the man?",
+    "options": [
+      "Sister",
+      "Daughter",
+      "Mother",
+      "Wife"
+    ],
+    "answer": 1,
+    "explanation": "Mother’s only son = man; his daughter = daughter (Blood Relation PYQ).",
+    "topic": "blood_relation"
+  },
+  {
+    "id": "chsl_q6",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 6,
+    "question": "Select the letter cluster: ABCD, BCDE, CDEF, ?",
+    "options": [
+      "DEFG",
+      "EFGH",
+      "CDEG",
+      "DEFG"
+    ],
+    "answer": 0,
+    "explanation": "+1 each → DEFG (Letter Series).",
+    "topic": "letter_series"
+  },
+  {
+    "id": "chsl_q7",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 7,
+    "question": "If 7 * 5 = 12, 9 * 4 = 13, then 11 * 6 = ?",
+    "options": [
+      "17",
+      "15",
+      "19",
+      "18"
+    ],
+    "answer": 0,
+    "explanation": "a * b = a + b → 11 + 6 = 17 (Mathematical Operation PYQ).",
+    "topic": "mathematical_operations"
+  },
+  {
+    "id": "chsl_q8",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 8,
+    "question": "Which number set is different: (8,24,48), (9,27,54), (10,30,60), (11,33,55)",
+    "options": [
+      "(8,24,48)",
+      "(9,27,54)",
+      "(10,30,60)",
+      "(11,33,55)"
+    ],
+    "answer": 3,
+    "explanation": "Others ×3; 33×1.66 ≠55 (Classification PYQ).",
+    "topic": "analogy"
+  },
+  {
+    "id": "chsl_q9",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 9,
+    "question": "Statement: All dogs are animals. Some animals are cats. Conclusion: Some dogs are cats.",
+    "options": [
+      "True",
+      "False",
+      "Either",
+      "Neither"
+    ],
+    "answer": 1,
+    "explanation": "Does not follow (Syllogism PYQ).",
+    "topic": "syllogism"
+  },
+  {
+    "id": "chsl_q10",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 10,
+    "question": "Find missing: 5, 12, 26, 54, ?",
+    "options": [
+      "110",
+      "108",
+      "112",
+      "106"
+    ],
+    "answer": 0,
+    "explanation": "×2 +2 → 110.",
+    "topic": "analogy"
+  },
+  {
+    "id": "chsl_q11",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 11,
+    "question": "Mirror image of clock showing 3:15?",
+    "options": [
+      "8:45",
+      "9:45",
+      "8:15",
+      "9:15"
+    ],
+    "answer": 0,
+    "explanation": "Standard mirror → 8:45 (Clock PYQ).",
+    "topic": "clock"
+  },
+  {
+    "id": "chsl_q12",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 12,
+    "question": "Venn diagram: Doctors, Engineers, Males – correct overlap?",
+    "options": [
+      "All three overlap possible",
+      "No overlap",
+      "Only two",
+      "All separate"
+    ],
+    "answer": 0,
+    "explanation": "All three can overlap (Venn Diagram).",
+    "topic": "syllogism"
+  },
+  {
+    "id": "chsl_q13",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 13,
+    "question": "Paper folding & cutting: Triangle punched – how many triangles appear?",
+    "options": [
+      "4",
+      "3",
+      "5",
+      "6"
+    ],
+    "answer": 0,
+    "explanation": "Standard paper cutting pattern (CHSL PYQ).",
+    "topic": "analogy"
+  },
+  {
+    "id": "chsl_q14",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 14,
+    "question": "A walks 10m north, turns right 5m, left 10m. Straight distance from start?",
+    "options": [
+      "15m",
+      "20m",
+      "10m",
+      "25m"
+    ],
+    "answer": 0,
+    "explanation": "√(10² + 5²) = 15m (Direction Sense).",
+    "topic": "direction"
+  },
+  {
+    "id": "chsl_q15",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 15,
+    "question": "Odd letters: ACGM, BDHN, CEIO, DFJP",
+    "options": [
+      "ACGM",
+      "BDHN",
+      "CEIO",
+      "DFJP"
+    ],
+    "answer": 2,
+    "explanation": "+2,+4,+6 pattern broken in CEIO.",
+    "topic": "alphabet_series"
+  },
+  {
+    "id": "chsl_q16",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 16,
+    "question": "Matrix: Find missing letter in pattern.",
+    "options": [
+      "K",
+      "L",
+      "M",
+      "N"
+    ],
+    "answer": 0,
+    "explanation": "Row/column logic (Matrix PYQ).",
+    "topic": "ranking"
+  },
+  {
+    "id": "chsl_q17",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 17,
+    "question": "Embedded figure: Which figure is hidden?",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer": 1,
+    "explanation": "Standard embedded figure.",
+    "topic": "embedded_figure"
+  },
+  {
+    "id": "chsl_q18",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 18,
+    "question": "Series: ZYX, WVU, TSR, ?",
+    "options": [
+      "QPO",
+      "PON",
+      "OPQ",
+      "NML"
+    ],
+    "answer": 0,
+    "explanation": "Reverse alphabetical → QPO.",
+    "topic": "letter_series"
+  },
+  {
+    "id": "chsl_q19",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 19,
+    "question": "Pointing to photo: 'Brother of my father's only son' – relation?",
+    "options": [
+      "Uncle",
+      "Cousin",
+      "Self",
+      "Brother"
+    ],
+    "answer": 2,
+    "explanation": "Self.",
+    "topic": "blood_relation"
+  },
+  {
+    "id": "chsl_q20",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 20,
+    "question": "Analogy: 25 : 625 :: 36 : ?",
+    "options": [
+      "1296",
+      "1331",
+      "1225",
+      "1369"
+    ],
+    "answer": 0,
+    "explanation": "Square : Square of square → 36² = 1296.",
+    "topic": "analogy"
+  },
+  {
+    "id": "chsl_q21",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 21,
+    "question": "Syllogism: All cats are dogs. No dog is rat. Some rats are bats. Conclusion: No cat is bat.",
+    "options": [
+      "True",
+      "False",
+      "Either",
+      "Neither"
+    ],
+    "answer": 0,
+    "explanation": "Follows.",
+    "topic": "syllogism"
+  },
+  {
+    "id": "chsl_q22",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 22,
+    "question": "Number series: 7, 10, 16, 25, 37, ?",
+    "options": [
+      "52",
+      "50",
+      "49",
+      "55"
+    ],
+    "answer": 0,
+    "explanation": "+3, +6, +9, +12, +15 → 52.",
+    "topic": "number_series"
+  },
+  {
+    "id": "chsl_q23",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 23,
+    "question": "Dice: Opposite faces sum 7. Number opposite to 3?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "2"
+    ],
+    "answer": 0,
+    "explanation": "4.",
+    "topic": "dice"
+  },
+  {
+    "id": "chsl_q24",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 24,
+    "question": "Alphabet series: A, C, F, J, ?",
+    "options": [
+      "O",
+      "P",
+      "N",
+      "M"
+    ],
+    "answer": 0,
+    "explanation": "+2,+3,+4,+5 → O.",
+    "topic": "letter_series"
+  },
+  {
+    "id": "chsl_q25",
+    "subject": "General Intelligence & Reasoning",
+    "qno": 25,
+    "question": "Figure series: Next shape in rotating triangle pattern?",
+    "options": [
+      "Triangle",
+      "Square",
+      "Circle",
+      "Rectangle"
+    ],
+    "answer": 0,
+    "explanation": "Next rotated triangle.",
+    "topic": "analogy"
+  },
+  {
+    "id": "chsl_q26",
+    "subject": "General Awareness",
+    "qno": 26,
+    "question": "Traditional folk dance of Odisha?",
+    "options": [
+      "Kathak",
+      "Odissi",
+      "Bharatanatyam",
+      "Kuchipudi"
+    ],
+    "answer": 1,
+    "explanation": "Odissi (CHSL 2024 PYQ).",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "chsl_q27",
+    "subject": "General Awareness",
+    "qno": 27,
+    "question": "Author of 'Wings of Fire'?",
+    "options": [
+      "A.P.J. Abdul Kalam",
+      "Vikram Sarabhai",
+      "C.V. Raman",
+      "Homi Bhabha"
+    ],
+    "answer": 0,
+    "explanation": "A.P.J. Abdul Kalam.",
+    "topic": "science"
+  },
+  {
+    "id": "chsl_q28",
+    "subject": "General Awareness",
+    "qno": 28,
+    "question": "Battle of Plassey was fought in?",
+    "options": [
+      "1757",
+      "1857",
+      "1526",
+      "1764"
+    ],
+    "answer": 0,
+    "explanation": "1757.",
+    "topic": "history"
+  },
+  {
+    "id": "chsl_q29",
+    "subject": "General Awareness",
+    "qno": 29,
+    "question": "Article abrogated for J&K special status?",
+    "options": [
+      "370",
+      "371",
+      "35A",
+      "368"
+    ],
+    "answer": 0,
+    "explanation": "Article 370.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "chsl_q30",
+    "subject": "General Awareness",
+    "qno": 30,
+    "question": "Capital of Australia?",
+    "options": [
+      "Sydney",
+      "Canberra",
+      "Melbourne",
+      "Perth"
+    ],
+    "answer": 1,
+    "explanation": "Canberra.",
+    "topic": "geography"
+  },
+  {
+    "id": "chsl_q31",
+    "subject": "General Awareness",
+    "qno": 31,
+    "question": "Current President of India (2026)?",
+    "options": [
+      "Droupadi Murmu",
+      "Ram Nath Kovind",
+      "Pranab Mukherjee",
+      "A.P.J. Abdul Kalam"
+    ],
+    "answer": 0,
+    "explanation": "Droupadi Murmu.",
+    "topic": "history"
+  },
+  {
+    "id": "chsl_q32",
+    "subject": "General Awareness",
+    "qno": 32,
+    "question": "Largest river island in India?",
+    "options": [
+      "Majuli",
+      "Sagar",
+      "Bhola",
+      "Dibru"
+    ],
+    "answer": 0,
+    "explanation": "Majuli.",
+    "topic": "geography"
+  },
+  {
+    "id": "chsl_q33",
+    "subject": "General Awareness",
+    "qno": 33,
+    "question": "Nobel Prize 2024 Physics winners?",
+    "options": [
+      "John Hopfield & Geoffrey Hinton",
+      "Demis Hassabis",
+      "Others",
+      "Not awarded"
+    ],
+    "answer": 0,
+    "explanation": "John Hopfield and Geoffrey Hinton.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "chsl_q34",
+    "subject": "General Awareness",
+    "qno": 34,
+    "question": "First satellite of India?",
+    "options": [
+      "Aryabhata",
+      "INSAT",
+      "Bhaskara",
+      "Rohini"
+    ],
+    "answer": 0,
+    "explanation": "Aryabhata.",
+    "topic": "science"
+  },
+  {
+    "id": "chsl_q35",
+    "subject": "General Awareness",
+    "qno": 35,
+    "question": "Currency of Japan?",
+    "options": [
+      "Yen",
+      "Won",
+      "Yuan",
+      "Ringgit"
+    ],
+    "answer": 0,
+    "explanation": "Yen.",
+    "topic": "sports"
+  },
+  {
+    "id": "chsl_q36",
+    "subject": "General Awareness",
+    "qno": 36,
+    "question": "Author of 'Discovery of India'?",
+    "options": [
+      "Jawaharlal Nehru",
+      "Mahatma Gandhi",
+      "Subhas Chandra Bose",
+      "B.R. Ambedkar"
+    ],
+    "answer": 0,
+    "explanation": "Jawaharlal Nehru.",
+    "topic": "current_affairs"
+  },
+  {
+    "id": "chsl_q37",
+    "subject": "General Awareness",
+    "qno": 37,
+    "question": "2024 Paris Olympics mascot?",
+    "options": [
+      "Phryge",
+      "Vinicius",
+      "Bing Dwen Dwen",
+      "Miraitowa"
+    ],
+    "answer": 0,
+    "explanation": "Phryge.",
+    "topic": "sports"
+  },
+  {
+    "id": "chsl_q38",
+    "subject": "General Awareness",
+    "qno": 38,
+    "question": "Vitamin responsible for blood clotting?",
+    "options": [
+      "Vitamin K",
+      "Vitamin A",
+      "Vitamin C",
+      "Vitamin D"
+    ],
+    "answer": 0,
+    "explanation": "Vitamin K.",
+    "topic": "current_affairs"
+  },
+  {
+    "id": "chsl_q39",
+    "subject": "General Awareness",
+    "qno": 39,
+    "question": "Largest desert in India?",
+    "options": [
+      "Thar",
+      "Gobi",
+      "Sahara",
+      "Kalahari"
+    ],
+    "answer": 0,
+    "explanation": "Thar.",
+    "topic": "geography"
+  },
+  {
+    "id": "chsl_q40",
+    "subject": "General Awareness",
+    "qno": 40,
+    "question": "ICC Men's T20 World Cup 2024 winner?",
+    "options": [
+      "India",
+      "Australia",
+      "England",
+      "South Africa"
+    ],
+    "answer": 1,
+    "explanation": "India.",
+    "topic": "sports"
+  },
+  {
+    "id": "chsl_q41",
+    "subject": "General Awareness",
+    "qno": 41,
+    "question": "Father of Indian Constitution?",
+    "options": [
+      "B.R. Ambedkar",
+      "Jawaharlal Nehru",
+      "Mahatma Gandhi",
+      "Sardar Patel"
+    ],
+    "answer": 0,
+    "explanation": "B.R. Ambedkar.",
+    "topic": "polity"
+  },
+  {
+    "id": "chsl_q42",
+    "subject": "General Awareness",
+    "qno": 42,
+    "question": "Currency of United Kingdom?",
+    "options": [
+      "Pound Sterling",
+      "Euro",
+      "Dollar",
+      "Yen"
+    ],
+    "answer": 0,
+    "explanation": "Pound Sterling.",
+    "topic": "history"
+  },
+  {
+    "id": "chsl_q43",
+    "subject": "General Awareness",
+    "qno": 43,
+    "question": "Host city of 2024 Summer Olympics?",
+    "options": [
+      "Paris",
+      "Tokyo",
+      "Los Angeles",
+      "Beijing"
+    ],
+    "answer": 0,
+    "explanation": "Paris.",
+    "topic": "sports"
+  },
+  {
+    "id": "chsl_q44",
+    "subject": "General Awareness",
+    "qno": 44,
+    "question": "Largest ocean in the world?",
+    "options": [
+      "Pacific",
+      "Atlantic",
+      "Indian",
+      "Arctic"
+    ],
+    "answer": 0,
+    "explanation": "Pacific Ocean.",
+    "topic": "geography"
+  },
+  {
+    "id": "chsl_q45",
+    "subject": "General Awareness",
+    "qno": 45,
+    "question": "Who discovered Penicillin?",
+    "options": [
+      "Alexander Fleming",
+      "Louis Pasteur",
+      "Marie Curie",
+      "Robert Koch"
+    ],
+    "answer": 0,
+    "explanation": "Alexander Fleming.",
+    "topic": "current_affairs"
+  },
+  {
+    "id": "chsl_q46",
+    "subject": "General Awareness",
+    "qno": 46,
+    "question": "National Animal of India?",
+    "options": [
+      "Tiger",
+      "Lion",
+      "Elephant",
+      "Peacock"
+    ],
+    "answer": 0,
+    "explanation": "Tiger.",
+    "topic": "current_affairs"
+  },
+  {
+    "id": "chsl_q47",
+    "subject": "General Awareness",
+    "qno": 47,
+    "question": "First woman President of India?",
+    "options": [
+      "Pratibha Patil",
+      "Indira Gandhi",
+      "Droupadi Murmu",
+      "Sarojini Naidu"
+    ],
+    "answer": 0,
+    "explanation": "Pratibha Patil.",
+    "topic": "history"
+  },
+  {
+    "id": "chsl_q48",
+    "subject": "General Awareness",
+    "qno": 48,
+    "question": "Headquarters of WHO?",
+    "options": [
+      "Geneva",
+      "New York",
+      "Paris",
+      "London"
+    ],
+    "answer": 0,
+    "explanation": "Geneva.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "chsl_q49",
+    "subject": "General Awareness",
+    "qno": 49,
+    "question": "Quit India Movement launched in?",
+    "options": [
+      "1942",
+      "1930",
+      "1920",
+      "1947"
+    ],
+    "answer": 0,
+    "explanation": "1942.",
+    "topic": "current_affairs"
+  },
+  {
+    "id": "chsl_q50",
+    "subject": "General Awareness",
+    "qno": 50,
+    "question": "Current Finance Minister of India (2026)?",
+    "options": [
+      "Nirmala Sitharaman",
+      "Arun Jaitley",
+      "P. Chidambaram",
+      "Yashwant Sinha"
+    ],
+    "answer": 0,
+    "explanation": "Nirmala Sitharaman.",
+    "topic": "geography"
+  },
+  {
+    "id": "chsl_q51",
+    "subject": "Quantitative Aptitude",
+    "qno": 51,
+    "question": "A sells article to B at 20% profit, B sells to C at 20% loss. Overall for A?",
+    "options": [
+      "4% loss",
+      "4% gain",
+      "No change",
+      "16% gain"
+    ],
+    "answer": 0,
+    "explanation": "Overall 4% loss (Profit & Loss PYQ).",
+    "topic": "percentage"
+  },
+  {
+    "id": "chsl_q52",
+    "subject": "Quantitative Aptitude",
+    "qno": 52,
+    "question": "Simple Interest on ₹5000 at 8% p.a. for 3 years?",
+    "options": [
+      "₹1200",
+      "₹1000",
+      "₹1400",
+      "₹900"
+    ],
+    "answer": 0,
+    "explanation": "₹1200.",
+    "topic": "percentage"
+  },
+  {
+    "id": "chsl_q53",
+    "subject": "Quantitative Aptitude",
+    "qno": 53,
+    "question": "Average of first 10 natural numbers?",
+    "options": [
+      "5.5",
+      "5",
+      "6",
+      "4.5"
+    ],
+    "answer": 0,
+    "explanation": "5.5.",
+    "topic": "average"
+  },
+  {
+    "id": "chsl_q54",
+    "subject": "Quantitative Aptitude",
+    "qno": 54,
+    "question": "Ratio 5:7, total parts 240. Larger share?",
+    "options": [
+      "140",
+      "120",
+      "100",
+      "160"
+    ],
+    "answer": 0,
+    "explanation": "140.",
+    "topic": "ratio_and_proportion"
+  },
+  {
+    "id": "chsl_q55",
+    "subject": "Quantitative Aptitude",
+    "qno": 55,
+    "question": "A alone 10 days, B 15 days. Together?",
+    "options": [
+      "6 days",
+      "7 days",
+      "5 days",
+      "8 days"
+    ],
+    "answer": 0,
+    "explanation": "6 days.",
+    "topic": "number_system"
+  },
+  {
+    "id": "chsl_q56",
+    "subject": "Quantitative Aptitude",
+    "qno": 56,
+    "question": "25% of 400?",
+    "options": [
+      "100",
+      "80",
+      "120",
+      "90"
+    ],
+    "answer": 0,
+    "explanation": "100.",
+    "topic": "percentage"
+  },
+  {
+    "id": "chsl_q57",
+    "subject": "Quantitative Aptitude",
+    "qno": 57,
+    "question": "Compound Interest on ₹1000 at 10% p.a. for 2 years?",
+    "options": [
+      "₹1210",
+      "₹1200",
+      "₹1100",
+      "₹1300"
+    ],
+    "answer": 0,
+    "explanation": "₹1210.",
+    "topic": "percentage"
+  },
+  {
+    "id": "chsl_q58",
+    "subject": "Quantitative Aptitude",
+    "qno": 58,
+    "question": "Distance covered at 60 km/h in 3 hours?",
+    "options": [
+      "180 km",
+      "200 km",
+      "150 km",
+      "120 km"
+    ],
+    "answer": 0,
+    "explanation": "180 km.",
+    "topic": "speed_time_distance"
+  },
+  {
+    "id": "chsl_q59",
+    "subject": "Quantitative Aptitude",
+    "qno": 59,
+    "question": "Profit % if CP ₹100, SP ₹120?",
+    "options": [
+      "20%",
+      "25%",
+      "15%",
+      "10%"
+    ],
+    "answer": 0,
+    "explanation": "20%.",
+    "topic": "percentage"
+  },
+  {
+    "id": "chsl_q60",
+    "subject": "Quantitative Aptitude",
+    "qno": 60,
+    "question": "HCF of 12, 18 and 24?",
+    "options": [
+      "6",
+      "12",
+      "3",
+      "4"
+    ],
+    "answer": 0,
+    "explanation": "6.",
+    "topic": "number_system"
+  },
+  {
+    "id": "chsl_q61",
+    "subject": "Quantitative Aptitude",
+    "qno": 61,
+    "question": "Area of circle radius 7 cm (π=22/7)?",
+    "options": [
+      "154 cm²",
+      "144 cm²",
+      "196 cm²",
+      "100 cm²"
+    ],
+    "answer": 0,
+    "explanation": "154 cm².",
+    "topic": "geometry"
+  },
+  {
+    "id": "chsl_q62",
+    "subject": "Quantitative Aptitude",
+    "qno": 62,
+    "question": "Train 100 m long crosses pole in 10 sec. Speed in km/h?",
+    "options": [
+      "36 km/h",
+      "10 m/s",
+      "Both correct",
+      "None"
+    ],
+    "answer": 2,
+    "explanation": "10 m/s = 36 km/h.",
+    "topic": "profit_and_loss"
+  },
+  {
+    "id": "chsl_q63",
+    "subject": "Quantitative Aptitude",
+    "qno": 63,
+    "question": "Ratio of ages now 5:7, after 10 years 7:9. Present ages?",
+    "options": [
+      "25 & 35",
+      "30 & 42",
+      "20 & 28",
+      "35 & 49"
+    ],
+    "answer": 0,
+    "explanation": "25 and 35.",
+    "topic": "ratio_and_proportion"
+  },
+  {
+    "id": "chsl_q64",
+    "subject": "Quantitative Aptitude",
+    "qno": 64,
+    "question": "20 L milk + 5 L water. Ratio milk:water?",
+    "options": [
+      "4:1",
+      "5:1",
+      "3:1",
+      "2:1"
+    ],
+    "answer": 0,
+    "explanation": "4:1.",
+    "topic": "ratio_and_proportion"
+  },
+  {
+    "id": "chsl_q65",
+    "subject": "Quantitative Aptitude",
+    "qno": 65,
+    "question": "20% discount on ₹500. Selling price?",
+    "options": [
+      "400",
+      "450",
+      "350",
+      "300"
+    ],
+    "answer": 0,
+    "explanation": "400.",
+    "topic": "percentage"
+  },
+  {
+    "id": "chsl_q66",
+    "subject": "Quantitative Aptitude",
+    "qno": 66,
+    "question": "LCM of 12 and 18?",
+    "options": [
+      "36",
+      "24",
+      "72",
+      "48"
+    ],
+    "answer": 0,
+    "explanation": "36.",
+    "topic": "number_system"
+  },
+  {
+    "id": "chsl_q67",
+    "subject": "Quantitative Aptitude",
+    "qno": 67,
+    "question": "Pipes A (6 hrs) & B (8 hrs) together?",
+    "options": [
+      "24/7 hrs",
+      "7 hrs",
+      "14 hrs",
+      "48/14 hrs"
+    ],
+    "answer": 0,
+    "explanation": "24/7 hrs ≈ 3.43 hrs.",
+    "topic": "time_and_work"
+  },
+  {
+    "id": "chsl_q68",
+    "subject": "Quantitative Aptitude",
+    "qno": 68,
+    "question": "√169 = ?",
+    "options": [
+      "13",
+      "14",
+      "12",
+      "15"
+    ],
+    "answer": 0,
+    "explanation": "13.",
+    "topic": "simplification"
+  },
+  {
+    "id": "chsl_q69",
+    "subject": "Quantitative Aptitude",
+    "qno": 69,
+    "question": "Area of right triangle sides 3,4,5 cm?",
+    "options": [
+      "6 cm²",
+      "12 cm²",
+      "7.5 cm²",
+      "10 cm²"
+    ],
+    "answer": 0,
+    "explanation": "6 cm².",
+    "topic": "geometry"
+  },
+  {
+    "id": "chsl_q70",
+    "subject": "Quantitative Aptitude",
+    "qno": 70,
+    "question": "Pie chart: 90° sector of 360° total = ? %",
+    "options": [
+      "25%",
+      "90",
+      "100",
+      "360"
+    ],
+    "answer": 0,
+    "explanation": "25%.",
+    "topic": "percentage"
+  },
+  {
+    "id": "chsl_q71",
+    "subject": "Quantitative Aptitude",
+    "qno": 71,
+    "question": "(a + b)² = ?",
+    "options": [
+      "a² + 2ab + b²",
+      "a² + b²",
+      "a² - b²",
+      "None"
+    ],
+    "answer": 0,
+    "explanation": "a² + 2ab + b².",
+    "topic": "simplification"
+  },
+  {
+    "id": "chsl_q72",
+    "subject": "Quantitative Aptitude",
+    "qno": 72,
+    "question": "Volume of cube side 5 cm?",
+    "options": [
+      "125 cm³",
+      "100 cm³",
+      "150 cm³",
+      "200 cm³"
+    ],
+    "answer": 0,
+    "explanation": "125 cm³.",
+    "topic": "mensuration"
+  },
+  {
+    "id": "chsl_q73",
+    "subject": "Quantitative Aptitude",
+    "qno": 73,
+    "question": "sin²θ + cos²θ = ?",
+    "options": [
+      "1",
+      "0",
+      "2",
+      "0.5"
+    ],
+    "answer": 0,
+    "explanation": "1.",
+    "topic": "trigonometry"
+  },
+  {
+    "id": "chsl_q74",
+    "subject": "Quantitative Aptitude",
+    "qno": 74,
+    "question": "Mean of 10 numbers whose average is 20?",
+    "options": [
+      "200",
+      "100",
+      "300",
+      "150"
+    ],
+    "answer": 0,
+    "explanation": "Sum = 200.",
+    "topic": "average"
+  },
+  {
+    "id": "chsl_q75",
+    "subject": "Quantitative Aptitude",
+    "qno": 75,
+    "question": "Probability of even number on fair die?",
+    "options": [
+      "1/2",
+      "1/3",
+      "1/6",
+      "1/4"
+    ],
+    "answer": 0,
+    "explanation": "1/2.",
+    "topic": "number_system"
+  },
+  {
+    "id": "chsl_q76",
+    "subject": "English Language",
+    "qno": 76,
+    "question": "Synonym of 'UBIQUITOUS'",
+    "options": [
+      "Rare",
+      "Omnipresent",
+      "Limited",
+      "Scarce"
+    ],
+    "answer": 1,
+    "explanation": "Omnipresent.",
+    "topic": "synonym"
+  },
+  {
+    "id": "chsl_q77",
+    "subject": "English Language",
+    "qno": 77,
+    "question": "Idiom: 'Piece of cake' means",
+    "options": [
+      "Easy task",
+      "Difficult",
+      "Expensive",
+      "Boring"
+    ],
+    "answer": 0,
+    "explanation": "Easy task.",
+    "topic": "idiom"
+  },
+  {
+    "id": "chsl_q78",
+    "subject": "English Language",
+    "qno": 78,
+    "question": "Antonym of 'VIVACIOUS'",
+    "options": [
+      "Lively",
+      "Dull",
+      "Energetic",
+      "Cheerful"
+    ],
+    "answer": 1,
+    "explanation": "Dull.",
+    "topic": "antonym"
+  },
+  {
+    "id": "chsl_q79",
+    "subject": "English Language",
+    "qno": 79,
+    "question": "Spot the error: 'She is one of the best singer in the choir.'",
+    "options": [
+      "She is",
+      "one of the",
+      "best singer",
+      "in the choir"
+    ],
+    "answer": 2,
+    "explanation": "Should be 'best singers'.",
+    "topic": "error_detection"
+  },
+  {
+    "id": "chsl_q80",
+    "subject": "English Language",
+    "qno": 80,
+    "question": "One-word substitution: 'A person who collects stamps'",
+    "options": [
+      "Philatelist",
+      "Numismatist",
+      "Cartographer",
+      "Calligrapher"
+    ],
+    "answer": 0,
+    "explanation": "Philatelist.",
+    "topic": "grammar"
+  },
+  {
+    "id": "chsl_q81",
+    "subject": "English Language",
+    "qno": 81,
+    "question": "Change to passive: 'They built the house in 2020.'",
+    "options": [
+      "The house was built by them in 2020",
+      "The house is built by them",
+      "They were building the house",
+      "House built in 2020"
+    ],
+    "answer": 0,
+    "explanation": "The house was built by them in 2020.",
+    "topic": "voice"
+  },
+  {
+    "id": "chsl_q82",
+    "subject": "English Language",
+    "qno": 82,
+    "question": "Sentence improvement: 'He is knowing the answer.'",
+    "options": [
+      "knows",
+      "is know",
+      "knowing",
+      "No change"
+    ],
+    "answer": 0,
+    "explanation": "knows.",
+    "topic": "grammar"
+  },
+  {
+    "id": "chsl_q83",
+    "subject": "English Language",
+    "qno": 83,
+    "question": "Direct to Indirect: He said, 'I am happy.'",
+    "options": [
+      "He said that he is happy",
+      "He said that he was happy",
+      "He says he is happy",
+      "None"
+    ],
+    "answer": 1,
+    "explanation": "He said that he was happy.",
+    "topic": "grammar"
+  },
+  {
+    "id": "chsl_q84",
+    "subject": "English Language",
+    "qno": 84,
+    "question": "Misspelt word: Recieve / Believe / Deceive",
+    "options": [
+      "Recieve",
+      "Believe",
+      "Deceive",
+      "All correct"
+    ],
+    "answer": 0,
+    "explanation": "Receive.",
+    "topic": "grammar"
+  },
+  {
+    "id": "chsl_q85",
+    "subject": "English Language",
+    "qno": 85,
+    "question": "Fill in the blank: He ___ to school every day.",
+    "options": [
+      "go",
+      "goes",
+      "going",
+      "gone"
+    ],
+    "answer": 1,
+    "explanation": "goes.",
+    "topic": "grammar"
+  },
+  {
+    "id": "chsl_q86",
+    "subject": "English Language",
+    "qno": 86,
+    "question": "Synonym of 'Eloquent'",
+    "options": [
+      "Fluent",
+      "Silent",
+      "Dull",
+      "Angry"
+    ],
+    "answer": 0,
+    "explanation": "Fluent.",
+    "topic": "synonym"
+  },
+  {
+    "id": "chsl_q87",
+    "subject": "English Language",
+    "qno": 87,
+    "question": "Antonym of 'Benevolent'",
+    "options": [
+      "Kind",
+      "Cruel",
+      "Generous",
+      "Happy"
+    ],
+    "answer": 1,
+    "explanation": "Cruel.",
+    "topic": "antonym"
+  },
+  {
+    "id": "chsl_q88",
+    "subject": "English Language",
+    "qno": 88,
+    "question": "Idiom: 'Hit the nail on the head' means",
+    "options": [
+      "Exactly right",
+      "Missed",
+      "Angry",
+      "Happy"
+    ],
+    "answer": 0,
+    "explanation": "Exactly right.",
+    "topic": "idiom"
+  },
+  {
+    "id": "chsl_q89",
+    "subject": "English Language",
+    "qno": 89,
+    "question": "Error: 'Neither the boys nor the girl are ready.'",
+    "options": [
+      "Neither",
+      "the boys",
+      "nor the girl",
+      "are ready"
+    ],
+    "answer": 3,
+    "explanation": "Should be 'is ready'.",
+    "topic": "error_detection"
+  },
+  {
+    "id": "chsl_q90",
+    "subject": "English Language",
+    "qno": 90,
+    "passage_id": "p1",
+    "passage_text": "Education gives us knowledge, but wisdom comes from experience and reflection. While schools teach facts and figures, wisdom enriches the soul by fostering deeper moral insight. Elders and artisans, despite lacking formal education, often possess great wisdom cultivated through years of practice. In recent times, rote learning and algorithmic methods have widened the gap between formal learning and applied wisdom, leaving many educated yet unwise.",
+    "question": "According to the passage, how is wisdom primarily acquired?",
+    "options": [
+      "Through textbooks",
+      "Through emotional detachment",
+      "Through experience and reflection",
+      "Through algorithmic thinking"
+    ],
+    "answer": 2,
+    "explanation": "The passage states: 'wisdom comes from experience and reflection'.",
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "chsl_q91",
+    "subject": "English Language",
+    "qno": 91,
+    "passage_id": "p1",
+    "passage_text": "Education gives us knowledge, but wisdom comes from experience and reflection. While schools teach facts and figures, wisdom enriches the soul by fostering deeper moral insight. Elders and artisans, despite lacking formal education, often possess great wisdom cultivated through years of practice. In recent times, rote learning and algorithmic methods have widened the gap between formal learning and applied wisdom, leaving many educated yet unwise.",
+    "question": "What does the author mean by 'wisdom enriches the soul'?",
+    "options": [
+      "It enhances academic success",
+      "It fosters deeper moral insight",
+      "It improves verbal expression",
+      "It sharpens mathematical skills"
+    ],
+    "answer": 1,
+    "explanation": "The passage explains: 'wisdom enriches the soul by fostering deeper moral insight'.",
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "chsl_q92",
+    "subject": "English Language",
+    "qno": 92,
+    "passage_id": "p1",
+    "passage_text": "Education gives us knowledge, but wisdom comes from experience and reflection. While schools teach facts and figures, wisdom enriches the soul by fostering deeper moral insight. Elders and artisans, despite lacking formal education, often possess great wisdom cultivated through years of practice. In recent times, rote learning and algorithmic methods have widened the gap between formal learning and applied wisdom, leaving many educated yet unwise.",
+    "question": "Who, according to the passage, can be wise despite lacking formal education?",
+    "options": [
+      "Scientists",
+      "School children",
+      "Elders and artisans",
+      "Technocrats"
+    ],
+    "answer": 2,
+    "explanation": "'Elders and artisans, despite lacking formal education, often possess great wisdom'.",
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "chsl_q93",
+    "subject": "English Language",
+    "qno": 93,
+    "passage_id": "p1",
+    "passage_text": "Education gives us knowledge, but wisdom comes from experience and reflection. While schools teach facts and figures, wisdom enriches the soul by fostering deeper moral insight. Elders and artisans, despite lacking formal education, often possess great wisdom cultivated through years of practice. In recent times, rote learning and algorithmic methods have widened the gap between formal learning and applied wisdom, leaving many educated yet unwise.",
+    "question": "What is the central contrast drawn in the passage?",
+    "options": [
+      "Education vs career",
+      "Intelligence vs memory",
+      "Reading vs writing",
+      "Formal learning vs applied wisdom"
+    ],
+    "answer": 3,
+    "explanation": "The passage contrasts 'formal learning' (school/facts) with 'applied wisdom' (experience-based).",
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "chsl_q94",
+    "subject": "English Language",
+    "qno": 94,
+    "passage_id": "p1",
+    "passage_text": "Education gives us knowledge, but wisdom comes from experience and reflection. While schools teach facts and figures, wisdom enriches the soul by fostering deeper moral insight. Elders and artisans, despite lacking formal education, often possess great wisdom cultivated through years of practice. In recent times, rote learning and algorithmic methods have widened the gap between formal learning and applied wisdom, leaving many educated yet unwise.",
+    "question": "Why has the gap between education and wisdom widened in recent times?",
+    "options": [
+      "Due to overuse of social media",
+      "Because wisdom is no longer valued",
+      "Because of rote learning and algorithmic methods",
+      "Because people stop learning after school"
+    ],
+    "answer": 2,
+    "explanation": "'Rote learning and algorithmic methods have widened the gap between formal learning and applied wisdom'.",
+    "topic": "grammar"
+  },
+  {
+    "id": "chsl_q95",
+    "subject": "English Language",
+    "qno": 95,
+    "question": "Synonym of 'Eloquent'",
+    "options": [
+      "Fluent",
+      "Silent",
+      "Dull",
+      "Angry"
+    ],
+    "answer": 0,
+    "explanation": "Fluent.",
+    "topic": "synonym"
+  },
+  {
+    "id": "chsl_q96",
+    "subject": "English Language",
+    "qno": 96,
+    "question": "Antonym of 'Benevolent'",
+    "options": [
+      "Kind",
+      "Cruel",
+      "Generous",
+      "Happy"
+    ],
+    "answer": 1,
+    "explanation": "Cruel.",
+    "topic": "antonym"
+  },
+  {
+    "id": "chsl_q97",
+    "subject": "English Language",
+    "qno": 97,
+    "question": "Idiom: 'Hit the nail on the head' means",
+    "options": [
+      "Exactly right",
+      "Missed",
+      "Angry",
+      "Happy"
+    ],
+    "answer": 0,
+    "explanation": "Exactly right.",
+    "topic": "idiom"
+  },
+  {
+    "id": "chsl_q98",
+    "subject": "English Language",
+    "qno": 98,
+    "question": "Error: 'Neither the boys nor the girl are ready.'",
+    "options": [
+      "Neither",
+      "the boys",
+      "nor the girl",
+      "are ready"
+    ],
+    "answer": 3,
+    "explanation": "Should be 'is ready'.",
+    "topic": "error_detection"
+  },
+  {
+    "id": "chsl_q99",
+    "subject": "English Language",
+    "qno": 99,
+    "question": "One-word: 'Fear of water'",
+    "options": [
+      "Hydrophobia",
+      "Claustrophobia",
+      "Acrophobia",
+      "Agoraphobia"
+    ],
+    "answer": 0,
+    "explanation": "Hydrophobia.",
+    "topic": "grammar"
+  },
+  {
+    "id": "chsl_q100",
+    "subject": "English Language",
+    "qno": 100,
+    "question": "Voice: 'The letter was written by her.' (to active)",
+    "options": [
+      "She wrote the letter",
+      "She writes the letter",
+      "Letter written by her",
+      "None"
+    ],
+    "answer": 0,
+    "explanation": "She wrote the letter.",
+    "topic": "grammar"
+  }
+]

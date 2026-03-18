@@ -533,22 +533,22 @@
           <div class="logo-icon">📋</div>
           ExamEdge
         </div>
-        <div class="brand-tag">SSC Prep Platform</div>
+        <div class="brand-tag">Government Exams Prep Platform</div>
       </div>
       <div class="left-headline">
-        <h1>Crack SSC with<br /><span>Smart Practice</span></h1>
+        <h1>Crack Any Exam with<br /><span>Smart Practice</span></h1>
         <p>
           Full-length mock tests, subject-wise drills, and detailed analytics —
-          everything you need to ace SSC CGL & CHSL.
+          everything you need to ace SSC CGL & CHSL, RRB NTPC, JKSSB.
         </p>
       </div>
       <div class="stats-row">
         <div class="stat-item">
-          <div class="stat-num">4000+</div>
+          <div class="stat-num">Unlimited</div>
           <div class="stat-label">Questions</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">10+</div>
+          <div class="stat-num">Unlimited</div>
           <div class="stat-label">Mock Tests</div>
         </div>
         <div class="stat-item">
@@ -730,16 +730,8 @@
               line-height: 1.5;
             "
           >
-            📱 Uses <strong>Fast2SMS</strong> — free Indian SMS.
-            <a
-              href="https://www.fast2sms.com"
-              target="_blank"
-              style="color: var(--primary); font-weight: 700"
-              >Get API key →</a
-            ><br />
-            <span style="color: var(--text3)"
-              >🛠 No key yet? OTP shows on screen for testing.</span
-            >
+            📱 Uses <strong>Fast2SMS</strong> — free Indian SMS API. Get your
+            key at fast2sms.com and paste it in login.html
           </div>
           <div class="form-sub">We'll send a 6-digit code to your number</div>
           <div class="field">
@@ -842,13 +834,29 @@
       const auth = firebase.auth();
       const db = firebase.firestore();
 
+      // Flag to prevent redirect during active login/signup flow
+      let handlingAuth = false;
+
       // ── Auth state listener ─────────────────
-      auth.onAuthStateChanged((user) => {
-        if (user) {
-          // Already logged in → go to exams
-          window.location.href = "exams.html";
-        }
-      });
+      // Wrap in try/catch — if Firebase API key is invalid on page load,
+      // we don't want to show an error to the user unprompted.
+      try {
+        auth.onAuthStateChanged(
+          (user) => {
+            if (user && !handlingAuth) {
+              // Already logged in (page load) → go to exams
+              window.location.href = "exams.html";
+            }
+          },
+          (error) => {
+            // Auth error on page load (e.g. invalid API key, network issue)
+            // Log it but DON'T show a message — user hasn't done anything yet
+            console.warn("Auth init error:", error.code, error.message);
+          },
+        );
+      } catch (e) {
+        console.warn("Firebase auth unavailable:", e.message);
+      }
 
       // ── TABS ────────────────────────────────
       function switchTab(tab) {
@@ -895,20 +903,52 @@
       }
 
       // ── SAVE USER PROFILE ───────────────────
+      // Non-blocking — Firestore errors must NEVER prevent login
       async function saveUserProfile(user, name) {
-        await db
-          .collection("users")
-          .doc(user.uid)
-          .set(
-            {
-              name: name || user.displayName || "User",
-              email: user.email || "",
-              createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-              totalAttempts: 0,
-              bestScore: 0,
-            },
-            { merge: true },
-          );
+        try {
+          await db
+            .collection("users")
+            .doc(user.uid)
+            .set(
+              {
+                name: name || user.displayName || "User",
+                email: user.email || "",
+                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                totalAttempts: 0,
+                bestScore: 0,
+              },
+              { merge: true },
+            );
+        } catch (e) {
+          // permission-denied or Firestore not set up yet — log and continue
+          console.warn("saveUserProfile skipped:", e.code, e.message);
+        }
+      }
+
+      // ── FRIENDLY ERROR MESSAGES ─────────────
+      function friendlyError(code) {
+        const map = {
+          "auth/wrong-password": "Incorrect password. Please try again.",
+          "auth/user-not-found": "No account found with this email.",
+          "auth/invalid-email": "Please enter a valid email address.",
+          "auth/email-already-in-use":
+            "An account with this email already exists.",
+          "auth/weak-password": "Password must be at least 6 characters.",
+          "auth/too-many-requests":
+            "Too many attempts. Please try again later.",
+          "auth/network-request-failed":
+            "Network error. Check your connection.",
+          "auth/popup-closed-by-user": "Google sign-in was cancelled.",
+          "auth/invalid-credential": "Invalid email or password.",
+          "auth/api-key-not-valid":
+            "Firebase API key error. Go to Google Cloud Console → APIs & Services → Credentials → Browser key → set restrictions to None.",
+          "auth/api-key-not-valid.-please-pass-a-valid-api-key":
+            "Firebase API key is invalid. Please check your Firebase project settings.",
+        };
+        return (
+          map[code] ||
+          `Login failed (${code || "unknown error"}). Please try again.`
+        );
       }
 
       // ── EMAIL LOGIN ─────────────────────────
@@ -916,11 +956,16 @@
         const email = document.getElementById("loginEmail").value.trim();
         const pass = document.getElementById("loginPassword").value;
         if (!email || !pass) return showMsg("Please fill all fields.");
+        handlingAuth = true;
         try {
-          const cred = await auth.signInWithEmailAndPassword(email, pass);
+          await auth.signInWithEmailAndPassword(email, pass);
           showMsg("Logged in! Redirecting...", "success");
+          setTimeout(() => {
+            window.location.href = "exams.html";
+          }, 800);
         } catch (e) {
-          showMsg(e.message);
+          handlingAuth = false;
+          showMsg(friendlyError(e.code));
         }
       }
 
@@ -934,118 +979,119 @@
         if (pass !== conf) return showMsg("Passwords do not match.");
         if (pass.length < 6)
           return showMsg("Password must be at least 6 characters.");
+        handlingAuth = true;
         try {
           const cred = await auth.createUserWithEmailAndPassword(email, pass);
           await cred.user.updateProfile({ displayName: name });
           await saveUserProfile(cred.user, name);
           showMsg("Account created! Redirecting...", "success");
+          setTimeout(() => {
+            window.location.href = "exams.html";
+          }, 800);
         } catch (e) {
-          showMsg(e.message);
+          handlingAuth = false;
+          showMsg(friendlyError(e.code));
         }
       }
 
       // ── GOOGLE LOGIN ────────────────────────
       async function loginGoogle() {
         const provider = new firebase.auth.GoogleAuthProvider();
+        handlingAuth = true;
         try {
           const cred = await auth.signInWithPopup(provider);
           await saveUserProfile(cred.user);
           showMsg("Logged in with Google! Redirecting...", "success");
+          setTimeout(() => {
+            window.location.href = "exams.html";
+          }, 800);
         } catch (e) {
-          showMsg(e.message);
+          handlingAuth = false;
+          showMsg(friendlyError(e.code));
         }
       }
 
       // ── GUEST LOGIN ─────────────────────────
       async function loginGuest() {
+        handlingAuth = true;
         try {
           await auth.signInAnonymously();
           showMsg("Continuing as guest...", "success");
+          setTimeout(() => {
+            window.location.href = "exams.html";
+          }, 800);
         } catch (e) {
-          // If Firebase not configured, just redirect
+          handlingAuth = false;
+          // Firebase not configured or anonymous disabled → just redirect
           sessionStorage.setItem("guestMode", "true");
           window.location.href = "exams.html";
         }
       }
 
       // ── OTP via Fast2SMS ─────────────────────
-      // Fast2SMS free API — works for Indian numbers without billing
-      // Get your API key at: https://www.fast2sms.com
-      const FAST2SMS_KEY =
-        "ouiNF3Gct2JrTlwazEX7fSDxOpyAnQ840PIshebVvMZgWB9RL1beXRxvL2InEpT4817PYfw93NzUMo0W"; // ← paste your key here
+      // Get your FREE API key at: https://www.fast2sms.com
+      // Paste it below to enable real SMS. Until then, OTP shows on screen (dev mode).
+      const FAST2SMS_KEY = ""; // ← paste your Fast2SMS key here
 
       let generatedOTP = null;
       let otpPhone = null;
 
       async function sendOTP() {
         const raw = document.getElementById("phoneNumber").value.trim();
-        const phone = raw.replace(/\D/g, "");
+        const phone = raw.replace(/\D/g, ""); // digits only
         if (phone.length < 10)
           return showMsg("Enter a valid 10-digit Indian mobile number.");
 
+        // Generate 6-digit OTP locally
         generatedOTP = String(Math.floor(100000 + Math.random() * 900000));
-        otpPhone = phone.slice(-10);
+        otpPhone = phone.slice(-10); // last 10 digits
 
         const sendBtn = document.querySelector(".send-otp-btn");
         sendBtn.textContent = "Sending...";
         sendBtn.disabled = true;
 
-        // Try Fast2SMS quick route (works after website verification)
-        // Falls back to showing OTP in alert for dev/testing
-        let sent = false;
+        // DEV MODE: if no Fast2SMS key, skip SMS and show OTP on screen
+        if (!FAST2SMS_KEY) {
+          document.getElementById("otpPhoneStep").style.display = "none";
+          document.getElementById("otpVerifyStep").style.display = "block";
+          document.getElementById("otpSentTo").textContent =
+            `Dev mode — your OTP is: ${generatedOTP}`;
+          document.querySelector(".otp-digit").focus();
+          showMsg(
+            `📱 Dev mode OTP: ${generatedOTP}  (Add Fast2SMS key for real SMS)`,
+            "success",
+          );
+          startOtpResendTimer();
+          sendBtn.textContent = "Send OTP";
+          sendBtn.disabled = false;
+          return;
+        }
+
         try {
           const res = await fetch(
             `https://www.fast2sms.com/dev/bulkV2?authorization=${FAST2SMS_KEY}` +
-              `&route=q&message=Your+ExamEdge+OTP+is+${generatedOTP}.+Valid+for+5+minutes.&flash=0&numbers=${otpPhone}`,
+              `&route=otp&variables_values=${generatedOTP}&flash=0&numbers=${otpPhone}`,
             { method: "GET" },
           );
           const data = await res.json();
-          if (data.return === true) sent = true;
-          else {
-            // Try DLT route as fallback
-            const res2 = await fetch(
-              `https://www.fast2sms.com/dev/bulkV2?authorization=${FAST2SMS_KEY}` +
-                `&route=dlt&sender_id=EXAMDG&message=Your+ExamEdge+login+OTP+is+${generatedOTP}.+Do+not+share+this+with+anyone.&variables_values=${generatedOTP}|&flash=0&numbers=${otpPhone}`,
-              { method: "GET" },
-            );
-            const data2 = await res2.json();
-            if (data2.return === true) sent = true;
+
+          if (data.return === true) {
+            document.getElementById("otpPhoneStep").style.display = "none";
+            document.getElementById("otpVerifyStep").style.display = "block";
+            document.getElementById("otpSentTo").textContent =
+              `Code sent to +91 ${otpPhone}`;
+            document.querySelector(".otp-digit").focus();
+            showMsg("OTP sent successfully!", "success");
+            startOtpResendTimer();
+          } else {
+            showMsg("Failed to send OTP: " + (data.message || "Check API key"));
           }
         } catch (e) {
-          /* network error */
+          showMsg("Network error sending OTP. Check your Fast2SMS key.");
+        } finally {
+          sendBtn.textContent = "Send OTP";
+          sendBtn.disabled = false;
         }
-
-        if (sent) {
-          showOtpVerifyStep();
-          showMsg("OTP sent successfully!", "success");
-        } else if (
-          FAST2SMS_KEY ===
-          "ouiNF3Gct2JrTlwazEX7fSDxOpyAnQ840PIshebVvMZgWB9RL1beXRxvL2InEpT4817PYfw93NzUMo0W"
-        ) {
-          // Dev mode: show OTP in a visible dev banner (remove in production)
-          showOtpVerifyStep();
-          showMsg(`🛠 Dev mode — OTP: ${generatedOTP}`, "success");
-        } else {
-          // API key set but sending failed — likely needs website verification
-          // Still allow entry in dev mode
-          showOtpVerifyStep();
-          showMsg(
-            `⚠️ SMS failed. For testing, your OTP is: ${generatedOTP}`,
-            "success",
-          );
-        }
-
-        sendBtn.textContent = "Send OTP";
-        sendBtn.disabled = false;
-      }
-
-      function showOtpVerifyStep() {
-        document.getElementById("otpPhoneStep").style.display = "none";
-        document.getElementById("otpVerifyStep").style.display = "block";
-        document.getElementById("otpSentTo").textContent =
-          `Code sent to +91 ${otpPhone}`;
-        document.querySelector(".otp-digit").focus();
-        startOtpResendTimer();
       }
 
       let resendTimer = null;

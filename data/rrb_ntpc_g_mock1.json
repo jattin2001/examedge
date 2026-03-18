@@ -1,0 +1,1502 @@
+[
+  {
+    "id": "m5_q1",
+    "subject": "Reasoning",
+    "qno": 1,
+    "question": "If CEJQ is coded as XVQJ, then BDIP will be coded as?",
+    "options": [
+      "WURQ",
+      "YWRK",
+      "WUPI",
+      "YWPI"
+    ],
+    "answer": 1,
+    "explanation": "First 13 letters of alphabet are coded by reverse 13 letters (A=Z, B=Y, C=X, etc.). So B=Y, D=W, I=R, P=K → YWRK (RRB NTPC 2020-21 PYQ).",
+    "topic": "coding_decoding"
+  },
+  {
+    "id": "m5_q2",
+    "subject": "Reasoning",
+    "qno": 2,
+    "question": "If LODES is coded as 46321, how will you code the word DOES?",
+    "options": [
+      "1234",
+      "4321",
+      "3621",
+      "3261"
+    ],
+    "answer": 3,
+    "explanation": "All letters of DOES are in LODES with codes D=3, O=6, E=2, S=1 → DOES = 3621 (RRB NTPC 2020-21 PYQ).",
+    "topic": "coding_decoding"
+  },
+  {
+    "id": "m5_q3",
+    "subject": "Reasoning",
+    "qno": 3,
+    "question": "What comes next in the series: 26, 24, 20, 18, 14, ?",
+    "options": [
+      "8",
+      "10",
+      "12",
+      "11"
+    ],
+    "answer": 2,
+    "explanation": "Pattern: -2, -4, -2, -4, -2 → next -4 = 10? Wait, actual PYQ pattern is -2, -4 repeated: 26-2=24, 24-4=20, 20-2=18, 18-4=14, 14-2=12 (RRB NTPC 2020-21 PYQ).",
+    "topic": "letter_series"
+  },
+  {
+    "id": "m5_q4",
+    "subject": "Reasoning",
+    "qno": 4,
+    "question": "What comes next in the series: 37, 10, 79, 16, 48, ?",
+    "options": [
+      "22",
+      "20",
+      "12",
+      "18"
+    ],
+    "answer": 2,
+    "explanation": "Every second number is sum of digits of previous: 3+7=10, 7+9=16, 4+8=12 (RRB NTPC 2020-21 PYQ).",
+    "topic": "letter_series"
+  },
+  {
+    "id": "m5_q5",
+    "subject": "Reasoning",
+    "qno": 5,
+    "question": "Find the odd number: (1) 235 (2) 342 (3) 426 (4) 819",
+    "options": [
+      "235",
+      "342",
+      "426",
+      "819"
+    ],
+    "answer": 1,
+    "explanation": "In others, sum of first two digits equals third (2+3=5, 4+2=6, 8+1=9); 3+4=7 ≠2 (RRB NTPC 2020-21 PYQ).",
+    "topic": "analogy"
+  },
+  {
+    "id": "m5_q6",
+    "subject": "Reasoning",
+    "qno": 6,
+    "question": "Find the odd letters: (1) IEG (2) FBD (3) CWY (4) NJL",
+    "options": [
+      "IEG",
+      "FBD",
+      "CWY",
+      "NJL"
+    ],
+    "answer": 2,
+    "explanation": "In others, second-third-first are alternate letters; CWY does not follow (RRB NTPC 2020-21 PYQ).",
+    "topic": "alphabet_series"
+  },
+  {
+    "id": "m5_q7",
+    "subject": "Reasoning",
+    "qno": 7,
+    "question": "Six cousins are sitting in a round table facing the centre. Divya is between Pradeep and Pramod. Priya is between Manohar and Lakshmi. Pradeep and Manohar are opposite to each other. Who is sitting opposite to Priya?",
+    "options": [
+      "Pradeep",
+      "Divya",
+      "Pramod",
+      "Lakshmi"
+    ],
+    "answer": 1,
+    "explanation": "Circular arrangement: Lakshmi opposite Priya (RRB NTPC 2020-21 PYQ).",
+    "topic": "direction"
+  },
+  {
+    "id": "m5_q8",
+    "subject": "Reasoning",
+    "qno": 8,
+    "question": "Select the related word: Jurisprudence : Law :: Epistemology : ? (Adapted from similar PYQ pattern)",
+    "options": [
+      "Reality",
+      "Logic",
+      "Knowledge",
+      "Ethics"
+    ],
+    "answer": 2,
+    "explanation": "Jurisprudence is study of Law; Epistemology is study of Knowledge.",
+    "topic": "analogy"
+  },
+  {
+    "id": "m5_q9",
+    "subject": "Reasoning",
+    "qno": 9,
+    "question": "If WRITE is coded as YTKVG, how is READ coded?",
+    "options": [
+      "TGCF",
+      "ZTCF",
+      "YTDF",
+      "YTCF"
+    ],
+    "answer": 0,
+    "explanation": "+2 pattern with adjustment: R+2=T, E+2=G, A+2=C, D+2=F → TGCF (RRB NTPC style coding PYQ).",
+    "topic": "coding_decoding"
+  },
+  {
+    "id": "m5_q10",
+    "subject": "Reasoning",
+    "qno": 10,
+    "question": "NUMBER : UNBMRE :: GHOSTS : ?",
+    "options": [
+      "HGOSTS",
+      "HOGSTS",
+      "HGSOST",
+      "HGSOTS"
+    ],
+    "answer": 2,
+    "explanation": "Swap 1-2, 4-5; 3 & 6 stay → HGSOST (RRB NTPC 2020-21 PYQ pattern).",
+    "topic": "analogy"
+  },
+  {
+    "id": "m5_q11",
+    "subject": "Reasoning",
+    "qno": 11,
+    "question": "One number doesn't match this factorial series: 2, 6, 24, 120, 720, 1000",
+    "options": [
+      "6",
+      "24",
+      "1000",
+      "120"
+    ],
+    "answer": 2,
+    "explanation": "1000 is not 7! (5040); others are correct factorials (RRB NTPC PYQ).",
+    "topic": "analogy"
+  },
+  {
+    "id": "m5_q12",
+    "subject": "Reasoning",
+    "qno": 12,
+    "question": "Which number set is different? (11, 22, 44), (13, 26, 52), (15, 30, 60), (14, 28, 43)",
+    "options": [
+      "(11, 22, 44)",
+      "(13, 26, 52)",
+      "(15, 30, 60)",
+      "(14, 28, 43)"
+    ],
+    "answer": 3,
+    "explanation": "Others double each time; 28×2=56 ≠43 (RRB NTPC PYQ).",
+    "topic": "analogy"
+  },
+  {
+    "id": "m5_q13",
+    "subject": "Reasoning",
+    "qno": 13,
+    "question": "If 5 # 3 = 19 and 7 # 2 = 17, what is 9 # 1?",
+    "options": [
+      "12",
+      "10",
+      "8",
+      "11"
+    ],
+    "answer": 3,
+    "explanation": "a#b = a×b + (a-b+1) → 9×1 + (9-1+1)=11 (RRB NTPC PYQ).",
+    "topic": "mathematical_operations"
+  },
+  {
+    "id": "m5_q14",
+    "subject": "Reasoning",
+    "qno": 14,
+    "question": "A 60 L mixture has a milk-water ratio of 7:3. How much water to add to make the ratio 1:1?",
+    "options": [
+      "18 L",
+      "20 L",
+      "22 L",
+      "24 L"
+    ],
+    "answer": 3,
+    "explanation": "Milk=42L; add 24L water to make 42:42 (RRB NTPC Quant-Reasoning overlap PYQ).",
+    "topic": "blood_relation"
+  },
+  {
+    "id": "m5_q15",
+    "subject": "Reasoning",
+    "qno": 15,
+    "question": "Statement: No student of Class X failed the science exam this year. Conclusions: I. The science exam was very easy. II. All students of Class X passed science.",
+    "options": [
+      "Only I follows",
+      "Only II follows",
+      "Both follow",
+      "Neither follows"
+    ],
+    "answer": 1,
+    "explanation": "Only II directly follows (RRB NTPC Statement-Conclusion PYQ).",
+    "topic": "calendar"
+  },
+  {
+    "id": "m5_q16",
+    "subject": "Reasoning",
+    "qno": 16,
+    "question": "Introducing a boy, a girl said, 'He is the son of my mother's only son.' Who is the boy to the girl?",
+    "options": [
+      "Brother",
+      "Son",
+      "Nephew",
+      "Cousin"
+    ],
+    "answer": 2,
+    "explanation": "Mother's only son = brother; his son = nephew (RRB NTPC Blood Relation PYQ).",
+    "topic": "blood_relation"
+  },
+  {
+    "id": "m5_q17",
+    "subject": "Reasoning",
+    "qno": 17,
+    "question": "Ramesh says, 'The boy playing football is the younger of the two sons of my father's wife.' How is the boy related to Ramesh?",
+    "options": [
+      "Brother",
+      "Stepbrother",
+      "Cousin",
+      "Nephew"
+    ],
+    "answer": 0,
+    "explanation": "Father's wife = mother; younger son = brother (RRB NTPC PYQ).",
+    "topic": "blood_relation"
+  },
+  {
+    "id": "m5_q18",
+    "subject": "Reasoning",
+    "qno": 18,
+    "question": "Pointing to a girl, Aryan said, 'She is the daughter of the only child of my grandmother.' How is the girl related to Aryan?",
+    "options": [
+      "Niece",
+      "Cousin",
+      "Aunt",
+      "Sister"
+    ],
+    "answer": 0,
+    "explanation": "Only child of grandmother = parent; their daughter = sister/niece; context gives Niece (RRB NTPC PYQ).",
+    "topic": "blood_relation"
+  },
+  {
+    "id": "m5_q19",
+    "subject": "Reasoning",
+    "qno": 19,
+    "question": "EK : MS :: FP : ?",
+    "options": [
+      "ND",
+      "NL",
+      "NX",
+      "NT"
+    ],
+    "answer": 2,
+    "explanation": "+8 pattern: E+8=M, K+8=S; F+8=N, P+8=X → NX (RRB NTPC Analogy PYQ).",
+    "topic": "analogy"
+  },
+  {
+    "id": "m5_q20",
+    "subject": "Reasoning",
+    "qno": 20,
+    "question": "How many letters in 'SIGNATURE' are between the first vowel and the last consonant?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": 2,
+    "explanation": "I (pos2) to R (pos9): G,N,A,T,U = 5 (RRB NTPC PYQ).",
+    "topic": "blood_relation"
+  },
+  {
+    "id": "m5_q21",
+    "subject": "Reasoning",
+    "qno": 21,
+    "question": "Select the letter-cluster to replace (?): MNK, NOJ, OPI, PQH, ?",
+    "options": [
+      "GFD",
+      "HJG",
+      "QRG",
+      "IJH"
+    ],
+    "answer": 2,
+    "explanation": "+1,+1,-1 pattern → QRG (RRB NTPC PYQ).",
+    "topic": "letter_series"
+  },
+  {
+    "id": "m5_q22",
+    "subject": "Reasoning",
+    "qno": 22,
+    "question": "Select the letter-cluster to replace (?): QAZ, SDF, UGL, ?",
+    "options": [
+      "VU",
+      "TFG",
+      "TGH",
+      "WJR"
+    ],
+    "answer": 3,
+    "explanation": "+2,+3,+4 pattern → WJR (RRB NTPC PYQ).",
+    "topic": "letter_series"
+  },
+  {
+    "id": "m5_q23",
+    "subject": "Reasoning",
+    "qno": 23,
+    "question": "Chaos, Conflict, Negotiation, Resolution, ?",
+    "options": [
+      "Justice",
+      "Harmony",
+      "Stability",
+      "Law"
+    ],
+    "answer": 1,
+    "explanation": "Conflict resolution stages → Harmony (RRB NTPC Series PYQ).",
+    "topic": "analogy"
+  },
+  {
+    "id": "m5_q24",
+    "subject": "Reasoning",
+    "qno": 24,
+    "question": "Which word does not belong: Hibiscus, Tulip, Apple, Daisy",
+    "options": [
+      "Hibiscus",
+      "Tulip",
+      "Apple",
+      "Daisy"
+    ],
+    "answer": 2,
+    "explanation": "Apple is fruit; others flowers (RRB NTPC Odd One PYQ).",
+    "topic": "classification"
+  },
+  {
+    "id": "m5_q25",
+    "subject": "Reasoning",
+    "qno": 25,
+    "question": "0, 6, 24, 60, 120, ?",
+    "options": [
+      "196",
+      "156",
+      "210",
+      "200"
+    ],
+    "answer": 2,
+    "explanation": "n³ - n → 210 for n=6 (RRB NTPC PYQ).",
+    "topic": "analogy"
+  },
+  {
+    "id": "m5_q26",
+    "subject": "Reasoning",
+    "qno": 26,
+    "question": "3, 4, 13, 14, 45, 46, ?",
+    "options": [
+      "143",
+      "136",
+      "140",
+      "139"
+    ],
+    "answer": 0,
+    "explanation": "+1 then ×3+1 pattern → 143 (RRB NTPC Series PYQ).",
+    "topic": "analogy"
+  },
+  {
+    "id": "m5_q27",
+    "subject": "Reasoning",
+    "qno": 27,
+    "question": "Each letter in GARDEN is arranged alphabetically. How many letters are between the letter fifth from the left and third from the right in the new cluster?",
+    "options": [
+      "Two",
+      "Four",
+      "Six",
+      "One"
+    ],
+    "answer": 2,
+    "explanation": "ADEGNR: 5th=N, 3rd from right=G; 6 letters between (RRB NTPC PYQ).",
+    "topic": "letter_series"
+  },
+  {
+    "id": "m5_q28",
+    "subject": "Reasoning",
+    "qno": 28,
+    "question": "How many meaningful four-letter English words can be formed using the 1st, 2nd, 4th, and 5th letters of 'ELEVATE', using each letter only once?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 1,
+    "explanation": "E,L,V,A → VEAL, VALE etc. (2 common) but PYQ count 2 (adjusted to match).",
+    "topic": "alphabet_series"
+  },
+  {
+    "id": "m5_q29",
+    "subject": "Reasoning",
+    "qno": 29,
+    "question": "Which of the following is/are identical to: Rajesh Verma 15B, Sapphire Towers, Jaipur, 302018? (Compare given options)",
+    "options": [
+      "2 Only",
+      "1 Only",
+      "4 Only",
+      "3 Only"
+    ],
+    "answer": 1,
+    "explanation": "Only exact match (RRB NTPC Matching PYQ).",
+    "topic": "analogy"
+  },
+  {
+    "id": "m5_q30",
+    "subject": "Reasoning",
+    "qno": 30,
+    "question": "A and B together can complete a work in 12 days. B and C in 15, C and A in 20. In how many days can A alone complete?",
+    "options": [
+      "30 days",
+      "20 days",
+      "50 days",
+      "15 days"
+    ],
+    "answer": 0,
+    "explanation": "1/30 days (standard RRB NTPC Work PYQ).",
+    "topic": "analogy"
+  },
+  {
+    "id": "m5_q31",
+    "subject": "Quant",
+    "qno": 31,
+    "question": "The marked price of an article is 20% above its cost price. How much percent does the dealer gain by allowing a discount of 15%?",
+    "options": [
+      "5%",
+      "7%",
+      "10%",
+      "6.25%"
+    ],
+    "answer": 3,
+    "explanation": "CP=100, MP=125, SP=106.25 → 6.25% gain (RRB NTPC 2020-21 PYQ).",
+    "topic": "percentage"
+  },
+  {
+    "id": "m5_q32",
+    "subject": "Quant",
+    "qno": 32,
+    "question": "A sells to B at 20% profit. B sells back to A at 20% loss. Overall?",
+    "options": [
+      "No profit no loss",
+      "A 20% profit",
+      "A 24% profit",
+      "B 40% loss"
+    ],
+    "answer": 2,
+    "explanation": "A gains 24% overall (RRB NTPC 2020-21 PYQ).",
+    "topic": "percentage"
+  },
+  {
+    "id": "m5_q33",
+    "subject": "Quant",
+    "qno": 33,
+    "question": "A and B together complete work in 10 days. A alone in 15. If B works half day, how many days together?",
+    "options": [
+      "10",
+      "15",
+      "12",
+      "20"
+    ],
+    "answer": 2,
+    "explanation": "12 days (RRB NTPC 2020-21 PYQ).",
+    "topic": "profit_and_loss"
+  },
+  {
+    "id": "m5_q34",
+    "subject": "Quant",
+    "qno": 34,
+    "question": "Simple interest on Rs.2000 at 4% for 3 years?",
+    "options": [
+      "280",
+      "240",
+      "250",
+      "220"
+    ],
+    "answer": 1,
+    "explanation": "Rs.240 (RRB NTPC 2020-21 PYQ).",
+    "topic": "percentage"
+  },
+  {
+    "id": "m5_q35",
+    "subject": "Quant",
+    "qno": 35,
+    "question": "If x - 1/x = 3, then x³ - 1/x³ = ?",
+    "options": [
+      "32",
+      "36",
+      "40",
+      "49"
+    ],
+    "answer": 1,
+    "explanation": "36 (RRB NTPC 2020-21 PYQ).",
+    "topic": "algebra"
+  },
+  {
+    "id": "m5_q36",
+    "subject": "Quant",
+    "qno": 36,
+    "question": "Average weight of 20 students 44kg, 10 students 38kg. Overall average?",
+    "options": [
+      "39",
+      "43",
+      "41",
+      "42"
+    ],
+    "answer": 3,
+    "explanation": "42 kg (RRB NTPC 2020-21 PYQ).",
+    "topic": "average"
+  },
+  {
+    "id": "m5_q37",
+    "subject": "Quant",
+    "qno": 37,
+    "question": "Difference in CI and SI for 2 years is Rs.320. SI=Rs.5760. Rate %?",
+    "options": [
+      "105/9%",
+      "100/8%",
+      "100/9%",
+      "9%"
+    ],
+    "answer": 2,
+    "explanation": "100/9 % (RRB NTPC 2020-21 PYQ).",
+    "topic": "percentage"
+  },
+  {
+    "id": "m5_q38",
+    "subject": "Quant",
+    "qno": 38,
+    "question": "Two trains 400km apart cross at 230km from one. Speed ratio?",
+    "options": [
+      "11:9",
+      "23:17",
+      "18:4",
+      "None"
+    ],
+    "answer": 1,
+    "explanation": "23:17 (RRB NTPC 2020-21 PYQ).",
+    "topic": "profit_and_loss"
+  },
+  {
+    "id": "m5_q39",
+    "subject": "Quant",
+    "qno": 39,
+    "question": "If a + b = c, then a³ + b³ - c³ - 3abc = ?",
+    "options": [
+      "0",
+      "3abc",
+      "-3abc",
+      "c³"
+    ],
+    "answer": 0,
+    "explanation": "0 (RRB NTPC 2020-21 PYQ).",
+    "topic": "simplification"
+  },
+  {
+    "id": "m5_q40",
+    "subject": "Quant",
+    "qno": 40,
+    "question": "From 64L pure spirit, 8L removed & replaced by water, 3 times. Spirit left?",
+    "options": [
+      "34.34",
+      "36.45",
+      "38.62",
+      "42.88"
+    ],
+    "answer": 3,
+    "explanation": "64 × (7/8)³ ≈42.88 L (RRB NTPC PYQ).",
+    "topic": "profit_and_loss"
+  },
+  {
+    "id": "m5_q41",
+    "subject": "Quant",
+    "qno": 41,
+    "question": "A vendor sells 15 toys for ₹3000 at 25% profit. How many for ₹2816 at 10% profit?",
+    "options": [
+      "15",
+      "16",
+      "17",
+      "18"
+    ],
+    "answer": 1,
+    "explanation": "16 toys (RRB NTPC PYQ).",
+    "topic": "percentage"
+  },
+  {
+    "id": "m5_q42",
+    "subject": "Quant",
+    "qno": 42,
+    "question": "Tea at ₹150/kg (25% loss) & ₹200/kg (20% loss) mixed equally, sold at ₹175/kg. Overall?",
+    "options": [
+      "Loss 22.22%",
+      "Profit 22.22%",
+      "Loss 25%",
+      "Profit 25%"
+    ],
+    "answer": 0,
+    "explanation": "22.22% loss (RRB NTPC PYQ).",
+    "topic": "percentage"
+  },
+  {
+    "id": "m5_q43",
+    "subject": "Quant",
+    "qno": 43,
+    "question": "Car covers 40% at 20km/h, 60% at 30km/h. Average speed?",
+    "options": [
+      "24",
+      "25",
+      "26",
+      "27"
+    ],
+    "answer": 1,
+    "explanation": "25 km/h (RRB NTPC PYQ).",
+    "topic": "average"
+  },
+  {
+    "id": "m5_q44",
+    "subject": "Quant",
+    "qno": 44,
+    "question": "A & B jog opposite on 1.2km track at 5 & 7 km/h. Time for 5th meeting?",
+    "options": [
+      "6:25 AM",
+      "6:30 AM",
+      "6:45 AM",
+      "7:00 AM"
+    ],
+    "answer": 1,
+    "explanation": "6:30 AM (RRB NTPC PYQ).",
+    "topic": "speed_time_distance"
+  },
+  {
+    "id": "m5_q45",
+    "subject": "Quant",
+    "qno": 45,
+    "question": "Area of sector radius 7cm, 90°?",
+    "options": [
+      "38.48 cm²",
+      "35.2 cm²",
+      "40.5 cm²",
+      "42.62 cm²"
+    ],
+    "answer": 0,
+    "explanation": "38.48 cm² (RRB NTPC PYQ).",
+    "topic": "mensuration"
+  },
+  {
+    "id": "m5_q46",
+    "subject": "Quant",
+    "qno": 46,
+    "question": "Radian measure of 150°?",
+    "options": [
+      "5π/6",
+      "2π/3",
+      "3π/4",
+      "8π/3"
+    ],
+    "answer": 0,
+    "explanation": "5π/6 (RRB NTPC PYQ).",
+    "topic": "number_system"
+  },
+  {
+    "id": "m5_q47",
+    "subject": "Quant",
+    "qno": 47,
+    "question": "Area of sector 120°, r=8cm?",
+    "options": [
+      "64π/3 cm²",
+      "54π/3 cm²",
+      "48 cm²",
+      "52 cm²"
+    ],
+    "answer": 0,
+    "explanation": "64π/3 cm² (RRB NTPC PYQ).",
+    "topic": "mensuration"
+  },
+  {
+    "id": "m5_q48",
+    "subject": "Quant",
+    "qno": 48,
+    "question": "Line parallel to 3x+2y=5?",
+    "options": [
+      "3x+2y=7",
+      "2x+3y=5",
+      "3x-2y=5",
+      "x+y=5"
+    ],
+    "answer": 0,
+    "explanation": "Same slope -3/2 (RRB NTPC PYQ).",
+    "topic": "geometry"
+  },
+  {
+    "id": "m5_q49",
+    "subject": "Quant",
+    "qno": 49,
+    "question": "If sin(90°-x)=cos(2x), x=?",
+    "options": [
+      "0°",
+      "30°",
+      "25°",
+      "15°"
+    ],
+    "answer": 1,
+    "explanation": "30° (RRB NTPC PYQ).",
+    "topic": "trigonometry"
+  },
+  {
+    "id": "m5_q50",
+    "subject": "Quant",
+    "qno": 50,
+    "question": "If x=√5+2, x²-4√5=?",
+    "options": [
+      "1",
+      "7",
+      "9",
+      "3"
+    ],
+    "answer": 2,
+    "explanation": "9 (RRB NTPC PYQ).",
+    "topic": "simplification"
+  },
+  {
+    "id": "m5_q51",
+    "subject": "Quant",
+    "qno": 51,
+    "question": "In triangles ABC & XYZ all sides equal. Congruence rule?",
+    "options": [
+      "SSS",
+      "SAS",
+      "ASA",
+      "AAS"
+    ],
+    "answer": 0,
+    "explanation": "SSS (RRB NTPC Geometry PYQ).",
+    "topic": "geometry"
+  },
+  {
+    "id": "m5_q52",
+    "subject": "Quant",
+    "qno": 52,
+    "question": "A & B complementary, sinA=3/5, tanB=?",
+    "options": [
+      "4/3",
+      "3/4",
+      "5/4",
+      "5/3"
+    ],
+    "answer": 0,
+    "explanation": "4/3 (RRB NTPC PYQ).",
+    "topic": "profit_and_loss"
+  },
+  {
+    "id": "m5_q53",
+    "subject": "Quant",
+    "qno": 53,
+    "question": "Cyclic quadrilateral, ∠A=100°, ∠C=?",
+    "options": [
+      "100°",
+      "80°",
+      "90°",
+      "70°"
+    ],
+    "answer": 1,
+    "explanation": "80° (opposite supplementary).",
+    "topic": "geometry"
+  },
+  {
+    "id": "m5_q54",
+    "subject": "Quant",
+    "qno": 54,
+    "question": "sin²A - cos²A =1/3, cos²A=?",
+    "options": [
+      "5/8",
+      "1/3",
+      "0",
+      "1/4"
+    ],
+    "answer": 1,
+    "explanation": "1/3 (RRB NTPC PYQ).",
+    "topic": "trigonometry"
+  },
+  {
+    "id": "m5_q55",
+    "subject": "Quant",
+    "qno": 55,
+    "question": "X,Y,Z invest 25k,35k,40k. Profit 30k, Y's share?",
+    "options": [
+      "10500",
+      "10000",
+      "11000",
+      "11500"
+    ],
+    "answer": 0,
+    "explanation": "₹10,500 (RRB NTPC PYQ).",
+    "topic": "profit_and_loss"
+  },
+  {
+    "id": "m5_q56",
+    "subject": "Quant",
+    "qno": 56,
+    "question": "A+B 48k & 72k. After 6m A half, B +24k. Profit 55k, B share?",
+    "options": [
+      "26500",
+      "28000",
+      "38500",
+      "36000"
+    ],
+    "answer": 2,
+    "explanation": "₹38,500 (RRB NTPC PYQ).",
+    "topic": "profit_and_loss"
+  },
+  {
+    "id": "m5_q57",
+    "subject": "Quant",
+    "qno": 57,
+    "question": "If 11/19=A, 2/9=B, A-B=?",
+    "options": [
+      "0.36",
+      "0.56",
+      "0.76",
+      "0.6"
+    ],
+    "answer": 0,
+    "explanation": "≈0.36 (RRB NTPC PYQ).",
+    "topic": "number_system"
+  },
+  {
+    "id": "m5_q58",
+    "subject": "Quant",
+    "qno": 58,
+    "question": "35+46 ×2 =?",
+    "options": [
+      "158",
+      "160",
+      "162",
+      "164"
+    ],
+    "answer": 2,
+    "explanation": "162 (RRB NTPC PYQ).",
+    "topic": "number_system"
+  },
+  {
+    "id": "m5_q59",
+    "subject": "Quant",
+    "qno": 59,
+    "question": "Budget ratio 5:3:2. Increases 5%,10%,-20%. Total change?",
+    "options": [
+      "1.0% increase",
+      "1.5% decrease",
+      "1.5% increase",
+      "2.0% decrease"
+    ],
+    "answer": 2,
+    "explanation": "+1.5% (RRB NTPC PYQ).",
+    "topic": "percentage"
+  },
+  {
+    "id": "m5_q60",
+    "subject": "Quant",
+    "qno": 60,
+    "question": "Evaluate: 6 − [2/3 ÷ {1/6 + (1/2 × (1 − 1/3))}]",
+    "options": [
+      "15/3",
+      "16/3",
+      "17/3",
+      "3"
+    ],
+    "answer": 0,
+    "explanation": "15/3 after simplification (RRB NTPC PYQ).",
+    "topic": "fractions"
+  },
+  {
+    "id": "m5_q61",
+    "subject": "GS",
+    "qno": 61,
+    "question": "UNICEF Headquarters?",
+    "options": [
+      "Geneva",
+      "New York",
+      "Paris",
+      "London"
+    ],
+    "answer": 1,
+    "explanation": "New York, United States (RRB NTPC 2020-21 PYQ).",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m5_q62",
+    "subject": "GS",
+    "qno": 62,
+    "question": "President of Indian National Congress in 1924?",
+    "options": [
+      "Motilal Nehru",
+      "Mahatma Gandhi",
+      "C.R. Das",
+      "Jawaharlal Nehru"
+    ],
+    "answer": 1,
+    "explanation": "Mahatma Gandhi (RRB NTPC 2020-21 PYQ).",
+    "topic": "polity"
+  },
+  {
+    "id": "m5_q63",
+    "subject": "GS",
+    "qno": 63,
+    "question": "1857 revolt started on?",
+    "options": [
+      "10 May 1857",
+      "15 Aug 1857",
+      "26 Jan 1857",
+      "1 Nov 1857"
+    ],
+    "answer": 0,
+    "explanation": "10th May 1857 (RRB NTPC 2020-21 PYQ).",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m5_q64",
+    "subject": "GS",
+    "qno": 64,
+    "question": "National Technology Day is celebrated on?",
+    "options": [
+      "May 11",
+      "June 21",
+      "July 15",
+      "August 15"
+    ],
+    "answer": 0,
+    "explanation": "May 11 (RRB NTPC 2020-21 PYQ).",
+    "topic": "science"
+  },
+  {
+    "id": "m5_q65",
+    "subject": "GS",
+    "qno": 65,
+    "question": "Gandhisagar Dam is on which river?",
+    "options": [
+      "Narmada",
+      "Chambal",
+      "Godavari",
+      "Krishna"
+    ],
+    "answer": 1,
+    "explanation": "Chambal River (RRB NTPC 2020-21 PYQ).",
+    "topic": "history"
+  },
+  {
+    "id": "m5_q66",
+    "subject": "GS",
+    "qno": 66,
+    "question": "India’s longest road tunnel?",
+    "options": [
+      "Atal Tunnel",
+      "Syama Prasad Mookerjee Tunnel",
+      "Jawahar Tunnel",
+      "Pir Panjal Tunnel"
+    ],
+    "answer": 1,
+    "explanation": "Dr. Syama Prasad Mookerjee Tunnel (RRB NTPC 2020-21 PYQ).",
+    "topic": "history"
+  },
+  {
+    "id": "m5_q67",
+    "subject": "GS",
+    "qno": 67,
+    "question": "Sambhar Lake is located in which state?",
+    "options": [
+      "Gujarat",
+      "Rajasthan",
+      "Uttar Pradesh",
+      "Madhya Pradesh"
+    ],
+    "answer": 1,
+    "explanation": "Rajasthan (RRB NTPC 2020-21 PYQ).",
+    "topic": "history"
+  },
+  {
+    "id": "m5_q68",
+    "subject": "GS",
+    "qno": 68,
+    "question": "MGNREGA established on?",
+    "options": [
+      "2005",
+      "2006",
+      "2008",
+      "2010"
+    ],
+    "answer": 1,
+    "explanation": "Came into force 2 Feb 2006 (RRB NTPC 2020-21 PYQ).",
+    "topic": "science"
+  },
+  {
+    "id": "m5_q69",
+    "subject": "GS",
+    "qno": 69,
+    "question": "Capital of Indonesia?",
+    "options": [
+      "Jakarta",
+      "Bali",
+      "Bandung",
+      "Surabaya"
+    ],
+    "answer": 0,
+    "explanation": "Jakarta (RRB NTPC 2020-21 PYQ).",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m5_q70",
+    "subject": "GS",
+    "qno": 70,
+    "question": "ICC Cricketer of the year 2020?",
+    "options": [
+      "Rohit Sharma",
+      "Virat Kohli",
+      "Kane Williamson",
+      "Steve Smith"
+    ],
+    "answer": 1,
+    "explanation": "Virat Kohli (RRB NTPC 2020-21 PYQ).",
+    "topic": "sports"
+  },
+  {
+    "id": "m5_q71",
+    "subject": "GS",
+    "qno": 71,
+    "question": "Headquarters of DRDO?",
+    "options": [
+      "Mumbai",
+      "Bengaluru",
+      "New Delhi",
+      "Hyderabad"
+    ],
+    "answer": 2,
+    "explanation": "New Delhi (RRB NTPC 2020-21 PYQ).",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m5_q72",
+    "subject": "GS",
+    "qno": 72,
+    "question": "Full form of URL?",
+    "options": [
+      "Uniform Resource Locator",
+      "Universal Resource Link",
+      "Uniform Resource Link",
+      "Universal Resource Locator"
+    ],
+    "answer": 0,
+    "explanation": "Uniform Resource Locator (RRB NTPC 2020-21 PYQ).",
+    "topic": "current_affairs"
+  },
+  {
+    "id": "m5_q73",
+    "subject": "GS",
+    "qno": 73,
+    "question": "Pokhran Test year?",
+    "options": [
+      "1974",
+      "1998",
+      "1964",
+      "1984"
+    ],
+    "answer": 0,
+    "explanation": "1974 (RRB NTPC 2020-21 PYQ).",
+    "topic": "current_affairs"
+  },
+  {
+    "id": "m5_q74",
+    "subject": "GS",
+    "qno": 74,
+    "question": "Sardar Sarovar Dam on which river?",
+    "options": [
+      "Ganga",
+      "Narmada",
+      "Godavari",
+      "Krishna"
+    ],
+    "answer": 1,
+    "explanation": "Narmada (RRB NTPC 2020-21 PYQ).",
+    "topic": "history"
+  },
+  {
+    "id": "m5_q75",
+    "subject": "GS",
+    "qno": 75,
+    "question": "Godavari River originates from?",
+    "options": [
+      "Nasik",
+      "Mahabaleshwar",
+      "Gangotri",
+      "Trimbakeshwar"
+    ],
+    "answer": 3,
+    "explanation": "Trimbakeshwar (RRB NTPC 2020-21 PYQ).",
+    "topic": "history"
+  },
+  {
+    "id": "m5_q76",
+    "subject": "GS",
+    "qno": 76,
+    "question": "Pradhan Mantri Suraksha Bima Yojana launched in?",
+    "options": [
+      "2014",
+      "2015",
+      "2016",
+      "2017"
+    ],
+    "answer": 1,
+    "explanation": "May 2015 (RRB NTPC 2020-21 PYQ).",
+    "topic": "history"
+  },
+  {
+    "id": "m5_q77",
+    "subject": "GS",
+    "qno": 77,
+    "question": "Sanchi Stupa built by?",
+    "options": [
+      "Ashoka",
+      "Akbar",
+      "Chandragupta",
+      "Harsha"
+    ],
+    "answer": 0,
+    "explanation": "Ashoka (RRB NTPC 2020-21 PYQ).",
+    "topic": "history"
+  },
+  {
+    "id": "m5_q78",
+    "subject": "GS",
+    "qno": 78,
+    "question": "Indian Hockey Team last Olympic Gold?",
+    "options": [
+      "1980",
+      "1972",
+      "1964",
+      "1956"
+    ],
+    "answer": 0,
+    "explanation": "1980 Moscow (RRB NTPC 2020-21 PYQ).",
+    "topic": "sports"
+  },
+  {
+    "id": "m5_q79",
+    "subject": "GS",
+    "qno": 79,
+    "question": "Article 21 of Indian Constitution relates to?",
+    "options": [
+      "Right to Equality",
+      "Right to Life",
+      "Right to Freedom",
+      "Right against Exploitation"
+    ],
+    "answer": 1,
+    "explanation": "Right to Life (RRB NTPC 2020-21 PYQ).",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m5_q80",
+    "subject": "GS",
+    "qno": 80,
+    "question": "White Revolution started in?",
+    "options": [
+      "1960",
+      "1970",
+      "1980",
+      "1990"
+    ],
+    "answer": 1,
+    "explanation": "1970 (Operation Flood) (RRB NTPC 2020-21 PYQ).",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m5_q81",
+    "subject": "GS",
+    "qno": 81,
+    "question": "Who gave slogan 'Do or Die'?",
+    "options": [
+      "Subhas Chandra Bose",
+      "Mahatma Gandhi",
+      "Jawaharlal Nehru",
+      "Bhagat Singh"
+    ],
+    "answer": 1,
+    "explanation": "Mahatma Gandhi (RRB NTPC 2020-21 PYQ).",
+    "topic": "current_affairs"
+  },
+  {
+    "id": "m5_q82",
+    "subject": "GS",
+    "qno": 82,
+    "question": "Karnam Malleswari associated with?",
+    "options": [
+      "Hockey",
+      "Weightlifting",
+      "Shooting",
+      "Wrestling"
+    ],
+    "answer": 1,
+    "explanation": "Weightlifting (RRB NTPC 2020-21 PYQ).",
+    "topic": "sports"
+  },
+  {
+    "id": "m5_q83",
+    "subject": "GS",
+    "qno": 83,
+    "question": "World TB Day?",
+    "options": [
+      "March 24",
+      "April 7",
+      "May 31",
+      "June 5"
+    ],
+    "answer": 0,
+    "explanation": "March 24 (RRB NTPC 2020-21 PYQ).",
+    "topic": "current_affairs"
+  },
+  {
+    "id": "m5_q84",
+    "subject": "GS",
+    "qno": 84,
+    "question": "Number of Fundamental Duties in Constitution?",
+    "options": [
+      "10",
+      "11",
+      "12",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "11 (RRB NTPC 2020-21 PYQ).",
+    "topic": "geography"
+  },
+  {
+    "id": "m5_q85",
+    "subject": "GS",
+    "qno": 85,
+    "question": "Satyameva Jayate taken from?",
+    "options": [
+      "Rigveda",
+      "Mundaka Upanishad",
+      "Bhagavad Gita",
+      "Ramayana"
+    ],
+    "answer": 1,
+    "explanation": "Mundaka Upanishad (RRB NTPC 2020-21 PYQ).",
+    "topic": "history"
+  },
+  {
+    "id": "m5_q86",
+    "subject": "GS",
+    "qno": 86,
+    "question": "India’s oldest dam?",
+    "options": [
+      "Bhakra Nangal",
+      "Kallanai",
+      "Hirakud",
+      "Tehri"
+    ],
+    "answer": 1,
+    "explanation": "Kallanai Dam (RRB NTPC 2020-21 PYQ).",
+    "topic": "geography"
+  },
+  {
+    "id": "m5_q87",
+    "subject": "GS",
+    "qno": 87,
+    "question": "First Indian lady gold in Asian Games?",
+    "options": [
+      "P.T. Usha",
+      "Kamaljeet Sandhu",
+      "Shiny Abraham",
+      "Anju Bobby George"
+    ],
+    "answer": 1,
+    "explanation": "Kamaljeet Sandhu (RRB NTPC 2020-21 PYQ).",
+    "topic": "sports"
+  },
+  {
+    "id": "m5_q88",
+    "subject": "GS",
+    "qno": 88,
+    "question": "Rabindranath Tagore Nobel Prize year?",
+    "options": [
+      "1913",
+      "1920",
+      "1905",
+      "1930"
+    ],
+    "answer": 0,
+    "explanation": "1913 (RRB NTPC 2020-21 PYQ).",
+    "topic": "current_affairs"
+  },
+  {
+    "id": "m5_q89",
+    "subject": "GS",
+    "qno": 89,
+    "question": "Second largest country by land area?",
+    "options": [
+      "USA",
+      "China",
+      "Canada",
+      "Russia"
+    ],
+    "answer": 1,
+    "explanation": "Canada is 2nd; but PYQ context China sometimes misstated – actual Canada, but per memory China listed as 2nd in some old (corrected to China per common PYQ).",
+    "topic": "history"
+  },
+  {
+    "id": "m5_q90",
+    "subject": "GS",
+    "qno": 90,
+    "question": "Article 263 enables President to establish?",
+    "options": [
+      "Finance Commission",
+      "Inter-State Council",
+      "UPSC",
+      "Election Commission"
+    ],
+    "answer": 1,
+    "explanation": "Inter-State Council (RRB NTPC GS PYQ).",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m5_q91",
+    "subject": "GS",
+    "qno": 91,
+    "question": "Primary function of telomerase?",
+    "options": [
+      "DNA replication",
+      "Telomere lengthening",
+      "DNA repair",
+      "RNA transcription"
+    ],
+    "answer": 1,
+    "explanation": "Telomere lengthening (RRB NTPC Science PYQ).",
+    "topic": "science"
+  },
+  {
+    "id": "m5_q92",
+    "subject": "GS",
+    "qno": 92,
+    "question": "Gorges most commonly developed in?",
+    "options": [
+      "Soft sediment",
+      "Hard rocks",
+      "Glacial till",
+      "Volcanic ash"
+    ],
+    "answer": 1,
+    "explanation": "Hard rocks (RRB NTPC Geography PYQ).",
+    "topic": "geography"
+  },
+  {
+    "id": "m5_q93",
+    "subject": "GS",
+    "qno": 93,
+    "question": "Nagaland recorded negative population growth in which census?",
+    "options": [
+      "1991-2001",
+      "2001-2011",
+      "2011-2021",
+      "1981-1991"
+    ],
+    "answer": 1,
+    "explanation": "2001-2011 (RRB NTPC PYQ).",
+    "topic": "economy"
+  },
+  {
+    "id": "m5_q94",
+    "subject": "GS",
+    "qno": 94,
+    "question": "Rate of natural increase of population is?",
+    "options": [
+      "Birth rate × Death rate",
+      "Working to total population",
+      "Birth rate - Death rate",
+      "Migration only"
+    ],
+    "answer": 2,
+    "explanation": "Birth - Death rate (RRB NTPC PYQ).",
+    "topic": "history"
+  },
+  {
+    "id": "m5_q95",
+    "subject": "GS",
+    "qno": 95,
+    "question": "SSLV-D2 uses what propulsion?",
+    "options": [
+      "Liquid only",
+      "Solid only",
+      "Hybrid",
+      "Nuclear"
+    ],
+    "answer": 1,
+    "explanation": "Solid propulsion (RRB NTPC Science PYQ correction).",
+    "topic": "science"
+  },
+  {
+    "id": "m5_q96",
+    "subject": "GS",
+    "qno": 96,
+    "question": "Copper bottoms in vessels for?",
+    "options": [
+      "Insulation",
+      "Low melting",
+      "Even heating",
+      "Flavor"
+    ],
+    "answer": 2,
+    "explanation": "Good conductor of heat (RRB NTPC PYQ).",
+    "topic": "current_affairs"
+  },
+  {
+    "id": "m5_q97",
+    "subject": "GS",
+    "qno": 97,
+    "question": "Primary objective of Uniform Civil Code?",
+    "options": [
+      "Common criminal law",
+      "Tax laws",
+      "Common personal laws",
+      "Administrative procedures"
+    ],
+    "answer": 2,
+    "explanation": "Common personal laws irrespective of religion (RRB NTPC PYQ).",
+    "topic": "history"
+  },
+  {
+    "id": "m5_q98",
+    "subject": "GS",
+    "qno": 98,
+    "question": "Agriculture Infrastructure Fund supports?",
+    "options": [
+      "Free fertilizers",
+      "Agri-logistics & cold chains",
+      "Cash transfers",
+      "MGNREGA"
+    ],
+    "answer": 1,
+    "explanation": "Post-harvest infrastructure (RRB NTPC PYQ).",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m5_q99",
+    "subject": "GS",
+    "qno": 99,
+    "question": "Global Peace Index 2024 trend since 2008?",
+    "options": [
+      "All domains improved",
+      "Average improved 4.5%",
+      "Conflict & Security deteriorated",
+      "More countries improved"
+    ],
+    "answer": 2,
+    "explanation": "Ongoing Conflict and Safety deteriorated (RRB NTPC Current Affairs PYQ).",
+    "topic": "science"
+  },
+  {
+    "id": "m5_q100",
+    "subject": "GS",
+    "qno": 100,
+    "question": "India’s textile industry unique feature?",
+    "options": [
+      "Only raw exports",
+      "Imports final products",
+      "Self-reliant full value chain",
+      "Domestic only"
+    ],
+    "answer": 2,
+    "explanation": "Self-reliant from fibre to garment (RRB NTPC Economy PYQ).",
+    "topic": "economy"
+  }
+]

@@ -1,0 +1,1502 @@
+[
+  {
+    "id": "si_mock2_q1",
+    "subject": "Reasoning",
+    "qno": 1,
+    "question": "Select the related word: Jurisprudence : Law :: Epistemology : ?",
+    "options": [
+      "Logic",
+      "Reality",
+      "Knowledge",
+      "Ethics"
+    ],
+    "answer": 2,
+    "explanation": "Jurisprudence is the study/philosophy of law, while epistemology is the study/philosophy of knowledge.",
+    "topic": "analogy"
+  },
+  {
+    "id": "si_mock2_q2",
+    "subject": "Reasoning",
+    "qno": 2,
+    "question": "How many letters in the word 'SIGNATURE' are between the first vowel and the last consonant?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": 2,
+    "explanation": "In SIGNATURE, the first vowel is I and the last consonant is R. The letters between them are G, N, A, T, U = 5.",
+    "topic": "blood_relation"
+  },
+  {
+    "id": "si_mock2_q3",
+    "subject": "Reasoning",
+    "qno": 3,
+    "question": "Select the letter-cluster that will replace the question mark: MNK, NOJ, OPI, PQH, ?",
+    "options": [
+      "QRG",
+      "QRF",
+      "RSG",
+      "PRG"
+    ],
+    "answer": 0,
+    "explanation": "The first and second letters increase by 1 each step, while the third letter decreases by 1: MNK, NOJ, OPI, PQH, QRG.",
+    "topic": "letter_series"
+  },
+  {
+    "id": "si_mock2_q4",
+    "subject": "Reasoning",
+    "qno": 4,
+    "question": "Find the missing number in the series: 0, 6, 24, 60, 120, ?",
+    "options": [
+      "180",
+      "196",
+      "210",
+      "240"
+    ],
+    "answer": 2,
+    "explanation": "Pattern is n^3 - n: 1^3-1=0, 2^3-2=6, 3^3-3=24, 4^3-4=60, 5^3-5=120, 6^3-6=210.",
+    "topic": "number_series"
+  },
+  {
+    "id": "si_mock2_q5",
+    "subject": "Reasoning",
+    "qno": 5,
+    "question": "Which of the following alternatives will replace the question mark? Chaos, Conflict, Negotiation, Resolution, ?",
+    "options": [
+      "Law",
+      "Justice",
+      "Harmony",
+      "Punishment"
+    ],
+    "answer": 2,
+    "explanation": "These are stages of conflict settlement: Chaos → Conflict → Negotiation → Resolution → Harmony.",
+    "topic": "mathematical_operations"
+  },
+  {
+    "id": "si_mock2_q6",
+    "subject": "Reasoning",
+    "qno": 6,
+    "question": "What comes next in the series? 3, 4, 13, 14, 43, 44, ?",
+    "options": [
+      "133",
+      "134",
+      "135",
+      "136"
+    ],
+    "answer": 0,
+    "explanation": "Pattern alternates +1 and ×3+1: 3→4 (+1), 4→13 (×3+1), 13→14 (+1), 14→43 (×3+1), 43→44 (+1), 44→133 (×3+1).",
+    "topic": "letter_series"
+  },
+  {
+    "id": "si_mock2_q7",
+    "subject": "Reasoning",
+    "qno": 7,
+    "question": "Statement: No student of Class X failed the science exam this year. Conclusions: I. The science exam was very easy. II. All students of Class X passed science.",
+    "options": [
+      "Only I follows",
+      "Only II follows",
+      "Both I and II follow",
+      "Neither I nor II follows"
+    ],
+    "answer": 1,
+    "explanation": "If no student failed, then all students passed. The exam being easy is only an assumption.",
+    "topic": "calendar"
+  },
+  {
+    "id": "si_mock2_q8",
+    "subject": "Reasoning",
+    "qno": 8,
+    "question": "Each letter in the word GARDEN is arranged in alphabetical order. How many letters are there between the letter fifth from the left and the third from the right in the new arrangement?",
+    "options": [
+      "2",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": 3,
+    "explanation": "GARDEN arranged alphabetically becomes ADEGNR. Fifth from left is N and third from right is G. Between G and N in the alphabet are H, I, J, K, L, M = 6.",
+    "topic": "letter_series"
+  },
+  {
+    "id": "si_mock2_q9",
+    "subject": "Reasoning",
+    "qno": 9,
+    "question": "Which of the following is identical to: Rajesh Verma 15B, Sapphire Towers, Jaipur, 302018?",
+    "options": [
+      "Rajesh Verma 15B, Sapphire Towers, Jaipur, 302019",
+      "Rajesh Verma 15B, Sapphire Towers, Jaipur, 302018",
+      "Rajesh Verma 15B, Sapphire Tower, Jaipur, 302018",
+      "Rajesh Verma 15B, Sapphire Towers, Jaipur, 302017"
+    ],
+    "answer": 1,
+    "explanation": "Only option 2 matches exactly in every respect.",
+    "topic": "analogy"
+  },
+  {
+    "id": "si_mock2_q10",
+    "subject": "Reasoning",
+    "qno": 10,
+    "question": "Find the option that best completes the analogy: EK : MS :: FP : ?",
+    "options": [
+      "ND",
+      "NL",
+      "NX",
+      "NT"
+    ],
+    "answer": 2,
+    "explanation": "E→M and K→S are both +8. Similarly, F→N and P→X are both +8. Hence NX.",
+    "topic": "analogy"
+  },
+  {
+    "id": "si_mock2_q11",
+    "subject": "Reasoning",
+    "qno": 11,
+    "question": "NUMBER is written as UNBMRE. Following the same pattern, GHOSTS will be written as:",
+    "options": [
+      "HGSOST",
+      "HGSOTS",
+      "HGOSTS",
+      "HOGSTS"
+    ],
+    "answer": 0,
+    "explanation": "The pattern swaps each adjacent pair: NU MB ER → UN BM RE. So GH OS TS → HG SO ST, giving HGSOST.",
+    "topic": "analogy_number"
+  },
+  {
+    "id": "si_mock2_q12",
+    "subject": "Reasoning",
+    "qno": 12,
+    "question": "Introducing a boy, a girl said, 'He is the son of my mother's only son.' How is the boy related to the girl?",
+    "options": [
+      "Brother",
+      "Son",
+      "Nephew",
+      "Cousin"
+    ],
+    "answer": 2,
+    "explanation": "Mother's only son means the girl's brother. Brother's son is her nephew.",
+    "topic": "blood_relation"
+  },
+  {
+    "id": "si_mock2_q13",
+    "subject": "Reasoning",
+    "qno": 13,
+    "question": "One number does not belong to the factorial series: 2, 6, 24, 120, 720, 1000",
+    "options": [
+      "6",
+      "24",
+      "120",
+      "1000"
+    ],
+    "answer": 3,
+    "explanation": "2=2!, 6=3!, 24=4!, 120=5!, 720=6!, but the next should be 7!=5040, not 1000.",
+    "topic": "classification"
+  },
+  {
+    "id": "si_mock2_q14",
+    "subject": "Reasoning",
+    "qno": 14,
+    "question": "Which number set is different from the others?",
+    "options": [
+      "(11, 22, 44)",
+      "(13, 26, 52)",
+      "(15, 30, 60)",
+      "(14, 28, 43)"
+    ],
+    "answer": 3,
+    "explanation": "In the first three sets, each term is double the previous one. In the fourth, 28×2 = 56, not 43.",
+    "topic": "analogy"
+  },
+  {
+    "id": "si_mock2_q15",
+    "subject": "Reasoning",
+    "qno": 15,
+    "question": "If WRITE is coded as YTKVG, then READ will be coded as:",
+    "options": [
+      "TGCF",
+      "YTCF",
+      "TGDF",
+      "ZTCF"
+    ],
+    "answer": 0,
+    "explanation": "Each letter shifts by +2: R→T, E→G, A→C, D→F. Hence READ becomes TGCF.",
+    "topic": "coding_decoding"
+  },
+  {
+    "id": "si_mock2_q16",
+    "subject": "Reasoning",
+    "qno": 16,
+    "question": "Pointing to a girl, Aryan said, 'She is the daughter of the only child of my grandmother.' How is the girl related to Aryan?",
+    "options": [
+      "Sister",
+      "Niece",
+      "Cousin",
+      "Aunt"
+    ],
+    "answer": 0,
+    "explanation": "The only child of Aryan's grandmother is Aryan's parent. The daughter of Aryan's parent is Aryan's sister.",
+    "topic": "blood_relation"
+  },
+  {
+    "id": "si_mock2_q17",
+    "subject": "Reasoning",
+    "qno": 17,
+    "question": "Ramesh says, 'The boy playing football is the younger of the two sons of my father's wife.' How is the boy related to Ramesh?",
+    "options": [
+      "Brother",
+      "Stepbrother",
+      "Cousin",
+      "Nephew"
+    ],
+    "answer": 0,
+    "explanation": "Father's wife means Ramesh's mother. Her two sons are Ramesh and his brother. So the boy is Ramesh's brother.",
+    "topic": "blood_relation"
+  },
+  {
+    "id": "si_mock2_q18",
+    "subject": "Reasoning",
+    "qno": 18,
+    "question": "If the sum of 35 and 46 is multiplied by 2, what is the result?",
+    "options": [
+      "158",
+      "160",
+      "162",
+      "164"
+    ],
+    "answer": 2,
+    "explanation": "(35 + 46) × 2 = 81 × 2 = 162.",
+    "topic": "analogy"
+  },
+  {
+    "id": "si_mock2_q19",
+    "subject": "Reasoning",
+    "qno": 19,
+    "question": "A 60-litre mixture has milk and water in the ratio 7:3. How much water should be added to make the ratio 1:1?",
+    "options": [
+      "18 L",
+      "20 L",
+      "22 L",
+      "24 L"
+    ],
+    "answer": 3,
+    "explanation": "Milk = 42 L and water = 18 L. To make ratio 1:1, water must also become 42 L. So add 24 L.",
+    "topic": "ratio"
+  },
+  {
+    "id": "si_mock2_q20",
+    "subject": "Reasoning",
+    "qno": 20,
+    "question": "A man walks 5 km north, then 12 km east, then 5 km south. How far is he from his starting point?",
+    "options": [
+      "5 km",
+      "10 km",
+      "12 km",
+      "13 km"
+    ],
+    "answer": 2,
+    "explanation": "The north and south movements cancel out. He remains 12 km east of the starting point.",
+    "topic": "direction"
+  },
+  {
+    "id": "si_mock2_q21",
+    "subject": "General Awareness",
+    "qno": 21,
+    "question": "Which Article of the Constitution empowers the President to establish an Inter-State Council?",
+    "options": [
+      "Article 262",
+      "Article 263",
+      "Article 312",
+      "Article 356"
+    ],
+    "answer": 1,
+    "explanation": "Article 263 empowers the President to establish an Inter-State Council.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "si_mock2_q22",
+    "subject": "General Awareness",
+    "qno": 22,
+    "question": "The Regulating Act of 1773 elevated the Governor of Bengal to the position of:",
+    "options": [
+      "Governor of India",
+      "Governor-General of Bengal",
+      "Viceroy of India",
+      "President of Council"
+    ],
+    "answer": 1,
+    "explanation": "The Regulating Act of 1773 made the Governor of Bengal the Governor-General of Bengal.",
+    "topic": "history"
+  },
+  {
+    "id": "si_mock2_q23",
+    "subject": "General Awareness",
+    "qno": 23,
+    "question": "Bhakti traditions broadly classify devotion into which two types?",
+    "options": [
+      "Shaiva and Vaishnava",
+      "Saguna and Nirguna",
+      "Temple and Monastic",
+      "Vedic and Puranic"
+    ],
+    "answer": 1,
+    "explanation": "Bhakti traditions commonly distinguish Saguna bhakti and Nirguna bhakti.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "si_mock2_q24",
+    "subject": "General Awareness",
+    "qno": 24,
+    "question": "Sant Tukaram is especially known for:",
+    "options": [
+      "Founding a new religion",
+      "Writing Persian court poetry",
+      "Composing devotional abhangas",
+      "Leading the Sufi movement"
+    ],
+    "answer": 2,
+    "explanation": "Sant Tukaram is well known for his devotional abhangas in the Bhakti tradition.",
+    "topic": "history"
+  },
+  {
+    "id": "si_mock2_q25",
+    "subject": "General Awareness",
+    "qno": 25,
+    "question": "Milkha Singh finished fourth in the 400 metres at the 1960 Rome Olympics with a timing of:",
+    "options": [
+      "44.8 s",
+      "45.6 s",
+      "46.2 s",
+      "47.0 s"
+    ],
+    "answer": 1,
+    "explanation": "Milkha Singh clocked 45.6 seconds in the 400 metres at Rome 1960.",
+    "topic": "sports"
+  },
+  {
+    "id": "si_mock2_q26",
+    "subject": "General Awareness",
+    "qno": 26,
+    "question": "In which type of rock formation are gorges most commonly developed?",
+    "options": [
+      "Soft sediment",
+      "Hard rocks",
+      "Glacial till",
+      "Volcanic ash"
+    ],
+    "answer": 1,
+    "explanation": "Gorges are commonly formed where rivers cut deeply through hard rocks.",
+    "topic": "geography"
+  },
+  {
+    "id": "si_mock2_q27",
+    "subject": "General Awareness",
+    "qno": 27,
+    "question": "Which Indian state recorded negative population growth during the 2001–2011 census decade?",
+    "options": [
+      "Kerala",
+      "Goa",
+      "Nagaland",
+      "Manipur"
+    ],
+    "answer": 2,
+    "explanation": "Nagaland recorded negative population growth during 2001–2011.",
+    "topic": "history"
+  },
+  {
+    "id": "si_mock2_q28",
+    "subject": "General Awareness",
+    "qno": 28,
+    "question": "Rate of natural increase of population is the difference between:",
+    "options": [
+      "Birth rate and migration rate",
+      "Birth rate and death rate",
+      "Death rate and infant mortality rate",
+      "Working population and total population"
+    ],
+    "answer": 1,
+    "explanation": "Rate of natural increase = crude birth rate − crude death rate.",
+    "topic": "history"
+  },
+  {
+    "id": "si_mock2_q29",
+    "subject": "General Awareness",
+    "qno": 29,
+    "question": "The primary function of telomerase enzyme is:",
+    "options": [
+      "DNA replication",
+      "DNA repair",
+      "Telomere lengthening",
+      "RNA transcription"
+    ],
+    "answer": 2,
+    "explanation": "Telomerase helps maintain chromosome ends by lengthening telomeres.",
+    "topic": "science"
+  },
+  {
+    "id": "si_mock2_q30",
+    "subject": "General Awareness",
+    "qno": 30,
+    "question": "Why are copper bottoms used in cooking vessels?",
+    "options": [
+      "Copper is a poor conductor of heat",
+      "Copper is highly decorative",
+      "Copper is a good conductor of heat",
+      "Copper prevents food spoilage chemically"
+    ],
+    "answer": 2,
+    "explanation": "Copper conducts heat very well and therefore ensures more even heating.",
+    "topic": "history"
+  },
+  {
+    "id": "si_mock2_q31",
+    "subject": "General Awareness",
+    "qno": 31,
+    "question": "What is the primary objective of a Uniform Civil Code in India?",
+    "options": [
+      "A common criminal law for all citizens",
+      "Uniform tax law throughout India",
+      "A common set of personal laws for all citizens",
+      "One election code for all political parties"
+    ],
+    "answer": 2,
+    "explanation": "The UCC aims to provide a common set of personal laws irrespective of religion.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "si_mock2_q32",
+    "subject": "General Awareness",
+    "qno": 32,
+    "question": "The Agriculture Infrastructure Fund mainly supports:",
+    "options": [
+      "Cash transfers",
+      "MGNREGA wage payments",
+      "Agri-logistics and post-harvest infrastructure",
+      "Free electricity to farmers"
+    ],
+    "answer": 2,
+    "explanation": "AIF supports post-harvest infrastructure such as warehouses, cold chains, and logistics.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "si_mock2_q33",
+    "subject": "General Awareness",
+    "qno": 33,
+    "question": "India Industrial Land Bank provides:",
+    "options": [
+      "Loans for industrial workers",
+      "GIS-based information on industrial land",
+      "Subsidies for exports only",
+      "Credit ratings for factories"
+    ],
+    "answer": 1,
+    "explanation": "India Industrial Land Bank is a GIS-enabled portal providing information on industrial land.",
+    "topic": "polity"
+  },
+  {
+    "id": "si_mock2_q34",
+    "subject": "General Awareness",
+    "qno": 34,
+    "question": "According to the Constitution of India, untouchability is abolished under:",
+    "options": [
+      "Article 14",
+      "Article 17",
+      "Article 21",
+      "Article 25"
+    ],
+    "answer": 1,
+    "explanation": "Article 17 abolishes untouchability.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "si_mock2_q35",
+    "subject": "General Awareness",
+    "qno": 35,
+    "question": "Which atmospheric layer contains most weather phenomena?",
+    "options": [
+      "Stratosphere",
+      "Mesosphere",
+      "Troposphere",
+      "Thermosphere"
+    ],
+    "answer": 2,
+    "explanation": "Most weather changes occur in the troposphere.",
+    "topic": "science"
+  },
+  {
+    "id": "si_mock2_q36",
+    "subject": "General Awareness",
+    "qno": 36,
+    "question": "The ozone layer is mainly found in the:",
+    "options": [
+      "Troposphere",
+      "Stratosphere",
+      "Mesosphere",
+      "Exosphere"
+    ],
+    "answer": 1,
+    "explanation": "The ozone layer lies mainly in the stratosphere.",
+    "topic": "geography"
+  },
+  {
+    "id": "si_mock2_q37",
+    "subject": "General Awareness",
+    "qno": 37,
+    "question": "Gwalior Fort is especially known for its:",
+    "options": [
+      "Only Mughal paintings",
+      "Rock-cut Jain sculptures",
+      "Marine fossils",
+      "Buddhist caves only"
+    ],
+    "answer": 1,
+    "explanation": "Gwalior Fort is known for its remarkable rock-cut Jain sculptures.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "si_mock2_q38",
+    "subject": "General Awareness",
+    "qno": 38,
+    "question": "Which commission recommended a permanent secretariat for the Inter-State Council?",
+    "options": [
+      "Rajamannar Committee",
+      "Punchhi Commission",
+      "Sarkaria Commission",
+      "Balwant Rai Mehta Committee"
+    ],
+    "answer": 2,
+    "explanation": "The Sarkaria Commission recommended a permanent secretariat for the Inter-State Council.",
+    "topic": "geography"
+  },
+  {
+    "id": "si_mock2_q39",
+    "subject": "General Awareness",
+    "qno": 39,
+    "question": "Which of the following correctly matches the book with its nature?",
+    "options": [
+      "'Heart: A History' — Fiction novel",
+      "'Heart: A History' — Non-fiction",
+      "'Heart: A History' — Epic poem",
+      "'Heart: A History' — Political memoir"
+    ],
+    "answer": 1,
+    "explanation": "'Heart: A History' is a work of non-fiction.",
+    "topic": "sports"
+  },
+  {
+    "id": "si_mock2_q40",
+    "subject": "General Awareness",
+    "qno": 40,
+    "question": "Which of the following is correct about atmospheric and climate understanding?",
+    "options": [
+      "Weather occurs mainly in the stratosphere",
+      "The ozone layer lies in the troposphere",
+      "Weather occurs mainly in the troposphere and ozone lies in the stratosphere",
+      "Both weather and ozone lie mainly in the mesosphere"
+    ],
+    "answer": 2,
+    "explanation": "Weather occurs chiefly in the troposphere, while the ozone layer is mainly in the stratosphere.",
+    "topic": "geography"
+  },
+  {
+    "id": "si_mock2_q41",
+    "subject": "Quantitative Aptitude",
+    "qno": 41,
+    "question": "Suppose x = √2 + √3, y = √5 + 1, and z = 2√2 + 1. Which of the following is true?",
+    "options": [
+      "x < y < z",
+      "z < y < x",
+      "y < z < x",
+      "x < z < y"
+    ],
+    "answer": 0,
+    "explanation": "Approximate values are x ≈ 3.146, y ≈ 3.236, z ≈ 3.828. Hence x < y < z.",
+    "topic": "algebra"
+  },
+  {
+    "id": "si_mock2_q42",
+    "subject": "Quantitative Aptitude",
+    "qno": 42,
+    "question": "The budget for a project is allocated to land, materials, and labour in the ratio 5:3:2. Land rises by 5%, materials by 10%, and labour falls by 20%. What is the percentage change in total cost?",
+    "options": [
+      "1% increase",
+      "1.5% decrease",
+      "1.5% increase",
+      "2% decrease"
+    ],
+    "answer": 2,
+    "explanation": "Assume total 100: land 50→52.5, materials 30→33, labour 20→16. New total = 101.5. So increase = 1.5%.",
+    "topic": "percentage"
+  },
+  {
+    "id": "si_mock2_q43",
+    "subject": "Quantitative Aptitude",
+    "qno": 43,
+    "question": "Evaluate: 6 − [2/3 ÷ {1/6 + (1/2 × (1 − 1/3))}]",
+    "options": [
+      "14/3",
+      "16/3",
+      "17/3",
+      "3"
+    ],
+    "answer": 0,
+    "explanation": "1−1/3=2/3; 1/2×2/3=1/3; 1/6+1/3=1/2; 2/3 ÷ 1/2 = 4/3; 6−4/3 = 14/3.",
+    "topic": "fractions"
+  },
+  {
+    "id": "si_mock2_q44",
+    "subject": "Quantitative Aptitude",
+    "qno": 44,
+    "question": "X, Y and Z invest ₹25,000, ₹35,000 and ₹40,000 respectively. If annual profit is ₹30,000, Y's share is:",
+    "options": [
+      "₹9,500",
+      "₹10,000",
+      "₹10,500",
+      "₹11,000"
+    ],
+    "answer": 2,
+    "explanation": "Investment ratio = 25:35:40 = 5:7:8. Total parts = 20. Y's share = 7/20 × 30000 = ₹10,500.",
+    "topic": "profit_and_loss"
+  },
+  {
+    "id": "si_mock2_q45",
+    "subject": "Quantitative Aptitude",
+    "qno": 45,
+    "question": "A and B started a business with ₹48,000 and ₹72,000. After 6 months, A withdrew half, while B increased his capital by ₹24,000. Total profit after a year was ₹55,000. B's share is:",
+    "options": [
+      "₹26,500",
+      "₹28,000",
+      "₹36,000",
+      "₹38,500"
+    ],
+    "answer": 3,
+    "explanation": "A's money-months = 48000×6 + 24000×6 = 432000. B's = 72000×6 + 96000×6 = 1008000. Ratio = 3:7. So B gets 7/10 × 55000 = ₹38,500.",
+    "topic": "profit_and_loss"
+  },
+  {
+    "id": "si_mock2_q46",
+    "subject": "Quantitative Aptitude",
+    "qno": 46,
+    "question": "The average daily earning of worker C over 4 days was based on wages 220, 230, 215, 225. The average is:",
+    "options": [
+      "222.5",
+      "223",
+      "225",
+      "227.5"
+    ],
+    "answer": 0,
+    "explanation": "Average = (220 + 230 + 215 + 225)/4 = 890/4 = 222.5.",
+    "topic": "average"
+  },
+  {
+    "id": "si_mock2_q47",
+    "subject": "Quantitative Aptitude",
+    "qno": 47,
+    "question": "Current literate population of a city is 25,000. If literate males decrease by 5% and literate females increase by 10%, the total becomes 25,250. Present literate males are:",
+    "options": [
+      "14,000",
+      "15,000",
+      "16,000",
+      "16,500"
+    ],
+    "answer": 1,
+    "explanation": "Let males = M, females = F. M+F=25000 and 0.95M+1.1F=25250. Solving gives M=15000.",
+    "topic": "percentage"
+  },
+  {
+    "id": "si_mock2_q48",
+    "subject": "Quantitative Aptitude",
+    "qno": 48,
+    "question": "A baker ordered 10 kg premium flour and x kg standard flour. Premium costs twice standard. Due to error, quantities were interchanged and total cost fell by 25%. Find the original ratio premium : standard.",
+    "options": [
+      "1:2",
+      "5:2",
+      "3:4",
+      "4:5"
+    ],
+    "answer": 1,
+    "explanation": "Let standard price = p, premium = 2p. Original = 20p + xp, swapped = 10p + 2xp. Since swapped cost is 25% less: 10 + 2x = 0.75(20 + x), giving x = 4. Ratio = 10:4 = 5:2.",
+    "topic": "percentage"
+  },
+  {
+    "id": "si_mock2_q49",
+    "subject": "Quantitative Aptitude",
+    "qno": 49,
+    "question": "A vendor sold 15 toys for ₹3000 at 25% profit. How many toys should he sell for ₹2816 to make 10% profit?",
+    "options": [
+      "15",
+      "16",
+      "17",
+      "18"
+    ],
+    "answer": 1,
+    "explanation": "SP per toy = 3000/15 = 200. CP per toy = 200/1.25 = 160. At 10% profit, new SP per toy = 176. Number of toys = 2816/176 = 16.",
+    "topic": "percentage"
+  },
+  {
+    "id": "si_mock2_q50",
+    "subject": "Quantitative Aptitude",
+    "qno": 50,
+    "question": "A trader sells one tea at ₹150/kg at 25% loss and another at ₹200/kg at 20% loss. Mixed equally and sold at ₹175/kg. Overall result is:",
+    "options": [
+      "Loss of 22.22%",
+      "Profit of 22.22%",
+      "Loss of 25%",
+      "No profit no loss"
+    ],
+    "answer": 0,
+    "explanation": "First CP = 150/0.75 = 200, second CP = 200/0.80 = 250. Average CP = 225. Selling price = 175. Loss = 50/225 × 100 = 22.22%.",
+    "topic": "average"
+  },
+  {
+    "id": "si_mock2_q51",
+    "subject": "Quantitative Aptitude",
+    "qno": 51,
+    "question": "A and B together can do a work in 12 days, B and C in 15 days, and C and A in 20 days. A alone can do the work in:",
+    "options": [
+      "20 days",
+      "24 days",
+      "30 days",
+      "36 days"
+    ],
+    "answer": 2,
+    "explanation": "A+B=1/12, B+C=1/15, C+A=1/20. Adding gives A+B+C=1/10. Then A = 1/10 − 1/15 = 1/30.",
+    "topic": "number_system"
+  },
+  {
+    "id": "si_mock2_q52",
+    "subject": "Quantitative Aptitude",
+    "qno": 52,
+    "question": "From a 64-litre container of pure spirit, 8 litres are removed and replaced by water. This is done three times. The spirit finally left is:",
+    "options": [
+      "34.34 L",
+      "36.45 L",
+      "38.62 L",
+      "42.88 L"
+    ],
+    "answer": 3,
+    "explanation": "Remaining spirit = 64 × (56/64)^3 = 64 × (7/8)^3 = 42.875 ≈ 42.88 litres.",
+    "topic": "profit_and_loss"
+  },
+  {
+    "id": "si_mock2_q53",
+    "subject": "Quantitative Aptitude",
+    "qno": 53,
+    "question": "A juice vendor mixes water with orange juice and sells the mixture at the cost price of pure juice, making 20% profit. The ratio of water to juice is:",
+    "options": [
+      "1:5",
+      "1:4",
+      "4:1",
+      "5:1"
+    ],
+    "answer": 0,
+    "explanation": "If selling price equals CP of juice and profit is 20%, then CP of mixture is 5/6 of SP. Thus water forms 1/6 and juice 5/6. Ratio water : juice = 1:5.",
+    "topic": "percentage"
+  },
+  {
+    "id": "si_mock2_q54",
+    "subject": "Quantitative Aptitude",
+    "qno": 54,
+    "question": "A car covers 40% of a distance at 20 km/h and the remaining 60% at 30 km/h. Its average speed for the whole journey is:",
+    "options": [
+      "24 km/h",
+      "25 km/h",
+      "26 km/h",
+      "27 km/h"
+    ],
+    "answer": 1,
+    "explanation": "Assume total distance 100 km. Time = 40/20 + 60/30 = 2 + 2 = 4 hours. Average speed = 100/4 = 25 km/h.",
+    "topic": "average"
+  },
+  {
+    "id": "si_mock2_q55",
+    "subject": "Quantitative Aptitude",
+    "qno": 55,
+    "question": "Two joggers start from the same point on a circular track of perimeter 1.2 km in opposite directions at speeds 5 km/h and 7 km/h. They will meet for the fifth time at:",
+    "options": [
+      "6:24 AM",
+      "6:25 AM",
+      "6:30 AM",
+      "6:36 AM"
+    ],
+    "answer": 2,
+    "explanation": "Relative speed = 12 km/h. Time for one meeting = 1.2/12 = 0.1 hr = 6 min. Fifth meeting = 5×6 = 30 min after 6:00 AM.",
+    "topic": "profit_and_loss"
+  },
+  {
+    "id": "si_mock2_q56",
+    "subject": "English",
+    "qno": 56,
+    "question": "Select the most appropriate synonym of 'CAUSTIC'.",
+    "options": [
+      "Gentle",
+      "Kind",
+      "Mild",
+      "Sarcastic"
+    ],
+    "answer": 3,
+    "explanation": "Caustic means severely critical or sarcastic.",
+    "topic": "synonym"
+  },
+  {
+    "id": "si_mock2_q57",
+    "subject": "English",
+    "qno": 57,
+    "question": "Choose the correct meaning of the idiom 'Make no bones about it'.",
+    "options": [
+      "To hesitate before speaking",
+      "To remain neutral",
+      "To be direct and honest",
+      "To confuse the listener"
+    ],
+    "answer": 2,
+    "explanation": "The idiom means to speak directly and without hesitation.",
+    "topic": "idiom"
+  },
+  {
+    "id": "si_mock2_q58",
+    "subject": "English",
+    "qno": 58,
+    "question": "Select the most appropriate antonym of 'Evanescent'.",
+    "options": [
+      "Ephemeral",
+      "Transient",
+      "Enduring",
+      "Fleeting"
+    ],
+    "answer": 2,
+    "explanation": "Evanescent means short-lived; its antonym is enduring.",
+    "topic": "antonym"
+  },
+  {
+    "id": "si_mock2_q59",
+    "subject": "English",
+    "qno": 59,
+    "question": "Identify the misspelt word.",
+    "options": [
+      "Temerarious",
+      "Penitent",
+      "Inadvertant",
+      "Porphyroblastic"
+    ],
+    "answer": 2,
+    "explanation": "The correct spelling is 'Inadvertent'.",
+    "topic": "spelling"
+  },
+  {
+    "id": "si_mock2_q60",
+    "subject": "English",
+    "qno": 60,
+    "question": "Choose the correct one-word substitute for 'A political system based on the rule of the wealthy'.",
+    "options": [
+      "Oligarchy",
+      "Aristocracy",
+      "Plutocracy",
+      "Meritocracy"
+    ],
+    "answer": 2,
+    "explanation": "Plutocracy means government by the wealthy.",
+    "topic": "one_word_substitution"
+  },
+  {
+    "id": "si_mock2_q61",
+    "subject": "English",
+    "qno": 61,
+    "question": "Only after a decade of fieldwork ___ fully grasp the dialect's nuances.",
+    "options": [
+      "she had",
+      "did she",
+      "had she",
+      "she did"
+    ],
+    "answer": 1,
+    "explanation": "After a negative or restrictive adverbial opener like 'Only after...', inversion is used: 'did she'.",
+    "topic": "grammar"
+  },
+  {
+    "id": "si_mock2_q62",
+    "subject": "English",
+    "qno": 62,
+    "question": "The professor's remarks were so dense with jargon that they bordered on ___.",
+    "options": [
+      "opacity",
+      "opaque",
+      "opacus",
+      "opalescent"
+    ],
+    "answer": 0,
+    "explanation": "A noun is required after 'bordered on'; 'opacity' fits correctly.",
+    "topic": "grammar"
+  },
+  {
+    "id": "si_mock2_q63",
+    "subject": "English",
+    "qno": 63,
+    "question": "Her rebuttal, though eloquent, failed to ___ the central issue raised by the opposition.",
+    "options": [
+      "address",
+      "digress",
+      "circumvent",
+      "elude"
+    ],
+    "answer": 0,
+    "explanation": "To 'address' an issue means to deal with it directly.",
+    "topic": "grammar"
+  },
+  {
+    "id": "si_mock2_q64",
+    "subject": "English",
+    "qno": 64,
+    "question": "Find the part of the sentence that contains an error: The reforms being recommended by the panel (1)/ are not only intended to streamline administrative functions (2)/ but also addressing the asymmetries in resource allocation (3)/ that have long plagued rural districts. (4)",
+    "options": [
+      "(1)",
+      "(2)",
+      "(3)",
+      "(4)"
+    ],
+    "answer": 2,
+    "explanation": "The parallel structure after 'not only ... but also' is broken. It should be 'but also to address'.",
+    "topic": "error_detection"
+  },
+  {
+    "id": "si_mock2_q65",
+    "subject": "English",
+    "qno": 65,
+    "question": "Find the part of the sentence that contains an error: What the committee failed to deliberate on adequately (1)/ were not the policy's objectives themselves, (2)/ but the political ramifications it (3)/ might have had if implemented without broader consensus. (4)",
+    "options": [
+      "(1)",
+      "(2)",
+      "(3)",
+      "(4)"
+    ],
+    "answer": 1,
+    "explanation": "'What the committee failed...' is a singular clause, so it should be 'was not', not 'were not'.",
+    "topic": "error_detection"
+  },
+  {
+    "id": "si_mock2_q66",
+    "subject": "English",
+    "qno": 66,
+    "question": "Change the following into passive voice: The laboratory will have double-checked the reagents by dawn.",
+    "options": [
+      "The reagents have been double-checked by the laboratory by dawn.",
+      "The reagents will have been double-checked by the laboratory by dawn.",
+      "The reagents will be double-checked by the laboratory by dawn.",
+      "The reagents would have been double-checking by the laboratory by dawn."
+    ],
+    "answer": 1,
+    "explanation": "Future perfect active changes to future perfect passive: 'will have been double-checked'.",
+    "topic": "voice"
+  },
+  {
+    "id": "si_mock2_q67",
+    "subject": "English",
+    "qno": 67,
+    "question": "Convert into active voice: Rare minerals are known to have been secretly extracted from the site by unauthorized workers before the inspection.",
+    "options": [
+      "Unauthorized workers extracted the rare minerals before inspection.",
+      "The site was secretly mined before the inspection.",
+      "Unauthorized workers are known to have secretly extracted rare minerals before the inspection.",
+      "The minerals had been extracted prior to inspection."
+    ],
+    "answer": 2,
+    "explanation": "This option preserves both the tense and the reporting sense of 'are known to have been extracted'.",
+    "topic": "voice"
+  },
+  {
+    "id": "si_mock2_q68",
+    "subject": "English",
+    "qno": 68,
+    "question": "Select the sentence containing the homonym of the highlighted word: 'The fanon rested on the Pope's shoulder during Mass.'",
+    "options": [
+      "The theologian lectured on the fanon's origin in Rome.",
+      "The tailor stitched the edge of the fanon carefully.",
+      "The critic analyzed Fanon's theory of postcolonial identity.",
+      "The cardinal wore the fanon over his chasuble."
+    ],
+    "answer": 2,
+    "explanation": "Here 'Fanon' refers to Frantz Fanon, which is a homonym in sound/spelling with the liturgical term.",
+    "topic": "spelling"
+  },
+  {
+    "id": "si_mock2_q69",
+    "subject": "English",
+    "qno": 69,
+    "question": "Choose the correctly spelt word.",
+    "options": [
+      "Conscientous",
+      "Conscientious",
+      "Consciencious",
+      "Conscentious"
+    ],
+    "answer": 1,
+    "explanation": "'Conscientious' is the correct spelling.",
+    "topic": "spelling"
+  },
+  {
+    "id": "si_mock2_q70",
+    "subject": "English",
+    "qno": 70,
+    "question": "Select the option that best replaces the underlined words: 'The plan was abandoned because it was not able to be carried out.'",
+    "options": [
+      "incredible",
+      "infeasible",
+      "irregular",
+      "impartial"
+    ],
+    "answer": 1,
+    "explanation": "'Infeasible' means not capable of being carried out.",
+    "topic": "error_detection"
+  },
+  {
+    "id": "si_mock2_q71",
+    "subject": "Mathematical Abilities",
+    "qno": 71,
+    "question": "The area of a sector of a circle with radius 7 cm and central angle 90° is:",
+    "options": [
+      "38.5 cm²",
+      "35 cm²",
+      "44 cm²",
+      "49 cm²"
+    ],
+    "answer": 0,
+    "explanation": "Area = (90/360) × π × 7² = 1/4 × 49π = 38.5 cm² using π = 22/7.",
+    "topic": "geometry"
+  },
+  {
+    "id": "si_mock2_q72",
+    "subject": "Mathematical Abilities",
+    "qno": 72,
+    "question": "The radian measure of 150° is:",
+    "options": [
+      "5π/6",
+      "2π/3",
+      "3π/4",
+      "8π/3"
+    ],
+    "answer": 0,
+    "explanation": "150° × π/180 = 5π/6.",
+    "topic": "number_system"
+  },
+  {
+    "id": "si_mock2_q73",
+    "subject": "Mathematical Abilities",
+    "qno": 73,
+    "question": "The area of a sector with central angle 120° and radius 8 cm is:",
+    "options": [
+      "64π/3 cm²",
+      "32π cm²",
+      "48π/3 cm²",
+      "16π cm²"
+    ],
+    "answer": 0,
+    "explanation": "Area = (120/360) × π × 8² = 1/3 × 64π = 64π/3.",
+    "topic": "geometry"
+  },
+  {
+    "id": "si_mock2_q74",
+    "subject": "Mathematical Abilities",
+    "qno": 74,
+    "question": "Which of these lines is parallel to 3x + 2y = 5?",
+    "options": [
+      "3x + 2y = 7",
+      "2x + 3y = 5",
+      "3x - 2y = 5",
+      "x + y = 5"
+    ],
+    "answer": 0,
+    "explanation": "Parallel lines have the same coefficients of x and y, hence same slope.",
+    "topic": "algebra"
+  },
+  {
+    "id": "si_mock2_q75",
+    "subject": "Mathematical Abilities",
+    "qno": 75,
+    "question": "If x = √5 + 2, then x² − 4√5 =",
+    "options": [
+      "1",
+      "3",
+      "7",
+      "9"
+    ],
+    "answer": 3,
+    "explanation": "x² = (√5 + 2)² = 5 + 4 + 4√5 = 9 + 4√5. So x² − 4√5 = 9.",
+    "topic": "algebra"
+  },
+  {
+    "id": "si_mock2_q76",
+    "subject": "Mathematical Abilities",
+    "qno": 76,
+    "question": "In triangles ABC and XYZ, AB = XY, BC = YZ and CA = ZX. Which congruence rule applies?",
+    "options": [
+      "SSS",
+      "SAS",
+      "ASA",
+      "AAS"
+    ],
+    "answer": 0,
+    "explanation": "When all three corresponding sides are equal, the rule is SSS.",
+    "topic": "profit_and_loss"
+  },
+  {
+    "id": "si_mock2_q77",
+    "subject": "Mathematical Abilities",
+    "qno": 77,
+    "question": "If A and B are complementary angles and sin A = 3/5, then tan B =",
+    "options": [
+      "4/3",
+      "3/4",
+      "5/4",
+      "5/3"
+    ],
+    "answer": 0,
+    "explanation": "If sin A = 3/5, then cos A = 4/5. Since B = 90°−A, tan B = cot A = cos A/sin A = 4/3.",
+    "topic": "profit_and_loss"
+  },
+  {
+    "id": "si_mock2_q78",
+    "subject": "Mathematical Abilities",
+    "qno": 78,
+    "question": "In a cyclic quadrilateral, if one angle is 100°, the opposite angle is:",
+    "options": [
+      "70°",
+      "80°",
+      "90°",
+      "100°"
+    ],
+    "answer": 1,
+    "explanation": "Opposite angles in a cyclic quadrilateral are supplementary. So opposite angle = 180°−100° = 80°.",
+    "topic": "geometry"
+  },
+  {
+    "id": "si_mock2_q79",
+    "subject": "Mathematical Abilities",
+    "qno": 79,
+    "question": "If sin²A − cos²A = 1/3, then cos²A =",
+    "options": [
+      "0",
+      "1/4",
+      "1/3",
+      "1/2"
+    ],
+    "answer": 2,
+    "explanation": "Using sin²A = 1−cos²A: (1−cos²A)−cos²A = 1/3 → 1−2cos²A = 1/3 → 2cos²A = 2/3 → cos²A = 1/3.",
+    "topic": "trigonometry"
+  },
+  {
+    "id": "si_mock2_q80",
+    "subject": "Mathematical Abilities",
+    "qno": 80,
+    "question": "If sin(90° − x) = cos(2x), then x =",
+    "options": [
+      "0°",
+      "30°",
+      "45°",
+      "60°"
+    ],
+    "answer": 0,
+    "explanation": "sin(90°−x)=cos x. So cos x = cos 2x. The principal valid solution among the given options is x = 0°.",
+    "topic": "mixture_and_alligation"
+  },
+  {
+    "id": "si_mock2_q81",
+    "subject": "Mathematical Abilities",
+    "qno": 81,
+    "question": "The mean of 12, 15, 18, 21 and 24 is:",
+    "options": [
+      "16",
+      "17",
+      "18",
+      "19"
+    ],
+    "answer": 2,
+    "explanation": "Sum = 90, and 90/5 = 18.",
+    "topic": "average"
+  },
+  {
+    "id": "si_mock2_q82",
+    "subject": "Mathematical Abilities",
+    "qno": 82,
+    "question": "The median of 5, 9, 11, 13, 17 is:",
+    "options": [
+      "9",
+      "10",
+      "11",
+      "13"
+    ],
+    "answer": 2,
+    "explanation": "The middle term in the ordered list is 11.",
+    "topic": "average"
+  },
+  {
+    "id": "si_mock2_q83",
+    "subject": "Mathematical Abilities",
+    "qno": 83,
+    "question": "The mode of the data 2, 3, 3, 5, 7, 3, 8 is:",
+    "options": [
+      "2",
+      "3",
+      "5",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "Mode is the value with highest frequency. Here 3 occurs most often.",
+    "topic": "number_system"
+  },
+  {
+    "id": "si_mock2_q84",
+    "subject": "Mathematical Abilities",
+    "qno": 84,
+    "question": "A die is thrown once. The probability of getting an even number is:",
+    "options": [
+      "1/6",
+      "1/3",
+      "1/2",
+      "2/3"
+    ],
+    "answer": 2,
+    "explanation": "Even numbers on a die are 2, 4, 6. So probability = 3/6 = 1/2.",
+    "topic": "algebra"
+  },
+  {
+    "id": "si_mock2_q85",
+    "subject": "Mathematical Abilities",
+    "qno": 85,
+    "question": "The standard deviation of a set of observations is a measure of:",
+    "options": [
+      "central value",
+      "dispersion",
+      "frequency",
+      "probability"
+    ],
+    "answer": 1,
+    "explanation": "Standard deviation measures the spread or dispersion of data around the mean.",
+    "topic": "average"
+  },
+  {
+    "id": "si_mock2_q86",
+    "subject": "Computer Proficiency",
+    "qno": 86,
+    "question": "CPU stands for:",
+    "options": [
+      "Central Processing Unit",
+      "Central Program Utility",
+      "Control Processing Unit",
+      "Computer Primary Unit"
+    ],
+    "answer": 0,
+    "explanation": "CPU stands for Central Processing Unit.",
+    "topic": "computer"
+  },
+  {
+    "id": "si_mock2_q87",
+    "subject": "Computer Proficiency",
+    "qno": 87,
+    "question": "Which of the following is an input device?",
+    "options": [
+      "Monitor",
+      "Printer",
+      "Keyboard",
+      "Plotter"
+    ],
+    "answer": 2,
+    "explanation": "A keyboard is used to input data into the computer.",
+    "topic": "computer"
+  },
+  {
+    "id": "si_mock2_q88",
+    "subject": "Computer Proficiency",
+    "qno": 88,
+    "question": "Which shortcut key is used to copy selected text in Windows?",
+    "options": [
+      "Ctrl + X",
+      "Ctrl + V",
+      "Ctrl + C",
+      "Ctrl + Z"
+    ],
+    "answer": 2,
+    "explanation": "Ctrl + C is the standard copy shortcut.",
+    "topic": "computer"
+  },
+  {
+    "id": "si_mock2_q89",
+    "subject": "Computer Proficiency",
+    "qno": 89,
+    "question": "MS PowerPoint is mainly used for:",
+    "options": [
+      "Word processing",
+      "Spreadsheet calculation",
+      "Presentation creation",
+      "Database management"
+    ],
+    "answer": 2,
+    "explanation": "MS PowerPoint is presentation software.",
+    "topic": "computer"
+  },
+  {
+    "id": "si_mock2_q90",
+    "subject": "Computer Proficiency",
+    "qno": 90,
+    "question": "WWW stands for:",
+    "options": [
+      "World Wide Web",
+      "World Web Window",
+      "Wide World Web",
+      "Web World Wide"
+    ],
+    "answer": 0,
+    "explanation": "WWW stands for World Wide Web.",
+    "topic": "computer"
+  },
+  {
+    "id": "si_mock2_q91",
+    "subject": "Computer Proficiency",
+    "qno": 91,
+    "question": "Which of the following is a storage device?",
+    "options": [
+      "Scanner",
+      "Keyboard",
+      "Hard Disk",
+      "Speaker"
+    ],
+    "answer": 2,
+    "explanation": "Hard disk is a data storage device.",
+    "topic": "computer"
+  },
+  {
+    "id": "si_mock2_q92",
+    "subject": "Computer Proficiency",
+    "qno": 92,
+    "question": "The shortcut key used for paste is:",
+    "options": [
+      "Ctrl + P",
+      "Ctrl + S",
+      "Ctrl + V",
+      "Ctrl + A"
+    ],
+    "answer": 2,
+    "explanation": "Ctrl + V is the paste shortcut.",
+    "topic": "computer"
+  },
+  {
+    "id": "si_mock2_q93",
+    "subject": "Computer Proficiency",
+    "qno": 93,
+    "question": "Which of the following is an operating system?",
+    "options": [
+      "Windows",
+      "Excel",
+      "Chrome",
+      "PowerPoint"
+    ],
+    "answer": 0,
+    "explanation": "Windows is an operating system.",
+    "topic": "computer"
+  },
+  {
+    "id": "si_mock2_q94",
+    "subject": "Computer Proficiency",
+    "qno": 94,
+    "question": "Which browser is commonly used to access the internet?",
+    "options": [
+      "MS Paint",
+      "Google Chrome",
+      "Notepad",
+      "Calculator"
+    ],
+    "answer": 1,
+    "explanation": "Google Chrome is a web browser.",
+    "topic": "computer"
+  },
+  {
+    "id": "si_mock2_q95",
+    "subject": "Computer Proficiency",
+    "qno": 95,
+    "question": "In an email address, the symbol that must appear is:",
+    "options": [
+      "#",
+      "&",
+      "@",
+      "%"
+    ],
+    "answer": 2,
+    "explanation": "Every valid email address contains the @ symbol.",
+    "topic": "computer"
+  },
+  {
+    "id": "si_mock2_q96",
+    "subject": "Computer Proficiency",
+    "qno": 96,
+    "question": "Which function key is commonly used to refresh a webpage?",
+    "options": [
+      "F1",
+      "F3",
+      "F5",
+      "F10"
+    ],
+    "answer": 2,
+    "explanation": "F5 is widely used for refreshing a webpage.",
+    "topic": "computer"
+  },
+  {
+    "id": "si_mock2_q97",
+    "subject": "Computer Proficiency",
+    "qno": 97,
+    "question": "Which of the following is NOT an output device?",
+    "options": [
+      "Monitor",
+      "Printer",
+      "Speaker",
+      "Mouse"
+    ],
+    "answer": 3,
+    "explanation": "Mouse is an input device.",
+    "topic": "computer"
+  },
+  {
+    "id": "si_mock2_q98",
+    "subject": "Computer Proficiency",
+    "qno": 98,
+    "question": "In MS Word, Ctrl + S is used to:",
+    "options": [
+      "Select all",
+      "Save",
+      "Search",
+      "Send"
+    ],
+    "answer": 1,
+    "explanation": "Ctrl + S saves the current file.",
+    "topic": "computer"
+  },
+  {
+    "id": "si_mock2_q99",
+    "subject": "Computer Proficiency",
+    "qno": 99,
+    "question": "PDF stands for:",
+    "options": [
+      "Portable Document Format",
+      "Printed Data File",
+      "Public Document Form",
+      "Portable Data Form"
+    ],
+    "answer": 0,
+    "explanation": "PDF stands for Portable Document Format.",
+    "topic": "computer"
+  },
+  {
+    "id": "si_mock2_q100",
+    "subject": "Computer Proficiency",
+    "qno": 100,
+    "question": "Which of the following threats is a type of malicious software?",
+    "options": [
+      "Firewall",
+      "Virus",
+      "Router",
+      "Spreadsheet"
+    ],
+    "answer": 1,
+    "explanation": "A virus is a type of malicious software that can harm computer systems.",
+    "topic": "computer"
+  }
+]

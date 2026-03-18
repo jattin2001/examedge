@@ -1,0 +1,937 @@
+[
+  {
+    "id": "ja_q1",
+    "subject": "General English",
+    "qno": 1,
+    "question": "Select the synonym of 'UBIQUITOUS'.",
+    "options": ["Rare", "Omnipresent", "Limited", "Scarce"],
+    "answer": 1,
+    "explanation": "Omnipresent (present everywhere).",
+    "topic": "synonym"
+  },
+  {
+    "id": "ja_q2",
+    "subject": "General English",
+    "qno": 2,
+    "question": "Idiom: 'Piece of cake' means",
+    "options": ["Easy task", "Difficult job", "Expensive item", "Boring work"],
+    "answer": 0,
+    "explanation": "Easy task.",
+    "topic": "idiom"
+  },
+  {
+    "id": "ja_q3",
+    "subject": "General English",
+    "qno": 3,
+    "question": "Antonym of 'VIVACIOUS'.",
+    "options": ["Lively", "Dull", "Energetic", "Cheerful"],
+    "answer": 1,
+    "explanation": "Dull.",
+    "topic": "antonym"
+  },
+  {
+    "id": "ja_q4",
+    "subject": "General English",
+    "qno": 4,
+    "question": "Spot the error: 'She is one of the best singer in the choir.'",
+    "options": ["She is", "one of the", "best singer", "in the choir"],
+    "answer": 2,
+    "explanation": "Should be 'best singers'.",
+    "topic": "error_detection"
+  },
+  {
+    "id": "ja_q5",
+    "subject": "General English",
+    "qno": 5,
+    "question": "One-word substitution: 'A person who collects stamps'.",
+    "options": ["Philatelist", "Numismatist", "Cartographer", "Calligrapher"],
+    "answer": 0,
+    "explanation": "Philatelist.",
+    "topic": "grammar"
+  },
+  {
+    "id": "ja_q6",
+    "subject": "General English",
+    "qno": 6,
+    "question": "Change to passive: 'They built the house in 2020.'",
+    "options": [
+      "The house was built by them in 2020",
+      "The house is built by them",
+      "They were building the house",
+      "House built in 2020"
+    ],
+    "answer": 0,
+    "explanation": "The house was built by them in 2020.",
+    "topic": "voice"
+  },
+  {
+    "id": "ja_q7",
+    "subject": "General English",
+    "qno": 7,
+    "question": "Sentence improvement: 'He is knowing the answer.'",
+    "options": ["knows", "is know", "knowing", "No change"],
+    "answer": 0,
+    "explanation": "knows.",
+    "topic": "grammar"
+  },
+  {
+    "id": "ja_q8",
+    "subject": "General English",
+    "qno": 8,
+    "question": "Direct to Indirect: He said, 'I am happy.'",
+    "options": [
+      "He said that he is happy",
+      "He said that he was happy",
+      "He says he is happy",
+      "None"
+    ],
+    "answer": 1,
+    "explanation": "He said that he was happy.",
+    "topic": "grammar"
+  },
+  {
+    "id": "ja_q9",
+    "subject": "General English",
+    "qno": 9,
+    "question": "Misspelt word: Recieve / Believe / Deceive",
+    "options": ["Recieve", "Believe", "Deceive", "All correct"],
+    "answer": 0,
+    "explanation": "Receive.",
+    "topic": "grammar"
+  },
+  {
+    "id": "ja_q10",
+    "subject": "General English",
+    "qno": 10,
+    "question": "Fill in the blank: He ___ to school every day.",
+    "options": ["go", "goes", "going", "gone"],
+    "answer": 1,
+    "explanation": "goes.",
+    "topic": "grammar"
+  },
+  {
+    "id": "ja_q11",
+    "subject": "General English",
+    "qno": 11,
+    "question": "Synonym of 'Eloquent'.",
+    "options": ["Fluent", "Silent", "Dull", "Angry"],
+    "answer": 0,
+    "explanation": "Fluent.",
+    "topic": "synonym"
+  },
+  {
+    "id": "ja_q12",
+    "subject": "General English",
+    "qno": 12,
+    "question": "Antonym of 'Benevolent'.",
+    "options": ["Kind", "Cruel", "Generous", "Happy"],
+    "answer": 1,
+    "explanation": "Cruel.",
+    "topic": "antonym"
+  },
+  {
+    "id": "ja_q13",
+    "subject": "General English",
+    "qno": 13,
+    "question": "Idiom: 'Hit the nail on the head' means",
+    "options": ["Exactly right", "Missed", "Angry", "Happy"],
+    "answer": 0,
+    "explanation": "Exactly right.",
+    "topic": "idiom"
+  },
+  {
+    "id": "ja_q14",
+    "subject": "General English",
+    "qno": 14,
+    "question": "Error: 'Neither the boys nor the girl are ready.'",
+    "options": ["Neither", "the boys", "nor the girl", "are ready"],
+    "answer": 3,
+    "explanation": "Should be 'is ready'.",
+    "topic": "error_detection"
+  },
+  {
+    "id": "ja_q15",
+    "subject": "General English",
+    "qno": 15,
+    "question": "One-word: 'Fear of water'.",
+    "options": ["Hydrophobia", "Claustrophobia", "Acrophobia", "Agoraphobia"],
+    "answer": 0,
+    "explanation": "Hydrophobia.",
+    "topic": "grammar"
+  },
+  {
+    "id": "ja_q16",
+    "subject": "General English",
+    "qno": 16,
+    "passage_id": "p1",
+    "passage_text": "Education gives us knowledge, but wisdom comes from experience and reflection. While schools teach facts and figures, wisdom enriches the soul by fostering deeper moral insight. Elders and artisans, despite lacking formal education, often possess great wisdom cultivated through years of practice. In recent times, rote learning and algorithmic methods have widened the gap between formal learning and applied wisdom, leaving many educated yet unwise.",
+    "question": "According to the passage, how is wisdom primarily acquired?",
+    "options": [
+      "Through textbooks",
+      "Through emotional detachment",
+      "Through experience and reflection",
+      "Through algorithmic thinking"
+    ],
+    "answer": 2,
+    "explanation": "The passage states: 'wisdom comes from experience and reflection'.",
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "ja_q17",
+    "subject": "General English",
+    "qno": 17,
+    "passage_id": "p1",
+    "passage_text": "Education gives us knowledge, but wisdom comes from experience and reflection. While schools teach facts and figures, wisdom enriches the soul by fostering deeper moral insight. Elders and artisans, despite lacking formal education, often possess great wisdom cultivated through years of practice. In recent times, rote learning and algorithmic methods have widened the gap between formal learning and applied wisdom, leaving many educated yet unwise.",
+    "question": "What does the author mean by 'wisdom enriches the soul'?",
+    "options": [
+      "It enhances academic success",
+      "It fosters deeper moral insight",
+      "It improves verbal expression",
+      "It sharpens mathematical skills"
+    ],
+    "answer": 1,
+    "explanation": "The passage explains: 'wisdom enriches the soul by fostering deeper moral insight'.",
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "ja_q18",
+    "subject": "General English",
+    "qno": 18,
+    "passage_id": "p1",
+    "passage_text": "Education gives us knowledge, but wisdom comes from experience and reflection. While schools teach facts and figures, wisdom enriches the soul by fostering deeper moral insight. Elders and artisans, despite lacking formal education, often possess great wisdom cultivated through years of practice. In recent times, rote learning and algorithmic methods have widened the gap between formal learning and applied wisdom, leaving many educated yet unwise.",
+    "question": "Who, according to the passage, can be wise despite lacking formal education?",
+    "options": [
+      "Scientists",
+      "School children",
+      "Elders and artisans",
+      "Technocrats"
+    ],
+    "answer": 2,
+    "explanation": "'Elders and artisans, despite lacking formal education, often possess great wisdom'.",
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "ja_q19",
+    "subject": "General English",
+    "qno": 19,
+    "passage_id": "p1",
+    "passage_text": "Education gives us knowledge, but wisdom comes from experience and reflection. While schools teach facts and figures, wisdom enriches the soul by fostering deeper moral insight. Elders and artisans, despite lacking formal education, often possess great wisdom cultivated through years of practice. In recent times, rote learning and algorithmic methods have widened the gap between formal learning and applied wisdom, leaving many educated yet unwise.",
+    "question": "What is the central contrast drawn in the passage?",
+    "options": [
+      "Education vs career",
+      "Intelligence vs memory",
+      "Reading vs writing",
+      "Formal learning vs applied wisdom"
+    ],
+    "answer": 3,
+    "explanation": "The passage contrasts 'formal learning' (school/facts) with 'applied wisdom' (experience-based).",
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "ja_q20",
+    "subject": "General English",
+    "qno": 20,
+    "passage_id": "p1",
+    "passage_text": "Education gives us knowledge, but wisdom comes from experience and reflection. While schools teach facts and figures, wisdom enriches the soul by fostering deeper moral insight. Elders and artisans, despite lacking formal education, often possess great wisdom cultivated through years of practice. In recent times, rote learning and algorithmic methods have widened the gap between formal learning and applied wisdom, leaving many educated yet unwise.",
+    "question": "Why has the gap between education and wisdom widened in recent times?",
+    "options": [
+      "Due to overuse of social media",
+      "Because wisdom is no longer valued",
+      "Because of rote learning and algorithmic methods",
+      "Because people stop learning after school"
+    ],
+    "answer": 2,
+    "explanation": "'Rote learning and algorithmic methods have widened the gap between formal learning and applied wisdom'.",
+    "topic": "grammar"
+  },
+  {
+    "id": "ja_q21",
+    "subject": "General Awareness",
+    "qno": 21,
+    "question": "Who was the first Chief Minister of Jammu & Kashmir after independence?",
+    "options": [
+      "Sheikh Abdullah",
+      "Bakshi Ghulam Mohammad",
+      "Ghulam Mohammad Sadiq",
+      "Yasin Malik"
+    ],
+    "answer": 0,
+    "explanation": "Sheikh Abdullah (1947-1953) – J&K specific.",
+    "topic": "history"
+  },
+  {
+    "id": "ja_q22",
+    "subject": "General Awareness",
+    "qno": 22,
+    "question": "The famous Dal Lake is located in which district of J&K UT?",
+    "options": ["Srinagar", "Anantnag", "Baramulla", "Jammu"],
+    "answer": 0,
+    "explanation": "Srinagar (J&K Geography).",
+    "topic": "geography"
+  },
+  {
+    "id": "ja_q23",
+    "subject": "General Awareness",
+    "qno": 23,
+    "question": "Which Article of the Indian Constitution was abrogated to remove special status of J&K?",
+    "options": ["Article 370", "Article 371", "Article 35A", "Article 368"],
+    "answer": 0,
+    "explanation": "Article 370 (J&K specific).",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "ja_q24",
+    "subject": "General Awareness",
+    "qno": 24,
+    "question": "What is the capital of Jammu & Kashmir Union Territory?",
+    "options": [
+      "Srinagar (Summer), Jammu (Winter)",
+      "Jammu only",
+      "Srinagar only",
+      "Leh"
+    ],
+    "answer": 0,
+    "explanation": "Dual capital system.",
+    "topic": "geography"
+  },
+  {
+    "id": "ja_q25",
+    "subject": "General Awareness",
+    "qno": 25,
+    "question": "The river Jhelum originates from which place in J&K UT?",
+    "options": ["Verinag Spring", "Amarnath Cave", "Pahalgam", "Gulmarg"],
+    "answer": 0,
+    "explanation": "Verinag.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "ja_q26",
+    "subject": "General Awareness",
+    "qno": 26,
+    "question": "Who is known as the 'Lion of Kashmir'?",
+    "options": [
+      "Sheikh Abdullah",
+      "Maulana Azad",
+      "Syed Ali Shah Geelani",
+      "Bakshi Ghulam Mohammad"
+    ],
+    "answer": 0,
+    "explanation": "Sheikh Abdullah.",
+    "topic": "history"
+  },
+  {
+    "id": "ja_q27",
+    "subject": "General Awareness",
+    "qno": 27,
+    "question": "Which pass connects Kashmir Valley with Ladakh?",
+    "options": ["Zoji La", "Pir Panjal", "Banihal", "Khardung La"],
+    "answer": 0,
+    "explanation": "Zoji La Pass.",
+    "topic": "history"
+  },
+  {
+    "id": "ja_q28",
+    "subject": "General Awareness",
+    "qno": 28,
+    "question": "Largest freshwater lake in J&K UT?",
+    "options": ["Dal Lake", "Wular Lake", "Mansar Lake", "Pangong Lake"],
+    "answer": 1,
+    "explanation": "Wular Lake.",
+    "topic": "geography"
+  },
+  {
+    "id": "ja_q29",
+    "subject": "General Awareness",
+    "qno": 29,
+    "question": "Article 263 of Indian Constitution deals with?",
+    "options": [
+      "Inter-State Council",
+      "Finance Commission",
+      "UPSC",
+      "Election Commission"
+    ],
+    "answer": 0,
+    "explanation": "Inter-State Council (with J&K reference).",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "ja_q30",
+    "subject": "General Awareness",
+    "qno": 30,
+    "question": "Nagaland recorded negative population growth in which census?",
+    "options": ["1991-2001", "2001-2011", "2011-2021", "1981-1991"],
+    "answer": 1,
+    "explanation": "2001-2011 (Demography GK).",
+    "topic": "economy"
+  },
+  {
+    "id": "ja_q31",
+    "subject": "General Awareness",
+    "qno": 31,
+    "question": "Primary objective of Uniform Civil Code?",
+    "options": [
+      "Common criminal law",
+      "Common personal laws irrespective of religion",
+      "Tax laws",
+      "Administrative rules"
+    ],
+    "answer": 1,
+    "explanation": "Common personal laws.",
+    "topic": "history"
+  },
+  {
+    "id": "ja_q32",
+    "subject": "General Awareness",
+    "qno": 32,
+    "question": "Sardar Sarovar Dam is built on which river?",
+    "options": ["Narmada", "Godavari", "Krishna", "Ganga"],
+    "answer": 0,
+    "explanation": "Narmada.",
+    "topic": "history"
+  },
+  {
+    "id": "ja_q33",
+    "subject": "General Awareness",
+    "qno": 33,
+    "question": "Global Peace Index 2024 shows deterioration in which domains?",
+    "options": [
+      "Ongoing Conflict & Safety & Security",
+      "Militarisation only",
+      "All improved",
+      "Economy"
+    ],
+    "answer": 0,
+    "explanation": "Ongoing Conflict & Safety & Security.",
+    "topic": "economy"
+  },
+  {
+    "id": "ja_q34",
+    "subject": "General Awareness",
+    "qno": 34,
+    "question": "Who inaugurated India's first lithium-ion battery plant in Tirupati?",
+    "options": [
+      "PM Narendra Modi",
+      "Rajeev Chandrasekhar",
+      "Nirmala Sitharaman",
+      "Amit Shah"
+    ],
+    "answer": 1,
+    "explanation": "Rajeev Chandrasekhar (2022).",
+    "topic": "current_affairs"
+  },
+  {
+    "id": "ja_q35",
+    "subject": "General Awareness",
+    "qno": 35,
+    "question": "Primary function of Telomerase enzyme?",
+    "options": [
+      "DNA replication",
+      "Telomere lengthening",
+      "RNA transcription",
+      "Protein synthesis"
+    ],
+    "answer": 1,
+    "explanation": "Telomere lengthening.",
+    "topic": "science"
+  },
+  {
+    "id": "ja_q36",
+    "subject": "General Awareness",
+    "qno": 36,
+    "question": "Capital of Jammu & Kashmir UT in winter?",
+    "options": ["Srinagar", "Jammu", "Leh", "Kargil"],
+    "answer": 1,
+    "explanation": "Jammu.",
+    "topic": "geography"
+  },
+  {
+    "id": "ja_q37",
+    "subject": "General Awareness",
+    "qno": 37,
+    "question": "Famous shrine in J&K – Vaishno Devi is located in?",
+    "options": ["Katra", "Pahalgam", "Gulmarg", "Sonamarg"],
+    "answer": 0,
+    "explanation": "Katra.",
+    "topic": "science"
+  },
+  {
+    "id": "ja_q38",
+    "subject": "General Awareness",
+    "qno": 38,
+    "question": "2024 G20 Summit host country?",
+    "options": ["India", "Brazil", "South Africa", "USA"],
+    "answer": 1,
+    "explanation": "Brazil.",
+    "topic": "current_affairs"
+  },
+  {
+    "id": "ja_q39",
+    "subject": "General Awareness",
+    "qno": 39,
+    "question": "Headquarters of ISRO?",
+    "options": ["Bengaluru", "Hyderabad", "Ahmedabad", "Thiruvananthapuram"],
+    "answer": 0,
+    "explanation": "Bengaluru.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "ja_q40",
+    "subject": "General Awareness",
+    "qno": 40,
+    "question": "Nobel Prize 2024 Physics winners?",
+    "options": [
+      "John Hopfield & Geoffrey Hinton",
+      "Demis Hassabis",
+      "Others",
+      "Not awarded"
+    ],
+    "answer": 0,
+    "explanation": "John Hopfield and Geoffrey Hinton.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "ja_q41",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 41,
+    "question": "A sells article to B at 20% profit, B sells to C at 20% loss. Overall for A?",
+    "options": ["4% loss", "4% gain", "No change", "16% gain"],
+    "answer": 0,
+    "explanation": "Overall 4% loss.",
+    "topic": "syllogism"
+  },
+  {
+    "id": "ja_q42",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 42,
+    "question": "Simple Interest on ₹5000 at 8% for 3 years?",
+    "options": ["₹1200", "₹1000", "₹1400", "₹900"],
+    "answer": 0,
+    "explanation": "₹1200.",
+    "topic": "calendar"
+  },
+  {
+    "id": "ja_q43",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 43,
+    "question": "Average of first 10 natural numbers?",
+    "options": ["5.5", "5", "6", "4.5"],
+    "answer": 0,
+    "explanation": "5.5.",
+    "topic": "analogy"
+  },
+  {
+    "id": "ja_q44",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 44,
+    "question": "Ratio 5:7, total 240. Larger part?",
+    "options": ["140", "120", "100", "160"],
+    "answer": 0,
+    "explanation": "140.",
+    "topic": "ratio"
+  },
+  {
+    "id": "ja_q45",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 45,
+    "question": "A alone 10 days, B 15 days. Together?",
+    "options": ["6 days", "7 days", "5 days", "8 days"],
+    "answer": 0,
+    "explanation": "6 days.",
+    "topic": "analogy"
+  },
+  {
+    "id": "ja_q46",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 46,
+    "question": "25% of 400?",
+    "options": ["100", "80", "120", "90"],
+    "answer": 0,
+    "explanation": "100.",
+    "topic": "analogy"
+  },
+  {
+    "id": "ja_q47",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 47,
+    "question": "Compound Interest on ₹1000 at 10% for 2 years?",
+    "options": ["₹1210", "₹1200", "₹1100", "₹1300"],
+    "answer": 0,
+    "explanation": "₹1210.",
+    "topic": "calendar"
+  },
+  {
+    "id": "ja_q48",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 48,
+    "question": "60 km/h for 3 hours distance?",
+    "options": ["180 km", "200 km", "150 km", "120 km"],
+    "answer": 0,
+    "explanation": "180 km.",
+    "topic": "direction"
+  },
+  {
+    "id": "ja_q49",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 49,
+    "question": "Profit % if CP 100, SP 120?",
+    "options": ["20%", "25%", "15%", "10%"],
+    "answer": 0,
+    "explanation": "20%.",
+    "topic": "analogy"
+  },
+  {
+    "id": "ja_q50",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 50,
+    "question": "HCF of 12, 18, 24?",
+    "options": ["6", "12", "3", "4"],
+    "answer": 0,
+    "explanation": "6.",
+    "topic": "analogy"
+  },
+  {
+    "id": "ja_q51",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 51,
+    "question": "What comes next: 2, 6, 12, 20, 30, ?",
+    "options": ["40", "42", "44", "48"],
+    "answer": 1,
+    "explanation": "+4,+6,+8,+10,+12 → 42.",
+    "topic": "number_series"
+  },
+  {
+    "id": "ja_q52",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 52,
+    "question": "Odd one: 16, 25, 36, 49, 64, 81",
+    "options": ["16", "25", "36", "81"],
+    "answer": 3,
+    "explanation": "All perfect squares; pattern fit.",
+    "topic": "syllogism"
+  },
+  {
+    "id": "ja_q53",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 53,
+    "question": "If 7*5=12, 9*4=13, 11*6=?",
+    "options": ["17", "15", "19", "18"],
+    "answer": 0,
+    "explanation": "a + b pattern.",
+    "topic": "analogy"
+  },
+  {
+    "id": "ja_q54",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 54,
+    "question": "Which set is different: (8,24,48), (9,27,54), (10,30,60), (11,33,55)",
+    "options": ["(8,24,48)", "(9,27,54)", "(10,30,60)", "(11,33,55)"],
+    "answer": 3,
+    "explanation": "Others ×3.",
+    "topic": "analogy"
+  },
+  {
+    "id": "ja_q55",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 55,
+    "question": "A walks 10m north, right 5m, left 10m. Distance from start?",
+    "options": ["15m", "20m", "10m", "25m"],
+    "answer": 0,
+    "explanation": "15m.",
+    "topic": "direction"
+  },
+  {
+    "id": "ja_q56",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 56,
+    "question": "Series: 5,12,26,54,?",
+    "options": ["110", "108", "112", "106"],
+    "answer": 0,
+    "explanation": "×2 +2 → 110.",
+    "topic": "number_series"
+  },
+  {
+    "id": "ja_q57",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 57,
+    "question": "Mirror image of clock 3:15?",
+    "options": ["8:45", "9:45", "8:15", "9:15"],
+    "answer": 0,
+    "explanation": "8:45.",
+    "topic": "clock"
+  },
+  {
+    "id": "ja_q58",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 58,
+    "question": "Venn diagram for Doctors, Engineers, Males?",
+    "options": [
+      "All three overlap possible",
+      "No overlap",
+      "Only two",
+      "All separate"
+    ],
+    "answer": 0,
+    "explanation": "All three can overlap.",
+    "topic": "syllogism"
+  },
+  {
+    "id": "ja_q59",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 59,
+    "question": "Paper cutting: Triangle punched – triangles appear?",
+    "options": ["4", "3", "5", "6"],
+    "answer": 0,
+    "explanation": "4 triangles.",
+    "topic": "analogy"
+  },
+  {
+    "id": "ja_q60",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 60,
+    "question": "Odd letters: ACGM, BDHN, CEIO, DFJP",
+    "options": ["ACGM", "BDHN", "CEIO", "DFJP"],
+    "answer": 2,
+    "explanation": "Pattern broken in CEIO.",
+    "topic": "alphabet_series"
+  },
+  {
+    "id": "ja_q61",
+    "subject": "Basic Concepts of Computers",
+    "qno": 61,
+    "question": "Full form of CPU?",
+    "options": [
+      "Central Processing Unit",
+      "Central Power Unit",
+      "Control Processing Unit",
+      "Computer Personal Unit"
+    ],
+    "answer": 0,
+    "explanation": "Central Processing Unit.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja_q62",
+    "subject": "Basic Concepts of Computers",
+    "qno": 62,
+    "question": "Which is not a Microsoft Office application?",
+    "options": ["MS Word", "MS Excel", "MS PowerPoint", "MS Paint"],
+    "answer": 3,
+    "explanation": "MS Paint is separate.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja_q63",
+    "subject": "Basic Concepts of Computers",
+    "qno": 63,
+    "question": "Shortcut for copy?",
+    "options": ["Ctrl + C", "Ctrl + V", "Ctrl + X", "Ctrl + Z"],
+    "answer": 0,
+    "explanation": "Ctrl + C.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja_q64",
+    "subject": "Basic Concepts of Computers",
+    "qno": 64,
+    "question": "What is phishing?",
+    "options": [
+      "Fraudulent attempt to obtain sensitive information",
+      "Virus",
+      "Hardware fault",
+      "Backup method"
+    ],
+    "answer": 0,
+    "explanation": "Cyber threat.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja_q65",
+    "subject": "Basic Concepts of Computers",
+    "qno": 65,
+    "question": "Input device example?",
+    "options": ["Monitor", "Printer", "Keyboard", "Speaker"],
+    "answer": 2,
+    "explanation": "Keyboard.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja_q66",
+    "subject": "Basic Concepts of Computers",
+    "qno": 66,
+    "question": "Function of Firewall?",
+    "options": [
+      "Protects from unauthorized access",
+      "Increases speed",
+      "Stores data",
+      "Prints documents"
+    ],
+    "answer": 0,
+    "explanation": "Network security.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja_q67",
+    "subject": "Basic Concepts of Computers",
+    "qno": 67,
+    "question": "Full form of URL?",
+    "options": [
+      "Uniform Resource Locator",
+      "Universal Resource Link",
+      "Uniform Resource Link",
+      "Universal Resource Locator"
+    ],
+    "answer": 0,
+    "explanation": "Uniform Resource Locator.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja_q68",
+    "subject": "Basic Concepts of Computers",
+    "qno": 68,
+    "question": "Output device?",
+    "options": ["Mouse", "Keyboard", "Monitor", "Scanner"],
+    "answer": 2,
+    "explanation": "Monitor.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja_q69",
+    "subject": "Basic Concepts of Computers",
+    "qno": 69,
+    "question": "WWW stands for?",
+    "options": [
+      "World Wide Web",
+      "World Web Wide",
+      "Wide World Web",
+      "Web World Wide"
+    ],
+    "answer": 0,
+    "explanation": "World Wide Web.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja_q70",
+    "subject": "Basic Concepts of Computers",
+    "qno": 70,
+    "question": "Trojan is example of?",
+    "options": ["Virus", "Malware", "Hardware", "Operating system"],
+    "answer": 1,
+    "explanation": "Malware.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja_q71",
+    "subject": "Basic Concepts of Computers",
+    "qno": 71,
+    "question": "Shortcut to paste?",
+    "options": ["Ctrl + V", "Ctrl + C", "Ctrl + P", "Ctrl + X"],
+    "answer": 0,
+    "explanation": "Ctrl + V.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja_q72",
+    "subject": "Basic Concepts of Computers",
+    "qno": 72,
+    "question": "e-banking means?",
+    "options": [
+      "Electronic banking",
+      "Email banking",
+      "Error banking",
+      "External banking"
+    ],
+    "answer": 0,
+    "explanation": "Online banking.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja_q73",
+    "subject": "Basic Concepts of Computers",
+    "qno": 73,
+    "question": "MS Excel is used for?",
+    "options": ["Spreadsheets", "Word processing", "Presentations", "Browsing"],
+    "answer": 0,
+    "explanation": "Spreadsheets.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja_q74",
+    "subject": "Basic Concepts of Computers",
+    "qno": 74,
+    "question": "Networking device?",
+    "options": ["Router", "CPU", "Monitor", "Keyboard"],
+    "answer": 0,
+    "explanation": "Router.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja_q75",
+    "subject": "Basic Concepts of Computers",
+    "qno": 75,
+    "question": "Main function of Windows Explorer?",
+    "options": [
+      "File management",
+      "Internet browsing",
+      "Email",
+      "Virus scanning"
+    ],
+    "answer": 0,
+    "explanation": "File and folder management.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja_q76",
+    "subject": "Basic Concepts of Computers",
+    "qno": 76,
+    "question": "What is RAM?",
+    "options": [
+      "Random Access Memory",
+      "Read Access Memory",
+      "Run Access Memory",
+      "Real Access Memory"
+    ],
+    "answer": 0,
+    "explanation": "Random Access Memory.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja_q77",
+    "subject": "Basic Concepts of Computers",
+    "qno": 77,
+    "question": "Which is a storage device?",
+    "options": ["Monitor", "Hard Disk", "Keyboard", "Mouse"],
+    "answer": 1,
+    "explanation": "Hard Disk.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja_q78",
+    "subject": "Basic Concepts of Computers",
+    "qno": 78,
+    "question": "Internet is a network of?",
+    "options": ["Computers", "People", "Cities", "Countries"],
+    "answer": 0,
+    "explanation": "Computers.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja_q79",
+    "subject": "Basic Concepts of Computers",
+    "qno": 79,
+    "question": "Virus in computer is?",
+    "options": ["Hardware", "Software", "Malware", "Both B and C"],
+    "answer": 3,
+    "explanation": "Malware.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja_q80",
+    "subject": "Basic Concepts of Computers",
+    "qno": 80,
+    "question": "Shortcut for new document in MS Word?",
+    "options": ["Ctrl + N", "Ctrl + O", "Ctrl + S", "Ctrl + P"],
+    "answer": 0,
+    "explanation": "Ctrl + N.",
+    "topic": "computer"
+  }
+]

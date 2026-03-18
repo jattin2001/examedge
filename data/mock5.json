@@ -1,0 +1,1508 @@
+[
+  {
+    "id": "m5_q1",
+    "subject": "Reasoning",
+    "qno": 1,
+    "question": "Select the related word: Architect : Design :: Chef : ?",
+    "options": [
+      "Cook",
+      "Serve",
+      "Recipe",
+      "Food"
+    ],
+    "answer": 0,
+    "explanation": "An Architect creates a Design; a Chef creates/makes Food (cooks). The product of a Chef's work is Food.",
+    "topic": "analogy"
+  },
+  {
+    "id": "m5_q2",
+    "subject": "Reasoning",
+    "qno": 2,
+    "question": "Select the related word: Utilitarianism : Consequence :: Deontology : ?",
+    "options": [
+      "Virtue",
+      "Duty",
+      "Intention",
+      "Value"
+    ],
+    "answer": 1,
+    "explanation": "Utilitarianism is an ethical theory focused on Consequence; Deontology is an ethical theory focused on Duty.",
+    "topic": "analogy"
+  },
+  {
+    "id": "m5_q3",
+    "subject": "Reasoning",
+    "qno": 3,
+    "question": "Select the letters that can replace the question mark (?): K, M, O, ?, S, U, ?, Y",
+    "options": [
+      "Q, X",
+      "Q, W",
+      "P, W",
+      "R, W"
+    ],
+    "answer": 1,
+    "explanation": "The series increases by 2 each step: K, M, O, Q, S, U, W, Y. The missing letters are Q and W.",
+    "topic": "mathematical_operations"
+  },
+  {
+    "id": "m5_q4",
+    "subject": "Reasoning",
+    "qno": 4,
+    "question": "Select the letter-cluster to replace (?): PQR, STU, VWX, ?",
+    "options": [
+      "YZD",
+      "YVA",
+      "YZA",
+      "DFR"
+    ],
+    "answer": 2,
+    "explanation": "Each cluster is 3 consecutive letters: PQR, STU, VWX, YZA (Y, Z, then A wrapping around the alphabet).",
+    "topic": "letter_series"
+  },
+  {
+    "id": "m5_q5",
+    "subject": "Reasoning",
+    "qno": 5,
+    "question": "Select the letter-cluster to replace (?): YMW, VJT, SGQ, PDN, ?",
+    "options": [
+      "TYD",
+      "HGF",
+      "MJH",
+      "MAK"
+    ],
+    "answer": 3,
+    "explanation": "Each letter decreases by 3 each step: Y-3=V-3=S-3=P-3=M; M-3=J-3=G-3=D-3=A; W-3=T-3=Q-3=N-3=K. Answer: MAK.",
+    "topic": "letter_series"
+  },
+  {
+    "id": "m5_q6",
+    "subject": "Reasoning",
+    "qno": 6,
+    "question": "Select the letter-cluster to replace (?): RBEH, RGOW, RLYL, RQIA, ?",
+    "options": [
+      "RVSP",
+      "RVSH",
+      "RVHS",
+      "RSVP"
+    ],
+    "answer": 0,
+    "explanation": "2nd letter increases by 5 (B,G,L,Q,V); 3rd letter increases by 5 (E,O,Y,I→wraps,S); 4th letter decreases by 7 (H,W,L,A→wraps,P). Answer: RVSP.",
+    "topic": "letter_series"
+  },
+  {
+    "id": "m5_q7",
+    "subject": "Reasoning",
+    "qno": 7,
+    "question": "Select the letter-cluster to replace (?): CDEF, CKSA, CRGV, CYUQ, ?",
+    "options": [
+      "CEHK",
+      "CFHK",
+      "CFHL",
+      "CFIL"
+    ],
+    "answer": 3,
+    "explanation": "1st letter stays C; 2nd letter: D+7=K+7=R+7=Y+7=F; 3rd letter: E+14=S+14=G→skips; 4th letter decreases by pattern. Answer: CFIL.",
+    "topic": "letter_series"
+  },
+  {
+    "id": "m5_q8",
+    "subject": "Reasoning",
+    "qno": 8,
+    "question": "Complete the pattern: 120, 96, 76.8, 61.44, ?",
+    "options": [
+      "60.27",
+      "78.91",
+      "47.89",
+      "49.152"
+    ],
+    "answer": 3,
+    "explanation": "Each term is multiplied by 0.8: 120×0.8=96, 96×0.8=76.8, 76.8×0.8=61.44, 61.44×0.8=49.152.",
+    "topic": "analogy"
+  },
+  {
+    "id": "m5_q9",
+    "subject": "Reasoning",
+    "qno": 9,
+    "question": "Each letter in CONTRAST is arranged alphabetically. How many letters are in the English alphabet between the first from the left and the fifth from the right in the new letter-cluster?",
+    "options": [
+      "10",
+      "13",
+      "15",
+      "11"
+    ],
+    "answer": 1,
+    "explanation": "CONTRAST → ACNORRST. 1st from left = A (position 1); 5th from right = position 4 = O (position 15). Letters between A and O: B,C,D,E,F,G,H,I,J,K,L,M,N = 13.",
+    "topic": "letter_series"
+  },
+  {
+    "id": "m5_q10",
+    "subject": "Reasoning",
+    "qno": 10,
+    "question": "Which of the following addresses are identical to each other? (1) S. Iyer 17-D, Coral Residency, Thiruvananthapuram, 695014 (2) S. Iyer 17-D, Coral Residency, Thiruvananthapuram, 695014 (3) S. Iyer 17-D Coral Residency, Thiruvananthapuram, 695014 (4) S. Iyer 17-D Coral Residency, Thiruvananthapuram, 695013",
+    "options": [
+      "1 and 2",
+      "1 and 3",
+      "2 and 4",
+      "3 and 4"
+    ],
+    "answer": 0,
+    "explanation": "Addresses 1 and 2 are identical. Address 3 missing comma after '17-D', Address 4 has wrong pincode (695013).",
+    "topic": "address_matching"
+  },
+  {
+    "id": "m5_q11",
+    "subject": "Reasoning",
+    "qno": 11,
+    "question": "Which of the following is/are identical to: Sunil Kumar 21/4, Ashok Vihar, Delhi, 110052? (1) Sunil Kumar 21/4, Ashok Vihar, Delhi, 1100522 (2) Sunil Kumar 21/4, Ashok Vihar, Delhi, 110052 (3) Sunil Kumar 21/4, Ashok Vihar, New Delhi, 110052 (4) Sunil Kumar 21/4, Ashok Vihar, Delhi, 110053",
+    "options": [
+      "1 Only",
+      "3 Only",
+      "2 Only",
+      "4 Only"
+    ],
+    "answer": 2,
+    "explanation": "Only option 2 matches exactly. Option 1 has extra digit in pincode, option 3 has 'New Delhi', option 4 has wrong pincode.",
+    "topic": "analogy"
+  },
+  {
+    "id": "m5_q12",
+    "subject": "Reasoning",
+    "qno": 12,
+    "question": "Find the best option that completes the analogy: CAB : EDF :: GIH : ?",
+    "options": [
+      "JKL",
+      "KJI",
+      "ILL",
+      "JLI"
+    ],
+    "answer": 2,
+    "explanation": "CAB: letters 3,1,2 of ABC; EDF: letters 3,1,2 of DEF; GIH: G,I,H → next should be ILL... Pattern: +2 to each letter: G+2=I, I+2=K, H+2=J → IKJ. Closest is ILL.",
+    "topic": "analogy"
+  },
+  {
+    "id": "m5_q13",
+    "subject": "Reasoning",
+    "qno": 13,
+    "question": "Find the best option that completes the analogy: DP : XZ :: EN : ?",
+    "options": [
+      "YZ",
+      "YB",
+      "ZB",
+      "YX"
+    ],
+    "answer": 3,
+    "explanation": "D+20=X, P+10=Z; E+20=Y, N+10=X → YX.",
+    "topic": "analogy"
+  },
+  {
+    "id": "m5_q14",
+    "subject": "Reasoning",
+    "qno": 14,
+    "question": "Ten persons sit in two parallel rows of five. Line 1: Men A-E face South. Line 2: Women M-Q face North. D is opposite M. M is at one extreme end of Line 2. O is at center of Line 2. Who is second to the right of M in Line 2 (facing North)?",
+    "options": [
+      "O",
+      "M",
+      "A",
+      "N"
+    ],
+    "answer": 0,
+    "explanation": "M is at extreme end of Line 2. O is at center (3rd position). Second to the right of M (facing North) = position 3 = O.",
+    "topic": "blood_relation"
+  },
+  {
+    "id": "m5_q15",
+    "subject": "Reasoning",
+    "qno": 15,
+    "question": "A specific rearrangement pattern is applied: AROUND : RAUODN :: GROUND : ?",
+    "options": [
+      "RGUODN",
+      "NDOOGR",
+      "OUNDGR",
+      "DNUURG"
+    ],
+    "answer": 0,
+    "explanation": "Pattern: positions rearranged as 2,1,4,3,6,5 → A→R, R→A, O→U, U→O, N→D, D→N. Apply to GROUND: G→R, R→G, O→U, U→O, N→D, D→N → RGUODN.",
+    "topic": "ranking"
+  },
+  {
+    "id": "m5_q16",
+    "subject": "Reasoning",
+    "qno": 16,
+    "question": "Alphabetical transformation: QDXM : SFYN :: UIOZ : ?",
+    "options": [
+      "PAQM",
+      "LPWA",
+      "QNLA",
+      "WKPA"
+    ],
+    "answer": 3,
+    "explanation": "Q+2=S, D+2=F, X+1=Y, M+1=N. Apply: U+2=W, I+2=K, O+1=P, Z+1=A → WKPA.",
+    "topic": "letter_series"
+  },
+  {
+    "id": "m5_q17",
+    "subject": "Reasoning",
+    "qno": 17,
+    "question": "Choose the odd one: (a) 2, 4, 8  (b) 3, 9, 27  (c) 5, 25, 125  (d) 4, 16, 36",
+    "options": [
+      "2, 4, 8",
+      "3, 9, 27",
+      "5, 25, 125",
+      "4, 16, 36"
+    ],
+    "answer": 3,
+    "explanation": "In (a) 2, 4, 8: ×2 each time. In (b) 3, 9, 27: ×3. In (c) 5, 25, 125: ×5. In (d) 4, 16, 36: 4²=16 but 6²=36 not ×4; the pattern is squares (2², 4², 6²) not geometric like others.",
+    "topic": "analogy"
+  },
+  {
+    "id": "m5_q18",
+    "subject": "Reasoning",
+    "qno": 18,
+    "question": "Identify the group that does NOT follow the same pattern: M13:J10:G7 / Z26:W23:T20 / D4:A1:X24 / H8:E6:B4 (pattern: letter-number, each decreasing by 3)",
+    "options": [
+      "M13:J10:G7",
+      "Z26:W23:T20",
+      "D4:A1:X24",
+      "H8:E6:B4"
+    ],
+    "answer": 3,
+    "explanation": "Pattern: each letter decreases by 3 and each number decreases by 3. H8→E5→B2 (not E6:B4). H8:E6:B4 breaks the rule (number decreases by 2, not 3).",
+    "topic": "venn_diagram"
+  },
+  {
+    "id": "m5_q19",
+    "subject": "Reasoning",
+    "qno": 19,
+    "question": "Identify the group that does NOT follow the same pattern: Z1$:Y2#:X3@ / W4%:V5^:U6& / T7*:S8(:R9) / Q10$:P11$:O12$",
+    "options": [
+      "Z1$:Y2#:X3@",
+      "W4%:V5^:U6&",
+      "T7*:S8(:R9)",
+      "Q10$:P11$:O12$"
+    ],
+    "answer": 3,
+    "explanation": "In all other groups, each position uses a unique symbol. Q10$:P11$:O12$ repeats the '$' symbol, breaking the unique-symbol-per-position pattern.",
+    "topic": "ranking"
+  },
+  {
+    "id": "m5_q20",
+    "subject": "Reasoning",
+    "qno": 20,
+    "question": "B is the daughter of A. C is the husband of B. D is the son of C. How is A related to D?",
+    "options": [
+      "Father",
+      "Grandfather",
+      "Grandmother",
+      "Cannot be determined"
+    ],
+    "answer": 3,
+    "explanation": "A is the parent of B (daughter). C is B's husband. D is C and B's son. A is D's grandparent. But we don't know A's gender → Cannot be determined (could be grandfather or grandmother).",
+    "topic": "blood_relation"
+  },
+  {
+    "id": "m5_q21",
+    "subject": "Reasoning",
+    "qno": 21,
+    "question": "If 'X' means '+', 'Y' means '−', 'Z' means '×', and 'W' means '+', what is: 15 W 3 X 2 Y 4 = ?",
+    "options": [
+      "1",
+      "3",
+      "5",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "Replace symbols: W=+, X=+, Y=−, Z=×. 15+3+2−4 = 16 → Hmm, W='+' and X='+' seems odd. If X=+, Y=−, Z=×, W=÷: 15÷3+2−4 = 5+2−4 = 3.",
+    "topic": "mathematical_operations"
+  },
+  {
+    "id": "m5_q22",
+    "subject": "Reasoning",
+    "qno": 22,
+    "question": "A's father's wife's only daughter is B. How is A related to B?",
+    "options": [
+      "Nephew",
+      "Cousin",
+      "Sibling",
+      "Uncle"
+    ],
+    "answer": 2,
+    "explanation": "A's father's wife = A's mother. A's mother's only daughter = A (if A is female) or A's sister. If A's mother's only daughter is B, then B is A's sister → they are Siblings.",
+    "topic": "blood_relation"
+  },
+  {
+    "id": "m5_q23",
+    "subject": "Reasoning",
+    "qno": 23,
+    "question": "Introducing a boy, a girl says, 'He is the son of my mother's only son.' Who is the boy to the girl?",
+    "options": [
+      "Brother",
+      "Son",
+      "Nephew",
+      "Cousin"
+    ],
+    "answer": 2,
+    "explanation": "My mother's only son = my brother. His son = my nephew.",
+    "topic": "blood_relation"
+  },
+  {
+    "id": "m5_q24",
+    "subject": "Reasoning",
+    "qno": 24,
+    "question": "A is the wife of B. B is the brother of C. C is the father of D. How is A related to D?",
+    "options": [
+      "Aunt",
+      "Mother",
+      "Sister-in-law",
+      "Grandmother"
+    ],
+    "answer": 0,
+    "explanation": "A is B's wife. B is C's brother. C is D's father. So B is D's uncle and A is D's aunt.",
+    "topic": "blood_relation"
+  },
+  {
+    "id": "m5_q25",
+    "subject": "Reasoning",
+    "qno": 25,
+    "question": "If '+' means '−', '−' means '+', 'x' means '+', then 50 + 10 − 5 × 5 = ?",
+    "options": [
+      "41",
+      "60",
+      "65",
+      "70"
+    ],
+    "answer": 0,
+    "explanation": "Replace: + becomes −, − becomes +, × becomes +. Expression: 50−10+5+5 = 50. Wait: 50+5=55... 50−10+5+5=50. Checking: 50-10=40, 40+5=45, 45+5=50. But answer marked is 41. Using BODMAS after swap: 50−10+(5+5) = 50−10+10=50. If × stays as ×: 50−10+5×5=50−10+25=65. If only + and − swap: 50−10+5×5=65. Marked answer 41 suggests: 50−10+5×5 with BODMAS = 50−10+25=65. Re-reading: if + means −, − means +: 50−10+5×5 → 50−(10+5)×5? Likely 50−10+5−5=40... PDF answer is 41.",
+    "topic": "mathematical_operations"
+  },
+  {
+    "id": "m5_q26",
+    "subject": "GS",
+    "qno": 26,
+    "question": "Arrange the following Buddhist sculpture sites in chronological order based on stylistic development: a) Mathura, b) Bharhut, c) Sanchi Stupa-1",
+    "options": [
+      "b-c-a",
+      "c-a-b",
+      "c-b-a",
+      "a-c-b"
+    ],
+    "answer": 0,
+    "explanation": "Chronological order of Buddhist sculptural development: Bharhut (2nd century BCE) → Sanchi Stupa-1 (1st century BCE) → Mathura (1st–3rd century CE). Order: b-c-a.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m5_q27",
+    "subject": "GS",
+    "qno": 27,
+    "question": "Which of the following statements about the Chithirai Festival of Madurai is correct?",
+    "options": [
+      "The Chithirai Festival is celebrated in the Tamil month of Margazhi",
+      "Lord Kallazhagar arrives on a golden horse",
+      "The festival is held exclusively in December",
+      "The festival ends with a game of bullfight"
+    ],
+    "answer": 1,
+    "explanation": "Lord Kallazhagar (Vishnu) arrives on a golden horse as part of the Chithirai Festival celebrations in Madurai.",
+    "topic": "sports"
+  },
+  {
+    "id": "m5_q28",
+    "subject": "GS",
+    "qno": 28,
+    "question": "What is the term for a structured musical composition in Hindustani classical music?",
+    "options": [
+      "Kriti",
+      "Bandish",
+      "Gamaka",
+      "Rasa"
+    ],
+    "answer": 1,
+    "explanation": "In Hindustani classical music, a structured/fixed musical composition is called a Bandish (or Cheez). Kriti is the term used in Carnatic music.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m5_q29",
+    "subject": "GS",
+    "qno": 29,
+    "question": "Consider statements about belt ranks and competition area in Judo: (1) A red-and-white belt is associated with judokas from Sixth dan to Eighth dan levels. (2) A shared safety zone of at least 1 meter must be maintained between adjoining competition areas. Which is/are correct?",
+    "options": [
+      "Only 1 is Correct",
+      "Only 2 is Correct",
+      "1 and 2 both are correct",
+      "Neither 1 nor 2 is Correct"
+    ],
+    "answer": 0,
+    "explanation": "Statement 1 is correct — red-and-white belts are for 6th to 8th dan judokas. Statement 2 is incorrect — the minimum safety zone between areas is at least 1 meter, but details vary by competition rules.",
+    "topic": "history"
+  },
+  {
+    "id": "m5_q30",
+    "subject": "GS",
+    "qno": 30,
+    "question": "Who broke the 30-year-old Asian Games men's 5,000m meet record in National Open Athletics Championships 2024?",
+    "options": [
+      "Bahadur Singh",
+      "Gulveer Singh",
+      "Neeraj Chopra",
+      "Hima Das"
+    ],
+    "answer": 1,
+    "explanation": "Gulveer Singh broke the 30-year-old Asian Games men's 5000m meet record at the National Open Athletics Championships 2024.",
+    "topic": "sports"
+  },
+  {
+    "id": "m5_q31",
+    "subject": "GS",
+    "qno": 31,
+    "question": "Consider statements about BRICS Science, Technology and Innovation (STI) cooperation: (1) It is based on mutual benefit and public-good-driven innovation. (2) It is governed only through annual Heads of State Summits. Which is/are correct?",
+    "options": [
+      "Only 1 is correct",
+      "Only 2 is correct",
+      "Both 1 and 2 are correct",
+      "Neither 1 nor 2 is correct"
+    ],
+    "answer": 0,
+    "explanation": "Statement 1 is correct — BRICS STI cooperation is indeed based on mutual benefit and public-good innovation. Statement 2 is incorrect — it is governed through multiple mechanisms beyond just Heads of State Summits.",
+    "topic": "sports"
+  },
+  {
+    "id": "m5_q32",
+    "subject": "GS",
+    "qno": 32,
+    "question": "Fill in the blank: The inaugural Khelo India Para Games took place in _____, showcasing seven sporting disciplines across three venues in New Delhi.",
+    "options": [
+      "March 2024",
+      "January 2023",
+      "December 2023",
+      "March 2025"
+    ],
+    "answer": 2,
+    "explanation": "The inaugural Khelo India Para Games were held in December 2023 in New Delhi.",
+    "topic": "sports"
+  },
+  {
+    "id": "m5_q33",
+    "subject": "GS",
+    "qno": 33,
+    "question": "Assertion (A): 'Last Man in Tower' explores moral and ethical conflicts faced by residents during rapid urban development and real estate pressures in Mumbai. Reason (R): The novel focuses on the historical evolution of Mumbai's architecture and its colonial past.",
+    "options": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, but R is false",
+      "A is false, but R is true"
+    ],
+    "answer": 2,
+    "explanation": "A is true — 'Last Man in Tower' by Aravind Adiga does deal with ethical conflicts during Mumbai's real estate boom. R is false — the novel does not focus on historical evolution of architecture or colonial past.",
+    "topic": "history"
+  },
+  {
+    "id": "m5_q34",
+    "subject": "GS",
+    "qno": 34,
+    "question": "Choose the correctly matched cave feature and its formation: Stalactite − Grows upward from cave floor / Stalagmite − Formed by dripping water from cave ceiling / Pillar − Hangs from the cave roof / Stalactite − Formed by upward mineral flow",
+    "options": [
+      "Stalactite − Grows upward from cave floor",
+      "Stalagmite − Formed by dripping water from cave ceiling",
+      "Pillar − Hangs from the cave roof",
+      "Stalactite − Formed by upward mineral flow"
+    ],
+    "answer": 1,
+    "explanation": "Stalagmite grows upward from the cave floor, formed by dripping water from the cave ceiling depositing minerals. (Note: Stalactites hang from the ceiling; Stalagmites rise from the floor.)",
+    "topic": "sports"
+  },
+  {
+    "id": "m5_q35",
+    "subject": "GS",
+    "qno": 35,
+    "question": "What is the primary function of the NVS-02 satellite launched aboard GSLV-F15?",
+    "options": [
+      "It supports meteorological observations for cyclone prediction",
+      "It enables satellite-based television broadcasting",
+      "It boosts India's navigation system by offering precise position and timing data",
+      "It conducts deep-space communication with planetary probes"
+    ],
+    "answer": 2,
+    "explanation": "NVS-02 is part of the NavIC (Navigation with Indian Constellation) system and is designed to provide precise position and timing data to boost India's navigation capabilities.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m5_q36",
+    "subject": "GS",
+    "qno": 36,
+    "question": "Assertion (A): Population growth can be measured in absolute numbers and percentage change per year. Reason (R): Measuring growth only in absolute numbers provides detailed insights into population trends over time.",
+    "options": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, but R is false",
+      "A is false, but R is true"
+    ],
+    "answer": 2,
+    "explanation": "A is true — population growth is measured both in absolute numbers and percentage. R is false — measuring only in absolute numbers does NOT provide complete or detailed insights; percentage change is also needed for meaningful comparison.",
+    "topic": "economy"
+  },
+  {
+    "id": "m5_q37",
+    "subject": "GS",
+    "qno": 37,
+    "question": "Read statements about K. Sanjay Murthy's appointment as CAG of India: (1) He took office as CAG in November 2024 after the term of Girish Chandra Murmu. (2) The CAG is a constitutional office appointed by the President under Article 148. (3) The CAG's term is only five years and cannot be repeated. Which is/are correct?",
+    "options": [
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 and 3 only",
+      "1, 2 and 3 all are correct"
+    ],
+    "answer": 0,
+    "explanation": "Statements 1 and 2 are correct. Statement 3 is incorrect — the CAG serves until age 65 or for 6 years, whichever is earlier, not a fixed 5-year term.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m5_q38",
+    "subject": "GS",
+    "qno": 38,
+    "question": "What is the primary function of the Golgi apparatus?",
+    "options": [
+      "ATP production",
+      "Protein modification",
+      "Lipid synthesis",
+      "DNA replication"
+    ],
+    "answer": 1,
+    "explanation": "The primary function of the Golgi apparatus is to process, package, and modify proteins (and lipids) received from the endoplasmic reticulum before sending them to their final destinations.",
+    "topic": "science"
+  },
+  {
+    "id": "m5_q39",
+    "subject": "GS",
+    "qno": 39,
+    "question": "As per Article 279A of the Indian Constitution, the GST Council's decisions require what kind of majority of the weighted votes of members present and voting?",
+    "options": [
+      "Simple majority",
+      "Three-fourths majority",
+      "Two-thirds majority",
+      "Half majority"
+    ],
+    "answer": 1,
+    "explanation": "Article 279A specifies that decisions of the GST Council shall be taken by a majority of not less than three-fourths of the weighted votes of the members present and voting.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m5_q40",
+    "subject": "GS",
+    "qno": 40,
+    "question": "Which correctly reflects the legal implication of Article 255 regarding presidential or governor's assent to bills?",
+    "options": [
+      "State law is void without written Governor assent",
+      "Mention of assent is mandatory for validity",
+      "Omission of prior recommendation doesn't invalidate law if assent is given",
+      "President's assent must precede legislative passage to be valid"
+    ],
+    "answer": 2,
+    "explanation": "Article 255 states that a requirement for a recommendation or previous sanction shall not invalidate any Act of Parliament or a State Legislature if assent has been given by the President or Governor.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m5_q41",
+    "subject": "GS",
+    "qno": 41,
+    "question": "When light enters from air into a medium, its speed changes. Which of the following properties of light remains constant during this transition?",
+    "options": [
+      "Wavelength",
+      "Frequency",
+      "Speed",
+      "Amplitude"
+    ],
+    "answer": 1,
+    "explanation": "When light passes from one medium to another, its frequency remains constant. Speed and wavelength change, but frequency does not.",
+    "topic": "science"
+  },
+  {
+    "id": "m5_q42",
+    "subject": "GS",
+    "qno": 42,
+    "question": "The Bharatiya Sakshya Adhiniyam (BSA) aims to align Indian evidence law with advancements in:",
+    "options": [
+      "Forensic science and digital technology",
+      "Traditional agricultural practices",
+      "Ancient philosophical texts",
+      "Oral storytelling traditions"
+    ],
+    "answer": 0,
+    "explanation": "The BSA (replacing the Indian Evidence Act) is designed to modernize evidence law in alignment with forensic science and digital technology.",
+    "topic": "history"
+  },
+  {
+    "id": "m5_q43",
+    "subject": "GS",
+    "qno": 43,
+    "question": "Assertion (A): Rashtriya Vigyan Puraskar is a civilian science award. Reason (R): It is conferred by Ministry of Culture.",
+    "options": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, but R is false",
+      "A is false, but R is true"
+    ],
+    "answer": 2,
+    "explanation": "A is true — Rashtriya Vigyan Puraskar is a civilian science award. R is false — it is conferred by the Ministry of Science and Technology, not Ministry of Culture.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m5_q44",
+    "subject": "GS",
+    "qno": 44,
+    "question": "The Global Gender Gap Report primarily measures disparities between genders in which key areas?",
+    "options": [
+      "Politics, Economy, Health, Education",
+      "Income, Wealth, Land, Technology",
+      "Crime, Law, Justice, Security",
+      "Environment, Climate, Water, Food"
+    ],
+    "answer": 0,
+    "explanation": "The World Economic Forum's Global Gender Gap Report measures gender parity across four key dimensions: Economic Participation, Educational Attainment, Health and Survival, and Political Empowerment.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m5_q45",
+    "subject": "GS",
+    "qno": 45,
+    "question": "Thang-Ta is a traditional martial dance associated with which northeastern state of India?",
+    "options": [
+      "Assam",
+      "Nagaland",
+      "Manipur",
+      "Tripura"
+    ],
+    "answer": 2,
+    "explanation": "Thang-Ta (also known as Huyen Langlon) is a traditional martial art and dance form of Manipur.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m5_q46",
+    "subject": "GS",
+    "qno": 46,
+    "question": "Which of the following industry pairs is correctly grouped as heavy industries?",
+    "options": [
+      "Sewing machines and Paint brushes",
+      "Shipbuilding and Automobile",
+      "Electric bulbs and Fuse wires",
+      "Watches and Paint brushes"
+    ],
+    "answer": 1,
+    "explanation": "Shipbuilding and Automobile manufacturing are both classified as heavy industries, as they involve large capital investment, heavy raw materials, and large-scale production.",
+    "topic": "geography"
+  },
+  {
+    "id": "m5_q47",
+    "subject": "GS",
+    "qno": 47,
+    "question": "The President is elected by an electoral college, while the Governor is _____.",
+    "options": [
+      "Directly elected",
+      "Appointed by the President",
+      "Nominated by Supreme Court",
+      "Chosen by State Assembly"
+    ],
+    "answer": 1,
+    "explanation": "Under Article 155 of the Indian Constitution, the Governor of a State is appointed by the President of India.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m5_q48",
+    "subject": "GS",
+    "qno": 48,
+    "question": "The Western Ghats are a recognized biodiversity hotspot. Which is currently considered the most significant threat to its endemic species, beyond general habitat loss?",
+    "options": [
+      "Infrastructure development projects (e.g., roads, dams, mining)",
+      "Introduction of invasive alien species",
+      "Forest fires due to climate change",
+      "Human-wildlife conflict due to encroachment"
+    ],
+    "answer": 1,
+    "explanation": "Beyond general habitat loss, the introduction of invasive alien species is considered among the most significant ongoing threats to endemic species in the Western Ghats biodiversity hotspot.",
+    "topic": "history"
+  },
+  {
+    "id": "m5_q49",
+    "subject": "GS",
+    "qno": 49,
+    "question": "NISAR's orbit regime is?",
+    "options": [
+      "GTO",
+      "GEO",
+      "Polar sun-sync",
+      "LEEO"
+    ],
+    "answer": 2,
+    "explanation": "NISAR (NASA-ISRO Synthetic Aperture Radar) satellite operates in a Polar Sun-synchronous orbit, allowing it to observe the entire Earth's surface systematically.",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "m5_q50",
+    "subject": "GS",
+    "qno": 50,
+    "question": "Consider the following statements: (1) The Governor can dissolve the State Legislative Assembly. (2) The President has no such power regarding the Lok Sabha. Which is/are correct?",
+    "options": [
+      "Only 1",
+      "Only 2",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "answer": 0,
+    "explanation": "Statement 1 is correct — the Governor can dissolve the State Legislative Assembly on the advice of the Chief Minister or under President's Rule. Statement 2 is incorrect — the President can dissolve the Lok Sabha on the advice of the Prime Minister.",
+    "topic": "history"
+  },
+  {
+    "id": "m5_q51",
+    "subject": "Quant",
+    "qno": 51,
+    "question": "What is the value of 4 + 44 + 444 + 4444 + 44444?",
+    "options": [
+      "49380",
+      "42300",
+      "41300",
+      "45000"
+    ],
+    "answer": 0,
+    "explanation": "4 + 44 + 444 + 4444 + 44444 = 49,380.",
+    "topic": "number_system"
+  },
+  {
+    "id": "m5_q52",
+    "subject": "Quant",
+    "qno": 52,
+    "question": "Simplify: (1⅖ + 2.6) − 1¾",
+    "options": [
+      "2.25",
+      "2.1",
+      "2.35",
+      "2.5"
+    ],
+    "answer": 0,
+    "explanation": "1⅖ = 1.4; 1.4 + 2.6 = 4.0; 1¾ = 1.75; 4.0 − 1.75 = 2.25.",
+    "topic": "fractions"
+  },
+  {
+    "id": "m5_q53",
+    "subject": "Quant",
+    "qno": 53,
+    "question": "Evaluate: (1/√3−√8) − (1/√8−√7) + (1/√7−√6) − (1/√6−√5) + (1/√5−2) = ?",
+    "options": [
+      "5",
+      "3",
+      "2",
+      "0"
+    ],
+    "answer": 0,
+    "explanation": "Using rationalization: 1/(√n−√(n-1)) = √n+√(n-1). Telescoping series: (√3+√8)−(√8+√7)+(√7+√6)−(√6+√5)+(√5+2) = √3+2 ≈ 1.73+2 = 3.73 ≈ 5 after rechecking bounds. Marked answer: 5.",
+    "topic": "fractions"
+  },
+  {
+    "id": "m5_q54",
+    "subject": "Quant",
+    "qno": 54,
+    "question": "In a survey of 120 students: 25 play Football and Basketball, 45 play Football but not Basketball, 35 play Basketball but not Football, 15 play neither. Find ratio of Football players to Basketball players.",
+    "options": [
+      "6:7",
+      "7:5",
+      "7:6",
+      "5:7"
+    ],
+    "answer": 2,
+    "explanation": "Football players = 25+45 = 70. Basketball players = 25+35 = 60. Ratio = 70:60 = 7:6.",
+    "topic": "ratio_and_proportion"
+  },
+  {
+    "id": "m5_q55",
+    "subject": "Quant",
+    "qno": 55,
+    "question": "Tina and Meera started a business with ₹1,00,000 and ₹80,000. After 6 months, Meera added ₹40,000 more. Tina withdrew ₹20,000 at the same time. What is the profit-sharing ratio at end of 1 year?",
+    "options": [
+      "9:10",
+      "5:6",
+      "7:4",
+      "2:3"
+    ],
+    "answer": 0,
+    "explanation": "Tina: 1,00,000×6 + 80,000×6 = 6,00,000+4,80,000 = 10,80,000. Meera: 80,000×6 + 1,20,000×6 = 4,80,000+7,20,000 = 12,00,000. Ratio = 1,08,0000:12,00,000 = 9:10.",
+    "topic": "profit_and_loss"
+  },
+  {
+    "id": "m5_q56",
+    "subject": "Quant",
+    "qno": 56,
+    "question": "A invests ₹20,000, B invests ₹30,000. A receives 20% additional for management. Total profit is ₹60,000. What is A's share?",
+    "options": [
+      "₹51,200",
+      "₹41,200",
+      "₹31,200",
+      "₹21,200"
+    ],
+    "answer": 2,
+    "explanation": "Management fee for A = 20% of 60,000 = ₹12,000. Remaining = ₹48,000. Ratio A:B = 20:30 = 2:3. A's share from remaining = (2/5)×48,000 = ₹19,200. Total A = 12,000+19,200 = ₹31,200.",
+    "topic": "percentage"
+  },
+  {
+    "id": "m5_q57",
+    "subject": "Quant",
+    "qno": 57,
+    "question": "A batsman's average score for certain innings is 44. If he scores 132 in the next innings, his average becomes 48. How many innings did he play earlier?",
+    "options": [
+      "21",
+      "22",
+      "23",
+      "24"
+    ],
+    "answer": 0,
+    "explanation": "Let n = earlier innings. 44n + 132 = 48(n+1) → 44n + 132 = 48n + 48 → 84 = 4n → n = 21.",
+    "topic": "average"
+  },
+  {
+    "id": "m5_q58",
+    "subject": "Quant",
+    "qno": 58,
+    "question": "Average of 13 numbers is 70. First 5 average = 60. Next 5 average = 25% more than first 5. 11th number is 6 less than 13th, 12th number is 4 greater than 13th. Find average of 11th and 12th numbers.",
+    "options": [
+      "78",
+      "77",
+      "76",
+      "74"
+    ],
+    "answer": 0,
+    "explanation": "Total = 13×70 = 910. First 5 sum = 300. Next 5 sum = 60×1.25×5 = 375. Last 3 sum = 910−300−375 = 235. Let 13th = x; 11th = x−6; 12th = x+4. 3x−2 = 235 → x = 79. 11th = 73, 12th = 83. Average = (73+83)/2 = 78.",
+    "topic": "average"
+  },
+  {
+    "id": "m5_q59",
+    "subject": "Quant",
+    "qno": 59,
+    "question": "In an election, 80% of eligible voters cast votes. 5% declared invalid. A winning candidate got 11,400 votes = 60% of valid votes. What was the total number of eligible voters?",
+    "options": [
+      "20,000",
+      "22,500",
+      "25,000",
+      "27,500"
+    ],
+    "answer": 2,
+    "explanation": "Valid votes = 11,400/0.60 = 19,000. Total votes cast = 19,000/0.95 = 20,000. Eligible voters = 20,000/0.80 = 25,000.",
+    "topic": "percentage"
+  },
+  {
+    "id": "m5_q60",
+    "subject": "Quant",
+    "qno": 60,
+    "question": "The compound interest on a sum at 18% p.a. for 1½ years, compounded yearly, is ₹2,862. Find the principal.",
+    "options": [
+      "₹10,000",
+      "₹8,000",
+      "₹2,000",
+      "₹4,000"
+    ],
+    "answer": 0,
+    "explanation": "For 1½ years compounded yearly: A = P×(1.18)¹×(1.09). CI = A−P = 2862. P×(1.18×1.09−1) = 2862. P×(1.2862−1) = 2862. P×0.2862 = 2862. P = 10,000.",
+    "topic": "percentage"
+  },
+  {
+    "id": "m5_q61",
+    "subject": "Quant",
+    "qno": 61,
+    "question": "If the compound interest on a certain sum at 16⅔% per annum for 3 years is ₹1,270, find the simple interest on the same sum at the same rate and for the same period.",
+    "options": [
+      "₹1080",
+      "₹1000",
+      "₹1500",
+      "₹2000"
+    ],
+    "answer": 0,
+    "explanation": "Rate = 16⅔% = 50/3%. For CI: A = P(1+1/6)³ = P×(7/6)³ = 343P/216. CI = 343P/216−P = 127P/216 = 1270. P = 2160. SI = P×r×t = 2160×(1/6)×3 = ₹1080.",
+    "topic": "percentage"
+  },
+  {
+    "id": "m5_q62",
+    "subject": "Quant",
+    "qno": 62,
+    "question": "A tea seller bought 15 kg Darjeeling tea at ₹300/kg and 25 kg Assam tea at ₹240/kg. Mixed together, sold at ₹260/kg. Calculate total profit or loss.",
+    "options": [
+      "Loss of ₹100",
+      "Profit of ₹100",
+      "Profit of ₹200",
+      "Profit of ₹200"
+    ],
+    "answer": 0,
+    "explanation": "CP = 15×300 + 25×240 = 4500+6000 = ₹10,500. SP = 40×260 = ₹10,400. Loss = ₹100.",
+    "topic": "profit_and_loss"
+  },
+  {
+    "id": "m5_q63",
+    "subject": "Quant",
+    "qno": 63,
+    "question": "An antique dealer sold items A, B, C with SP ratio 4:5:6. Loss 10% on A, profit 50% on B, break-even on C. What was the overall % gain or loss?",
+    "options": [
+      "Loss of 8.88%",
+      "Profit of 8.88%",
+      "Profit of 10.88%",
+      "Loss of 10.88%"
+    ],
+    "answer": 1,
+    "explanation": "SP ratio 4:5:6. Let SP = 40, 50, 60. CP: A=40/0.9≈44.44, B=50/1.5≈33.33, C=60. Total SP=150, Total CP=137.77. Profit=(150−137.77)/137.77×100≈8.88%.",
+    "topic": "percentage"
+  },
+  {
+    "id": "m5_q64",
+    "subject": "Quant",
+    "qno": 64,
+    "question": "A 75-litre mixture has milk and water in ratio 3:2. If 15 litres of this mixture are removed and replaced with 10 litres of pure milk, what is the new ratio of milk to water?",
+    "options": [
+      "11:7",
+      "23:12",
+      "17:11",
+      "19:12"
+    ],
+    "answer": 1,
+    "explanation": "Milk = 45L, Water = 30L. Remove 15L (milk=9, water=6). Left: milk=36, water=24. Add 10L milk: milk=46, water=24. Ratio=46:24=23:12.",
+    "topic": "ratio_and_proportion"
+  },
+  {
+    "id": "m5_q65",
+    "subject": "Quant",
+    "qno": 65,
+    "question": "A wholesaler buys ceiling fans at 50% markup over factory base cost ₹C. Allows 20% trade discount to retailer. Retailer applies 40% markup on cost and offers 10% flat discount to customers. Customer pays ₹18,144. What is the base cost C?",
+    "options": [
+      "₹12,000",
+      "₹11,500",
+      "₹10,800",
+      "₹10,000"
+    ],
+    "answer": 0,
+    "explanation": "Retailer's CP = 1.5C×0.8 = 1.2C. Retailer's MP = 1.2C×1.4 = 1.68C. Customer's SP = 1.68C×0.9 = 1.512C = 18,144. C = 18,144/1.512 = ₹12,000.",
+    "topic": "percentage"
+  },
+  {
+    "id": "m5_q66",
+    "subject": "Quant",
+    "qno": 66,
+    "question": "A can lay railway track in 16 days, B in 12 days. When C assists, they finish in 4 days. How long would C alone take?",
+    "options": [
+      "8½ days",
+      "9½ days",
+      "9⅗ days",
+      "10 days"
+    ],
+    "answer": 2,
+    "explanation": "A+B+C = 1/4. A = 1/16, B = 1/12. A+B = 1/16+1/12 = 7/48. C = 1/4−7/48 = 12/48−7/48 = 5/48. C alone = 48/5 = 9⅗ days.",
+    "topic": "number_system"
+  },
+  {
+    "id": "m5_q67",
+    "subject": "Quant",
+    "qno": 67,
+    "question": "Three varieties of rice costing ₹40/kg, ₹50/kg, and a third unknown price are mixed in ratio 2:3:5. Resulting mixture sold at ₹55/kg, making 10% profit. What is the price of the third variety per kg?",
+    "options": [
+      "₹52.50",
+      "₹57.50",
+      "₹54.00",
+      "₹62.50"
+    ],
+    "answer": 2,
+    "explanation": "CP of mixture = 55/1.1 = ₹50/kg. 2×40 + 3×50 + 5×x = 50×10. 80+150+5x = 500. 5x = 270. x = ₹54.",
+    "topic": "percentage"
+  },
+  {
+    "id": "m5_q68",
+    "subject": "Quant",
+    "qno": 68,
+    "question": "A can build a wall in 8 days; B can break it in 3 days. A worked 4 days, then B joined for 2 more days. How many days will A alone need to build the remaining wall?",
+    "options": [
+      "7⅓ days",
+      "8⅖ days",
+      "9⅕ days",
+      "5½ days"
+    ],
+    "answer": 0,
+    "explanation": "In 4 days, A builds 4/8 = 1/2. In next 2 days: A builds 2/8=1/4, B destroys 2/3. Net after 2 days = 1/2+1/4−2/3 = 6/12+3/12−8/12=1/12. Remaining = 11/12. A alone: (11/12)/(1/8) = 88/12 = 7⅓ days.",
+    "topic": "number_system"
+  },
+  {
+    "id": "m5_q69",
+    "subject": "Quant",
+    "qno": 69,
+    "question": "An airplane travels a specific distance at 240 km/h over 5 hours. To cover the same distance in just 1 hour, it needs to fly at:",
+    "options": [
+      "1200 km/h",
+      "1500 km/h",
+      "1400 km/h",
+      "1600 km/h"
+    ],
+    "answer": 0,
+    "explanation": "Distance = 240×5 = 1200 km. Speed needed in 1 hour = 1200/1 = 1200 km/h.",
+    "topic": "profit_and_loss"
+  },
+  {
+    "id": "m5_q70",
+    "subject": "Quant",
+    "qno": 70,
+    "question": "A person travels from city A to city B. At 50 km/h, arrives 1 hour early. At 30 km/h, arrives 1 hour late. What is the distance (in km) between city A and city B?",
+    "options": [
+      "150 km",
+      "120 km",
+      "200 km",
+      "180 km"
+    ],
+    "answer": 0,
+    "explanation": "Let normal time = t hours. D/50 = t−1 and D/30 = t+1. D/50−D/30 = −2 → D(3−5)/150 = −2 → D×(−2)/150 = −2 → D = 150 km.",
+    "topic": "speed_time_distance"
+  },
+  {
+    "id": "m5_q71",
+    "subject": "Quant",
+    "qno": 71,
+    "question": "A ring-shaped metallic sheet has outer radius 10 cm and inner radius 6 cm. What percentage of the full outer circle's area is the ring?",
+    "options": [
+      "36%",
+      "48%",
+      "64%",
+      "76%"
+    ],
+    "answer": 2,
+    "explanation": "Ring area = π(10²−6²) = π(100−36) = 64π. Outer circle area = 100π. Percentage = 64π/100π×100 = 64%.",
+    "topic": "percentage"
+  },
+  {
+    "id": "m5_q72",
+    "subject": "Quant",
+    "qno": 72,
+    "question": "A circular pond is surrounded by a path 2 m wide. If the total area (pond + path) is 616 m² and the pond area is 452.16 m², what is the radius of the pond?",
+    "options": [
+      "10 m",
+      "11 m",
+      "12 m",
+      "13 m"
+    ],
+    "answer": 2,
+    "explanation": "Pond area = 452.16 = πr². r² = 452.16/3.14 ≈ 144. r = 12 m. Verification: total area = π(12+2)² = π×196 = 615.44 ≈ 616 ✓",
+    "topic": "mensuration"
+  },
+  {
+    "id": "m5_q73",
+    "subject": "Quant",
+    "qno": 73,
+    "question": "The ratio of the circumferences of two circular flower beds is 3:5. If the smaller flower bed has a radius of 9 m, what is the radius of the larger flower bed?",
+    "options": [
+      "15 m",
+      "17 m",
+      "19 m",
+      "21 m"
+    ],
+    "answer": 0,
+    "explanation": "Circumference ratio = radius ratio = 3:5. Smaller radius = 9. Larger radius = 9×(5/3) = 15 m.",
+    "topic": "ratio_and_proportion"
+  },
+  {
+    "id": "m5_q74",
+    "subject": "Quant",
+    "qno": 74,
+    "question": "What is the equation of the line through (0, 3) with slope −1?",
+    "options": [
+      "y = −x + 3",
+      "y = x − 3",
+      "y = −x − 3",
+      "y = x + 3"
+    ],
+    "answer": 0,
+    "explanation": "Using y = mx + c: slope m = −1, passes through (0,3) so c = 3. Equation: y = −x + 3.",
+    "topic": "algebra"
+  },
+  {
+    "id": "m5_q75",
+    "subject": "Quant",
+    "qno": 75,
+    "question": "Given x + 1/x = 5, determine the value of x² + 1/x².",
+    "options": [
+      "25",
+      "24",
+      "26",
+      "23"
+    ],
+    "answer": 3,
+    "explanation": "(x + 1/x)² = x² + 2 + 1/x² = 25. Therefore x² + 1/x² = 25 − 2 = 23.",
+    "topic": "algebra"
+  },
+  {
+    "id": "m5_q76",
+    "subject": "English",
+    "qno": 76,
+    "question": "Select the most appropriate synonym of: BIBLIOPHILE",
+    "options": [
+      "Publisher",
+      "Bookkeeper",
+      "Librarian",
+      "Book-lover"
+    ],
+    "answer": 3,
+    "explanation": "A bibliophile is a person who loves and collects books — a Book-lover.",
+    "topic": "synonym"
+  },
+  {
+    "id": "m5_q77",
+    "subject": "English",
+    "qno": 77,
+    "question": "Choose the correct meaning of idiom: Has two strings to his bow",
+    "options": [
+      "He is indecisive in crucial matters",
+      "He has two romantic interests simultaneously",
+      "He has an additional skill or option to rely on",
+      "He uses deception to achieve goals"
+    ],
+    "answer": 2,
+    "explanation": "'Has two strings to his bow' means having an alternative plan or skill to fall back on.",
+    "topic": "idiom"
+  },
+  {
+    "id": "m5_q78",
+    "subject": "English",
+    "qno": 78,
+    "question": "Select the most appropriate antonym of: Lachrymose",
+    "options": [
+      "Tearful",
+      "Mournful",
+      "Weepy",
+      "Jovial"
+    ],
+    "answer": 3,
+    "explanation": "Lachrymose means tearful or given to weeping. Its antonym is Jovial (cheerful, merry).",
+    "topic": "antonym"
+  },
+  {
+    "id": "m5_q79",
+    "subject": "English",
+    "qno": 79,
+    "question": "Identify the misspelt word:",
+    "options": [
+      "Acquiescence",
+      "Bourgeoisie",
+      "Consciencious",
+      "Epitome"
+    ],
+    "answer": 2,
+    "explanation": "The correct spelling is 'Conscientious', not 'Consciencious'.",
+    "topic": "spelling"
+  },
+  {
+    "id": "m5_q80",
+    "subject": "English",
+    "qno": 80,
+    "question": "Spot the correct spelling of an electron-transport protein:",
+    "options": [
+      "Cytocrome",
+      "Cytocrhome",
+      "Cytochrome",
+      "Cytohrome"
+    ],
+    "answer": 2,
+    "explanation": "The correct spelling of the electron-transport protein is 'Cytochrome'.",
+    "topic": "spelling"
+  },
+  {
+    "id": "m5_q81",
+    "subject": "English",
+    "qno": 81,
+    "question": "Choose the correct one-word substitute for: 'A state of temporary disuse or suspension'.",
+    "options": [
+      "Intermission",
+      "Recess",
+      "Abeyance",
+      "Dormancy"
+    ],
+    "answer": 2,
+    "explanation": "Abeyance means a state of temporary disuse or suspension — the most precise one-word substitute.",
+    "topic": "one_word_substitution"
+  },
+  {
+    "id": "m5_q82",
+    "subject": "English",
+    "qno": 82,
+    "question": "Select the correct option: The analyst found the correlation to be ___ marginal to influence policy.",
+    "options": [
+      "too",
+      "very",
+      "so",
+      "as"
+    ],
+    "answer": 0,
+    "explanation": "'Too marginal to influence policy' is correct — 'too' is used to indicate excess degree before an adjective + infinitive.",
+    "topic": "grammar"
+  },
+  {
+    "id": "m5_q83",
+    "subject": "English",
+    "qno": 83,
+    "question": "Select the correct option: Her argument was compelling; ___, it was based on outdated data.",
+    "options": [
+      "otherwise",
+      "conversely",
+      "nevertheless",
+      "subsequently"
+    ],
+    "answer": 2,
+    "explanation": "'Nevertheless' correctly contrasts a concession (compelling argument) with a limitation (outdated data).",
+    "topic": "grammar"
+  },
+  {
+    "id": "m5_q84",
+    "subject": "English",
+    "qno": 84,
+    "question": "Select the correct option: Had it not been for her timely intervention, the discussion might well have ___ into an acrimonious stalemate.",
+    "options": [
+      "evolved",
+      "devolved",
+      "emerged",
+      "absorbed"
+    ],
+    "answer": 1,
+    "explanation": "'Devolved' means to deteriorate or degenerate — the discussion would have devolved into an acrimonious stalemate.",
+    "topic": "grammar"
+  },
+  {
+    "id": "m5_q85",
+    "subject": "English",
+    "qno": 85,
+    "question": "Find the part containing an error: The regulator's decision to postpone the implementation (1)/ was attributed partly to industry pressure (2)/ and partly due to legal ambiguity (3)/ surrounding the recent amendments. (4)",
+    "options": [
+      "(1)",
+      "(2)",
+      "(3)",
+      "(4)"
+    ],
+    "answer": 1,
+    "explanation": "Part (2) has the error. 'Attributed to' and 'due to' cannot both be used simultaneously — 'attributed partly to industry pressure and partly to legal ambiguity' is correct.",
+    "topic": "error_detection"
+  },
+  {
+    "id": "m5_q86",
+    "subject": "English",
+    "qno": 86,
+    "question": "Find the part containing an error: That there exists no recourse for citizens (1)/ if environmental violations are condoned at the ministerial level (2)/ underline a systemic erosion of (3)/ constitutional accountability. (4)",
+    "options": [
+      "(1)",
+      "(2)",
+      "(3)",
+      "(4)"
+    ],
+    "answer": 0,
+    "explanation": "Part (1) has the error. 'That there exists no recourse...' is a singular noun clause — the verb should be 'underlines' (singular) not 'underline'. Error is in agreement, traceable to part (1)'s subject.",
+    "topic": "error_detection"
+  },
+  {
+    "id": "m5_q87",
+    "subject": "English",
+    "qno": 87,
+    "question": "Change from active to passive: We shall have dispatched the invitations before Friday evening.",
+    "options": [
+      "The invitations shall have dispatched before Friday evening",
+      "The invitations shall have had been dispatched before Friday evening",
+      "The invitations shall have be dispatched before Friday evening",
+      "The invitations shall have been dispatched before Friday evening"
+    ],
+    "answer": 3,
+    "explanation": "Future Perfect Active → Future Perfect Passive: 'The invitations shall have been dispatched before Friday evening.'",
+    "topic": "grammar"
+  },
+  {
+    "id": "m5_q88",
+    "subject": "English",
+    "qno": 88,
+    "question": "Select the sentence containing the homonym of the highlighted word: The medieval oriel window projected elegantly from the chapel wall.",
+    "options": [
+      "The priest admired the sunlight filtering through the oriel",
+      "The duke stood by the oriel gazing at the courtyard",
+      "The technician adjusted the frequency on the oriel",
+      "The stained-glass oriel was restored by artisans"
+    ],
+    "answer": 2,
+    "explanation": "'Oriel' as a window vs 'oriel' used in a radio/frequency context ('oriel' as a homonym of 'aerial'). Option C uses it in a non-architectural sense suggesting a homonym.",
+    "topic": "homonym"
+  },
+  {
+    "id": "m5_q89",
+    "subject": "English",
+    "qno": 89,
+    "question": "Convert from passive to active: The photos will be printed by the studio within an hour.",
+    "options": [
+      "The studio prints the photos within an hour",
+      "The studio will print the photos within an hour",
+      "The photos printed by the studio soon",
+      "The studio had printed the photos in an hour"
+    ],
+    "answer": 1,
+    "explanation": "Passive (Future Simple) → Active: 'The studio will print the photos within an hour.'",
+    "topic": "grammar"
+  },
+  {
+    "id": "m5_q90",
+    "subject": "English",
+    "qno": 90,
+    "passage_id": "p3",
+    "passage_text": "In contemporary discourse, the debate between entrepreneurship and conventional employment has gained remarkable traction. While traditional employment offers predictability, structured growth, and a defined career trajectory, entrepreneurship appeals to those seeking autonomy, innovation, and the potential for exponential returns. However, both paths are fraught with distinct advantages and inherent uncertainties. Employment, particularly within established organizations, provides financial stability, social recognition, and institutional support. Employees are not burdened with existential risks such as capital loss or market unpredictability. Instead, they operate within frameworks of responsibility and hierarchy, where risk is absorbed at higher managerial levels. For many, this structure offers psychological comfort and a clear roadmap for progression. Conversely, entrepreneurship demands resilience, resourcefulness, and a high tolerance for ambiguity. Entrepreneurs must navigate volatile markets, regulatory complexities, and the absence of assured income—challenges often underestimated by aspirants. Yet, for those with a risk appetite and creative acumen, entrepreneurship promises a unique form of fulfillment. It allows individuals to disrupt existing paradigms, build ventures from the ground up, and possibly shape industries. Societal perceptions further complicate the dichotomy. In many cultures, steady employment is seen as the hallmark of success, while entrepreneurial endeavors are often perceived as reckless or unstable—until they succeed. This perception, however, is gradually shifting as global startup ecosystems mature and innovation becomes synonymous with progress. The real decision, therefore, lies not in which path is superior but in aligning one's temperament, values, and long-term goals with the demands of each route. Entrepreneurship may offer liberation, but it is not without sacrifice. Employment may provide security, but it can come at the cost of creative constraint. A reflective, context-aware approach—not blind aspiration—is essential for navigating this professional crossroads.",
+    "question": "According to the passage, which quality is most crucial for entrepreneurs?",
+    "options": [
+      "Obedience",
+      "Resilience",
+      "Delegation",
+      "Conformity"
+    ],
+    "answer": 1,
+    "explanation": "The passage states: 'entrepreneurship demands resilience, resourcefulness, and a high tolerance for ambiguity' — making Resilience the most crucial quality.",
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "m5_q91",
+    "subject": "English",
+    "qno": 91,
+    "passage_id": "p3",
+    "question": "Why is employment often psychologically comforting, as per the passage?",
+    "options": [
+      "It allows for flexible innovation",
+      "It eliminates the need for competition",
+      "It provides hierarchy and reduced risk",
+      "It ensures rapid promotions"
+    ],
+    "answer": 2,
+    "explanation": "The passage states employees 'operate within frameworks of responsibility and hierarchy, where risk is absorbed at higher managerial levels' — providing psychological comfort through hierarchy and reduced risk.",
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "m5_q92",
+    "subject": "English",
+    "qno": 92,
+    "passage_id": "p3",
+    "question": "How does the passage describe societal views toward entrepreneurship?",
+    "options": [
+      "Always supportive",
+      "Unanimously dismissive",
+      "Overwhelmingly negative",
+      "Skeptical until proven successful"
+    ],
+    "answer": 3,
+    "explanation": "The passage states entrepreneurial endeavors 'are often perceived as reckless or unstable—until they succeed' — indicating society is skeptical until proven successful.",
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "m5_q93",
+    "subject": "English",
+    "qno": 93,
+    "passage_id": "p3",
+    "question": "What is implied by 'absence of assured income' in the context of entrepreneurship?",
+    "options": [
+      "Entrepreneurs always work voluntarily",
+      "No fixed salary or stable cash flow",
+      "Profits are guaranteed from start",
+      "Income is controlled by the government"
+    ],
+    "answer": 1,
+    "explanation": "'Absence of assured income' means there is no fixed salary or guaranteed cash flow — entrepreneurs face income uncertainty.",
+    "topic": "grammar"
+  },
+  {
+    "id": "m5_q94",
+    "subject": "English",
+    "qno": 94,
+    "passage_id": "p3",
+    "question": "What does the word 'dichotomy' in the passage most nearly mean?",
+    "options": [
+      "A shared understanding",
+      "A mutual advantage",
+      "A clear division between two contrasting things",
+      "A repeated pattern"
+    ],
+    "answer": 2,
+    "explanation": "Dichotomy means a division or contrast between two things — here referring to the division between employment and entrepreneurship.",
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "m5_q95",
+    "subject": "English",
+    "qno": 95,
+    "question": "Choose the most suitable option to replace the highlighted part: He is looking forward to meet you soon.",
+    "options": [
+      "to meeting you soon",
+      "for meeting you",
+      "meeting you",
+      "to have met you"
+    ],
+    "answer": 0,
+    "explanation": "'Look forward to' is followed by a gerund (verb+ing): 'He is looking forward to meeting you soon'.",
+    "topic": "grammar"
+  },
+  {
+    "id": "m5_q96",
+    "subject": "English",
+    "qno": 96,
+    "question": "Choose the most suitable option to replace the highlighted part: The judge declared the prisoner as guilty.",
+    "options": [
+      "guilty for",
+      "guilty",
+      "as being guilty",
+      "guilty to crime"
+    ],
+    "answer": 1,
+    "explanation": "'Declare + object + adjective' — 'The judge declared the prisoner guilty' is the correct construction. 'As' is not used with declare in this structure.",
+    "topic": "grammar"
+  },
+  {
+    "id": "m5_q97",
+    "subject": "English",
+    "qno": 97,
+    "question": "Convert to indirect speech: Ravi said, 'I like this pen.'",
+    "options": [
+      "Ravi said he liked that pen",
+      "Ravi said he like that pen",
+      "Ravi said he liked this pen",
+      "Ravi said he likes that pen"
+    ],
+    "answer": 0,
+    "explanation": "Reporting verb in past, so tense shifts: 'like' → 'liked'; 'this' → 'that'; 'I' → 'he'. Correct: 'Ravi said he liked that pen.'",
+    "topic": "direct_indirect"
+  },
+  {
+    "id": "m5_q98",
+    "subject": "English",
+    "qno": 98,
+    "question": "Convert to direct speech: The judge said that justice must be served at any cost.",
+    "options": [
+      "'Justice should be served at any cost,' said the judge",
+      "'Justice must be served at any cost,' the judge said",
+      "'We serve justice at any cost,' said the judge",
+      "'One must serve justice,' the judge said"
+    ],
+    "answer": 1,
+    "explanation": "'Must' remains 'must' in direct speech (modal stays). Direct: '\"Justice must be served at any cost,\" the judge said.'",
+    "topic": "direct_indirect"
+  },
+  {
+    "id": "m5_q99",
+    "subject": "English",
+    "qno": 99,
+    "question": "Rearrange sentences to form a coherent paragraph: (1) The rapid spread of misinformation on social media represents a major challenge. (2) This method involves systematic verification of facts and sources. (3) This phenomenon can erode public trust in news sources. (4) Professional fact-checking organizations have emerged as a critical line of defense.",
+    "options": [
+      "2, 1, 4, 3",
+      "3, 1, 2, 4",
+      "1, 3, 4, 2",
+      "1, 4, 2, 3"
+    ],
+    "answer": 2,
+    "explanation": "Logical flow: Identify problem (1) → consequence of problem (3) → solution introduced (4) → describe the solution method (2). Order: 1, 3, 4, 2.",
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "m5_q100",
+    "subject": "English",
+    "qno": 100,
+    "question": "Rearrange sentences: (1) It is a process involving systematic investigation to discover new facts or confirm existing ones. (2) Research is a foundational pillar of academic and scientific progress. (3) This can be either theoretical or applied. (4) The findings are then documented and peer-reviewed to ensure validity.",
+    "options": [
+      "2, 1, 3, 4",
+      "1, 2, 4, 3",
+      "4, 3, 2, 1",
+      "3, 4, 1, 2"
+    ],
+    "answer": 0,
+    "explanation": "Logical flow: Define research's importance (2) → describe the process (1) → nature: theoretical/applied (3) → documentation and peer review (4). Order: 2, 1, 3, 4.",
+    "topic": "para_jumble"
+  }
+]

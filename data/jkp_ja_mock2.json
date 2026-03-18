@@ -1,0 +1,987 @@
+[
+  {
+    "id": "ja2_q1",
+    "subject": "General English",
+    "qno": 1,
+    "question": "Select the synonym of 'PERSPICACIOUS'.",
+    "options": ["Obtuse", "Astute", "Naive", "Gullible"],
+    "answer": 1,
+    "explanation": "Astute (sharp-witted insight).",
+    "topic": "synonym"
+  },
+  {
+    "id": "ja2_q2",
+    "subject": "General English",
+    "qno": 2,
+    "question": "Idiom: 'Bite the bullet' means",
+    "options": [
+      "Avoid a difficult situation",
+      "Face something unpleasant bravely",
+      "Celebrate success",
+      "Make a small mistake"
+    ],
+    "answer": 1,
+    "explanation": "Face something unpleasant bravely.",
+    "topic": "idiom"
+  },
+  {
+    "id": "ja2_q3",
+    "subject": "General English",
+    "qno": 3,
+    "question": "Antonym of 'OBFUSCATE'.",
+    "options": ["Clarify", "Confuse", "Hide", "Complicate"],
+    "answer": 0,
+    "explanation": "Clarify.",
+    "topic": "antonym"
+  },
+  {
+    "id": "ja2_q4",
+    "subject": "General English",
+    "qno": 4,
+    "question": "Spot the error: 'Not only the manager but also the staff were responsible for the delay in the project.'",
+    "options": [
+      "Not only the manager",
+      "but also the staff",
+      "were responsible",
+      "for the delay in the project"
+    ],
+    "answer": 2,
+    "explanation": "Should be 'was responsible' (singular subject-verb agreement with 'manager').",
+    "topic": "error_detection"
+  },
+  {
+    "id": "ja2_q5",
+    "subject": "General English",
+    "qno": 5,
+    "question": "One-word substitution: 'A government by the rich'.",
+    "options": ["Oligarchy", "Plutocracy", "Aristocracy", "Theocracy"],
+    "answer": 1,
+    "explanation": "Plutocracy.",
+    "topic": "grammar"
+  },
+  {
+    "id": "ja2_q6",
+    "subject": "General English",
+    "qno": 6,
+    "question": "Change to passive: 'The committee will have finalised the report by tomorrow.'",
+    "options": [
+      "The report will have been finalised by the committee by tomorrow",
+      "The report will be finalised by the committee",
+      "The committee will finalise the report",
+      "The report had been finalised"
+    ],
+    "answer": 0,
+    "explanation": "Future perfect passive form.",
+    "topic": "voice"
+  },
+  {
+    "id": "ja2_q7",
+    "subject": "General English",
+    "qno": 7,
+    "question": "Sentence improvement: 'She is used to get up early in the morning.'",
+    "options": ["to getting up", "getting up", "to get up", "No change"],
+    "answer": 0,
+    "explanation": "Gerund after 'be used to'.",
+    "topic": "grammar"
+  },
+  {
+    "id": "ja2_q8",
+    "subject": "General English",
+    "qno": 8,
+    "question": "Direct to Indirect: She said, 'I will have finished the work by evening.'",
+    "options": [
+      "She said that she would have finished the work by evening",
+      "She said that she will finish the work",
+      "She says she would finish",
+      "None"
+    ],
+    "answer": 0,
+    "explanation": "Future perfect backshift.",
+    "topic": "grammar"
+  },
+  {
+    "id": "ja2_q9",
+    "subject": "General English",
+    "qno": 9,
+    "question": "Misspelt word among: Irascible, Perspicacious, Inadvertent, Porphyroblastic",
+    "options": ["Irascible", "Perspicacious", "Inadvertent", "Porphyroblastic"],
+    "answer": 3,
+    "explanation": "Correct: Porphyroblastic.",
+    "topic": "grammar"
+  },
+  {
+    "id": "ja2_q10",
+    "subject": "General English",
+    "qno": 10,
+    "question": "Fill in the blank: Hardly had he reached the station ___ the train left.",
+    "options": ["when", "than", "then", "and"],
+    "answer": 0,
+    "explanation": "Hardly...when inversion.",
+    "topic": "grammar"
+  },
+  {
+    "id": "ja2_q11",
+    "subject": "General English",
+    "qno": 11,
+    "question": "Synonym of 'LUGUBRIOUS'.",
+    "options": ["Cheerful", "Mournful", "Vibrant", "Lively"],
+    "answer": 1,
+    "explanation": "Mournful.",
+    "topic": "synonym"
+  },
+  {
+    "id": "ja2_q12",
+    "subject": "General English",
+    "qno": 12,
+    "question": "Antonym of 'EPHEMERAL'.",
+    "options": ["Transient", "Eternal", "Fleeting", "Short-lived"],
+    "answer": 1,
+    "explanation": "Eternal.",
+    "topic": "antonym"
+  },
+  {
+    "id": "ja2_q13",
+    "subject": "General English",
+    "qno": 13,
+    "question": "Idiom: 'Throw in the towel' means",
+    "options": [
+      "Admit defeat",
+      "Celebrate victory",
+      "Continue fighting",
+      "Make peace"
+    ],
+    "answer": 0,
+    "explanation": "Admit defeat.",
+    "topic": "idiom"
+  },
+  {
+    "id": "ja2_q14",
+    "subject": "General English",
+    "qno": 14,
+    "question": "Error: 'The number of students are increasing every year.'",
+    "options": [
+      "The number of",
+      "students are",
+      "increasing every year",
+      "No error"
+    ],
+    "answer": 1,
+    "explanation": "Should be 'is increasing' (singular subject).",
+    "topic": "error_detection"
+  },
+  {
+    "id": "ja2_q15",
+    "subject": "General English",
+    "qno": 15,
+    "question": "One-word: 'A person who is indifferent to pleasure and pain'.",
+    "options": ["Stoic", "Hedonist", "Ascetic", "Epicurean"],
+    "answer": 0,
+    "explanation": "Stoic.",
+    "topic": "grammar"
+  },
+  {
+    "id": "ja2_q16",
+    "subject": "General English",
+    "qno": 16,
+    "passage_id": "p1",
+    "passage_text": "Education gives us knowledge, but wisdom comes from experience and reflection. While schools teach facts and figures, wisdom enriches the soul by fostering deeper moral insight. Elders and artisans, despite lacking formal education, often possess great wisdom cultivated through years of practice. In recent times, rote learning and algorithmic methods have widened the gap between formal learning and applied wisdom, leaving many educated yet unwise.",
+    "question": "According to the passage, how is wisdom primarily acquired?",
+    "options": [
+      "Through textbooks",
+      "Through emotional detachment",
+      "Through experience and reflection",
+      "Through algorithmic thinking"
+    ],
+    "answer": 2,
+    "explanation": "The passage states: 'wisdom comes from experience and reflection'.",
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "ja2_q17",
+    "subject": "General English",
+    "qno": 17,
+    "passage_id": "p1",
+    "passage_text": "Education gives us knowledge, but wisdom comes from experience and reflection. While schools teach facts and figures, wisdom enriches the soul by fostering deeper moral insight. Elders and artisans, despite lacking formal education, often possess great wisdom cultivated through years of practice. In recent times, rote learning and algorithmic methods have widened the gap between formal learning and applied wisdom, leaving many educated yet unwise.",
+    "question": "What does the author mean by 'wisdom enriches the soul'?",
+    "options": [
+      "It enhances academic success",
+      "It fosters deeper moral insight",
+      "It improves verbal expression",
+      "It sharpens mathematical skills"
+    ],
+    "answer": 1,
+    "explanation": "The passage explains: 'wisdom enriches the soul by fostering deeper moral insight'.",
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "ja2_q18",
+    "subject": "General English",
+    "qno": 18,
+    "passage_id": "p1",
+    "passage_text": "Education gives us knowledge, but wisdom comes from experience and reflection. While schools teach facts and figures, wisdom enriches the soul by fostering deeper moral insight. Elders and artisans, despite lacking formal education, often possess great wisdom cultivated through years of practice. In recent times, rote learning and algorithmic methods have widened the gap between formal learning and applied wisdom, leaving many educated yet unwise.",
+    "question": "Who, according to the passage, can be wise despite lacking formal education?",
+    "options": [
+      "Scientists",
+      "School children",
+      "Elders and artisans",
+      "Technocrats"
+    ],
+    "answer": 2,
+    "explanation": "'Elders and artisans, despite lacking formal education, often possess great wisdom'.",
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "ja2_q19",
+    "subject": "General English",
+    "qno": 19,
+    "passage_id": "p1",
+    "passage_text": "Education gives us knowledge, but wisdom comes from experience and reflection. While schools teach facts and figures, wisdom enriches the soul by fostering deeper moral insight. Elders and artisans, despite lacking formal education, often possess great wisdom cultivated through years of practice. In recent times, rote learning and algorithmic methods have widened the gap between formal learning and applied wisdom, leaving many educated yet unwise.",
+    "question": "What is the central contrast drawn in the passage?",
+    "options": [
+      "Education vs career",
+      "Intelligence vs memory",
+      "Reading vs writing",
+      "Formal learning vs applied wisdom"
+    ],
+    "answer": 3,
+    "explanation": "The passage contrasts 'formal learning' (school/facts) with 'applied wisdom' (experience-based).",
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "ja2_q20",
+    "subject": "General English",
+    "qno": 20,
+    "passage_id": "p1",
+    "passage_text": "Education gives us knowledge, but wisdom comes from experience and reflection. While schools teach facts and figures, wisdom enriches the soul by fostering deeper moral insight. Elders and artisans, despite lacking formal education, often possess great wisdom cultivated through years of practice. In recent times, rote learning and algorithmic methods have widened the gap between formal learning and applied wisdom, leaving many educated yet unwise.",
+    "question": "Why has the gap between education and wisdom widened in recent times?",
+    "options": [
+      "Due to overuse of social media",
+      "Because wisdom is no longer valued",
+      "Because of rote learning and algorithmic methods",
+      "Because people stop learning after school"
+    ],
+    "answer": 2,
+    "explanation": "'Rote learning and algorithmic methods have widened the gap between formal learning and applied wisdom'.",
+    "topic": "reading_comprehension"
+  },
+  {
+    "id": "ja2_q21",
+    "subject": "General Awareness",
+    "qno": 21,
+    "question": "Which commission recommended a permanent Secretariat for the Inter-State Council?",
+    "options": [
+      "Rajamannar Committee",
+      "Punchhi Commission",
+      "Sarkaria Commission",
+      "Venkatachelliah Commission"
+    ],
+    "answer": 2,
+    "explanation": "Sarkaria Commission (JKSSB SI/Assistant PYQ level).",
+    "topic": "history"
+  },
+  {
+    "id": "ja2_q22",
+    "subject": "General Awareness",
+    "qno": 22,
+    "question": "The Dr. S.P. Mookerjee Swimming Stadium is located in?",
+    "options": ["Mumbai", "Chandigarh", "New Delhi", "Bangalore"],
+    "answer": 2,
+    "explanation": "New Delhi (JKSSB GS PYQ).",
+    "topic": "geography"
+  },
+  {
+    "id": "ja2_q23",
+    "subject": "General Awareness",
+    "qno": 23,
+    "question": "India recorded negative population growth in which state between 2001-2011?",
+    "options": ["Kerala", "Goa", "Nagaland", "Manipur"],
+    "answer": 2,
+    "explanation": "Nagaland (Demography – JKSSB PYQ).",
+    "topic": "economy"
+  },
+  {
+    "id": "ja2_q24",
+    "subject": "General Awareness",
+    "qno": 24,
+    "question": "The Agriculture Infrastructure Fund primarily supports?",
+    "options": [
+      "Free fertilizers",
+      "Agri-logistics and cold chains",
+      "Cash transfers",
+      "MGNREGA work"
+    ],
+    "answer": 1,
+    "explanation": "Post-harvest infrastructure (Economy – JKSSB level).",
+    "topic": "economy"
+  },
+  {
+    "id": "ja2_q25",
+    "subject": "General Awareness",
+    "qno": 25,
+    "question": "Gorges are most commonly developed in which geological formation?",
+    "options": ["Soft sediment", "Hard rocks", "Glacial till", "Volcanic ash"],
+    "answer": 1,
+    "explanation": "Hard rocks (Geography – JKSSB PYQ).",
+    "topic": "geography"
+  },
+  {
+    "id": "ja2_q26",
+    "subject": "General Awareness",
+    "qno": 26,
+    "question": "In Bhakti tradition, the two broad types of worship are?",
+    "options": [
+      "Vedic and Non-Vedic",
+      "Saguna and Nirguna",
+      "Orthodox and Reformist",
+      "Shaiva and Vaishnava"
+    ],
+    "answer": 1,
+    "explanation": "Saguna and Nirguna (Culture – JKSSB PYQ).",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "ja2_q27",
+    "subject": "General Awareness",
+    "qno": 27,
+    "question": "Sant Tukaram is known for writing over how many abhangas?",
+    "options": ["10,000", "32,000", "50,000", "5,000"],
+    "answer": 1,
+    "explanation": "32,000 (Bhakti movement – JKSSB PYQ).",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "ja2_q28",
+    "subject": "General Awareness",
+    "qno": 28,
+    "question": "Why can hockey players use only the flat left-hand side of the stick?",
+    "options": [
+      "Better control",
+      "Prevents unfair left-handed advantage",
+      "Uniform rebound",
+      "Training ease"
+    ],
+    "answer": 1,
+    "explanation": "Prevents unfair advantage (Sports – JKSSB PYQ).",
+    "topic": "sports"
+  },
+  {
+    "id": "ja2_q29",
+    "subject": "General Awareness",
+    "qno": 29,
+    "question": "The Regulating Act 1773 elevated the Governor of Bengal to?",
+    "options": [
+      "Governor-General with a council",
+      "Ceremonial head",
+      "Direct reporting to Crown",
+      "Madras Presidency"
+    ],
+    "answer": 0,
+    "explanation": "Governor-General with four-member council (History – JKSSB PYQ).",
+    "topic": "history"
+  },
+  {
+    "id": "ja2_q30",
+    "subject": "General Awareness",
+    "qno": 30,
+    "question": "Milkha Singh set Indian 400m record at 1960 Rome Olympics with timing?",
+    "options": ["43.2 sec", "46.2 sec", "44.8 sec", "45.6 sec"],
+    "answer": 3,
+    "explanation": "45.6 seconds (Sports – JKSSB PYQ).",
+    "topic": "sports"
+  },
+  {
+    "id": "ja2_q31",
+    "subject": "General Awareness",
+    "qno": 31,
+    "question": "India–Uzbekistan BIT requires exhaustion of local remedies before international arbitration?",
+    "options": ["True", "False", "Not mentioned", "Optional"],
+    "answer": 0,
+    "explanation": "True (Recent BIT – Current Affairs 2024-25).",
+    "topic": "current_affairs"
+  },
+  {
+    "id": "ja2_q32",
+    "subject": "General Awareness",
+    "qno": 32,
+    "question": "NIRI (National Infrastructure Readiness Index) covers indicators beyond just Smart Cities?",
+    "options": [
+      "True",
+      "False",
+      "Only Smart Cities",
+      "Private investment excluded"
+    ],
+    "answer": 0,
+    "explanation": "True (Infrastructure reforms – Current Affairs).",
+    "topic": "current_affairs"
+  },
+  {
+    "id": "ja2_q33",
+    "subject": "General Awareness",
+    "qno": 33,
+    "question": "Global Peace Index 2024 trend since 2008?",
+    "options": [
+      "All domains improved",
+      "Average improved 4.5%",
+      "Ongoing Conflict & Safety deteriorated",
+      "More countries improved"
+    ],
+    "answer": 2,
+    "explanation": "Ongoing Conflict & Safety deteriorated (Current Affairs 2024).",
+    "topic": "current_affairs"
+  },
+  {
+    "id": "ja2_q34",
+    "subject": "General Awareness",
+    "qno": 34,
+    "question": "Who won the Nobel Prize in Physics 2024?",
+    "options": [
+      "John Hopfield & Geoffrey Hinton",
+      "Demis Hassabis",
+      "Not announced",
+      "AI researchers only"
+    ],
+    "answer": 0,
+    "explanation": "John Hopfield and Geoffrey Hinton (Current Affairs 2024).",
+    "topic": "current_affairs"
+  },
+  {
+    "id": "ja2_q35",
+    "subject": "General Awareness",
+    "qno": 35,
+    "question": "The Chaturbhuj Mandir in Gwalior Fort is an example of?",
+    "options": [
+      "Vaishnavite shrine",
+      "Shaivite shrine",
+      "Jain temple",
+      "Buddhist shrine"
+    ],
+    "answer": 1,
+    "explanation": "Shaivite/Vishnu shrine (J&K/History GK – JKSSB PYQ).",
+    "topic": "arts_culture"
+  },
+  {
+    "id": "ja2_q36",
+    "subject": "General Awareness",
+    "qno": 36,
+    "question": "India’s textile industry is unique for being self-reliant across?",
+    "options": [
+      "Only raw exports",
+      "Imports final products",
+      "Full value chain from fibre to garment",
+      "Domestic market only"
+    ],
+    "answer": 2,
+    "explanation": "Full value chain (Economy – JKSSB PYQ).",
+    "topic": "economy"
+  },
+  {
+    "id": "ja2_q37",
+    "subject": "General Awareness",
+    "qno": 37,
+    "question": "SSLV-D2 mission uses which propulsion system?",
+    "options": ["Liquid only", "Solid propulsion", "Hybrid", "Nuclear"],
+    "answer": 1,
+    "explanation": "Solid propulsion (Science & Tech – JKSSB PYQ).",
+    "topic": "science"
+  },
+  {
+    "id": "ja2_q38",
+    "subject": "General Awareness",
+    "qno": 38,
+    "question": "Copper bottoms in cooking vessels are used because copper is a good?",
+    "options": [
+      "Insulator",
+      "Low melting point material",
+      "Conductor of heat",
+      "Flavour enhancer"
+    ],
+    "answer": 2,
+    "explanation": "Conductor of heat (Science – JKSSB PYQ).",
+    "topic": "science"
+  },
+  {
+    "id": "ja2_q39",
+    "subject": "General Awareness",
+    "qno": 39,
+    "question": "Under updated SAPCC 2025, which sector received highest budgetary allocation for climate adaptation?",
+    "options": [
+      "Transport",
+      "Urban Planning",
+      "Agriculture and Water Resources",
+      "Renewable Energy"
+    ],
+    "answer": 2,
+    "explanation": "Agriculture and Water Resources (Current Affairs 2025).",
+    "topic": "current_affairs"
+  },
+  {
+    "id": "ja2_q40",
+    "subject": "General Awareness",
+    "qno": 40,
+    "question": "India’s oldest dam is?",
+    "options": ["Bhakra Nangal", "Kallanai", "Hirakud", "Tehri"],
+    "answer": 1,
+    "explanation": "Kallanai Dam (History – JKSSB PYQ).",
+    "topic": "history"
+  },
+  {
+    "id": "ja2_q41",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 41,
+    "question": "A and B invest ₹48,000 and ₹72,000. After 6 months A withdraws half, B adds ₹24,000. Profit ₹55,000. B’s share?",
+    "options": ["₹26,500", "₹28,000", "₹38,500", "₹36,000"],
+    "answer": 2,
+    "explanation": "Capital-time ratio 3:7 → ₹38,500 (Partnership with time variation – moderate-hard).",
+    "topic": "partnership"
+  },
+  {
+    "id": "ja2_q42",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 42,
+    "question": "From 64 L pure spirit, 8 L removed and replaced by water, repeated 3 times. Spirit left?",
+    "options": ["34.34 L", "36.45 L", "38.62 L", "42.88 L"],
+    "answer": 3,
+    "explanation": "64 × (7/8)³ ≈ 42.88 L (Mixture – hard).",
+    "topic": "mixture"
+  },
+  {
+    "id": "ja2_q43",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 43,
+    "question": "A and B together 12 days, B+C 15 days, C+A 20 days. A alone?",
+    "options": ["30", "20", "50", "15"],
+    "answer": 0,
+    "explanation": "30 days (Work & Time – moderate).",
+    "topic": "time_work"
+  },
+  {
+    "id": "ja2_q44",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 44,
+    "question": "Budget ratio 5:3:2. Land +5%, material +10%, labour –20%. Total % change?",
+    "options": [
+      "1.0% increase",
+      "1.5% decrease",
+      "1.5% increase",
+      "2.0% decrease"
+    ],
+    "answer": 2,
+    "explanation": "+1.5% (Percentage change – moderate).",
+    "topic": "percentage"
+  },
+  {
+    "id": "ja2_q45",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 45,
+    "question": "Car covers 40% at 20 km/h, 60% at 30 km/h. Average speed?",
+    "options": ["24", "25", "26", "27"],
+    "answer": 1,
+    "explanation": "25 km/h (Time & Distance – moderate).",
+    "topic": "time_distance"
+  },
+  {
+    "id": "ja2_q46",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 46,
+    "question": "If x = √5 + 2, x² – 4√5 = ?",
+    "options": ["1", "7", "9", "3"],
+    "answer": 2,
+    "explanation": "9 (Algebra – moderate).",
+    "topic": "algebra"
+  },
+  {
+    "id": "ja2_q47",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 47,
+    "question": "In cyclic quadrilateral, ∠A = 100°, ∠C = ?",
+    "options": ["100°", "80°", "90°", "70°"],
+    "answer": 1,
+    "explanation": "80° (Geometry – moderate).",
+    "topic": "geometry"
+  },
+  {
+    "id": "ja2_q48",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 48,
+    "question": "sin(90° – x) = cos(2x), find x?",
+    "options": ["0°", "30°", "25°", "15°"],
+    "answer": 1,
+    "explanation": "30° (Trigonometry – moderate-hard).",
+    "topic": "trigonometry"
+  },
+  {
+    "id": "ja2_q49",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 49,
+    "question": "Area of sector radius 7 cm, 90°?",
+    "options": ["38.48 cm²", "35.2 cm²", "40.5 cm²", "42.62 cm²"],
+    "answer": 0,
+    "explanation": "38.48 cm² (Mensuration – moderate).",
+    "topic": "mensuration"
+  },
+  {
+    "id": "ja2_q50",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 50,
+    "question": "Line parallel to 3x + 2y = 5?",
+    "options": ["3x + 2y = 7", "2x + 3y = 5", "3x – 2y = 5", "x + y = 5"],
+    "answer": 0,
+    "explanation": "Same slope –3/2 (Coordinate Geometry).",
+    "topic": "geometry"
+  },
+  {
+    "id": "ja2_q51",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 51,
+    "question": "If sin²A – cos²A = 1/3, cos²A = ?",
+    "options": ["5/8", "1/3", "0", "1/4"],
+    "answer": 1,
+    "explanation": "1/3 (Trigonometry identity).",
+    "topic": "trigonometry"
+  },
+  {
+    "id": "ja2_q52",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 52,
+    "question": "Complementary angles, sin A = 3/5, tan B = ?",
+    "options": ["4/3", "3/4", "5/4", "5/3"],
+    "answer": 0,
+    "explanation": "4/3.",
+    "topic": "trigonometry"
+  },
+  {
+    "id": "ja2_q53",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 53,
+    "question": "Triangles ABC & XYZ with all sides equal. Congruence rule?",
+    "options": ["SSS", "SAS", "ASA", "AAS"],
+    "answer": 0,
+    "explanation": "SSS.",
+    "topic": "geometry"
+  },
+  {
+    "id": "ja2_q54",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 54,
+    "question": "A jogs 5 km/h, B 7 km/h opposite on 1.2 km track. Time for 5th meeting?",
+    "options": ["6:25 AM", "6:30 AM", "6:45 AM", "7:00 AM"],
+    "answer": 1,
+    "explanation": "Relative speed 12 km/h → 6:30 AM.",
+    "topic": "time_distance"
+  },
+  {
+    "id": "ja2_q55",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 55,
+    "question": "If 11/19 = A, 2/9 = B, A – B ≈ ?",
+    "options": ["0.36", "0.56", "0.76", "0.6"],
+    "answer": 0,
+    "explanation": "≈0.36.",
+    "topic": "percentage"
+  },
+  {
+    "id": "ja2_q56",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 56,
+    "question": "Series: 0, 6, 24, 60, 120, ?",
+    "options": ["196", "156", "210", "200"],
+    "answer": 2,
+    "explanation": "n³ – n → 210.",
+    "topic": "number_series"
+  },
+  {
+    "id": "ja2_q57",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 57,
+    "question": "EK : MS :: FP : ?",
+    "options": ["ND", "NX", "NL", "NT"],
+    "answer": 1,
+    "explanation": "+8 → NX.",
+    "topic": "analogy"
+  },
+  {
+    "id": "ja2_q58",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 58,
+    "question": "If 5 # 3 = 19, 7 # 2 = 17, 9 # 1 = ?",
+    "options": ["12", "10", "8", "11"],
+    "answer": 3,
+    "explanation": "11.",
+    "topic": "analogy"
+  },
+  {
+    "id": "ja2_q59",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 59,
+    "question": "Chaos, Conflict, Negotiation, Resolution, ?",
+    "options": ["Justice", "Harmony", "Stability", "Law"],
+    "answer": 1,
+    "explanation": "Harmony (stages).",
+    "topic": "analogy"
+  },
+  {
+    "id": "ja2_q60",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 60,
+    "question": "Pointing to girl: 'Daughter of only child of my grandmother'. Relation?",
+    "options": ["Niece", "Cousin", "Aunt", "Sister"],
+    "answer": 0,
+    "explanation": "Niece.",
+    "topic": "blood_relation"
+  },
+  {
+    "id": "ja2_q61",
+    "subject": "Basic Concepts of Computers",
+    "qno": 61,
+    "question": "What is the primary function of a Firewall?",
+    "options": [
+      "Speed up internet",
+      "Protect against unauthorized access",
+      "Store data permanently",
+      "Print documents"
+    ],
+    "answer": 1,
+    "explanation": "Protect against unauthorized access.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja2_q62",
+    "subject": "Basic Concepts of Computers",
+    "qno": 62,
+    "question": "Which of the following is a cyber security threat?",
+    "options": ["Router", "Trojan", "Monitor", "Keyboard"],
+    "answer": 1,
+    "explanation": "Trojan (malware).",
+    "topic": "cyber_security"
+  },
+  {
+    "id": "ja2_q63",
+    "subject": "Basic Concepts of Computers",
+    "qno": 63,
+    "question": "In MS Excel, VLOOKUP is used for?",
+    "options": [
+      "Vertical lookup in table",
+      "Horizontal lookup",
+      "Chart creation",
+      "Text formatting"
+    ],
+    "answer": 0,
+    "explanation": "Vertical lookup.",
+    "topic": "ms_office"
+  },
+  {
+    "id": "ja2_q64",
+    "subject": "Basic Concepts of Computers",
+    "qno": 64,
+    "question": "What does HTTPS stand for?",
+    "options": [
+      "Hyper Text Transfer Protocol Secure",
+      "Hyper Transfer Protocol",
+      "High Text Protocol",
+      "None"
+    ],
+    "answer": 0,
+    "explanation": "Hyper Text Transfer Protocol Secure.",
+    "topic": "internet"
+  },
+  {
+    "id": "ja2_q65",
+    "subject": "Basic Concepts of Computers",
+    "qno": 65,
+    "question": "Which is an example of secondary storage?",
+    "options": ["RAM", "Hard Disk", "Cache", "Registers"],
+    "answer": 1,
+    "explanation": "Hard Disk.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja2_q66",
+    "subject": "Basic Concepts of Computers",
+    "qno": 66,
+    "question": "What is the full form of URL?",
+    "options": [
+      "Uniform Resource Locator",
+      "Universal Resource Link",
+      "Uniform Resource Link",
+      "Universal Resource Locator"
+    ],
+    "answer": 0,
+    "explanation": "Uniform Resource Locator.",
+    "topic": "internet"
+  },
+  {
+    "id": "ja2_q67",
+    "subject": "Basic Concepts of Computers",
+    "qno": 67,
+    "question": "Phishing is a type of?",
+    "options": [
+      "Hardware attack",
+      "Social engineering attack",
+      "Physical theft",
+      "Power failure"
+    ],
+    "answer": 1,
+    "explanation": "Social engineering attack.",
+    "topic": "cyber_security"
+  },
+  {
+    "id": "ja2_q68",
+    "subject": "Basic Concepts of Computers",
+    "qno": 68,
+    "question": "Shortcut to paste in Windows?",
+    "options": ["Ctrl + V", "Ctrl + C", "Ctrl + X", "Ctrl + Z"],
+    "answer": 0,
+    "explanation": "Ctrl + V.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja2_q69",
+    "subject": "Basic Concepts of Computers",
+    "qno": 69,
+    "question": "WWW is a network of?",
+    "options": ["Computers", "Websites", "People", "Countries"],
+    "answer": 1,
+    "explanation": "Websites (World Wide Web).",
+    "topic": "internet"
+  },
+  {
+    "id": "ja2_q70",
+    "subject": "Basic Concepts of Computers",
+    "qno": 70,
+    "question": "What does RAM stand for?",
+    "options": [
+      "Random Access Memory",
+      "Read Only Memory",
+      "Real Access Memory",
+      "Run Access Memory"
+    ],
+    "answer": 0,
+    "explanation": "Random Access Memory.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja2_q71",
+    "subject": "Basic Concepts of Computers",
+    "qno": 71,
+    "question": "Which protocol is used for secure web browsing?",
+    "options": ["HTTP", "HTTPS", "FTP", "SMTP"],
+    "answer": 1,
+    "explanation": "HTTPS.",
+    "topic": "internet"
+  },
+  {
+    "id": "ja2_q72",
+    "subject": "Basic Concepts of Computers",
+    "qno": 72,
+    "question": "MS Word feature for checking spelling and grammar?",
+    "options": ["Spell Check", "Thesaurus", "Find & Replace", "Mail Merge"],
+    "answer": 0,
+    "explanation": "Spell Check.",
+    "topic": "ms_office"
+  },
+  {
+    "id": "ja2_q73",
+    "subject": "Basic Concepts of Computers",
+    "qno": 73,
+    "question": "A computer virus that replicates itself is called?",
+    "options": ["Trojan", "Worm", "Spyware", "Adware"],
+    "answer": 1,
+    "explanation": "Worm.",
+    "topic": "cyber_security"
+  },
+  {
+    "id": "ja2_q74",
+    "subject": "Basic Concepts of Computers",
+    "qno": 74,
+    "question": "What is the function of a Router?",
+    "options": [
+      "Connects multiple networks",
+      "Stores data",
+      "Displays output",
+      "Inputs data"
+    ],
+    "answer": 0,
+    "explanation": "Connects multiple networks.",
+    "topic": "networking"
+  },
+  {
+    "id": "ja2_q75",
+    "subject": "Basic Concepts of Computers",
+    "qno": 75,
+    "question": "Which is an output device?",
+    "options": ["Keyboard", "Mouse", "Monitor", "Scanner"],
+    "answer": 2,
+    "explanation": "Monitor.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja2_q76",
+    "subject": "Basic Concepts of Computers",
+    "qno": 76,
+    "question": "What does BIOS stand for?",
+    "options": [
+      "Basic Input Output System",
+      "Binary Input Output System",
+      "Basic Internal Operating System",
+      "None"
+    ],
+    "answer": 0,
+    "explanation": "Basic Input Output System.",
+    "topic": "computer"
+  },
+  {
+    "id": "ja2_q77",
+    "subject": "Basic Concepts of Computers",
+    "qno": 77,
+    "question": "Cloud computing primarily provides?",
+    "options": [
+      "Local storage only",
+      "On-demand resources over internet",
+      "Hardware manufacturing",
+      "Printing services"
+    ],
+    "answer": 1,
+    "explanation": "On-demand resources over internet.",
+    "topic": "internet"
+  },
+  {
+    "id": "ja2_q78",
+    "subject": "Basic Concepts of Computers",
+    "qno": 78,
+    "question": "What is a Trojan horse in computing?",
+    "options": [
+      "Legitimate software",
+      "Malware disguised as useful program",
+      "Hardware component",
+      "Network cable"
+    ],
+    "answer": 1,
+    "explanation": "Malware disguised as useful program.",
+    "topic": "cyber_security"
+  },
+  {
+    "id": "ja2_q79",
+    "subject": "Basic Concepts of Computers",
+    "qno": 79,
+    "question": "Shortcut for new slide in PowerPoint?",
+    "options": ["Ctrl + M", "Ctrl + N", "Ctrl + S", "Ctrl + P"],
+    "answer": 0,
+    "explanation": "Ctrl + M.",
+    "topic": "ms_office"
+  },
+  {
+    "id": "ja2_q80",
+    "subject": "Basic Concepts of Computers",
+    "qno": 80,
+    "question": "What is the main purpose of an Operating System?",
+    "options": [
+      "Manage hardware and software resources",
+      "Only browse internet",
+      "Create documents",
+      "Play games"
+    ],
+    "answer": 0,
+    "explanation": "Manage hardware and software resources.",
+    "topic": "computer"
+  }
+]
