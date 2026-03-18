@@ -697,13 +697,11 @@
       }
       .quick-btns {
         display: flex;
-        gap: 6px;
-        flex-wrap: wrap;
+        gap: 8px;
       }
       .quick-btn {
         flex: 1;
-        min-width: 40px;
-        padding: 8px 6px;
+        padding: 9px 4px;
         border: 1.5px solid var(--border);
         background: var(--bg);
         color: var(--text2);
@@ -712,18 +710,12 @@
         font-weight: 700;
         cursor: pointer;
         transition: all 0.18s;
-        text-align: center;
       }
       .quick-btn:hover,
       .quick-btn.active {
         background: var(--primary);
         border-color: var(--primary);
         color: #fff;
-      }
-      .quick-btn:disabled {
-        opacity: 0.3;
-        cursor: not-allowed;
-        pointer-events: none;
       }
 
       /* RESPONSIVE */
@@ -776,7 +768,7 @@
       <div class="hero-greeting">Good luck with your prep 🎯</div>
       <h1 class="hero-title">Choose Your <span>Mock Test</span></h1>
       <p class="hero-sub">
-        Pick an exam category and start practising with real EXAM-pattern
+        Pick an exam category and start practising with real SSC-pattern
         questions
       </p>
     </div>
@@ -801,7 +793,6 @@
             <div class="meta-item">⚡ +2 / -0.5</div>
           </div>
           <div
-            id="cglMockCount"
             style="
               font-size: 0.78rem;
               color: var(--accent);
@@ -814,10 +805,10 @@
           <button class="exam-btn btn-cgl">Select Mock →</button>
         </div>
 
-        <div class="exam-card chsl" onclick="openConfig('chsl')">
+        <div class="exam-card chsl" style="opacity: 0.72; cursor: default">
           <div class="exam-card-header">
             <div class="exam-icon">📜</div>
-            <span class="exam-badge badge-live">LIVE</span>
+            <span class="exam-badge badge-soon">COMING SOON</span>
           </div>
           <h3>SSC CHSL Tier 1</h3>
           <p>
@@ -830,17 +821,16 @@
             <div class="meta-item">⚡ +2 / -0.5</div>
           </div>
           <div
-            id="chslMockCount"
             style="
               font-size: 0.78rem;
-              color: var(--accent);
+              color: var(--text3);
               margin-bottom: 10px;
               font-weight: 600;
             "
           >
-            🗂️ Checking mocks…
+            🗂️ Mocks coming soon
           </div>
-          <button class="exam-btn btn-chsl">Select Mock →</button>
+          <button class="exam-btn btn-disabled" disabled>Coming Soon</button>
         </div>
 
         <div
@@ -865,7 +855,6 @@
             <div class="meta-item">⚡ +1 / −0.33</div>
           </div>
           <div
-            id="rrbMockCount"
             style="
               font-size: 0.78rem;
               color: var(--accent);
@@ -886,60 +875,48 @@
           </button>
         </div>
 
-        <div class="exam-card" onclick="openConfig('rrb_ntpc_ug')">
+        <div class="exam-card" style="opacity: 0.72; cursor: default">
           <div class="exam-card-header">
             <div class="exam-icon" style="background: rgba(245, 158, 11, 0.1)">
               🚆
             </div>
-            <span class="exam-badge badge-live">LIVE</span>
+            <span class="exam-badge badge-soon">COMING SOON</span>
           </div>
           <h3>RRB NTPC Undergraduate</h3>
           <p>
             Railway Recruitment Board — Undergraduate level. 100 questions
-            across Maths, Reasoning & GK. No English. 90 minutes.
+            across Maths, Reasoning & GK. 90 minutes.
           </p>
           <div class="exam-meta">
             <div class="meta-item">⏱️ 90 min</div>
-            <div class="meta-item">📝 100 Qs · 100 marks</div>
-            <div class="meta-item">⚡ +1 / −0.33</div>
+            <div class="meta-item">📝 100 Qs</div>
+            <div class="meta-item">⚡ +1 / -0.33</div>
           </div>
           <div
-            id="rrbUgMockCount"
             style="
               font-size: 0.78rem;
-              color: var(--accent);
+              color: var(--text3);
               margin-bottom: 10px;
               font-weight: 600;
             "
           >
-            🗂️ Checking mocks…
+            🗂️ Mocks coming soon
           </div>
-          <button
-            class="exam-btn"
-            style="
-              background: linear-gradient(135deg, #f59e0b, #ef4444);
-              color: white;
-            "
-          >
-            Select Mock →
-          </button>
+          <button class="exam-btn btn-disabled" disabled>Coming Soon</button>
         </div>
 
-        <div
-          class="exam-card"
-          onclick="openConfig('jkp_si')"
-          style="--card-accent: #8b5cf6"
-        >
+        <div class="exam-card" style="opacity: 0.72; cursor: default">
           <div class="exam-card-header">
             <div class="exam-icon" style="background: rgba(139, 92, 246, 0.1)">
               🛡️
             </div>
-            <span class="exam-badge badge-live">LIVE</span>
+            <span class="exam-badge badge-soon">COMING SOON</span>
           </div>
           <h3>JKSSB Sub Inspector</h3>
           <p>
-            J&amp;K Police — 100 Qs × 2 marks. Reasoning, GK, Quant, English,
-            Maths &amp; Computer. 120 min.
+            J&amp;K Police (Home Dept) — 100 Qs × 2 marks. Reasoning, General
+            Awareness, Quant, English, Mathematical Abilities &amp; Computer
+            Proficiency.
           </p>
           <div class="exam-meta">
             <div class="meta-item">⏱️ 120 min</div>
@@ -947,38 +924,30 @@
             <div class="meta-item">⚡ +2 / −0.5</div>
           </div>
           <div
-            id="jkpMockCount"
             style="
               font-size: 0.78rem;
-              color: var(--accent);
+              color: var(--text3);
               margin-bottom: 10px;
               font-weight: 600;
             "
           >
-            🗂️ Checking mocks…
+            🗂️ Mocks coming soon
           </div>
-          <button
-            class="exam-btn"
-            style="
-              background: linear-gradient(135deg, #8b5cf6, #ec4899);
-              color: white;
-            "
-          >
-            Select Mock →
-          </button>
+          <button class="exam-btn btn-disabled" disabled>Coming Soon</button>
         </div>
 
-        <div class="exam-card" onclick="openConfig('jkp_ja')">
+        <div class="exam-card" style="opacity: 0.72; cursor: default">
           <div class="exam-card-header">
             <div class="exam-icon" style="background: rgba(139, 92, 246, 0.1)">
               📋
             </div>
-            <span class="exam-badge badge-live">LIVE</span>
+            <span class="exam-badge badge-soon">COMING SOON</span>
           </div>
           <h3>JKSSB Junior Assistant</h3>
           <p>
-            J&amp;K SSB — 4 sections × 20 marks. English, GK (J&amp;K),
-            Reasoning &amp; Computer. 80 questions. 80 minutes.
+            J&amp;K Services Selection Board — 4 sections × 20 marks. English,
+            GK (J&amp;K focus), Numerical &amp; Reasoning, Computer. + 20 marks
+            Typing Test.
           </p>
           <div class="exam-meta">
             <div class="meta-item">⏱️ 80 min</div>
@@ -986,25 +955,16 @@
             <div class="meta-item">⚡ +1 / −0.25</div>
           </div>
           <div
-            id="jkpJaMockCount"
             style="
               font-size: 0.78rem;
-              color: var(--accent);
+              color: var(--text3);
               margin-bottom: 10px;
               font-weight: 600;
             "
           >
-            🗂️ Checking mocks…
+            🗂️ Mocks coming soon
           </div>
-          <button
-            class="exam-btn"
-            style="
-              background: linear-gradient(135deg, #8b5cf6, #06b6d4);
-              color: white;
-            "
-          >
-            Select Mock →
-          </button>
+          <button class="exam-btn btn-disabled" disabled>Coming Soon</button>
         </div>
       </div>
 
@@ -1223,84 +1183,51 @@
 
         <div style="margin-top: 22px">
           <span class="timer-lbl">📝 Number of Questions</span>
-          <div class="time-row" style="margin-bottom: 8px">
-            <input
-              type="number"
-              id="subjectQInput"
-              class="time-input"
-              value="25"
-              min="1"
-              max="50"
-              oninput="
-                subjQCount = Math.min(
-                  50,
-                  Math.max(1, parseInt(this.value) || 1),
-                );
-                syncSubjQBtns();
-              "
-              onfocus="this.style.borderColor = 'var(--primary)'"
-              onblur="this.style.borderColor = 'var(--border)'"
-            />
-            <span class="time-unit">questions</span>
-          </div>
           <div class="quick-btns" id="subjQCountBtns">
-            <button class="quick-btn" onclick="setSubjectQCount(10)">10</button>
-            <button class="quick-btn" onclick="setSubjectQCount(20)">20</button>
-            <button class="quick-btn active" onclick="setSubjectQCount(25)">
-              25
+            <button class="quick-btn" onclick="setSubjectQCount(10)">
+              10 Qs
             </button>
-            <button class="quick-btn" onclick="setSubjectQCount(30)">30</button>
-            <button class="quick-btn" onclick="setSubjectQCount(40)">40</button>
-            <button class="quick-btn" onclick="setSubjectQCount(50)">50</button>
+            <button class="quick-btn" onclick="setSubjectQCount(15)">
+              15 Qs
+            </button>
+            <button class="quick-btn" onclick="setSubjectQCount(20)">
+              20 Qs
+            </button>
+            <button class="quick-btn active" onclick="setSubjectQCount(25)">
+              25 Qs
+            </button>
           </div>
-          <p
-            style="
-              font-size: 11px;
-              color: var(--text3);
-              margin-top: 5px;
-              text-align: center;
-            "
-          >
-            Or type any number 1–50
-          </p>
         </div>
 
         <div style="margin-top: 18px">
           <span class="timer-lbl">⏱ Set Your Timer</span>
-          <div class="time-row" style="margin-bottom: 8px">
+          <div class="time-row">
             <input
               type="number"
               id="subjectTimeInput"
               class="time-input"
               value="25"
               min="1"
-              max="30"
-              oninput="syncSubjTimeBtns()"
+              max="120"
               onfocus="this.style.borderColor = 'var(--primary)'"
               onblur="this.style.borderColor = 'var(--border)'"
             />
             <span class="time-unit">minutes</span>
           </div>
           <div class="quick-btns" id="subjTimeBtns">
-            <button class="quick-btn" onclick="setSubjectTime(5)">5</button>
-            <button class="quick-btn" onclick="setSubjectTime(10)">10</button>
-            <button class="quick-btn" onclick="setSubjectTime(15)">15</button>
-            <button class="quick-btn" onclick="setSubjectTime(20)">20</button>
-            <button class="quick-btn active" onclick="setSubjectTime(25)">
-              25
+            <button class="quick-btn" onclick="setSubjectTime(10)">
+              10 min
             </button>
-            <button class="quick-btn" onclick="setSubjectTime(30)">30</button>
+            <button class="quick-btn" onclick="setSubjectTime(15)">
+              15 min
+            </button>
+            <button class="quick-btn" onclick="setSubjectTime(20)">
+              20 min
+            </button>
+            <button class="quick-btn active" onclick="setSubjectTime(25)">
+              25 min
+            </button>
           </div>
-          <p
-            style="
-              font-size: 11px;
-              color: var(--text3);
-              margin-top: 5px;
-              text-align: center;
-            "
-          >
-            Or type any number 1–30 min
-          </p>
         </div>
         <div class="modal-actions">
           <button class="modal-cancel" onclick="closeSubjectModal()">
@@ -1346,41 +1273,20 @@
 
         <div style="margin-top: 22px">
           <span class="timer-lbl">📝 Number of Questions</span>
-          <div class="time-row" style="margin-bottom: 8px">
-            <input
-              type="number"
-              id="chapQInput"
-              class="time-input"
-              value="10"
-              min="1"
-              max="50"
-              oninput="
-                chapQCount = Math.min(
-                  currentChapterCount || 50,
-                  Math.max(1, parseInt(this.value) || 1),
-                );
-                syncChapQBtns();
-              "
-              onfocus="this.style.borderColor = 'var(--primary)'"
-              onblur="this.style.borderColor = 'var(--border)'"
-            />
-            <span class="time-unit">questions</span>
-          </div>
           <div class="quick-btns" id="chapQCountBtns">
-            <button class="quick-btn active" onclick="setChapQCount(5)">
-              5
+            <button class="quick-btn" onclick="setChapQCount(5)">5 Qs</button>
+            <button class="quick-btn" onclick="setChapQCount(10)">10 Qs</button>
+            <button class="quick-btn active" onclick="setChapQCount(15)">
+              15 Qs
             </button>
-            <button class="quick-btn" onclick="setChapQCount(10)">10</button>
-            <button class="quick-btn" onclick="setChapQCount(15)">15</button>
-            <button class="quick-btn" onclick="setChapQCount(20)">20</button>
-            <button class="quick-btn" onclick="setChapQCount(30)">30</button>
+            <button class="quick-btn" onclick="setChapQCount(20)">20 Qs</button>
           </div>
           <p
             id="chapQCountNote"
             style="
               font-size: 11px;
               color: var(--text3);
-              margin-top: 5px;
+              margin-top: 6px;
               text-align: center;
             "
           ></p>
@@ -1388,41 +1294,27 @@
 
         <div style="margin-top: 18px">
           <span class="timer-lbl">⏱ Set Your Timer</span>
-          <div class="time-row" style="margin-bottom: 8px">
+          <div class="time-row">
             <input
               type="number"
               id="chapTimeInput"
               class="time-input"
-              value="10"
+              value="15"
               min="1"
-              max="30"
-              oninput="syncChapTimeBtns()"
+              max="120"
               onfocus="this.style.borderColor = 'var(--primary)'"
               onblur="this.style.borderColor = 'var(--border)'"
             />
             <span class="time-unit">minutes</span>
           </div>
           <div class="quick-btns" id="chapTimeBtns">
-            <button class="quick-btn" onclick="setChapTime(1)">1</button>
-            <button class="quick-btn" onclick="setChapTime(2)">2</button>
-            <button class="quick-btn" onclick="setChapTime(5)">5</button>
-            <button class="quick-btn active" onclick="setChapTime(10)">
-              10
+            <button class="quick-btn" onclick="setChapTime(10)">10 min</button>
+            <button class="quick-btn active" onclick="setChapTime(15)">
+              15 min
             </button>
-            <button class="quick-btn" onclick="setChapTime(15)">15</button>
-            <button class="quick-btn" onclick="setChapTime(20)">20</button>
-            <button class="quick-btn" onclick="setChapTime(30)">30</button>
+            <button class="quick-btn" onclick="setChapTime(20)">20 min</button>
+            <button class="quick-btn" onclick="setChapTime(25)">25 min</button>
           </div>
-          <p
-            style="
-              font-size: 11px;
-              color: var(--text3);
-              margin-top: 5px;
-              text-align: center;
-            "
-          >
-            Or type any number 1–30 min
-          </p>
         </div>
         <div class="modal-actions">
           <button class="modal-cancel" onclick="closeChapterModal()">
@@ -1521,23 +1413,20 @@
       }
 
       // ── FULL MOCK ─────────────────────────────────
-      // Exam config — add mocks[] as you create new files; auto-count detects available files
       const examConfig = {
         cgl: {
           title: "SSC CGL Tier 1",
           qs: 100,
           time: 60,
           subjects: "Quant · Reasoning · GS · English",
-          desc: "Full mock — 25 Qs per subject, 60 min. +2/−0.5 marking.",
-          marking: "+2 / −0.5",
-          prefix: "mock",
+          desc: "Full mock test — 25 questions per subject, 60 minutes.",
           mocks: [
-            { num: 1, label: "Mock 1" },
-            { num: 2, label: "Mock 2" },
-            { num: 3, label: "Mock 3" },
-            { num: 4, label: "Mock 4" },
-            { num: 5, label: "Mock 5" },
-            { num: 6, label: "Mock 6" },
+            { num: 1, label: "Mock 1 — Shift 1" },
+            { num: 2, label: "Mock 2 — Shift 2" },
+            { num: 3, label: "Mock 3 — Shift 3" },
+            { num: 4, label: "Mock 4 — Shift 4" },
+            { num: 5, label: "Mock 5 — Shift 5" },
+            { num: 6, label: "Mock 6 — Shift 6" },
           ],
         },
         chsl: {
@@ -1545,129 +1434,40 @@
           qs: 100,
           time: 60,
           subjects: "Quant · Reasoning · GS · English",
-          desc: "Full mock — 25 Qs per subject, 60 min. +2/−0.5 marking.",
-          marking: "+2 / −0.5",
-          prefix: "chsl_mock",
-          mocks: [],
+          desc: "Full mock test — 25 questions per subject, 60 minutes.",
+          mocks: [
+            { num: 1, label: "Mock 1 — Shift 1" },
+            { num: 2, label: "Mock 2 — Shift 2" },
+            { num: 3, label: "Mock 3 — Shift 3" },
+            { num: 4, label: "Mock 4 — Shift 4" },
+            { num: 5, label: "Mock 5 — Shift 5" },
+            { num: 6, label: "Mock 6 — Shift 6" },
+          ],
         },
         rrb_ntpc_g: {
           title: "RRB NTPC Graduate",
           qs: 100,
           time: 90,
           subjects: "Reasoning · Mathematics · General Awareness",
-          desc: "CBT 1 — 100 Qs, 1 mark each. No English section. 90 min.",
-          marking: "+1 / −0.33",
-          prefix: "rrb_ntpc_g_mock",
+          desc: "CBT 1 — 100 questions, 1 mark each. Reasoning, Maths & GK. 90 minutes.",
           mocks: [{ num: 1, label: "Mock 1" }],
-        },
-        jkp_si: {
-          title: "JKSSB Sub Inspector",
-          qs: 100,
-          time: 120,
-          subjects: "Reasoning · GK · Quant · English · Maths · Computer",
-          desc: "J&K Police SI — 6 sections, 100 Qs, 200 marks. 120 min.",
-          marking: "+2 / −0.5",
-          prefix: "jkp_si_mock",
-          mocks: [{ num: 1, label: "Mock 1" }],
-        },
-        rrb_ntpc_ug: {
-          title: "RRB NTPC Undergraduate",
-          qs: 100,
-          time: 90,
-          subjects: "Reasoning · Mathematics · General Awareness",
-          desc: "CBT 1 — 100 Qs, 1 mark each. Reasoning, Maths & GK. No English. 90 min.",
-          marking: "+1 / −0.33",
-          prefix: "rrb_ntpc_ug_mock",
-          mocks: [],
-        },
-        jkp_ja: {
-          title: "JKSSB Junior Assistant",
-          qs: 80,
-          time: 80,
-          subjects: "English · GK (J&K) · Reasoning · Computer",
-          desc: "J&K SSB JA — 4 sections × 20 marks, 80 Qs, 80 marks. 80 min.",
-          marking: "+1 / −0.25",
-          prefix: "jkp_ja_mock",
-          mocks: [],
         },
       };
-
-      // Auto-detect how many mock files exist for each exam and update counters
-      async function autoCountMocks() {
-        const entries = Object.entries(examConfig);
-        for (const [key, cfg] of entries) {
-          if (!cfg.prefix) continue;
-          let count = cfg.mocks.length;
-          // Try to find more files beyond what's declared
-          for (let i = count + 1; i <= 30; i++) {
-            try {
-              const r = await fetch(`data/${cfg.prefix}${i}.json`, {
-                method: "HEAD",
-              });
-              if (!r.ok) break;
-              cfg.mocks.push({ num: i, label: `Mock ${i}` });
-              count++;
-            } catch (e) {
-              break;
-            }
-          }
-          // Update badge on card
-          const badges = {
-            cgl: "cglMockCount",
-            rrb_ntpc_g: "rrbMockCount",
-            rrb_ntpc_ug: "rrbUgMockCount",
-            jkp_si: "jkpMockCount",
-            jkp_ja: "jkpJaMockCount",
-            chsl: "chslMockCount",
-          };
-          if (badges[key]) {
-            const el = document.getElementById(badges[key]);
-            if (el)
-              el.textContent = `🗂️ ${count} Mock${count !== 1 ? "s" : ""} Available`;
-          }
-        }
-      }
-      autoCountMocks();
       function openConfig(type) {
         currentExamType = type;
         const c = examConfig[type];
-        if (!c) return;
         document.getElementById("modalTitle").textContent = c.title;
         document.getElementById("modalDesc").textContent = c.desc;
         document.getElementById("cfgQs").textContent = c.qs;
         document.getElementById("cfgTime").textContent = c.time + " minutes";
         document.getElementById("cfgSubjects").textContent = c.subjects;
-        // Update marking display
-        const markRows = document.querySelectorAll(".config-row");
-        markRows.forEach((row) => {
-          const lbl = row.querySelector(".config-label");
-          if (lbl && lbl.textContent.includes("Correct")) {
-            const val = row.querySelector(".config-val");
-            if (val && c.marking)
-              val.textContent =
-                "+" +
-                c.marking.split("/")[0].trim().replace("+", "") +
-                " marks";
-          }
-          if (lbl && lbl.textContent.includes("Wrong")) {
-            const val = row.querySelector(".config-val");
-            if (val && c.marking)
-              val.textContent =
-                "−" +
-                c.marking.split("/")[1].trim().replace("−", "") +
-                " marks";
-          }
-        });
         const sel = document.getElementById("mockSelector");
-        const row = document.getElementById("mockSelectorRow");
-        if (sel && c.mocks && c.mocks.length > 0) {
+        if (sel && c.mocks) {
           sel.innerHTML = c.mocks
             .map((m) => `<option value="${m.num}">${m.label}</option>`)
             .join("");
-          sel.value = String(c.mocks[0].num);
-          if (row) row.style.display = "flex";
-        } else {
-          if (row) row.style.display = "none";
+          sel.value = "1";
+          document.getElementById("mockSelectorRow").style.display = "flex";
         }
         document.getElementById("configModal").classList.add("open");
       }
@@ -1724,8 +1524,6 @@
         t.style.backgroundClip = "text";
         setSubjectQCount(25);
         setSubjectTime(25);
-        const sqInp = document.getElementById("subjectQInput");
-        if (sqInp) sqInp.value = 25;
         document.getElementById("subjectModal").classList.add("open");
       }
       function closeSubjectModal() {
@@ -1734,49 +1532,28 @@
 
       function setSubjectQCount(n) {
         subjQCount = n;
-        const inp = document.getElementById("subjectQInput");
-        if (inp) inp.value = n;
-        syncSubjQBtns();
-      }
-      function syncSubjQBtns() {
         document
           .querySelectorAll("#subjQCountBtns .quick-btn")
           .forEach((btn) => {
-            btn.classList.toggle(
-              "active",
-              parseInt(btn.textContent) === subjQCount,
-            );
+            btn.classList.toggle("active", parseInt(btn.textContent) === n);
           });
       }
       function setSubjectTime(mins) {
         document.getElementById("subjectTimeInput").value = mins;
-        syncSubjTimeBtns();
-      }
-      function syncSubjTimeBtns() {
-        const mins =
-          parseInt(document.getElementById("subjectTimeInput").value) || 25;
         document.querySelectorAll("#subjTimeBtns .quick-btn").forEach((btn) => {
           btn.classList.toggle("active", parseInt(btn.textContent) === mins);
         });
       }
       function startSubjectPractice() {
-        const qEl = document.getElementById("subjectQInput");
-        if (qEl)
-          subjQCount = Math.min(50, Math.max(1, parseInt(qEl.value) || 25));
         const mins =
           parseInt(document.getElementById("subjectTimeInput").value) || 25;
-        if (mins < 1 || mins > 30) {
-          showToast("Please enter a timer between 1 and 30 minutes.");
-          return;
-        }
-        if (subjQCount < 1 || subjQCount > 50) {
-          showToast("Please enter between 1 and 50 questions.");
+        if (mins < 1 || mins > 120) {
+          showToast("Please enter a time between 1 and 120 minutes.");
           return;
         }
         sessionStorage.setItem("examType", "subject");
         sessionStorage.setItem("examMode", "subject");
         sessionStorage.setItem("selectedSubject", currentSubject);
-        sessionStorage.setItem("practiceExamType", "cgl"); // pull questions from CGL mocks
         sessionStorage.setItem("mockNumber", "0");
         sessionStorage.setItem("timerMode", "overall");
         sessionStorage.setItem("subjectTimeMins", String(mins));
@@ -1872,62 +1649,22 @@
         English: "english",
       };
 
-      // Fetch all mocks for a given exam prefix and return merged+deduped pool
-      async function fetchMockPool(prefix, maxMocks = 20) {
-        const cacheKey = "mockpool_" + prefix;
-        if (jsonCache[cacheKey]) return jsonCache[cacheKey];
-        const pool = [];
-        const seen = new Set();
-        for (let i = 1; i <= maxMocks; i++) {
-          try {
-            const r = await fetch(`data/${prefix}${i}.json`);
-            if (!r.ok) break;
-            const arr = await r.json();
-            if (!Array.isArray(arr) || arr.length < 5) break;
-            arr.forEach((q) => {
-              const key = (q.question || "").trim().slice(0, 60).toLowerCase();
-              if (!seen.has(key)) {
-                seen.add(key);
-                pool.push(q);
-              }
-            });
-          } catch (e) {
-            break;
-          }
-        }
-        // Also try dedicated subject JSON if it exists (has topic tags)
-        const subjectFiles = {
-          Quant: "quant",
-          Reasoning: "reasoning",
-          GS: "gs",
-          English: "english",
-        };
-        for (const [subj, file] of Object.entries(subjectFiles)) {
-          try {
-            const r = await fetch(`data/${file}.json`);
-            if (r.ok) {
-              const arr = await r.json();
-              arr.forEach((q) => {
-                const key = (q.question || "")
-                  .trim()
-                  .slice(0, 60)
-                  .toLowerCase();
-                if (!seen.has(key)) {
-                  seen.add(key);
-                  pool.push({ ...q, subject: subj });
-                }
-              });
-            }
-          } catch (e) {}
-        }
-        jsonCache[cacheKey] = pool;
-        return pool;
+      // Fetch subject JSON and cache it, returns promise of array
+      function fetchSubjectData(subject) {
+        if (jsonCache[subject]) return Promise.resolve(jsonCache[subject]);
+        return fetch(`data/${SUBJECT_FILE[subject]}.json`)
+          .then((r) => r.json())
+          .then((data) => {
+            jsonCache[subject] = data;
+            return data;
+          });
       }
 
       // Toggle accordion open/close
       function toggleChapSubject(subject) {
         const panel = document.getElementById("chapSubj-" + subject);
         const wasOpen = panel.classList.contains("open");
+        // Close all
         document
           .querySelectorAll(".chap-subject")
           .forEach((p) => p.classList.remove("open"));
@@ -1937,45 +1674,30 @@
         }
       }
 
-      // Build chapter chip grid — counts from mock pool (no separate JSON files needed)
+      // Build the chip grid for a subject (async, fills in counts after fetch)
       function buildChapGrid(subject) {
         const grid = document.getElementById("chapGrid-" + subject);
-        if (grid.dataset.built) return;
+        if (grid.dataset.built) return; // already built
         const chapters = CHAPTERS[subject] || [];
 
-        // Render chips immediately with loading state
+        // Render chips immediately with placeholder counts
         grid.innerHTML = chapters
           .map(
             (ch) => `
-          <div class="chap-chip" onclick="openChapterConfig('${subject}','${ch.key}',this)">
-            <div class="chap-chip-name">${ch.label}</div>
-            <div class="chap-chip-count" id="chapCount-${subject}-${ch.key}">Loading…</div>
-          </div>`,
+        <div class="chap-chip" onclick="openChapterConfig('${subject}','${ch.key}',this)">
+          <div class="chap-chip-name">${ch.label}</div>
+          <div class="chap-chip-count" id="chapCount-${subject}-${ch.key}">Loading…</div>
+        </div>`,
           )
           .join("");
 
-        // Fetch mock pool and compute topic counts
-        fetchMockPool("mock", 20)
-          .then((pool) => {
-            const subjectPool = pool.filter((q) => {
-              // Normalize subject names to match
-              const s = q.subject || "";
-              const norm = {
-                "General Intelligence and Reasoning": "Reasoning",
-                "General Intelligence & Reasoning": "Reasoning",
-                "General Knowledge": "GS",
-                "General Awareness": "GS",
-                "Quantitative Aptitude": "Quant",
-                Mathematics: "Quant",
-                "English Comprehension": "English",
-                "English Language": "English",
-              };
-              return (norm[s] || s) === subject;
-            });
+        // Fetch JSON and fill real counts
+        fetchSubjectData(subject)
+          .then((data) => {
             const countMap = {};
-            subjectPool.forEach((q) => {
-              const t = q.topic || "";
-              if (t) countMap[t] = (countMap[t] || 0) + 1;
+            data.forEach((q) => {
+              const t = q.topic || "unknown";
+              countMap[t] = (countMap[t] || 0) + 1;
             });
             chapters.forEach((ch) => {
               const el = document.getElementById(
@@ -2036,23 +1758,23 @@
         document.getElementById("chapModalCount").textContent =
           n > 0 ? `${n} question${n === 1 ? "" : "s"}` : "—";
 
-        // Default Q count = min(available, 10); let user type any value up to available
-        const defaultQ = Math.min(n || 5, 10);
+        // Default Q count = min(15, available); clamp quick-btns to available
+        const defaultQ = Math.min(15, n) || 5;
         setChapQCount(defaultQ);
-        // Note shows available count; input max is set dynamically
-        const inp = document.getElementById("chapQInput");
-        if (inp) {
-          inp.max = n || 50;
-          inp.value = defaultQ;
-        }
+        // Grey out buttons that exceed available
+        document
+          .querySelectorAll("#chapQCountBtns .quick-btn")
+          .forEach((btn) => {
+            const v = parseInt(btn.textContent);
+            btn.disabled = v > n;
+            btn.style.opacity = v > n ? "0.35" : "1";
+          });
         const note = document.getElementById("chapQCountNote");
         if (note)
           note.textContent =
-            n > 0
-              ? `${n} question${n === 1 ? "" : "s"} available — type any number 1–${n}`
-              : "Type how many questions to attempt";
+            n > 0 ? `(${n} questions available in this chapter)` : "";
 
-        setChapTime(Math.max(1, Math.min(10, Math.ceil(defaultQ / 2))));
+        setChapTime(15);
         document.getElementById("chapterModal").classList.add("open");
       }
       function closeChapterModal() {
@@ -2060,49 +1782,25 @@
       }
 
       function setChapQCount(n) {
-        const max = currentChapterCount || 50;
-        chapQCount = Math.min(max, Math.max(1, n));
-        const inp = document.getElementById("chapQInput");
-        if (inp) inp.value = chapQCount;
-        syncChapQBtns();
-      }
-      function syncChapQBtns() {
-        const max = currentChapterCount || 50;
+        chapQCount = n;
         document
           .querySelectorAll("#chapQCountBtns .quick-btn")
           .forEach((btn) => {
-            const v = parseInt(btn.textContent);
-            btn.disabled = v > max;
-            btn.style.opacity = v > max ? "0.3" : "1";
-            btn.classList.toggle("active", !btn.disabled && v === chapQCount);
+            if (!btn.disabled)
+              btn.classList.toggle("active", parseInt(btn.textContent) === n);
           });
       }
       function setChapTime(mins) {
         document.getElementById("chapTimeInput").value = mins;
-        syncChapTimeBtns();
-      }
-      function syncChapTimeBtns() {
-        const mins =
-          parseInt(document.getElementById("chapTimeInput").value) || 10;
         document.querySelectorAll("#chapTimeBtns .quick-btn").forEach((btn) => {
           btn.classList.toggle("active", parseInt(btn.textContent) === mins);
         });
       }
       function startChapterPractice() {
-        const qEl = document.getElementById("chapQInput");
-        if (qEl)
-          chapQCount = Math.min(
-            currentChapterCount || 50,
-            Math.max(1, parseInt(qEl.value) || 5),
-          );
         const mins =
-          parseInt(document.getElementById("chapTimeInput").value) || 10;
-        if (mins < 1 || mins > 30) {
-          showToast("Please enter a timer between 1 and 30 minutes.");
-          return;
-        }
-        if (chapQCount < 1) {
-          showToast("Please enter at least 1 question.");
+          parseInt(document.getElementById("chapTimeInput").value) || 15;
+        if (mins < 1 || mins > 120) {
+          showToast("Please enter a time between 1 and 120 minutes.");
           return;
         }
         sessionStorage.setItem("examType", "subject");
@@ -2243,5 +1941,21 @@
         setTimeout(() => (t.style.display = "none"), 3000);
       }
     </script>
+
+    <!-- FOOTER -->
+    <footer
+      style="
+        text-align: center;
+        padding: 20px 16px;
+        font-size: 12px;
+        color: var(--text3);
+        border-top: 1px solid var(--border);
+        background: var(--surface);
+        font-family: &quot;DM Sans&quot;, sans-serif;
+      "
+    >
+      Made with ❤️ by
+      <strong style="color: var(--text2)">Jattin Khajuria</strong>
+    </footer>
   </body>
 </html>

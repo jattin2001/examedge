@@ -204,8 +204,17 @@
       </div>
     </div>
 
-    <!-- SECTION TABS — built dynamically by buildSectionTabs() in script.js -->
-    <div class="section-select" id="sectionSelect"></div>
+    <!-- SECTION TABS -->
+    <div class="section-select" id="sectionSelect">
+      <button onclick="jumpSection('Reasoning')" data-sec="Reasoning">
+        🧩 Reasoning
+      </button>
+      <button onclick="jumpSection('GS')" data-sec="GS">🌍 GS</button>
+      <button onclick="jumpSection('Quant')" data-sec="Quant">🔢 Quant</button>
+      <button onclick="jumpSection('English')" data-sec="English">
+        📖 English
+      </button>
+    </div>
 
     <!-- SECTION LOCKED BANNER -->
     <div id="sectionLockedBanner">
@@ -631,5 +640,22 @@
     </div>
 
     <script src="script.js"></script>
+
+    <!-- FOOTER -->
+    <footer
+      style="
+        text-align: center;
+        padding: 16px;
+        font-size: 12px;
+        color: var(--text3);
+        border-top: 1px solid var(--border);
+        background: var(--surface);
+        font-family: &quot;DM Sans&quot;, sans-serif;
+        margin-top: 8px;
+      "
+    >
+      Made with ❤️ by
+      <strong style="color: var(--text2)">Jattin Khajuria</strong>
+    </footer>
   </body>
 </html>
