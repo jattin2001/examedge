@@ -1,166 +1,186 @@
 [
   {
-    "id": "ja_q1",
+    "id": "ja2_q1",
     "subject": "General English",
     "qno": 1,
-    "question": "Select the synonym of 'UBIQUITOUS'.",
-    "options": ["Rare", "Omnipresent", "Limited", "Scarce"],
+    "question": "Select the most appropriate synonym of 'PERSPICACIOUS'.",
+    "options": ["Obtuse", "Astute", "Naive", "Gullible"],
     "answer": 1,
-    "explanation": "Omnipresent (present everywhere).",
+    "explanation": "Astute (having keen insight or understanding).",
     "topic": "synonym"
   },
   {
-    "id": "ja_q2",
+    "id": "ja2_q2",
     "subject": "General English",
     "qno": 2,
-    "question": "Idiom: 'Piece of cake' means",
-    "options": ["Easy task", "Difficult job", "Expensive item", "Boring work"],
-    "answer": 0,
-    "explanation": "Easy task.",
+    "question": "Idiom: 'Bite the bullet' means",
+    "options": [
+      "Avoid a difficult situation",
+      "Face something unpleasant bravely",
+      "Celebrate success",
+      "Make a small mistake"
+    ],
+    "answer": 1,
+    "explanation": "Face something unpleasant bravely.",
     "topic": "idiom"
   },
   {
-    "id": "ja_q3",
+    "id": "ja2_q3",
     "subject": "General English",
     "qno": 3,
-    "question": "Antonym of 'VIVACIOUS'.",
-    "options": ["Lively", "Dull", "Energetic", "Cheerful"],
-    "answer": 1,
-    "explanation": "Dull.",
+    "question": "Antonym of 'OBFUSCATE'.",
+    "options": ["Clarify", "Confuse", "Hide", "Complicate"],
+    "answer": 0,
+    "explanation": "Clarify.",
     "topic": "antonym"
   },
   {
-    "id": "ja_q4",
+    "id": "ja2_q4",
     "subject": "General English",
     "qno": 4,
-    "question": "Spot the error: 'She is one of the best singer in the choir.'",
-    "options": ["She is", "one of the", "best singer", "in the choir"],
+    "question": "Spot the error: 'Not only the manager but also the staff were responsible for the delay in the project.'",
+    "options": [
+      "Not only the manager",
+      "but also the staff",
+      "were responsible",
+      "for the delay in the project"
+    ],
     "answer": 2,
-    "explanation": "Should be 'best singers'.",
+    "explanation": "Should be 'was responsible' (singular subject-verb agreement).",
     "topic": "error_detection"
   },
   {
-    "id": "ja_q5",
+    "id": "ja2_q5",
     "subject": "General English",
     "qno": 5,
-    "question": "One-word substitution: 'A person who collects stamps'.",
-    "options": ["Philatelist", "Numismatist", "Cartographer", "Calligrapher"],
-    "answer": 0,
-    "explanation": "Philatelist.",
-    "topic": "grammar"
+    "question": "One-word substitution: 'A government by the rich'.",
+    "options": ["Oligarchy", "Plutocracy", "Aristocracy", "Theocracy"],
+    "answer": 1,
+    "explanation": "Plutocracy.",
+    "topic": "one_word"
   },
   {
-    "id": "ja_q6",
+    "id": "ja2_q6",
     "subject": "General English",
     "qno": 6,
-    "question": "Change to passive: 'They built the house in 2020.'",
+    "question": "Change to passive: 'The committee will have finalised the report by tomorrow.'",
     "options": [
-      "The house was built by them in 2020",
-      "The house is built by them",
-      "They were building the house",
-      "House built in 2020"
+      "The report will have been finalised by the committee by tomorrow",
+      "The report will be finalised by the committee",
+      "The committee will finalise the report",
+      "The report had been finalised"
     ],
     "answer": 0,
-    "explanation": "The house was built by them in 2020.",
+    "explanation": "Future perfect passive form.",
     "topic": "voice"
   },
   {
-    "id": "ja_q7",
+    "id": "ja2_q7",
     "subject": "General English",
     "qno": 7,
-    "question": "Sentence improvement: 'He is knowing the answer.'",
-    "options": ["knows", "is know", "knowing", "No change"],
+    "question": "Sentence improvement: 'She is used to get up early in the morning.'",
+    "options": ["to getting up", "getting up", "to get up", "No change"],
     "answer": 0,
-    "explanation": "knows.",
+    "explanation": "Gerund after 'be used to'.",
     "topic": "grammar"
   },
   {
-    "id": "ja_q8",
+    "id": "ja2_q8",
     "subject": "General English",
     "qno": 8,
-    "question": "Direct to Indirect: He said, 'I am happy.'",
+    "question": "Direct to Indirect: She said, 'I will have finished the work by evening.'",
     "options": [
-      "He said that he is happy",
-      "He said that he was happy",
-      "He says he is happy",
+      "She said that she would have finished the work by evening",
+      "She said that she will finish the work",
+      "She says she would finish",
       "None"
     ],
-    "answer": 1,
-    "explanation": "He said that he was happy.",
-    "topic": "grammar"
+    "answer": 0,
+    "explanation": "Future perfect backshift.",
+    "topic": "narration"
   },
   {
-    "id": "ja_q9",
+    "id": "ja2_q9",
     "subject": "General English",
     "qno": 9,
-    "question": "Misspelt word: Recieve / Believe / Deceive",
-    "options": ["Recieve", "Believe", "Deceive", "All correct"],
-    "answer": 0,
-    "explanation": "Receive.",
-    "topic": "grammar"
+    "question": "Misspelt word among: Irascible, Perspicacious, Inadvertent, Porphyroblastic",
+    "options": ["Irascible", "Perspicacious", "Inadvertent", "Porphyroblastic"],
+    "answer": 3,
+    "explanation": "Correct spelling is Porphyroblastic.",
+    "topic": "spelling"
   },
   {
-    "id": "ja_q10",
+    "id": "ja2_q10",
     "subject": "General English",
     "qno": 10,
-    "question": "Fill in the blank: He ___ to school every day.",
-    "options": ["go", "goes", "going", "gone"],
-    "answer": 1,
-    "explanation": "goes.",
+    "question": "Fill in the blank: Hardly had he reached the station ___ the train left.",
+    "options": ["when", "than", "then", "and"],
+    "answer": 0,
+    "explanation": "Hardly...when inversion.",
     "topic": "grammar"
   },
   {
-    "id": "ja_q11",
+    "id": "ja2_q11",
     "subject": "General English",
     "qno": 11,
-    "question": "Synonym of 'Eloquent'.",
-    "options": ["Fluent", "Silent", "Dull", "Angry"],
-    "answer": 0,
-    "explanation": "Fluent.",
+    "question": "Synonym of 'LUGUBRIOUS'.",
+    "options": ["Cheerful", "Mournful", "Vibrant", "Lively"],
+    "answer": 1,
+    "explanation": "Mournful.",
     "topic": "synonym"
   },
   {
-    "id": "ja_q12",
+    "id": "ja2_q12",
     "subject": "General English",
     "qno": 12,
-    "question": "Antonym of 'Benevolent'.",
-    "options": ["Kind", "Cruel", "Generous", "Happy"],
+    "question": "Antonym of 'EPHEMERAL'.",
+    "options": ["Transient", "Eternal", "Fleeting", "Short-lived"],
     "answer": 1,
-    "explanation": "Cruel.",
+    "explanation": "Eternal.",
     "topic": "antonym"
   },
   {
-    "id": "ja_q13",
+    "id": "ja2_q13",
     "subject": "General English",
     "qno": 13,
-    "question": "Idiom: 'Hit the nail on the head' means",
-    "options": ["Exactly right", "Missed", "Angry", "Happy"],
+    "question": "Idiom: 'Throw in the towel' means",
+    "options": [
+      "Admit defeat",
+      "Celebrate victory",
+      "Continue fighting",
+      "Make peace"
+    ],
     "answer": 0,
-    "explanation": "Exactly right.",
+    "explanation": "Admit defeat.",
     "topic": "idiom"
   },
   {
-    "id": "ja_q14",
+    "id": "ja2_q14",
     "subject": "General English",
     "qno": 14,
-    "question": "Error: 'Neither the boys nor the girl are ready.'",
-    "options": ["Neither", "the boys", "nor the girl", "are ready"],
-    "answer": 3,
-    "explanation": "Should be 'is ready'.",
+    "question": "Error: 'The number of students are increasing every year.'",
+    "options": [
+      "The number of",
+      "students are",
+      "increasing every year",
+      "No error"
+    ],
+    "answer": 1,
+    "explanation": "Should be 'is increasing'.",
     "topic": "error_detection"
   },
   {
-    "id": "ja_q15",
+    "id": "ja2_q15",
     "subject": "General English",
     "qno": 15,
-    "question": "One-word: 'Fear of water'.",
-    "options": ["Hydrophobia", "Claustrophobia", "Acrophobia", "Agoraphobia"],
+    "question": "One-word: 'A person who is indifferent to pleasure and pain'.",
+    "options": ["Stoic", "Hedonist", "Ascetic", "Epicurean"],
     "answer": 0,
-    "explanation": "Hydrophobia.",
-    "topic": "grammar"
+    "explanation": "Stoic.",
+    "topic": "one_word"
   },
   {
-    "id": "ja_q16",
+    "id": "ja2_q16",
     "subject": "General English",
     "qno": 16,
     "passage_id": "p1",
@@ -177,7 +197,7 @@
     "topic": "reading_comprehension"
   },
   {
-    "id": "ja_q17",
+    "id": "ja2_q17",
     "subject": "General English",
     "qno": 17,
     "passage_id": "p1",
@@ -194,7 +214,7 @@
     "topic": "reading_comprehension"
   },
   {
-    "id": "ja_q18",
+    "id": "ja2_q18",
     "subject": "General English",
     "qno": 18,
     "passage_id": "p1",
@@ -211,7 +231,7 @@
     "topic": "reading_comprehension"
   },
   {
-    "id": "ja_q19",
+    "id": "ja2_q19",
     "subject": "General English",
     "qno": 19,
     "passage_id": "p1",
@@ -228,7 +248,7 @@
     "topic": "reading_comprehension"
   },
   {
-    "id": "ja_q20",
+    "id": "ja2_q20",
     "subject": "General English",
     "qno": 20,
     "passage_id": "p1",
@@ -242,696 +262,686 @@
     ],
     "answer": 2,
     "explanation": "'Rote learning and algorithmic methods have widened the gap between formal learning and applied wisdom'.",
-    "topic": "grammar"
+    "topic": "reading_comprehension"
   },
   {
-    "id": "ja_q21",
+    "id": "ja2_q21",
     "subject": "General Awareness",
     "qno": 21,
-    "question": "Who was the first Chief Minister of Jammu & Kashmir after independence?",
-    "options": [
-      "Sheikh Abdullah",
-      "Bakshi Ghulam Mohammad",
-      "Ghulam Mohammad Sadiq",
-      "Yasin Malik"
-    ],
-    "answer": 0,
-    "explanation": "Sheikh Abdullah (1947-1953) – J&K specific.",
+    "question": "Which of the following statements is/are correct about the Regulating Act 1773? 1. It elevated the Governor of Bengal to Governor-General. 2. It created a council of four members. 3. It was the first attempt to regulate the East India Company.",
+    "options": ["1 and 2 only", "2 and 3 only", "1, 2 and 3", "Only 3"],
+    "answer": 2,
+    "explanation": "All three statements are correct.",
     "topic": "history"
   },
   {
-    "id": "ja_q22",
+    "id": "ja2_q22",
     "subject": "General Awareness",
     "qno": 22,
-    "question": "The famous Dal Lake is located in which district of J&K UT?",
-    "options": ["Srinagar", "Anantnag", "Baramulla", "Jammu"],
+    "question": "Consider the following statements regarding Gwalior Fort: 1. It is spread over a hilltop more than 2 km in length. 2. Its southern path features intricately carved rock-cut temples of Jain tirthankars. 3. The Chaturbhuj Mandir is a Vaishnavite shrine. Which is/are correct?",
+    "options": ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
     "answer": 0,
-    "explanation": "Srinagar (J&K Geography).",
-    "topic": "geography"
+    "explanation": "1 and 2 only.",
+    "topic": "arts_culture"
   },
   {
-    "id": "ja_q23",
+    "id": "ja2_q23",
     "subject": "General Awareness",
     "qno": 23,
-    "question": "Which Article of the Indian Constitution was abrogated to remove special status of J&K?",
-    "options": ["Article 370", "Article 371", "Article 35A", "Article 368"],
+    "question": "Which of the following statements is/are correct about Bhakti tradition? 1. It distinguishes between Saguna and Nirguna worship. 2. Sant Tukaram wrote over 32,000 abhangas. 3. It was restricted only to temples and priests.",
+    "options": [
+      "1 and 2 only",
+      "2 and 3 only",
+      "1 and 3 only",
+      "All are correct"
+    ],
     "answer": 0,
-    "explanation": "Article 370 (J&K specific).",
+    "explanation": "1 and 2 only.",
     "topic": "arts_culture"
   },
   {
-    "id": "ja_q24",
+    "id": "ja2_q24",
     "subject": "General Awareness",
     "qno": 24,
-    "question": "What is the capital of Jammu & Kashmir Union Territory?",
-    "options": [
-      "Srinagar (Summer), Jammu (Winter)",
-      "Jammu only",
-      "Srinagar only",
-      "Leh"
-    ],
+    "question": "Which of the following statements about Milkha Singh is/are correct? 1. He finished fourth in 400m at 1960 Rome Olympics. 2. His timing of 45.6 seconds stood as Indian record till 1984. 3. He won gold in 1964 Tokyo Olympics.",
+    "options": ["1 and 2 only", "2 and 3 only", "1 and 3 only", "All three"],
     "answer": 0,
-    "explanation": "Dual capital system.",
-    "topic": "geography"
+    "explanation": "1 and 2 only.",
+    "topic": "sports"
   },
   {
-    "id": "ja_q25",
+    "id": "ja2_q25",
     "subject": "General Awareness",
     "qno": 25,
-    "question": "The river Jhelum originates from which place in J&K UT?",
-    "options": ["Verinag Spring", "Amarnath Cave", "Pahalgam", "Gulmarg"],
+    "question": "Consider the statements: 1. Article 263 empowers the President to establish Inter-State Council. 2. Sarkaria Commission recommended a permanent Secretariat for it. 3. Punchhi Commission also made similar recommendation. Which is/are correct?",
+    "options": ["1 and 2 only", "2 and 3 only", "1 and 3 only", "All three"],
     "answer": 0,
-    "explanation": "Verinag.",
-    "topic": "arts_culture"
+    "explanation": "1 and 2 only.",
+    "topic": "polity"
   },
   {
-    "id": "ja_q26",
+    "id": "ja2_q26",
     "subject": "General Awareness",
     "qno": 26,
-    "question": "Who is known as the 'Lion of Kashmir'?",
-    "options": [
-      "Sheikh Abdullah",
-      "Maulana Azad",
-      "Syed Ali Shah Geelani",
-      "Bakshi Ghulam Mohammad"
-    ],
+    "question": "Which of the following statements is/are correct about Agriculture Infrastructure Fund? 1. It provides medium to long-term debt financing. 2. It supports agri-logistics and cold chains. 3. It is managed by Ministry of Mines.",
+    "options": ["1 and 2 only", "2 and 3 only", "1 and 3 only", "All three"],
     "answer": 0,
-    "explanation": "Sheikh Abdullah.",
-    "topic": "history"
+    "explanation": "1 and 2 only.",
+    "topic": "economy"
   },
   {
-    "id": "ja_q27",
+    "id": "ja2_q27",
     "subject": "General Awareness",
     "qno": 27,
-    "question": "Which pass connects Kashmir Valley with Ladakh?",
-    "options": ["Zoji La", "Pir Panjal", "Banihal", "Khardung La"],
+    "question": "Consider the statements: 1. Global Peace Index 2024 shows deterioration in Ongoing Conflict and Safety & Security domains. 2. Militarisation domain has improved. 3. Average country score improved by 4.5% since 2008. Which is/are correct?",
+    "options": ["1 and 2 only", "2 and 3 only", "1 and 3 only", "All three"],
     "answer": 0,
-    "explanation": "Zoji La Pass.",
-    "topic": "history"
+    "explanation": "1 and 2 only.",
+    "topic": "current_affairs"
   },
   {
-    "id": "ja_q28",
+    "id": "ja2_q28",
     "subject": "General Awareness",
     "qno": 28,
-    "question": "Largest freshwater lake in J&K UT?",
-    "options": ["Dal Lake", "Wular Lake", "Mansar Lake", "Pangong Lake"],
-    "answer": 1,
-    "explanation": "Wular Lake.",
-    "topic": "geography"
-  },
-  {
-    "id": "ja_q29",
-    "subject": "General Awareness",
-    "qno": 29,
-    "question": "Article 263 of Indian Constitution deals with?",
-    "options": [
-      "Inter-State Council",
-      "Finance Commission",
-      "UPSC",
-      "Election Commission"
-    ],
-    "answer": 0,
-    "explanation": "Inter-State Council (with J&K reference).",
-    "topic": "arts_culture"
-  },
-  {
-    "id": "ja_q30",
-    "subject": "General Awareness",
-    "qno": 30,
-    "question": "Nagaland recorded negative population growth in which census?",
-    "options": ["1991-2001", "2001-2011", "2011-2021", "1981-1991"],
-    "answer": 1,
-    "explanation": "2001-2011 (Demography GK).",
-    "topic": "economy"
-  },
-  {
-    "id": "ja_q31",
-    "subject": "General Awareness",
-    "qno": 31,
-    "question": "Primary objective of Uniform Civil Code?",
-    "options": [
-      "Common criminal law",
-      "Common personal laws irrespective of religion",
-      "Tax laws",
-      "Administrative rules"
-    ],
-    "answer": 1,
-    "explanation": "Common personal laws.",
-    "topic": "history"
-  },
-  {
-    "id": "ja_q32",
-    "subject": "General Awareness",
-    "qno": 32,
-    "question": "Sardar Sarovar Dam is built on which river?",
-    "options": ["Narmada", "Godavari", "Krishna", "Ganga"],
-    "answer": 0,
-    "explanation": "Narmada.",
-    "topic": "history"
-  },
-  {
-    "id": "ja_q33",
-    "subject": "General Awareness",
-    "qno": 33,
-    "question": "Global Peace Index 2024 shows deterioration in which domains?",
-    "options": [
-      "Ongoing Conflict & Safety & Security",
-      "Militarisation only",
-      "All improved",
-      "Economy"
-    ],
-    "answer": 0,
-    "explanation": "Ongoing Conflict & Safety & Security.",
-    "topic": "economy"
-  },
-  {
-    "id": "ja_q34",
-    "subject": "General Awareness",
-    "qno": 34,
-    "question": "Who inaugurated India's first lithium-ion battery plant in Tirupati?",
-    "options": [
-      "PM Narendra Modi",
-      "Rajeev Chandrasekhar",
-      "Nirmala Sitharaman",
-      "Amit Shah"
-    ],
-    "answer": 1,
-    "explanation": "Rajeev Chandrasekhar (2022).",
-    "topic": "current_affairs"
-  },
-  {
-    "id": "ja_q35",
-    "subject": "General Awareness",
-    "qno": 35,
-    "question": "Primary function of Telomerase enzyme?",
-    "options": [
-      "DNA replication",
-      "Telomere lengthening",
-      "RNA transcription",
-      "Protein synthesis"
-    ],
-    "answer": 1,
-    "explanation": "Telomere lengthening.",
-    "topic": "science"
-  },
-  {
-    "id": "ja_q36",
-    "subject": "General Awareness",
-    "qno": 36,
-    "question": "Capital of Jammu & Kashmir UT in winter?",
-    "options": ["Srinagar", "Jammu", "Leh", "Kargil"],
-    "answer": 1,
-    "explanation": "Jammu.",
-    "topic": "geography"
-  },
-  {
-    "id": "ja_q37",
-    "subject": "General Awareness",
-    "qno": 37,
-    "question": "Famous shrine in J&K – Vaishno Devi is located in?",
-    "options": ["Katra", "Pahalgam", "Gulmarg", "Sonamarg"],
-    "answer": 0,
-    "explanation": "Katra.",
-    "topic": "science"
-  },
-  {
-    "id": "ja_q38",
-    "subject": "General Awareness",
-    "qno": 38,
-    "question": "2024 G20 Summit host country?",
-    "options": ["India", "Brazil", "South Africa", "USA"],
-    "answer": 1,
-    "explanation": "Brazil.",
-    "topic": "current_affairs"
-  },
-  {
-    "id": "ja_q39",
-    "subject": "General Awareness",
-    "qno": 39,
-    "question": "Headquarters of ISRO?",
-    "options": ["Bengaluru", "Hyderabad", "Ahmedabad", "Thiruvananthapuram"],
-    "answer": 0,
-    "explanation": "Bengaluru.",
-    "topic": "arts_culture"
-  },
-  {
-    "id": "ja_q40",
-    "subject": "General Awareness",
-    "qno": 40,
-    "question": "Nobel Prize 2024 Physics winners?",
+    "question": "Who won the Nobel Prize in Physics 2024?",
     "options": [
       "John Hopfield & Geoffrey Hinton",
       "Demis Hassabis",
-      "Others",
-      "Not awarded"
+      "Not announced yet",
+      "AI researchers only"
     ],
     "answer": 0,
-    "explanation": "John Hopfield and Geoffrey Hinton.",
-    "topic": "arts_culture"
+    "explanation": "John Hopfield and Geoffrey Hinton (2024).",
+    "topic": "current_affairs"
   },
   {
-    "id": "ja_q41",
+    "id": "ja2_q29",
+    "subject": "General Awareness",
+    "qno": 29,
+    "question": "Under updated State Action Plan on Climate Change (SAPCC) 2025, which sector received the highest budgetary allocation for climate adaptation?",
+    "options": [
+      "Transport",
+      "Urban Planning",
+      "Agriculture and Water Resources",
+      "Renewable Energy"
+    ],
+    "answer": 2,
+    "explanation": "Agriculture and Water Resources (2025 update).",
+    "topic": "current_affairs"
+  },
+  {
+    "id": "ja2_q30",
+    "subject": "General Awareness",
+    "qno": 30,
+    "question": "India–Uzbekistan Bilateral Investment Treaty (BIT) requires exhaustion of local remedies before international arbitration?",
+    "options": ["True", "False", "Not mentioned", "Optional"],
+    "answer": 0,
+    "explanation": "True (2024-25 BIT update).",
+    "topic": "current_affairs"
+  },
+  {
+    "id": "ja2_q31",
+    "subject": "General Awareness",
+    "qno": 31,
+    "question": "Which of the following statements is/are correct about Martand Sun Temple? 1. It was built by Lalitaditya Muktapida of Karkota dynasty. 2. It is dedicated to Surya (Sun God). 3. It was destroyed by Sultan Sikandar Shah Miri.",
+    "options": ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    "answer": 3,
+    "explanation": "All three statements are correct.",
+    "topic": "j&k_heritage"
+  },
+  {
+    "id": "ja2_q32",
+    "subject": "General Awareness",
+    "qno": 32,
+    "question": "Consider the statements: 1. The Treaty of Amritsar (1846) was signed between British and Maharaja Gulab Singh. 2. It led to the establishment of Dogra rule in J&K. 3. It transferred Kashmir Valley to Gulab Singh for 75 lakh rupees. Which is/are correct?",
+    "options": ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    "answer": 3,
+    "explanation": "All three statements are correct.",
+    "topic": "j&k_history"
+  },
+  {
+    "id": "ja2_q33",
+    "subject": "General Awareness",
+    "qno": 33,
+    "question": "Which of the following statements is/are correct? 1. Surinsar Lake's origin is associated with Mahabharata. 2. Mansar Lake is a Ramsar site. 3. Both are located in Udhampur district.",
+    "options": ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    "answer": 0,
+    "explanation": "1 and 2 only.",
+    "topic": "j&k_geography"
+  },
+  {
+    "id": "ja2_q34",
+    "subject": "General Awareness",
+    "qno": 34,
+    "question": "Consider the statements: 1. Hangul (Kashmir Stag) is the state animal of J&K. 2. It is found only in Dachigam National Park. 3. It is listed as Critically Endangered. Which is/are correct?",
+    "options": ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    "answer": 3,
+    "explanation": "All three statements are correct.",
+    "topic": "j&k_geography"
+  },
+  {
+    "id": "ja2_q35",
+    "subject": "General Awareness",
+    "qno": 35,
+    "question": "Which of the following statements is/are correct about Pampore? 1. It is world-famous for saffron production. 2. It lies on the banks of river Jhelum. 3. Saffron here is the costliest spice in the world.",
+    "options": ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    "answer": 0,
+    "explanation": "1 and 2 only.",
+    "topic": "j&k_economy"
+  },
+  {
+    "id": "ja2_q36",
+    "subject": "General Awareness",
+    "qno": 36,
+    "question": "Who wrote 'Rajatarangini', the historical chronicle of Kashmir kings?",
+    "options": ["Kalhana", "Lalitaditya", "Kalidasa", "Bilhana"],
+    "answer": 0,
+    "explanation": "Kalhana.",
+    "topic": "j&k_heritage"
+  },
+  {
+    "id": "ja2_q37",
+    "subject": "General Awareness",
+    "qno": 37,
+    "question": "The traditional Kashmiri dress worn in winter is called?",
+    "options": ["Pheran", "Achkan", "Bandhgala", "Sherwani"],
+    "answer": 0,
+    "explanation": "Pheran.",
+    "topic": "j&k_culture"
+  },
+  {
+    "id": "ja2_q38",
+    "subject": "General Awareness",
+    "qno": 38,
+    "question": "Burzahom archaeological site in Kashmir is famous for?",
+    "options": [
+      "Neolithic remains",
+      "Paleolithic tools",
+      "Harappan seals",
+      "Mauryan edicts"
+    ],
+    "answer": 0,
+    "explanation": "Neolithic remains.",
+    "topic": "j&k_history"
+  },
+  {
+    "id": "ja2_q39",
+    "subject": "General Awareness",
+    "qno": 39,
+    "question": "Which river is known as the 'Lifeline of Kashmir Valley'?",
+    "options": ["Chenab", "Jhelum", "Indus", "Ravi"],
+    "answer": 1,
+    "explanation": "Jhelum.",
+    "topic": "j&k_geography"
+  },
+  {
+    "id": "ja2_q40",
+    "subject": "General Awareness",
+    "qno": 40,
+    "question": "After the 2019 Reorganisation Act, the UT of J&K has how many districts?",
+    "options": ["18", "20", "22", "14"],
+    "answer": 1,
+    "explanation": "20 districts.",
+    "topic": "j&k_polity"
+  },
+  {
+    "id": "ja2_q41",
     "subject": "Numerical & Reasoning Ability",
     "qno": 41,
-    "question": "A sells article to B at 20% profit, B sells to C at 20% loss. Overall for A?",
-    "options": ["4% loss", "4% gain", "No change", "16% gain"],
-    "answer": 0,
-    "explanation": "Overall 4% loss.",
-    "topic": "syllogism"
+    "question": "A and B invest ₹48,000 and ₹72,000 respectively. After 6 months A withdraws half of his investment and B adds ₹24,000. If the total profit at the end of the year is ₹55,000, what is B’s share?",
+    "options": ["₹26,500", "₹28,000", "₹38,500", "₹36,000"],
+    "answer": 2,
+    "explanation": "Capital-time ratio becomes 3:7. B’s share = (7/10) × 55,000 = ₹38,500.",
+    "topic": "partnership"
   },
   {
-    "id": "ja_q42",
+    "id": "ja2_q42",
     "subject": "Numerical & Reasoning Ability",
     "qno": 42,
-    "question": "Simple Interest on ₹5000 at 8% for 3 years?",
-    "options": ["₹1200", "₹1000", "₹1400", "₹900"],
-    "answer": 0,
-    "explanation": "₹1200.",
-    "topic": "calendar"
+    "question": "64 litres of pure spirit is mixed with water. 8 litres of mixture is removed and replaced with water. This process is repeated three times. How much pure spirit is left?",
+    "options": ["34.34 L", "36.45 L", "38.62 L", "42.88 L"],
+    "answer": 3,
+    "explanation": "Spirit left = 64 × (7/8)^3 ≈ 42.88 L.",
+    "topic": "mixture"
   },
   {
-    "id": "ja_q43",
+    "id": "ja2_q43",
     "subject": "Numerical & Reasoning Ability",
     "qno": 43,
-    "question": "Average of first 10 natural numbers?",
-    "options": ["5.5", "5", "6", "4.5"],
+    "question": "A and B together can complete a work in 12 days, B and C together in 15 days, and C and A together in 20 days. In how many days can A alone complete the work?",
+    "options": ["30", "20", "50", "15"],
     "answer": 0,
-    "explanation": "5.5.",
-    "topic": "analogy"
+    "explanation": "1/A + 1/B = 1/12, 1/B + 1/C = 1/15, 1/C + 1/A = 1/20. Solving gives 1/A = 1/30. So A alone takes 30 days.",
+    "topic": "time_work"
   },
   {
-    "id": "ja_q44",
+    "id": "ja2_q44",
     "subject": "Numerical & Reasoning Ability",
     "qno": 44,
-    "question": "Ratio 5:7, total 240. Larger part?",
-    "options": ["140", "120", "100", "160"],
-    "answer": 0,
-    "explanation": "140.",
-    "topic": "ratio"
+    "question": "The expenditure of a family is in the ratio 5:3:2. If the expenditure increases by 5%, 10% and decreases by 20% respectively, what is the overall percentage change in total expenditure?",
+    "options": [
+      "1.0% increase",
+      "1.5% decrease",
+      "1.5% increase",
+      "2.0% decrease"
+    ],
+    "answer": 2,
+    "explanation": "New ratio = 5.25 : 3.3 : 1.6. Total parts change gives +1.5%.",
+    "topic": "percentage"
   },
   {
-    "id": "ja_q45",
+    "id": "ja2_q45",
     "subject": "Numerical & Reasoning Ability",
     "qno": 45,
-    "question": "A alone 10 days, B 15 days. Together?",
-    "options": ["6 days", "7 days", "5 days", "8 days"],
-    "answer": 0,
-    "explanation": "6 days.",
-    "topic": "analogy"
+    "question": "A car covers 40% of the distance at 20 km/h and the remaining 60% at 30 km/h. What is the average speed of the car for the whole journey?",
+    "options": ["24", "25", "26", "27"],
+    "answer": 1,
+    "explanation": "Average speed = Total distance / Total time = 25 km/h.",
+    "topic": "time_distance"
   },
   {
-    "id": "ja_q46",
+    "id": "ja2_q46",
     "subject": "Numerical & Reasoning Ability",
     "qno": 46,
-    "question": "25% of 400?",
-    "options": ["100", "80", "120", "90"],
-    "answer": 0,
-    "explanation": "100.",
-    "topic": "analogy"
+    "question": "If x = √5 + 2, then the value of x² – 4√5 is",
+    "options": ["1", "7", "9", "3"],
+    "answer": 2,
+    "explanation": "x² = 9 + 4√5, so x² – 4√5 = 9.",
+    "topic": "algebra"
   },
   {
-    "id": "ja_q47",
+    "id": "ja2_q47",
     "subject": "Numerical & Reasoning Ability",
     "qno": 47,
-    "question": "Compound Interest on ₹1000 at 10% for 2 years?",
-    "options": ["₹1210", "₹1200", "₹1100", "₹1300"],
-    "answer": 0,
-    "explanation": "₹1210.",
-    "topic": "calendar"
+    "question": "In a cyclic quadrilateral, if angle A is 100°, then the opposite angle C will be",
+    "options": ["100°", "80°", "90°", "70°"],
+    "answer": 1,
+    "explanation": "Opposite angles of a cyclic quadrilateral sum to 180°. So C = 180° – 100° = 80°.",
+    "topic": "geometry"
   },
   {
-    "id": "ja_q48",
+    "id": "ja2_q48",
     "subject": "Numerical & Reasoning Ability",
     "qno": 48,
-    "question": "60 km/h for 3 hours distance?",
-    "options": ["180 km", "200 km", "150 km", "120 km"],
-    "answer": 0,
-    "explanation": "180 km.",
-    "topic": "direction"
+    "question": "If sin(90° – x) = cos(2x), then the value of x is",
+    "options": ["0°", "30°", "25°", "15°"],
+    "answer": 1,
+    "explanation": "cos x = cos(2x) ⇒ 2x = 60° ⇒ x = 30°.",
+    "topic": "trigonometry"
   },
   {
-    "id": "ja_q49",
+    "id": "ja2_q49",
     "subject": "Numerical & Reasoning Ability",
     "qno": 49,
-    "question": "Profit % if CP 100, SP 120?",
-    "options": ["20%", "25%", "15%", "10%"],
+    "question": "The area of a sector of a circle with radius 7 cm and central angle 90° is",
+    "options": ["38.48 cm²", "35.2 cm²", "40.5 cm²", "42.62 cm²"],
     "answer": 0,
-    "explanation": "20%.",
-    "topic": "analogy"
+    "explanation": "(90/360) × π × 7² = 38.48 cm².",
+    "topic": "mensuration"
   },
   {
-    "id": "ja_q50",
+    "id": "ja2_q50",
     "subject": "Numerical & Reasoning Ability",
     "qno": 50,
-    "question": "HCF of 12, 18, 24?",
-    "options": ["6", "12", "3", "4"],
+    "question": "Which of the following lines is parallel to 3x + 2y = 5?",
+    "options": ["3x + 2y = 7", "2x + 3y = 5", "3x – 2y = 5", "x + y = 5"],
     "answer": 0,
-    "explanation": "6.",
-    "topic": "analogy"
+    "explanation": "Same coefficients of x and y (slope = –3/2).",
+    "topic": "geometry"
   },
   {
-    "id": "ja_q51",
+    "id": "ja2_q51",
     "subject": "Numerical & Reasoning Ability",
     "qno": 51,
-    "question": "What comes next: 2, 6, 12, 20, 30, ?",
-    "options": ["40", "42", "44", "48"],
+    "question": "If sin²A – cos²A = 1/3, then cos²A =",
+    "options": ["5/8", "1/3", "0", "1/4"],
     "answer": 1,
-    "explanation": "+4,+6,+8,+10,+12 → 42.",
-    "topic": "number_series"
+    "explanation": "cos²A – sin²A = –1/3 ⇒ 2cos²A – 1 = –1/3 ⇒ cos²A = 1/3.",
+    "topic": "trigonometry"
   },
   {
-    "id": "ja_q52",
+    "id": "ja2_q52",
     "subject": "Numerical & Reasoning Ability",
     "qno": 52,
-    "question": "Odd one: 16, 25, 36, 49, 64, 81",
-    "options": ["16", "25", "36", "81"],
-    "answer": 3,
-    "explanation": "All perfect squares; pattern fit.",
-    "topic": "syllogism"
+    "question": "If A and B are complementary angles and sin A = 3/5, then tan B = ?",
+    "options": ["4/3", "3/4", "5/4", "5/3"],
+    "answer": 0,
+    "explanation": "B = 90° – A, tan B = cot A = 1/tan A. sin A = 3/5 ⇒ tan A = 3/4 ⇒ tan B = 4/3.",
+    "topic": "trigonometry"
   },
   {
-    "id": "ja_q53",
+    "id": "ja2_q53",
     "subject": "Numerical & Reasoning Ability",
     "qno": 53,
-    "question": "If 7*5=12, 9*4=13, 11*6=?",
-    "options": ["17", "15", "19", "18"],
+    "question": "Two triangles ABC and XYZ have all three sides equal. By which congruence rule are they congruent?",
+    "options": ["SSS", "SAS", "ASA", "AAS"],
     "answer": 0,
-    "explanation": "a + b pattern.",
-    "topic": "analogy"
+    "explanation": "SSS (side-side-side).",
+    "topic": "geometry"
   },
   {
-    "id": "ja_q54",
+    "id": "ja2_q54",
     "subject": "Numerical & Reasoning Ability",
     "qno": 54,
-    "question": "Which set is different: (8,24,48), (9,27,54), (10,30,60), (11,33,55)",
-    "options": ["(8,24,48)", "(9,27,54)", "(10,30,60)", "(11,33,55)"],
-    "answer": 3,
-    "explanation": "Others ×3.",
-    "topic": "analogy"
+    "question": "A and B start jogging at 6:00 AM on a circular track of circumference 1.2 km in opposite directions at speeds of 5 km/h and 7 km/h respectively. At what time will they meet for the 5th time?",
+    "options": ["6:25 AM", "6:30 AM", "6:45 AM", "7:00 AM"],
+    "answer": 1,
+    "explanation": "Relative speed = 12 km/h. Time for one meeting = 1.2/12 = 0.1 hr = 6 min. 5 meetings = 30 min → 6:30 AM.",
+    "topic": "time_distance"
   },
   {
-    "id": "ja_q55",
+    "id": "ja2_q55",
     "subject": "Numerical & Reasoning Ability",
     "qno": 55,
-    "question": "A walks 10m north, right 5m, left 10m. Distance from start?",
-    "options": ["15m", "20m", "10m", "25m"],
+    "question": "If 11/19 = A and 2/9 = B, then A – B is approximately equal to",
+    "options": ["0.36", "0.56", "0.76", "0.6"],
     "answer": 0,
-    "explanation": "15m.",
-    "topic": "direction"
+    "explanation": "A ≈ 0.5789, B ≈ 0.2222, A – B ≈ 0.3567.",
+    "topic": "percentage"
   },
   {
-    "id": "ja_q56",
+    "id": "ja2_q56",
     "subject": "Numerical & Reasoning Ability",
     "qno": 56,
-    "question": "Series: 5,12,26,54,?",
-    "options": ["110", "108", "112", "106"],
-    "answer": 0,
-    "explanation": "×2 +2 → 110.",
+    "question": "Find the next term in the series: 0, 6, 24, 60, 120, ?",
+    "options": ["196", "156", "210", "200"],
+    "answer": 2,
+    "explanation": "Pattern = n³ – n → next is 6³ – 6 = 210.",
     "topic": "number_series"
   },
   {
-    "id": "ja_q57",
+    "id": "ja2_q57",
     "subject": "Numerical & Reasoning Ability",
     "qno": 57,
-    "question": "Mirror image of clock 3:15?",
-    "options": ["8:45", "9:45", "8:15", "9:15"],
-    "answer": 0,
-    "explanation": "8:45.",
-    "topic": "clock"
-  },
-  {
-    "id": "ja_q58",
-    "subject": "Numerical & Reasoning Ability",
-    "qno": 58,
-    "question": "Venn diagram for Doctors, Engineers, Males?",
-    "options": [
-      "All three overlap possible",
-      "No overlap",
-      "Only two",
-      "All separate"
-    ],
-    "answer": 0,
-    "explanation": "All three can overlap.",
-    "topic": "syllogism"
-  },
-  {
-    "id": "ja_q59",
-    "subject": "Numerical & Reasoning Ability",
-    "qno": 59,
-    "question": "Paper cutting: Triangle punched – triangles appear?",
-    "options": ["4", "3", "5", "6"],
-    "answer": 0,
-    "explanation": "4 triangles.",
+    "question": "EK : MS :: FP : ?",
+    "options": ["ND", "NX", "NL", "NT"],
+    "answer": 1,
+    "explanation": "+8 in each letter → NX.",
     "topic": "analogy"
   },
   {
-    "id": "ja_q60",
+    "id": "ja2_q58",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 58,
+    "question": "If 5 # 3 = 19, 7 # 2 = 17, then 9 # 1 = ?",
+    "options": ["12", "10", "8", "11"],
+    "answer": 3,
+    "explanation": "Pattern: (a × b) + (a – b + 1) → 9×1 + (9-1+1) = 11.",
+    "topic": "analogy"
+  },
+  {
+    "id": "ja2_q59",
+    "subject": "Numerical & Reasoning Ability",
+    "qno": 59,
+    "question": "Complete the analogy: Chaos : Conflict :: Negotiation : ?",
+    "options": ["Justice", "Harmony", "Stability", "Law"],
+    "answer": 1,
+    "explanation": "Negotiation leads to Harmony.",
+    "topic": "analogy"
+  },
+  {
+    "id": "ja2_q60",
     "subject": "Numerical & Reasoning Ability",
     "qno": 60,
-    "question": "Odd letters: ACGM, BDHN, CEIO, DFJP",
-    "options": ["ACGM", "BDHN", "CEIO", "DFJP"],
-    "answer": 2,
-    "explanation": "Pattern broken in CEIO.",
-    "topic": "alphabet_series"
+    "question": "Pointing to a girl, a man said, 'She is the daughter of the only child of my grandmother.' How is the girl related to the man?",
+    "options": ["Niece", "Cousin", "Aunt", "Sister"],
+    "answer": 0,
+    "explanation": "Daughter of only child of grandmother = Niece.",
+    "topic": "blood_relation"
   },
   {
-    "id": "ja_q61",
+    "id": "ja2_q61",
     "subject": "Basic Concepts of Computers",
     "qno": 61,
-    "question": "Full form of CPU?",
-    "options": [
-      "Central Processing Unit",
-      "Central Power Unit",
-      "Control Processing Unit",
-      "Computer Personal Unit"
-    ],
-    "answer": 0,
-    "explanation": "Central Processing Unit.",
-    "topic": "computer"
+    "question": "In MS Excel, which function is used to perform a vertical lookup in a table array?",
+    "options": ["HLOOKUP", "VLOOKUP", "INDEX", "MATCH"],
+    "answer": 1,
+    "explanation": "VLOOKUP (CGL-level MS Office).",
+    "topic": "ms_office"
   },
   {
-    "id": "ja_q62",
+    "id": "ja2_q62",
     "subject": "Basic Concepts of Computers",
     "qno": 62,
-    "question": "Which is not a Microsoft Office application?",
-    "options": ["MS Word", "MS Excel", "MS PowerPoint", "MS Paint"],
-    "answer": 3,
-    "explanation": "MS Paint is separate.",
-    "topic": "computer"
+    "question": "The default file extension of an Excel workbook created in MS Office 2007 and above is?",
+    "options": [".xls", ".xlsx", ".xlsm", ".xlt"],
+    "answer": 1,
+    "explanation": ".xlsx (CGL-level).",
+    "topic": "ms_office"
   },
   {
-    "id": "ja_q63",
+    "id": "ja2_q63",
     "subject": "Basic Concepts of Computers",
     "qno": 63,
-    "question": "Shortcut for copy?",
-    "options": ["Ctrl + C", "Ctrl + V", "Ctrl + X", "Ctrl + Z"],
-    "answer": 0,
-    "explanation": "Ctrl + C.",
-    "topic": "computer"
+    "question": "In MS PowerPoint, 'Slide Master' is primarily used for?",
+    "options": [
+      "Creating individual slides",
+      "Applying consistent design and layout to all slides",
+      "Adding animations only",
+      "Printing handouts"
+    ],
+    "answer": 1,
+    "explanation": "Applying consistent design to all slides (CGL-level).",
+    "topic": "ms_office"
   },
   {
-    "id": "ja_q64",
+    "id": "ja2_q64",
     "subject": "Basic Concepts of Computers",
     "qno": 64,
-    "question": "What is phishing?",
-    "options": [
-      "Fraudulent attempt to obtain sensitive information",
-      "Virus",
-      "Hardware fault",
-      "Backup method"
-    ],
+    "question": "The process of loading the Operating System into main memory when the computer is switched on is called?",
+    "options": ["Booting", "Debugging", "Compiling", "Assembling"],
     "answer": 0,
-    "explanation": "Cyber threat.",
-    "topic": "computer"
+    "explanation": "Booting (CGL-level OS concept).",
+    "topic": "operating_system"
   },
   {
-    "id": "ja_q65",
+    "id": "ja2_q65",
     "subject": "Basic Concepts of Computers",
     "qno": 65,
-    "question": "Input device example?",
-    "options": ["Monitor", "Printer", "Keyboard", "Speaker"],
-    "answer": 2,
-    "explanation": "Keyboard.",
-    "topic": "computer"
+    "question": "Which of the following is the full form of DNS in internet terminology?",
+    "options": [
+      "Domain Name System",
+      "Dynamic Network Service",
+      "Data Name Server",
+      "Direct Navigation System"
+    ],
+    "answer": 0,
+    "explanation": "Domain Name System (CGL-level Internet).",
+    "topic": "internet"
   },
   {
-    "id": "ja_q66",
+    "id": "ja2_q66",
     "subject": "Basic Concepts of Computers",
     "qno": 66,
-    "question": "Function of Firewall?",
+    "question": "In MS Word, which feature allows you to send personalised letters to multiple recipients using a data source?",
     "options": [
-      "Protects from unauthorized access",
-      "Increases speed",
-      "Stores data",
-      "Prints documents"
+      "Mail Merge",
+      "Track Changes",
+      "Hyperlink",
+      "Table of Contents"
     ],
     "answer": 0,
-    "explanation": "Network security.",
-    "topic": "computer"
+    "explanation": "Mail Merge (CGL-level).",
+    "topic": "ms_office"
   },
   {
-    "id": "ja_q67",
+    "id": "ja2_q67",
     "subject": "Basic Concepts of Computers",
     "qno": 67,
-    "question": "Full form of URL?",
-    "options": [
-      "Uniform Resource Locator",
-      "Universal Resource Link",
-      "Uniform Resource Link",
-      "Universal Resource Locator"
-    ],
-    "answer": 0,
-    "explanation": "Uniform Resource Locator.",
-    "topic": "computer"
+    "question": "Which protocol is used for sending emails from client to server?",
+    "options": ["POP3", "IMAP", "SMTP", "FTP"],
+    "answer": 2,
+    "explanation": "SMTP (CGL-level Email).",
+    "topic": "email"
   },
   {
-    "id": "ja_q68",
+    "id": "ja2_q68",
     "subject": "Basic Concepts of Computers",
     "qno": 68,
-    "question": "Output device?",
-    "options": ["Mouse", "Keyboard", "Monitor", "Scanner"],
-    "answer": 2,
-    "explanation": "Monitor.",
-    "topic": "computer"
+    "question": "What is the difference between IMAP and POP3?",
+    "options": [
+      "IMAP downloads emails, POP3 keeps them on server",
+      "POP3 downloads emails, IMAP keeps them on server",
+      "Both are same",
+      "None"
+    ],
+    "answer": 1,
+    "explanation": "POP3 downloads, IMAP keeps on server (CGL-level).",
+    "topic": "email"
   },
   {
-    "id": "ja_q69",
+    "id": "ja2_q69",
     "subject": "Basic Concepts of Computers",
     "qno": 69,
-    "question": "WWW stands for?",
-    "options": [
-      "World Wide Web",
-      "World Web Wide",
-      "Wide World Web",
-      "Web World Wide"
-    ],
-    "answer": 0,
-    "explanation": "World Wide Web.",
-    "topic": "computer"
+    "question": "Which of the following is an example of System Software?",
+    "options": ["MS Word", "Windows OS", "Google Chrome", "Photoshop"],
+    "answer": 1,
+    "explanation": "Windows OS (CGL-level Hardware/Software).",
+    "topic": "hardware_software"
   },
   {
-    "id": "ja_q70",
+    "id": "ja2_q70",
     "subject": "Basic Concepts of Computers",
     "qno": 70,
-    "question": "Trojan is example of?",
-    "options": ["Virus", "Malware", "Hardware", "Operating system"],
+    "question": "HTTPS uses which port by default for secure communication?",
+    "options": ["80", "443", "21", "25"],
     "answer": 1,
-    "explanation": "Malware.",
-    "topic": "computer"
+    "explanation": "Port 443 (CGL-level Internet).",
+    "topic": "internet"
   },
   {
-    "id": "ja_q71",
+    "id": "ja2_q71",
     "subject": "Basic Concepts of Computers",
     "qno": 71,
-    "question": "Shortcut to paste?",
-    "options": ["Ctrl + V", "Ctrl + C", "Ctrl + P", "Ctrl + X"],
+    "question": "In MS Excel, what does the function INDEX+MATCH combination replace?",
+    "options": [
+      "VLOOKUP limitations",
+      "SUM function",
+      "AVERAGE function",
+      "None"
+    ],
     "answer": 0,
-    "explanation": "Ctrl + V.",
-    "topic": "computer"
+    "explanation": "VLOOKUP limitations (CGL-level advanced formula).",
+    "topic": "ms_office"
   },
   {
-    "id": "ja_q72",
+    "id": "ja2_q72",
     "subject": "Basic Concepts of Computers",
     "qno": 72,
-    "question": "e-banking means?",
+    "question": "What is the kernel in an Operating System?",
     "options": [
-      "Electronic banking",
-      "Email banking",
-      "Error banking",
-      "External banking"
+      "User interface",
+      "Core part that manages hardware and software",
+      "Browser",
+      "Antivirus"
     ],
-    "answer": 0,
-    "explanation": "Online banking.",
-    "topic": "computer"
+    "answer": 1,
+    "explanation": "Core part that manages hardware and software (CGL-level OS).",
+    "topic": "operating_system"
   },
   {
-    "id": "ja_q73",
+    "id": "ja2_q73",
     "subject": "Basic Concepts of Computers",
     "qno": 73,
-    "question": "MS Excel is used for?",
-    "options": ["Spreadsheets", "Word processing", "Presentations", "Browsing"],
+    "question": "FTP stands for?",
+    "options": [
+      "File Transfer Protocol",
+      "Fast Transfer Protocol",
+      "File Transmission Protocol",
+      "None"
+    ],
     "answer": 0,
-    "explanation": "Spreadsheets.",
-    "topic": "computer"
+    "explanation": "File Transfer Protocol (CGL-level Internet).",
+    "topic": "internet"
   },
   {
-    "id": "ja_q74",
+    "id": "ja2_q74",
     "subject": "Basic Concepts of Computers",
     "qno": 74,
-    "question": "Networking device?",
-    "options": ["Router", "CPU", "Monitor", "Keyboard"],
-    "answer": 0,
-    "explanation": "Router.",
-    "topic": "computer"
+    "question": "Which of the following is NOT an input device?",
+    "options": ["Joystick", "Scanner", "Plotter", "Touch Screen"],
+    "answer": 2,
+    "explanation": "Plotter is output (CGL-level tricky).",
+    "topic": "input_output"
   },
   {
-    "id": "ja_q75",
+    "id": "ja2_q75",
     "subject": "Basic Concepts of Computers",
     "qno": 75,
-    "question": "Main function of Windows Explorer?",
+    "question": "In MS Access, what is a 'Query' used for?",
     "options": [
-      "File management",
-      "Internet browsing",
-      "Email",
-      "Virus scanning"
+      "To create forms",
+      "To retrieve and manipulate data from tables",
+      "To design reports",
+      "To create macros"
     ],
-    "answer": 0,
-    "explanation": "File and folder management.",
-    "topic": "computer"
+    "answer": 1,
+    "explanation": "To retrieve and manipulate data (CGL-level).",
+    "topic": "ms_office"
   },
   {
-    "id": "ja_q76",
+    "id": "ja2_q76",
     "subject": "Basic Concepts of Computers",
     "qno": 76,
-    "question": "What is RAM?",
+    "question": "What does the term 'Bootstrapping' refer to in computers?",
     "options": [
-      "Random Access Memory",
-      "Read Access Memory",
-      "Run Access Memory",
-      "Real Access Memory"
+      "Starting the OS using a small program",
+      "Installing software",
+      "Deleting files",
+      "Connecting internet"
     ],
     "answer": 0,
-    "explanation": "Random Access Memory.",
-    "topic": "computer"
+    "explanation": "Starting the OS using a small program (CGL-level).",
+    "topic": "operating_system"
   },
   {
-    "id": "ja_q77",
+    "id": "ja2_q77",
     "subject": "Basic Concepts of Computers",
     "qno": 77,
-    "question": "Which is a storage device?",
-    "options": ["Monitor", "Hard Disk", "Keyboard", "Mouse"],
-    "answer": 1,
-    "explanation": "Hard Disk.",
-    "topic": "computer"
+    "question": "Which of the following is a volatile memory?",
+    "options": ["ROM", "Hard Disk", "RAM", "Flash Drive"],
+    "answer": 2,
+    "explanation": "RAM (CGL-level memory concept).",
+    "topic": "hardware_software"
   },
   {
-    "id": "ja_q78",
+    "id": "ja2_q78",
     "subject": "Basic Concepts of Computers",
     "qno": 78,
-    "question": "Internet is a network of?",
-    "options": ["Computers", "People", "Cities", "Countries"],
+    "question": "In email terminology, BCC stands for?",
+    "options": [
+      "Blind Carbon Copy",
+      "Basic Carbon Copy",
+      "Bold Carbon Copy",
+      "None"
+    ],
     "answer": 0,
-    "explanation": "Computers.",
-    "topic": "computer"
+    "explanation": "Blind Carbon Copy (CGL-level Email).",
+    "topic": "email"
   },
   {
-    "id": "ja_q79",
+    "id": "ja2_q79",
     "subject": "Basic Concepts of Computers",
     "qno": 79,
-    "question": "Virus in computer is?",
-    "options": ["Hardware", "Software", "Malware", "Both B and C"],
-    "answer": 3,
-    "explanation": "Malware.",
-    "topic": "computer"
+    "question": "What is the full form of DHCP?",
+    "options": [
+      "Dynamic Host Configuration Protocol",
+      "Direct Host Control Protocol",
+      "Data Host Configuration Protocol",
+      "None"
+    ],
+    "answer": 0,
+    "explanation": "Dynamic Host Configuration Protocol (CGL-level Networking).",
+    "topic": "internet"
   },
   {
-    "id": "ja_q80",
+    "id": "ja2_q80",
     "subject": "Basic Concepts of Computers",
     "qno": 80,
-    "question": "Shortcut for new document in MS Word?",
-    "options": ["Ctrl + N", "Ctrl + O", "Ctrl + S", "Ctrl + P"],
-    "answer": 0,
-    "explanation": "Ctrl + N.",
-    "topic": "computer"
+    "question": "Which MS Office component is used to create relational databases?",
+    "options": ["MS Word", "MS Excel", "MS Access", "MS PowerPoint"],
+    "answer": 2,
+    "explanation": "MS Access (CGL-level).",
+    "topic": "ms_office"
   }
 ]

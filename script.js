@@ -439,15 +439,11 @@ function updateSectionTabs() {
 // ════════════════════════════════════════════
 async function loadFullMock() {
   applyStoredTheme();
-
-  // ── ANALYSE MODE: ?analyse=attempt_XXXX ──────────────────────────────────
-  const analyseId = new URLSearchParams(window.location.search).get("analyse");
-  if (analyseId) {
-    restoreAttemptForReview(analyseId);
+  const _aid = new URLSearchParams(window.location.search).get("analyse");
+  if (_aid) {
+    restoreAttemptForReview(_aid);
     return;
   }
-  // ─────────────────────────────────────────────────────────────────────────
-
   if (
     !sessionStorage.getItem("examType") &&
     !sessionStorage.getItem("examMode")
@@ -796,9 +792,6 @@ function initMock() {
   if (timerMode === "section") {
     initSectionTimer();
   } else {
-    // overall timer — only reset timeLeft for full mocks.
-    // Subject/chapter practice already set timeLeft before calling initMock();
-    // overwriting it here was the bug that always showed 25 min regardless of input.
     if (examMode !== "subject" && examMode !== "chapter") {
       const cfg = EXAM_CONFIG[examType] || EXAM_CONFIG.cgl;
       timeLeft = cfg.timeSeconds;
@@ -1472,26 +1465,6 @@ function restoreAttemptForReview(attemptId) {
     mockNumber = snap.mockNumber || 0;
     selectedSubject = snap.selectedSubject || null;
     selectedChapter = snap.selectedChapter || null;
-    const titleEl = document.getElementById("examTitle");
-    if (titleEl) {
-      const cfg = getCfg();
-
-      if (examMode === "subject" && selectedSubject) {
-        titleEl.textContent = `${cfg.sectionLabels[selectedSubject] || selectedSubject} Analysis`;
-      } else if (examMode === "chapter" && selectedSubject && selectedChapter) {
-        const chapterLabel = selectedChapter
-          .replace(/_/g, " ")
-          .replace(/\b\w/g, (c) => c.toUpperCase());
-        titleEl.textContent = `${selectedSubject} · ${chapterLabel} Analysis`;
-      } else if (mockNumber) {
-        titleEl.textContent = `${cfg.label} — Mock ${mockNumber} Analysis`;
-      } else {
-        titleEl.textContent = `${cfg.label} — Attempt Analysis`;
-      }
-    }
-
-    const timerBox = document.getElementById("timerBox");
-    if (timerBox) timerBox.style.display = "none";
 
     questionState = {};
     questions.forEach((q) => {
@@ -1545,6 +1518,21 @@ function restoreAttemptForReview(attemptId) {
     if (backBtn) backBtn.style.display = "flex";
     if (pauseBtn) pauseBtn.style.display = "none";
     if (submitBtn) submitBtn.style.display = "none";
+    const _aTitleEl = document.getElementById("examTitle");
+    if (_aTitleEl) {
+      const _aCfg = EXAM_CONFIG[examType] || {};
+      const _aMode =
+        examMode === "subject"
+          ? ` · ${selectedSubject || ""} Practice`
+          : examMode === "chapter"
+            ? ` · ${(selectedChapter || "").replace(/_/g, " ")}`
+            : mockNumber
+              ? ` — Mock ${mockNumber}`
+              : "";
+      _aTitleEl.textContent = `${_aCfg.label || examType}${_aMode}`;
+    }
+    const _aTimerBox = document.getElementById("timerBox");
+    if (_aTimerBox) _aTimerBox.style.display = "none";
 
     if (resultBox) {
       let banner = document.getElementById("analyseBanner");
@@ -1914,24 +1902,18 @@ let lbExamFilter = "cgl",
 
 function renderLeaderboard(attempts) {
   lbExamFilter = examType || "cgl";
-  const cglTab = document.getElementById("lbTabCgl");
-  const chslTab = document.getElementById("lbTabChsl");
-  if (cglTab && chslTab) {
-    cglTab.classList.toggle("active", lbExamFilter === "cgl");
-    chslTab.classList.toggle("active", lbExamFilter === "chsl");
-  }
+  const lbExamTabsEl = document.querySelector(".lb-exam-tabs");
+  if (lbExamTabsEl) lbExamTabsEl.style.display = "none";
   renderLeaderboardRows(attempts);
-  fetchGlobalLeaderboard(lbExamFilter);
+  // fetchGlobalLeaderboard called AFTER Firestore write — not here
 }
 function renderLeaderboardRows(attempts) {
   const el = document.getElementById("leaderboard");
   if (!el) return;
   const filtered = attempts.filter(
     (a) =>
-      (a.examTypeKey || "").toLowerCase() === lbExamFilter ||
-      (a.examType || "")
-        .toLowerCase()
-        .includes(lbExamFilter === "cgl" ? "cgl" : "chsl"),
+      (a.examTypeKey || "").toLowerCase() === (examType || "").toLowerCase() &&
+      Number(a.mockNumber || 0) === Number(mockNumber || 0),
   );
   el.innerHTML = `
     <div class="lb-tabs">
@@ -1987,28 +1969,24 @@ function switchLbExam(type, btn) {
   else fetchGlobalLeaderboard(type);
 }
 async function fetchGlobalLeaderboard(type) {
-  type = type || lbExamFilter || "cgl";
+  type = type || lbExamFilter || examType || "cgl";
   try {
     if (typeof firebase === "undefined" || !firebase.apps.length) return;
     const db = firebase.firestore();
-    const label = type === "cgl" ? "SSC CGL Tier 1" : "SSC CHSL Tier 1";
-    let query = db
+    const label =
+      EXAM_CONFIG[type]?.label || EXAM_CONFIG[examType]?.label || examType;
+    // Single equality where only — no orderBy = no composite index needed
+    const snap = await db
       .collection("leaderboard")
       .where("examType", "==", label)
-      .orderBy("score", "desc")
-      .limit(100);
-    if (mockNumber)
-      query = db
-        .collection("leaderboard")
-        .where("examType", "==", label)
-        .where("mockNumber", "==", mockNumber)
-        .orderBy("score", "desc")
-        .limit(100);
-    const snap = await query.get();
+      .get();
+    const thisMock = Number(mockNumber || 0);
+    // Filter mock client-side, keep best score per user, sort client-side
     const best = {};
     snap.docs.forEach((doc) => {
-      const d = doc.data(),
-        uid = d.userId || doc.id;
+      const d = doc.data();
+      if (Number(d.mockNumber || 0) !== thisMock) return;
+      const uid = d.userId || doc.id;
       if (!best[uid] || d.score > best[uid].score) best[uid] = d;
     });
     const ranked = Object.values(best).sort((a, b) => b.score - a.score);
@@ -2019,8 +1997,7 @@ async function fetchGlobalLeaderboard(type) {
     console.error("Global LB error:", e);
     const el = document.getElementById("lb-global");
     if (el)
-      el.innerHTML =
-        '<div class="lb-empty">Could not load. Check Firestore indexes.</div>';
+      el.innerHTML = '<div class="lb-empty">Could not load leaderboard.</div>';
   }
 }
 function renderGlobalRows(ranked) {
@@ -2061,32 +2038,57 @@ function renderGlobalRows(ranked) {
     .join("");
 }
 function updateRankStats(ranked) {
-  if (!ranked.length || !lastResult) return;
-  const myUid = currentUser?.uid,
-    maxScore = lastResult.maxScore || 200,
-    myScore = lastResult.score;
-  const myRank = ranked.findIndex((a) => a.userId === myUid) + 1,
-    total = ranked.length;
-  const topScore = ranked[0]?.score || 0;
-  const avgScore = ranked.reduce((s, a) => s + (a.score || 0), 0) / total;
-  const beaten = ranked.filter((a) => myScore > (a.score || 0)).length;
-  const percentile =
-    total > 1 ? ((beaten / (total - 1)) * 100).toFixed(1) : 100;
-  const rankNum = document.getElementById("globalRankNum");
-  if (rankNum) rankNum.textContent = myRank > 0 ? `#${myRank}` : "#—";
-  const ringPct =
-    myRank > 0 ? Math.max(5, ((total - myRank + 1) / total) * 100) : 0;
-  const offset = 314 - (ringPct / 100) * 314;
-  setTimeout(() => {
-    const fill = document.getElementById("rankRingFill");
-    if (fill) fill.style.strokeDashoffset = offset;
-  }, 300);
+  if (!lastResult) return;
   const fmt = (v) =>
     typeof v === "number" ? (v % 1 === 0 ? v : v.toFixed(1)) : v;
+  const myUid = currentUser?.uid;
+  const myScore = lastResult.score;
+  const maxScore = lastResult.maxScore || 200;
+  const rankNum = document.getElementById("globalRankNum");
+  const rankTotal = document.getElementById("rankTotal");
+  const card = document.getElementById("comparisonCard");
+
+  // Always ensure current user is in the pool — guards against Firestore consistency lag
+  const myId = myUid || "__me__";
+  let pool = ranked.filter((a) => a.userId !== myId && a.userId !== "__me__");
+  pool.push({ score: myScore, userId: myId });
+  pool.sort((a, b) => b.score - a.score);
+
+  const total = pool.length;
+
+  if (!total) {
+    if (rankNum) rankNum.textContent = "#—";
+    if (rankTotal) rankTotal.textContent = "";
+    if (card) card.style.display = "none";
+    return;
+  }
+
+  // Find my rank by userId (always found since we injected above)
+  const myRankIdx = pool.findIndex((a) => a.userId === myId);
+  const myRank = myRankIdx === -1 ? total : myRankIdx + 1;
+
+  const topScore = pool[0].score || 0;
+  const avgScore = pool.reduce((s, a) => s + (a.score || 0), 0) / total;
+  // Percentile = % of OTHER users I scored strictly higher than
+  const others = total - 1;
+  const beaten = pool.filter(
+    (a) => a.userId !== myId && (a.score || 0) < myScore,
+  ).length;
+  const percentile =
+    others > 0 ? ((beaten / others) * 100).toFixed(1) : "100.0";
+
+  if (rankNum) rankNum.textContent = `#${myRank}`;
+  if (rankTotal) rankTotal.textContent = `/ ${total}`;
+
+  const ringPct = Math.max(5, ((total - myRank + 1) / total) * 100);
+  setTimeout(() => {
+    const fill = document.getElementById("rankRingFill");
+    if (fill) fill.style.strokeDashoffset = 314 - (ringPct / 100) * 314;
+  }, 300);
+
   setText("topperScoreVal", fmt(topScore));
   setText("avgScoreVal", fmt(avgScore));
   setText("percentileVal", percentile + "%");
-  const card = document.getElementById("comparisonCard");
   if (card) card.style.display = "block";
   setTimeout(() => {
     setCompBar("cmpYouBar", "cmpYouLbl", myScore, maxScore, fmt(myScore));
@@ -2149,6 +2151,29 @@ async function saveToFirestoreAndRefresh(
       userName: user.displayName || user.email || "Anonymous",
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     });
+    // Inject current user's score directly into cache so rank is correct
+    // even if Firestore's get() hasn't indexed the new doc yet
+    const examLabel2 = EXAM_CONFIG[examType]?.label || examType;
+    const cacheKey = lbExamFilter || examType;
+    const myEntry = {
+      score,
+      correct,
+      wrong,
+      skipped,
+      accuracy: pct.toFixed(1),
+      examType: examLabel2,
+      mockNumber: mockNumber || 0,
+      userId: user.uid,
+      userName: user.displayName || user.email || "Anonymous",
+    };
+    if (!globalLbCache[cacheKey]) globalLbCache[cacheKey] = [];
+    globalLbCache[cacheKey] = globalLbCache[cacheKey].filter(
+      (a) => a.userId !== user.uid,
+    );
+    globalLbCache[cacheKey].push(myEntry);
+    globalLbCache[cacheKey].sort((a, b) => b.score - a.score);
+    updateRankStats(globalLbCache[cacheKey]);
+    await fetchGlobalLeaderboard(cacheKey);
     await renderFirestoreLeaderboard(user);
   } catch (e) {
     console.error("🔴 Firestore save failed:", e.code, e.message);
@@ -2163,7 +2188,7 @@ async function renderFirestoreLeaderboard(user) {
       .doc(user.uid)
       .collection("attempts")
       .orderBy("createdAt", "desc")
-      .limit(20)
+      .limit(50)
       .get();
     if (snap.empty) return;
     const data = snap.docs.map((d) => {
@@ -2188,14 +2213,11 @@ async function renderFirestoreLeaderboard(user) {
     if (personalEl) {
       const filtered = data.filter(
         (a) =>
-          (a.examTypeKey || "").toLowerCase() === lbExamFilter ||
-          (a.examType || "")
-            .toLowerCase()
-            .includes(lbExamFilter === "cgl" ? "cgl" : "chsl"),
+          (a.examTypeKey || "").toLowerCase() ===
+            (examType || "").toLowerCase() &&
+          Number(a.mockNumber || 0) === Number(mockNumber || 0),
       );
-      personalEl.innerHTML = buildPersonalRows(
-        filtered.length ? filtered : data,
-      );
+      personalEl.innerHTML = buildPersonalRows(filtered);
     }
   } catch (e) {
     console.warn("renderFirestoreLeaderboard error:", e);
