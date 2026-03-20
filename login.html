@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="ExamEdge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ExamEdge — Login</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -580,31 +584,46 @@
         <div class="form-title">Welcome back 👋</div>
         <div class="form-sub">Log in to continue your prep</div>
 
-        <form onsubmit="event.preventDefault(); loginEmail();" autocomplete="on">
-        <div class="field">
-          <label>Email</label>
-          <div class="input-wrap">
-            <span class="icon">📧</span>
-            <input type="email" id="loginEmail" placeholder="you@example.com" autocomplete="email" />
+        <form
+          onsubmit="
+            event.preventDefault();
+            loginEmail();
+          "
+          autocomplete="on"
+        >
+          <div class="field">
+            <label>Email</label>
+            <div class="input-wrap">
+              <span class="icon">📧</span>
+              <input
+                type="email"
+                id="loginEmail"
+                placeholder="you@example.com"
+                autocomplete="email"
+              />
+            </div>
           </div>
-        </div>
-        <div class="field">
-          <label>Password</label>
-          <div class="input-wrap">
-            <span class="icon">🔒</span>
-            <input
-              type="password"
-              id="loginPassword"
-              placeholder="Enter password"
-              autocomplete="current-password"
-            />
-            <button type="button" class="toggle-pw" onclick="togglePw('loginPassword', this)">
-              👁️
-            </button>
+          <div class="field">
+            <label>Password</label>
+            <div class="input-wrap">
+              <span class="icon">🔒</span>
+              <input
+                type="password"
+                id="loginPassword"
+                placeholder="Enter password"
+                autocomplete="current-password"
+              />
+              <button
+                type="button"
+                class="toggle-pw"
+                onclick="togglePw('loginPassword', this)"
+              >
+                👁️
+              </button>
+            </div>
           </div>
-        </div>
 
-        <button type="submit" class="btn-primary">Log In</button>
+          <button type="submit" class="btn-primary">Log In</button>
         </form>
 
         <div class="divider">or continue with</div>
@@ -1195,16 +1214,17 @@
         if (active === "signupScreen") signupEmail();
       });
     </script>
-  
+
     <script>
       // Register Service Worker — required for PWA install prompt
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
-          navigator.serviceWorker.register("/sw.js")
-            .then(r => console.log("SW registered:", r.scope))
-            .catch(e => console.warn("SW failed:", e));
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then((r) => console.log("SW registered:", r.scope))
+            .catch((e) => console.warn("SW failed:", e));
         });
       }
     </script>
-</body>
+  </body>
 </html>
