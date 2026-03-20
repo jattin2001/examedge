@@ -1,0 +1,26 @@
+{
+  "name": "ExamEdge — Mock Tests",
+  "short_name": "ExamEdge",
+  "description": "Practice SSC, JKSSB, RRB mock tests with real exam patterns",
+  "start_url": "/exams.html",
+  "display": "standalone",
+  "background_color": "#f0f2f8",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education"],
+  "screenshots": []
+}
