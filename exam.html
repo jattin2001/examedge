@@ -2,6 +2,7 @@
 <html data-theme="light">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="manifest" href="manifest.json" />
     <meta name="theme-color" content="#2563eb" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -747,6 +748,17 @@
         localStorage.setItem("ee-pwa-dismissed", "1");
       }
       window.addEventListener("appinstalled", () => dismissPWA());
+    </script>
+
+    <script>
+      // Register Service Worker — required for PWA install prompt
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js")
+            .then(r => console.log("SW registered:", r.scope))
+            .catch(e => console.warn("SW failed:", e));
+        });
+      }
     </script>
   </body>
 </html>

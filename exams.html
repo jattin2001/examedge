@@ -2,6 +2,7 @@
 <html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="manifest" href="manifest.json" />
     <meta name="theme-color" content="#2563eb" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -419,9 +420,7 @@
         text-overflow: ellipsis;
         white-space: nowrap;
       }
-      .mock-pip-label.done {
-        color: #10b981;
-      }
+      .mock-pip-label.done { color: #10b981; }
 
       .mock-count {
         margin-bottom: 6px;
@@ -1469,10 +1468,7 @@
           desc: "J&K SSB JA — 4 sections × 20 marks, 80 Qs, 80 marks. 80 min.",
           marking: { correct: "+1 mark", wrong: "−0.25 marks" },
           prefix: "jkp_ja_mock",
-          mocks: [
-            { num: 1, label: "Mock 1" },
-            { num: 2, label: "Mock 2" },
-          ],
+          mocks: [{ num: 1, label: "Mock 1" }, { num: 2, label: "Mock 2" }],
           icon: "📋",
           badge: "LIVE",
           badgeClass: "badge-live",
@@ -1485,8 +1481,7 @@
           title: "JKSSB Accounts Assistant (Finance)",
           qs: 120,
           time: 120,
-          subjects:
-            "GK (J&K) · Accountancy · English · Statistics · Maths · Economics · Science · Computer",
+          subjects: "GK (J&K) · Accountancy · English · Statistics · Maths · Economics · Science · Computer",
           desc: "JKSSB Finance — 120 Qs, 120 marks, 8 sections. 120 min. Objective Type.",
           marking: { correct: "+1 mark", wrong: "No negative marking" },
           prefix: "jkssb_finance_mock",
@@ -1503,8 +1498,7 @@
           title: "SSC GD Constable",
           qs: 80,
           time: 60,
-          subjects:
-            "Reasoning · General Knowledge · Mathematics · English/Hindi",
+          subjects: "Reasoning · General Knowledge · Mathematics · English/Hindi",
           desc: "SSC GD — 80 Qs × 2 marks = 160 marks. 4 sections, 20 Qs each. 60 min. CBT online.",
           marking: { correct: "+2 marks", wrong: "−0.5 marks" },
           prefix: "ssc_gd_mock",
@@ -1538,8 +1532,7 @@
           title: "SSC MTS",
           qs: 90,
           time: 90,
-          subjects:
-            "Numerical Ability · Reasoning · General Awareness · English",
+          subjects: "Numerical Ability · Reasoning · General Awareness · English",
           desc: "SSC MTS — 90 Qs, 270 marks. 2 sessions: Session 1 (Maths+Reasoning, no −ve) · Session 2 (GK+English, −1/wrong). 45 min each.",
           marking: { correct: "+3 marks", wrong: "−1 mark (Session 2 only)" },
           prefix: "ssc_mts_mock",
@@ -1705,15 +1698,11 @@
       function getLocalAttemptsForExam(examTypeKey) {
         try {
           const all = JSON.parse(localStorage.getItem("ssc-attempts") || "[]");
-          return all.filter(
-            (a) =>
-              (a.examTypeKey || "").toLowerCase() ===
-                examTypeKey.toLowerCase() &&
-              (a.examMode === "full" || !a.examMode),
+          return all.filter(a =>
+            (a.examTypeKey || "").toLowerCase() === examTypeKey.toLowerCase() &&
+            (a.examMode === "full" || !a.examMode)
           );
-        } catch (e) {
-          return [];
-        }
+        } catch(e) { return []; }
       }
 
       function renderExamCards() {
@@ -1776,9 +1765,9 @@
           progressRow.className = "mock-progress-row";
           if (cfg.mocks.length > 0) {
             const attempts = getLocalAttemptsForExam(key);
-            cfg.mocks.forEach((m) => {
-              const attempt = attempts.find(
-                (a) => Number(a.mockNumber) === Number(m.num),
+            cfg.mocks.forEach(m => {
+              const attempt = attempts.find(a =>
+                Number(a.mockNumber) === Number(m.num)
               );
               const pip = document.createElement("div");
               pip.className = "mock-pip";
@@ -2643,23 +2632,12 @@
         banner = document.createElement("div");
         banner.id = "pwa-banner";
         banner.style.cssText = [
-          "position:fixed",
-          "bottom:20px",
-          "left:50%",
-          "transform:translateX(-50%)",
-          "z-index:9998",
-          "background:var(--surface,#fff)",
-          "color:var(--text,#0f1117)",
-          "border:1.5px solid var(--border,#e2e6f0)",
-          "border-radius:16px",
-          "padding:14px 18px",
-          "display:flex",
-          "align-items:center",
-          "gap:12px",
-          "box-shadow:0 8px 32px rgba(0,0,0,0.15)",
-          "font-family:sans-serif",
-          "max-width:340px",
-          "width:90%",
+          "position:fixed","bottom:20px","left:50%","transform:translateX(-50%)",
+          "z-index:9998","background:var(--surface,#fff)","color:var(--text,#0f1117)",
+          "border:1.5px solid var(--border,#e2e6f0)","border-radius:16px",
+          "padding:14px 18px","display:flex","align-items:center","gap:12px",
+          "box-shadow:0 8px 32px rgba(0,0,0,0.15)","font-family:sans-serif",
+          "max-width:340px","width:90%"
         ].join(";");
         banner.innerHTML = `
           <span style="font-size:28px">📋</span>
@@ -2685,6 +2663,17 @@
         localStorage.setItem("ee-pwa-dismissed", "1");
       }
       window.addEventListener("appinstalled", () => dismissPWA());
+    </script>
+
+    <script>
+      // Register Service Worker — required for PWA install prompt
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js")
+            .then(r => console.log("SW registered:", r.scope))
+            .catch(e => console.warn("SW failed:", e));
+        });
+      }
     </script>
   </body>
 </html>

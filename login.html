@@ -2,6 +2,7 @@
 <html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ExamEdge — Login</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -579,11 +580,12 @@
         <div class="form-title">Welcome back 👋</div>
         <div class="form-sub">Log in to continue your prep</div>
 
+        <form onsubmit="event.preventDefault(); loginEmail();" autocomplete="on">
         <div class="field">
           <label>Email</label>
           <div class="input-wrap">
             <span class="icon">📧</span>
-            <input type="email" id="loginEmail" placeholder="you@example.com" />
+            <input type="email" id="loginEmail" placeholder="you@example.com" autocomplete="email" />
           </div>
         </div>
         <div class="field">
@@ -594,14 +596,16 @@
               type="password"
               id="loginPassword"
               placeholder="Enter password"
+              autocomplete="current-password"
             />
-            <button class="toggle-pw" onclick="togglePw('loginPassword', this)">
+            <button type="button" class="toggle-pw" onclick="togglePw('loginPassword', this)">
               👁️
             </button>
           </div>
         </div>
 
-        <button class="btn-primary" onclick="loginEmail()">Log In</button>
+        <button type="submit" class="btn-primary">Log In</button>
+        </form>
 
         <div class="divider">or continue with</div>
 
@@ -1191,5 +1195,16 @@
         if (active === "signupScreen") signupEmail();
       });
     </script>
-  </body>
+  
+    <script>
+      // Register Service Worker — required for PWA install prompt
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js")
+            .then(r => console.log("SW registered:", r.scope))
+            .catch(e => console.warn("SW failed:", e));
+        });
+      }
+    </script>
+</body>
 </html>
