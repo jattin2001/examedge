@@ -1,0 +1,1626 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExamEdge — Admin</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Satoshi:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+    <style>
+      :root {
+        --bg: #080c14;
+        --surface: #0f1523;
+        --surface2: #151d2e;
+        --border: #1e2d45;
+        --text: #e8eeff;
+        --text2: #7a8ab0;
+        --text3: #3a4a6a;
+        --primary: #3b82f6;
+        --accent: #06b6d4;
+        --green: #10b981;
+        --orange: #f59e0b;
+        --red: #ef4444;
+        --purple: #8b5cf6;
+        --pink: #ec4899;
+        --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        font-family: "Satoshi", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        display: flex;
+        min-height: 100vh;
+      }
+
+      /* ── SIDEBAR ─────────────────────────── */
+      .sidebar {
+        width: 220px;
+        flex-shrink: 0;
+        background: var(--surface);
+        border-right: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+        overflow-y: auto;
+      }
+      .sidebar-brand {
+        padding: 20px 18px 16px;
+        border-bottom: 1px solid var(--border);
+      }
+      .sidebar-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 18px;
+        font-weight: 900;
+        color: var(--text);
+      }
+      .logo-dot {
+        width: 32px;
+        height: 32px;
+        border-radius: 9px;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        display: grid;
+        place-items: center;
+        font-size: 16px;
+      }
+      .sidebar-sub {
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--text3);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-top: 3px;
+      }
+      .sidebar-nav {
+        padding: 12px 10px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+      .nav-section-label {
+        font-size: 10px;
+        font-weight: 800;
+        color: var(--text3);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 10px 8px 6px;
+      }
+      .nav-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 12px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text2);
+        transition: all 0.15s;
+        border: none;
+        background: transparent;
+        width: 100%;
+        text-align: left;
+      }
+      .nav-item:hover {
+        background: var(--surface2);
+        color: var(--text);
+      }
+      .nav-item.active {
+        background: rgba(59, 130, 246, 0.12);
+        color: var(--primary);
+      }
+      .nav-item .nav-icon {
+        font-size: 16px;
+        flex-shrink: 0;
+      }
+      .nav-badge {
+        margin-left: auto;
+        background: var(--red);
+        color: #fff;
+        border-radius: 999px;
+        padding: 1px 7px;
+        font-size: 10px;
+        font-weight: 800;
+      }
+      .sidebar-footer {
+        padding: 14px 16px;
+        border-top: 1px solid var(--border);
+      }
+      .admin-chip {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 10px;
+        border-radius: 10px;
+        background: var(--surface2);
+        border: 1px solid var(--border);
+      }
+      .admin-avatar {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        display: grid;
+        place-items: center;
+        font-size: 12px;
+        font-weight: 800;
+        color: #fff;
+      }
+      .admin-info {
+        flex: 1;
+        min-width: 0;
+      }
+      .admin-name {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--text);
+      }
+      .admin-role {
+        font-size: 10px;
+        color: var(--text3);
+      }
+
+      /* ── MAIN ────────────────────────────── */
+      .main {
+        margin-left: 220px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .topbar {
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        padding: 0 28px;
+        height: 58px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+      .topbar-title {
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 18px;
+        font-weight: 900;
+      }
+      .topbar-right {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .refresh-btn {
+        padding: 7px 14px;
+        border-radius: 9px;
+        border: 1px solid var(--border);
+        background: var(--surface2);
+        color: var(--text2);
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.15s;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .refresh-btn:hover {
+        background: var(--primary);
+        color: #fff;
+        border-color: var(--primary);
+      }
+      .refresh-btn.spinning .ri {
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--green);
+        box-shadow: 0 0 6px var(--green);
+      }
+
+      .content {
+        padding: 28px;
+        flex: 1;
+      }
+
+      /* ── PAGES ───────────────────────────── */
+      .page {
+        display: none;
+      }
+      .page.active {
+        display: block;
+      }
+
+      /* ── STAT CARDS ──────────────────────── */
+      .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+      .stat-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .stat-card:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow);
+      }
+      .stat-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        border-radius: 16px 16px 0 0;
+      }
+      .stat-card.blue::before {
+        background: linear-gradient(90deg, var(--primary), var(--accent));
+      }
+      .stat-card.green::before {
+        background: linear-gradient(90deg, var(--green), #06b6d4);
+      }
+      .stat-card.orange::before {
+        background: linear-gradient(90deg, var(--orange), #ef4444);
+      }
+      .stat-card.purple::before {
+        background: linear-gradient(90deg, var(--purple), var(--pink));
+      }
+      .stat-card.red::before {
+        background: linear-gradient(90deg, var(--red), var(--orange));
+      }
+      .stat-icon {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      .stat-val {
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 32px;
+        font-weight: 900;
+        line-height: 1;
+        margin-bottom: 4px;
+      }
+      .stat-lbl {
+        font-size: 12px;
+        color: var(--text2);
+        font-weight: 500;
+      }
+      .stat-sub {
+        font-size: 11px;
+        color: var(--text3);
+        margin-top: 6px;
+      }
+
+      /* ── SECTION HEADER ─────────────────── */
+      .sec-hdr {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 14px;
+        margin-top: 8px;
+      }
+      .sec-title {
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 15px;
+        font-weight: 900;
+        color: var(--text);
+      }
+      .sec-badge {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--text3);
+        background: var(--surface2);
+        padding: 3px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+      }
+
+      /* ── TABLE ───────────────────────────── */
+      .table-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 24px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th {
+        padding: 12px 16px;
+        text-align: left;
+        font-size: 11px;
+        font-weight: 800;
+        color: var(--text3);
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        background: var(--surface2);
+        border-bottom: 1px solid var(--border);
+      }
+      td {
+        padding: 12px 16px;
+        font-size: 13px;
+        border-bottom: 1px solid var(--border);
+        color: var(--text2);
+        vertical-align: middle;
+      }
+      tr:last-child td {
+        border-bottom: none;
+      }
+      tr:hover td {
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .td-main {
+        color: var(--text);
+        font-weight: 600;
+      }
+      .td-mono {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        color: var(--accent);
+      }
+
+      /* ── BADGE ───────────────────────────── */
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 3px 9px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 700;
+      }
+      .badge-green {
+        background: rgba(16, 185, 129, 0.15);
+        color: #6ee7b7;
+      }
+      .badge-orange {
+        background: rgba(245, 158, 11, 0.15);
+        color: #fcd34d;
+      }
+      .badge-red {
+        background: rgba(239, 68, 68, 0.15);
+        color: #fca5a5;
+      }
+      .badge-blue {
+        background: rgba(59, 130, 246, 0.15);
+        color: #93c5fd;
+      }
+      .badge-purple {
+        background: rgba(139, 92, 246, 0.15);
+        color: #c4b5fd;
+      }
+
+      /* ── FLAG CARD ───────────────────────── */
+      .flag-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 18px 20px;
+        margin-bottom: 12px;
+        transition: border-color 0.15s;
+        position: relative;
+      }
+      .flag-card:hover {
+        border-color: var(--border);
+      }
+      .flag-card.unread {
+        border-left: 3px solid var(--orange);
+      }
+      .flag-card.resolved {
+        opacity: 0.5;
+      }
+      .flag-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+      .flag-icon {
+        font-size: 20px;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .flag-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        line-height: 1.4;
+      }
+      .flag-meta {
+        font-size: 11px;
+        color: var(--text3);
+        margin-top: 3px;
+      }
+      .flag-reason {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 4px 10px;
+        border-radius: 8px;
+        background: rgba(245, 158, 11, 0.1);
+        border: 1px solid rgba(245, 158, 11, 0.2);
+        color: var(--orange);
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .flag-note {
+        font-size: 12px;
+        color: var(--text2);
+        background: var(--surface2);
+        border-radius: 8px;
+        padding: 8px 12px;
+        margin-bottom: 10px;
+        border-left: 2px solid var(--border);
+      }
+      .flag-actions {
+        display: flex;
+        gap: 8px;
+      }
+      .flag-btn {
+        padding: 6px 12px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: var(--surface2);
+        color: var(--text2);
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.15s;
+      }
+      .flag-btn:hover {
+        background: var(--primary);
+        color: #fff;
+        border-color: var(--primary);
+      }
+      .flag-btn.danger:hover {
+        background: var(--red);
+        border-color: var(--red);
+      }
+      .flag-btn.success:hover {
+        background: var(--green);
+        border-color: var(--green);
+      }
+
+      /* ── LEADERBOARD ─────────────────────── */
+      .lb-exam-filter {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+      }
+      .lb-filter-btn {
+        padding: 5px 12px;
+        border-radius: 999px;
+        border: 1.5px solid var(--border);
+        background: var(--surface2);
+        color: var(--text2);
+        font-size: 11px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.15s;
+      }
+      .lb-filter-btn.active {
+        background: var(--primary);
+        color: #fff;
+        border-color: var(--primary);
+      }
+
+      /* ── CHART BARS ──────────────────────── */
+      .mini-chart {
+        display: flex;
+        align-items: flex-end;
+        gap: 4px;
+        height: 60px;
+        margin-top: 8px;
+      }
+      .mini-bar {
+        flex: 1;
+        border-radius: 4px 4px 0 0;
+        background: linear-gradient(180deg, var(--primary), var(--accent));
+        opacity: 0.8;
+        transition: opacity 0.15s;
+        min-height: 4px;
+      }
+      .mini-bar:hover {
+        opacity: 1;
+      }
+
+      /* ── EMPTY STATE ─────────────────────── */
+      .empty {
+        text-align: center;
+        padding: 48px 20px;
+        color: var(--text3);
+      }
+      .empty-icon {
+        font-size: 40px;
+        margin-bottom: 12px;
+      }
+      .empty-text {
+        font-size: 14px;
+      }
+
+      /* ── LOADING ─────────────────────────── */
+      .loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        gap: 10px;
+        color: var(--text3);
+        font-size: 13px;
+      }
+      .spin {
+        width: 18px;
+        height: 18px;
+        border: 2px solid var(--border);
+        border-top-color: var(--primary);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+
+      /* ── TOAST ───────────────────────────── */
+      #toast {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #0f172a;
+        color: #fff;
+        border-radius: 999px;
+        padding: 10px 22px;
+        font-size: 13px;
+        font-weight: 700;
+        z-index: 9999;
+        display: none;
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+
+      /* ── LOGIN WALL ──────────────────────── */
+      #loginWall {
+        position: fixed;
+        inset: 0;
+        background: var(--bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .login-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 36px 32px;
+        width: 360px;
+        text-align: center;
+      }
+      .login-card h2 {
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 22px;
+        font-weight: 900;
+        margin-bottom: 6px;
+      }
+      .login-card p {
+        font-size: 13px;
+        color: var(--text2);
+        margin-bottom: 24px;
+      }
+      .login-input {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 12px;
+        border: 1.5px solid var(--border);
+        background: var(--surface2);
+        color: var(--text);
+        font-size: 14px;
+        font-family: inherit;
+        outline: none;
+        margin-bottom: 10px;
+        transition: border-color 0.15s;
+      }
+      .login-input:focus {
+        border-color: var(--primary);
+      }
+      .login-btn {
+        width: 100%;
+        padding: 13px;
+        border-radius: 12px;
+        border: none;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: #fff;
+        font-family: "Cabinet Grotesk", sans-serif;
+        font-size: 15px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: opacity 0.15s;
+      }
+      .login-btn:hover {
+        opacity: 0.9;
+      }
+      .login-err {
+        font-size: 12px;
+        color: var(--red);
+        margin-top: 8px;
+        min-height: 18px;
+      }
+
+      /* ── RESPONSIVE ──────────────────────── */
+      @media (max-width: 768px) {
+        .sidebar {
+          width: 60px;
+        }
+        .sidebar-brand .sidebar-logo span,
+        .sidebar-sub,
+        .nav-item span:not(.nav-icon),
+        .nav-badge,
+        .nav-section-label,
+        .admin-info {
+          display: none;
+        }
+        .main {
+          margin-left: 60px;
+        }
+        .stat-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .content {
+          padding: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- LOGIN WALL -->
+    <div id="loginWall">
+      <div class="login-card">
+        <div style="font-size: 40px; margin-bottom: 12px">🛡️</div>
+        <h2>Admin Access</h2>
+        <p>ExamEdge dashboard — authorized personnel only</p>
+        <form
+          onsubmit="
+            event.preventDefault();
+            adminLogin();
+          "
+        >
+          <input
+            class="login-input"
+            type="email"
+            id="adminEmail"
+            placeholder="Admin email"
+            autocomplete="email"
+          />
+          <input
+            class="login-input"
+            type="password"
+            id="adminPass"
+            placeholder="Password"
+            autocomplete="current-password"
+          />
+          <button class="login-btn" type="submit">🔐 Sign In</button>
+        </form>
+        <div class="login-err" id="loginErr"></div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="sidebar-logo">
+          <div class="logo-dot">📋</div>
+          <div>
+            <div>ExamEdge</div>
+            <div class="sidebar-sub">Admin Panel</div>
+          </div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section-label">Overview</div>
+        <button class="nav-item active" onclick="showPage('overview', this)">
+          <span class="nav-icon">📊</span><span>Dashboard</span>
+        </button>
+        <button class="nav-item" onclick="showPage('users', this)">
+          <span class="nav-icon">👥</span><span>Users</span>
+        </button>
+
+        <div class="nav-section-label">Content</div>
+        <button class="nav-item" onclick="showPage('flags', this)">
+          <span class="nav-icon">🚩</span><span>Flagged Questions</span>
+          <span class="nav-badge" id="flagBadge" style="display: none">0</span>
+        </button>
+        <button class="nav-item" onclick="showPage('leaderboard', this)">
+          <span class="nav-icon">🏆</span><span>Leaderboard</span>
+        </button>
+        <button class="nav-item" onclick="showPage('attempts', this)">
+          <span class="nav-icon">📝</span><span>Attempts</span>
+        </button>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="admin-chip">
+          <div class="admin-avatar" id="sidebarAvatar">A</div>
+          <div class="admin-info">
+            <div class="admin-name" id="sidebarName">Admin</div>
+            <div class="admin-role">Super Admin</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main">
+      <header class="topbar">
+        <div class="topbar-title" id="topbarTitle">Dashboard</div>
+        <div class="topbar-right">
+          <div class="status-dot" title="Firestore connected"></div>
+          <button class="refresh-btn" onclick="refreshCurrent()">
+            <span class="ri">🔄</span> Refresh
+          </button>
+          <button
+            class="refresh-btn"
+            onclick="adminLogout()"
+            style="color: var(--red)"
+          >
+            ← Logout
+          </button>
+        </div>
+      </header>
+
+      <div class="content">
+        <!-- ── OVERVIEW PAGE ── -->
+        <div class="page active" id="page-overview">
+          <div class="stat-grid" id="overviewStats">
+            <div class="loading">
+              <div class="spin"></div>
+              Loading stats…
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
+            <!-- Top Users -->
+            <div>
+              <div class="sec-hdr">
+                <div class="sec-title">🏅 Top Users by Attempts</div>
+              </div>
+              <div class="table-card">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>User</th>
+                      <th>Attempts</th>
+                      <th>Avg Acc</th>
+                    </tr>
+                  </thead>
+                  <tbody id="topUsersTable">
+                    <tr>
+                      <td colspan="4">
+                        <div class="loading"><div class="spin"></div></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Exam Popularity -->
+            <div>
+              <div class="sec-hdr">
+                <div class="sec-title">📈 Exam Popularity</div>
+              </div>
+              <div class="table-card">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Exam</th>
+                      <th>Attempts</th>
+                      <th>Avg Score</th>
+                    </tr>
+                  </thead>
+                  <tbody id="examPopTable">
+                    <tr>
+                      <td colspan="3">
+                        <div class="loading"><div class="spin"></div></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="sec-hdr" style="margin-top: 8px">
+            <div class="sec-title">⚡ Recent Attempts</div>
+            <div class="sec-badge" id="recentBadge">—</div>
+          </div>
+          <div class="table-card">
+            <table>
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Exam</th>
+                  <th>Mock</th>
+                  <th>Score</th>
+                  <th>Accuracy</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody id="recentTable">
+                <tr>
+                  <td colspan="6">
+                    <div class="loading"><div class="spin"></div></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ── USERS PAGE ── -->
+        <div class="page" id="page-users">
+          <div class="sec-hdr">
+            <div class="sec-title">👥 All Users</div>
+            <div class="sec-badge" id="usersBadge">—</div>
+          </div>
+          <div class="table-card">
+            <table>
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Email</th>
+                  <th>Attempts</th>
+                  <th>Best Score</th>
+                  <th>Avg Accuracy</th>
+                  <th>Last Active</th>
+                </tr>
+              </thead>
+              <tbody id="usersTable">
+                <tr>
+                  <td colspan="6">
+                    <div class="loading"><div class="spin"></div></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ── FLAGS PAGE ── -->
+        <div class="page" id="page-flags">
+          <div class="sec-hdr">
+            <div class="sec-title">🚩 Flagged Questions</div>
+            <div class="sec-badge" id="flagsCountBadge">—</div>
+          </div>
+          <div style="display: flex; gap: 8px; margin-bottom: 16px">
+            <button
+              class="lb-filter-btn active"
+              onclick="filterFlags('all', this)"
+            >
+              All
+            </button>
+            <button
+              class="lb-filter-btn"
+              onclick="filterFlags('unresolved', this)"
+            >
+              ⏳ Unresolved
+            </button>
+            <button
+              class="lb-filter-btn"
+              onclick="filterFlags('resolved', this)"
+            >
+              ✅ Resolved
+            </button>
+          </div>
+          <div id="flagsList">
+            <div class="loading">
+              <div class="spin"></div>
+              Loading reports…
+            </div>
+          </div>
+        </div>
+
+        <!-- ── LEADERBOARD PAGE ── -->
+        <div class="page" id="page-leaderboard">
+          <div class="sec-hdr">
+            <div class="sec-title">🏆 Global Leaderboard</div>
+          </div>
+          <div class="lb-exam-filter" id="lbExamFilter"></div>
+          <div class="table-card">
+            <table>
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>User</th>
+                  <th>Exam</th>
+                  <th>Mock</th>
+                  <th>Score</th>
+                  <th>Accuracy</th>
+                  <th>Correct</th>
+                  <th>Wrong</th>
+                </tr>
+              </thead>
+              <tbody id="lbTable">
+                <tr>
+                  <td colspan="8">
+                    <div class="loading"><div class="spin"></div></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ── ATTEMPTS PAGE ── -->
+        <div class="page" id="page-attempts">
+          <div class="sec-hdr">
+            <div class="sec-title">📝 All Attempts</div>
+            <div class="sec-badge" id="attemptsBadge">—</div>
+          </div>
+          <div class="table-card">
+            <table>
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Exam</th>
+                  <th>Mode</th>
+                  <th>Score</th>
+                  <th>Accuracy</th>
+                  <th>Correct</th>
+                  <th>Wrong</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody id="attemptsTable">
+                <tr>
+                  <td colspan="8">
+                    <div class="loading"><div class="spin"></div></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- /content -->
+    </div>
+    <!-- /main -->
+
+    <div id="toast"></div>
+
+    <script>
+      // ── FIREBASE CONFIG ───────────────────────
+      const firebaseConfig = {
+        apiKey: "AIzaSyAGY3cJ77N-4CF9sQS8vpziqXxkvIxvr8M",
+        authDomain: "examedge-84197.firebaseapp.com",
+        projectId: "examedge-84197",
+        storageBucket: "examedge-84197.firebasestorage.app",
+        messagingSenderId: "547588996223",
+        appId: "1:547588996223:web:c8304b0599edbeb060d34a",
+      };
+      try {
+        firebase.initializeApp(firebaseConfig);
+      } catch (e) {}
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+
+      // ── ADMIN EMAILS (only these can access) ──
+      const ADMIN_EMAILS = ["jattinkhajuria9@gmail.com"]; // add your email here
+
+      let currentPage = "overview";
+      let allFlags = [];
+      let flagFilter = "all";
+      let lbExamFilter = "all";
+      let allLbData = [];
+
+      // ── AUTH ──────────────────────────────────
+      auth.onAuthStateChanged((user) => {
+        if (user && ADMIN_EMAILS.includes(user.email)) {
+          document.getElementById("loginWall").style.display = "none";
+          const name = user.displayName || user.email.split("@")[0];
+          document.getElementById("sidebarName").textContent = name;
+          document.getElementById("sidebarAvatar").textContent =
+            name[0].toUpperCase();
+          loadAll();
+        } else if (user) {
+          // Logged in but not admin
+          document.getElementById("loginErr").textContent =
+            "⛔ Access denied. Not an admin account.";
+          auth.signOut();
+        }
+      });
+
+      function adminLogin() {
+        const email = document.getElementById("adminEmail").value.trim();
+        const pass = document.getElementById("adminPass").value;
+        const err = document.getElementById("loginErr");
+        err.textContent = "";
+        if (!ADMIN_EMAILS.includes(email)) {
+          err.textContent = "⛔ This email is not an admin account.";
+          return;
+        }
+        auth.signInWithEmailAndPassword(email, pass).catch((e) => {
+          err.textContent = "❌ " + e.message;
+        });
+      }
+
+      function adminLogout() {
+        auth.signOut().then(() => {
+          document.getElementById("loginWall").style.display = "flex";
+        });
+      }
+
+      // ── NAVIGATION ────────────────────────────
+      function showPage(page, btn) {
+        document
+          .querySelectorAll(".page")
+          .forEach((p) => p.classList.remove("active"));
+        document
+          .querySelectorAll(".nav-item")
+          .forEach((b) => b.classList.remove("active"));
+        document.getElementById("page-" + page).classList.add("active");
+        if (btn) btn.classList.add("active");
+        currentPage = page;
+        const titles = {
+          overview: "Dashboard",
+          users: "Users",
+          flags: "Flagged Questions",
+          leaderboard: "Leaderboard",
+          attempts: "Attempts",
+        };
+        document.getElementById("topbarTitle").textContent =
+          titles[page] || page;
+      }
+
+      function refreshCurrent() {
+        const btn = document.querySelector(".refresh-btn");
+        btn.classList.add("spinning");
+        loadAll().finally(() =>
+          setTimeout(() => btn.classList.remove("spinning"), 800),
+        );
+      }
+
+      // ── LOAD ALL DATA ─────────────────────────
+      async function loadAll() {
+        await Promise.all([
+          loadOverview(),
+          loadFlags(),
+          loadLeaderboard(),
+          loadAttempts(),
+        ]);
+      }
+
+      // ── HELPERS ───────────────────────────────
+      function fmt(v) {
+        if (typeof v !== "number") return v ?? "—";
+        return v % 1 === 0 ? v : v.toFixed(1);
+      }
+      function fmtDate(ts) {
+        if (!ts) return "—";
+        const d = ts.toDate ? ts.toDate() : new Date(ts);
+        return (
+          d.toLocaleDateString("en-IN", {
+            day: "2-digit",
+            month: "short",
+            year: "numeric",
+          }) +
+          " " +
+          d.toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" })
+        );
+      }
+      function showToast(msg) {
+        const t = document.getElementById("toast");
+        t.textContent = msg;
+        t.style.display = "block";
+        clearTimeout(showToast._t);
+        showToast._t = setTimeout(() => (t.style.display = "none"), 3000);
+      }
+      function accBadge(acc) {
+        const a = parseFloat(acc) || 0;
+        const cls =
+          a >= 70 ? "badge-green" : a >= 50 ? "badge-orange" : "badge-red";
+        return `<span class="badge ${cls}">${a.toFixed(1)}%</span>`;
+      }
+
+      // ── OVERVIEW ──────────────────────────────
+      async function loadOverview() {
+        try {
+          // Fetch leaderboard for user count & stats
+          const lbSnap = await db.collection("leaderboard").get();
+          const flagSnap = await db.collection("flaggedQuestions").get();
+
+          const lbDocs = lbSnap.docs.map((d) => d.data());
+          const uniqueUsers = new Set(lbDocs.map((d) => d.userId)).size;
+          const totalAttempts = lbDocs.length;
+          const avgScore = lbDocs.length
+            ? (
+                lbDocs.reduce((s, d) => s + (d.score || 0), 0) / lbDocs.length
+              ).toFixed(1)
+            : 0;
+          const unresolvedFlags = flagSnap.docs.filter(
+            (d) => !d.data().resolved,
+          ).length;
+
+          // Exam breakdown
+          const examMap = {};
+          lbDocs.forEach((d) => {
+            const k = d.examType || "Unknown";
+            if (!examMap[k])
+              examMap[k] = { count: 0, totalScore: 0, totalAcc: 0 };
+            examMap[k].count++;
+            examMap[k].totalScore += d.score || 0;
+            examMap[k].totalAcc += parseFloat(d.accuracy) || 0;
+          });
+
+          // Stat cards
+          document.getElementById("overviewStats").innerHTML = `
+        <div class="stat-card blue">
+          <div class="stat-icon">👥</div>
+          <div class="stat-val">${uniqueUsers}</div>
+          <div class="stat-lbl">Total Users</div>
+          <div class="stat-sub">Unique registered</div>
+        </div>
+        <div class="stat-card green">
+          <div class="stat-icon">📝</div>
+          <div class="stat-val">${totalAttempts}</div>
+          <div class="stat-lbl">Total Attempts</div>
+          <div class="stat-sub">Leaderboard entries</div>
+        </div>
+        <div class="stat-card orange">
+          <div class="stat-icon">⚡</div>
+          <div class="stat-val">${avgScore}</div>
+          <div class="stat-lbl">Avg Score</div>
+          <div class="stat-sub">Across all exams</div>
+        </div>
+        <div class="stat-card red">
+          <div class="stat-icon">🚩</div>
+          <div class="stat-val">${unresolvedFlags}</div>
+          <div class="stat-lbl">Open Reports</div>
+          <div class="stat-sub">Needs review</div>
+        </div>
+        <div class="stat-card purple">
+          <div class="stat-icon">📚</div>
+          <div class="stat-val">${Object.keys(examMap).length}</div>
+          <div class="stat-lbl">Active Exams</div>
+          <div class="stat-sub">With attempts</div>
+        </div>
+      `;
+
+          // Update flag badge
+          if (unresolvedFlags > 0) {
+            const badge = document.getElementById("flagBadge");
+            badge.textContent = unresolvedFlags;
+            badge.style.display = "inline";
+          }
+
+          // Exam popularity table
+          const examRows =
+            Object.entries(examMap)
+              .sort((a, b) => b[1].count - a[1].count)
+              .map(
+                ([name, v]) => `
+          <tr>
+            <td class="td-main">${name}</td>
+            <td><span class="badge badge-blue">${v.count}</span></td>
+            <td class="td-mono">${(v.totalScore / v.count).toFixed(1)}</td>
+          </tr>
+        `,
+              )
+              .join("") ||
+            `<tr><td colspan="3"><div class="empty"><div class="empty-icon">📭</div><div class="empty-text">No data yet</div></div></td></tr>`;
+          document.getElementById("examPopTable").innerHTML = examRows;
+
+          // Top users by attempt count
+          const userMap = {};
+          lbDocs.forEach((d) => {
+            const uid = d.userId;
+            if (!uid) return;
+            if (!userMap[uid])
+              userMap[uid] = {
+                name: d.userName || "Anonymous",
+                count: 0,
+                totalAcc: 0,
+              };
+            userMap[uid].count++;
+            userMap[uid].totalAcc += parseFloat(d.accuracy) || 0;
+          });
+          const topUsers = Object.values(userMap)
+            .sort((a, b) => b.count - a.count)
+            .slice(0, 10);
+          document.getElementById("topUsersTable").innerHTML =
+            topUsers
+              .map(
+                (u, i) => `
+        <tr>
+          <td><span class="badge badge-purple">${i + 1}</span></td>
+          <td class="td-main">${u.name}</td>
+          <td>${u.count}</td>
+          <td>${accBadge((u.totalAcc / u.count).toFixed(1))}</td>
+        </tr>
+      `,
+              )
+              .join("") ||
+            `<tr><td colspan="4" class="empty">No users yet</td></tr>`;
+
+          // Recent attempts
+          loadRecentAttempts();
+        } catch (e) {
+          console.error("Overview error:", e);
+          document.getElementById("overviewStats").innerHTML =
+            `<div class="empty"><div class="empty-icon">⚠️</div><div class="empty-text">Error loading stats: ${e.message}</div></div>`;
+        }
+      }
+
+      async function loadRecentAttempts() {
+        try {
+          const snap = await db
+            .collection("leaderboard")
+            .orderBy("createdAt", "desc")
+            .limit(20)
+            .get();
+          const docs = snap.docs.map((d) => d.data());
+          document.getElementById("recentBadge").textContent =
+            docs.length + " recent";
+          document.getElementById("recentTable").innerHTML =
+            docs
+              .map(
+                (d) => `
+        <tr>
+          <td class="td-main">${d.userName || "Anonymous"}</td>
+          <td>${d.examType || "—"}</td>
+          <td><span class="badge badge-blue">Mock ${d.mockNumber || "—"}</span></td>
+          <td class="td-mono">${fmt(d.score)}</td>
+          <td>${accBadge(d.accuracy)}</td>
+          <td style="font-size:11px;color:var(--text3)">${fmtDate(d.createdAt)}</td>
+        </tr>
+      `,
+              )
+              .join("") ||
+            `<tr><td colspan="6"><div class="empty"><div class="empty-icon">📭</div><div class="empty-text">No recent attempts</div></div></td></tr>`;
+        } catch (e) {
+          document.getElementById("recentTable").innerHTML =
+            `<tr><td colspan="6">Error: ${e.message}</td></tr>`;
+        }
+      }
+
+      // ── USERS ─────────────────────────────────
+      async function loadAttempts() {
+        try {
+          const snap = await db
+            .collection("leaderboard")
+            .orderBy("createdAt", "desc")
+            .limit(100)
+            .get();
+          const docs = snap.docs.map((d) => d.data());
+
+          // Build user map for Users page
+          const userMap = {};
+          docs.forEach((d) => {
+            const uid = d.userId || "guest";
+            if (!userMap[uid])
+              userMap[uid] = {
+                name: d.userName || "Anonymous",
+                attempts: 0,
+                bestScore: 0,
+                totalAcc: 0,
+                lastActive: null,
+              };
+            userMap[uid].attempts++;
+            if ((d.score || 0) > userMap[uid].bestScore)
+              userMap[uid].bestScore = d.score;
+            userMap[uid].totalAcc += parseFloat(d.accuracy) || 0;
+            if (
+              !userMap[uid].lastActive ||
+              d.createdAt?.seconds > userMap[uid].lastActive?.seconds
+            )
+              userMap[uid].lastActive = d.createdAt;
+          });
+
+          const users = Object.values(userMap).sort(
+            (a, b) => b.attempts - a.attempts,
+          );
+          document.getElementById("usersBadge").textContent =
+            users.length + " users";
+          document.getElementById("usersTable").innerHTML =
+            users
+              .map(
+                (u) => `
+        <tr>
+          <td class="td-main">👤 ${u.name}</td>
+          <td style="font-size:11px;color:var(--text3)">—</td>
+          <td><span class="badge badge-blue">${u.attempts}</span></td>
+          <td class="td-mono">${fmt(u.bestScore)}</td>
+          <td>${accBadge((u.totalAcc / u.attempts).toFixed(1))}</td>
+          <td style="font-size:11px;color:var(--text3)">${fmtDate(u.lastActive)}</td>
+        </tr>
+      `,
+              )
+              .join("") ||
+            `<tr><td colspan="6"><div class="empty"><div class="empty-icon">👥</div><div class="empty-text">No users yet</div></div></td></tr>`;
+
+          // Attempts page
+          document.getElementById("attemptsBadge").textContent =
+            docs.length + " total";
+          document.getElementById("attemptsTable").innerHTML =
+            docs
+              .map((d) => {
+                const mode =
+                  d.examMode === "subject"
+                    ? "Subject"
+                    : d.examMode === "chapter"
+                      ? "Chapter"
+                      : "Full Mock";
+                return `
+          <tr>
+            <td class="td-main">${d.userName || "Anonymous"}</td>
+            <td>${d.examType || "—"}</td>
+            <td><span class="badge ${d.examMode === "full" || !d.examMode ? "badge-green" : "badge-orange"}">${mode}</span></td>
+            <td class="td-mono">${fmt(d.score)}</td>
+            <td>${accBadge(d.accuracy)}</td>
+            <td style="color:var(--green)">${d.correct || 0}</td>
+            <td style="color:var(--red)">${d.wrong || 0}</td>
+            <td style="font-size:11px;color:var(--text3)">${fmtDate(d.createdAt)}</td>
+          </tr>
+        `;
+              })
+              .join("") ||
+            `<tr><td colspan="8"><div class="empty"><div class="empty-icon">📝</div><div class="empty-text">No attempts yet</div></div></td></tr>`;
+        } catch (e) {
+          console.error("Attempts error:", e);
+        }
+      }
+
+      // ── FLAGS ─────────────────────────────────
+      async function loadFlags() {
+        try {
+          const snap = await db
+            .collection("flaggedQuestions")
+            .orderBy("createdAt", "desc")
+            .limit(100)
+            .get();
+          allFlags = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+          document.getElementById("flagsCountBadge").textContent =
+            allFlags.length + " reports";
+          const unresolved = allFlags.filter((f) => !f.resolved).length;
+          if (unresolved > 0) {
+            const badge = document.getElementById("flagBadge");
+            badge.textContent = unresolved;
+            badge.style.display = "inline";
+          }
+          renderFlags();
+        } catch (e) {
+          document.getElementById("flagsList").innerHTML =
+            `<div class="empty"><div class="empty-icon">⚠️</div><div class="empty-text">Error: ${e.message}</div></div>`;
+        }
+      }
+
+      function filterFlags(type, btn) {
+        flagFilter = type;
+        document
+          .querySelectorAll(".lb-filter-btn")
+          .forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderFlags();
+      }
+
+      function renderFlags() {
+        let flags = allFlags;
+        if (flagFilter === "unresolved")
+          flags = flags.filter((f) => !f.resolved);
+        if (flagFilter === "resolved") flags = flags.filter((f) => f.resolved);
+
+        if (!flags.length) {
+          document.getElementById("flagsList").innerHTML =
+            `<div class="empty"><div class="empty-icon">✅</div><div class="empty-text">No reports in this category</div></div>`;
+          return;
+        }
+
+        document.getElementById("flagsList").innerHTML = flags
+          .map(
+            (f) => `
+      <div class="flag-card ${f.resolved ? "resolved" : "unread"}" id="flag-${f.id}">
+        <div class="flag-header">
+          <div class="flag-icon">${f.resolved ? "✅" : "🚩"}</div>
+          <div style="flex:1">
+            <div class="flag-title">${f.questionText || "Question text not available"}</div>
+            <div class="flag-meta">
+              ${f.examType || "—"} · Mock ${f.mockNumber || "—"} · ${f.subject || "—"}
+              &nbsp;·&nbsp; by <strong>${f.userName || "Anonymous"}</strong>
+              &nbsp;·&nbsp; ${f.reportedAt ? new Date(f.reportedAt).toLocaleDateString("en-IN") : "—"}
+            </div>
+          </div>
+          <div>
+            ${
+              f.resolved
+                ? `<span class="badge badge-green">✅ Resolved</span>`
+                : `<span class="badge badge-orange">⏳ Open</span>`
+            }
+          </div>
+        </div>
+        <div class="flag-reason">⚠️ ${f.reason || "No reason given"}</div>
+        ${f.note ? `<div class="flag-note">💬 "${f.note}"</div>` : ""}
+        <div class="flag-actions">
+          ${
+            !f.resolved
+              ? `
+            <button class="flag-btn success" onclick="resolveFlag('${f.id}')">✅ Mark Resolved</button>
+          `
+              : `
+            <button class="flag-btn" onclick="unresolveFlag('${f.id}')">🔄 Reopen</button>
+          `
+          }
+          <button class="flag-btn danger" onclick="deleteFlag('${f.id}')">🗑️ Delete</button>
+          <button class="flag-btn" onclick="copyFlagId('${f.id}')">📋 Copy ID</button>
+        </div>
+      </div>
+    `,
+          )
+          .join("");
+      }
+
+      async function resolveFlag(id) {
+        try {
+          await db
+            .collection("flaggedQuestions")
+            .doc(id)
+            .update({
+              resolved: true,
+              resolvedAt: firebase.firestore.FieldValue.serverTimestamp(),
+            });
+          const f = allFlags.find((f) => f.id === id);
+          if (f) f.resolved = true;
+          renderFlags();
+          showToast("✅ Marked as resolved");
+        } catch (e) {
+          showToast("❌ Error: " + e.message);
+        }
+      }
+
+      async function unresolveFlag(id) {
+        try {
+          await db
+            .collection("flaggedQuestions")
+            .doc(id)
+            .update({ resolved: false });
+          const f = allFlags.find((f) => f.id === id);
+          if (f) f.resolved = false;
+          renderFlags();
+          showToast("🔄 Reopened");
+        } catch (e) {
+          showToast("❌ Error: " + e.message);
+        }
+      }
+
+      async function deleteFlag(id) {
+        if (!confirm("Delete this report permanently?")) return;
+        try {
+          await db.collection("flaggedQuestions").doc(id).delete();
+          allFlags = allFlags.filter((f) => f.id !== id);
+          renderFlags();
+          showToast("🗑️ Deleted");
+        } catch (e) {
+          showToast("❌ Error: " + e.message);
+        }
+      }
+
+      function copyFlagId(id) {
+        navigator.clipboard.writeText(id);
+        showToast("📋 ID copied");
+      }
+
+      // ── LEADERBOARD ───────────────────────────
+      async function loadLeaderboard() {
+        try {
+          const snap = await db
+            .collection("leaderboard")
+            .orderBy("score", "desc")
+            .limit(200)
+            .get();
+          allLbData = snap.docs.map((d) => d.data());
+
+          // Build exam filter tabs
+          const exams = [
+            "all",
+            ...new Set(allLbData.map((d) => d.examType).filter(Boolean)),
+          ];
+          document.getElementById("lbExamFilter").innerHTML = exams
+            .map(
+              (e) => `
+        <button class="lb-filter-btn ${e === "all" ? "active" : ""}"
+          onclick="filterLb('${e}', this)">${e === "all" ? "🌍 All Exams" : e}</button>
+      `,
+            )
+            .join("");
+
+          renderLeaderboard();
+        } catch (e) {
+          document.getElementById("lbTable").innerHTML =
+            `<tr><td colspan="8">Error: ${e.message}</td></tr>`;
+        }
+      }
+
+      function filterLb(exam, btn) {
+        lbExamFilter = exam;
+        document
+          .querySelectorAll("#lbExamFilter .lb-filter-btn")
+          .forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderLeaderboard();
+      }
+
+      function renderLeaderboard() {
+        let data =
+          lbExamFilter === "all"
+            ? allLbData
+            : allLbData.filter((d) => d.examType === lbExamFilter);
+        data = data.sort((a, b) => b.score - a.score).slice(0, 50);
+
+        if (!data.length) {
+          document.getElementById("lbTable").innerHTML =
+            `<tr><td colspan="8"><div class="empty"><div class="empty-icon">🏆</div><div class="empty-text">No entries yet</div></div></td></tr>`;
+          return;
+        }
+
+        document.getElementById("lbTable").innerHTML = data
+          .map((d, i) => {
+            const medal =
+              i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : i + 1;
+            return `
+        <tr>
+          <td><span class="badge ${i < 3 ? "badge-orange" : "badge-purple"}">${medal}</span></td>
+          <td class="td-main">${d.userName || "Anonymous"}</td>
+          <td style="font-size:12px">${d.examType || "—"}</td>
+          <td><span class="badge badge-blue">Mock ${d.mockNumber || "—"}</span></td>
+          <td class="td-mono" style="font-size:16px;font-weight:800;color:var(--primary)">${fmt(d.score)}</td>
+          <td>${accBadge(d.accuracy)}</td>
+          <td style="color:var(--green)">${d.correct || 0}</td>
+          <td style="color:var(--red)">${d.wrong || 0}</td>
+        </tr>
+      `;
+          })
+          .join("");
+      }
+    </script>
+  </body>
+</html>
