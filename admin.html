@@ -1046,7 +1046,7 @@
       const db = firebase.firestore();
 
       // ── ADMIN EMAILS (only these can access) ──
-      const ADMIN_EMAILS = ["jattinkhajuria9@gmail.com"]; // add your email here
+      const ADMIN_EMAILS = ["jattinkhajuria2001@gmail.com"]; // add your email here
 
       let currentPage = "overview";
       let allFlags = [];
@@ -1501,13 +1501,10 @@
 
       async function resolveFlag(id) {
         try {
-          await db
-            .collection("flaggedQuestions")
-            .doc(id)
-            .update({
-              resolved: true,
-              resolvedAt: firebase.firestore.FieldValue.serverTimestamp(),
-            });
+          await db.collection("flaggedQuestions").doc(id).update({
+            resolved: true,
+            resolvedAt: firebase.firestore.FieldValue.serverTimestamp(),
+          });
           const f = allFlags.find((f) => f.id === id);
           if (f) f.resolved = true;
           renderFlags();
