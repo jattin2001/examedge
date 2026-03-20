@@ -1,12 +1,141 @@
 <!doctype html>
-<html>
+<html data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; url=login.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ExamEdge</title>
-    <script>
-      window.location.replace("login.html");
-    </script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="ExamEdge" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #0e7490 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .splash {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        animation: fadeIn 0.4s ease;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(12px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      .splash-icon {
+        width: 90px;
+        height: 90px;
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      }
+      .splash-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .splash-name {
+        font-size: 28px;
+        font-weight: 900;
+        color: #fff;
+        letter-spacing: -0.5px;
+      }
+
+      .splash-tagline {
+        font-size: 13px;
+        color: rgba(255,255,255,0.5);
+        margin-top: -12px;
+      }
+
+      .splash-spinner {
+        width: 32px;
+        height: 32px;
+        border: 3px solid rgba(255,255,255,0.15);
+        border-top-color: #38bdf8;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        margin-top: 8px;
+      }
+
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+
+      /* Dot grid background */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+        background-size: 28px 28px;
+        pointer-events: none;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="splash">
+      <div class="splash-icon">
+        <img src="icons/icon-192.png" alt="ExamEdge" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'width:90px;height:90px;background:linear-gradient(135deg,#2563eb,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:40px\'>📋</div>'" />
+      </div>
+      <div class="splash-name">ExamEdge</div>
+      <div class="splash-tagline">Your exam prep companion</div>
+      <div class="splash-spinner"></div>
+    </div>
+
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyAGY3cJ77N-4CF9sQS8vpziqXxkvIxvr8M",
+        authDomain: "examedge-84197.firebaseapp.com",
+        projectId: "examedge-84197",
+        storageBucket: "examedge-84197.firebasestorage.app",
+        messagingSenderId: "547588996223",
+        appId: "1:547588996223:web:c8304b0599edbeb060d34a",
+      };
+
+      try { firebase.initializeApp(firebaseConfig); } catch(e) {}
+
+      // Register service worker
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/sw.js").catch(() => {});
+      }
+
+      // Wait for Firebase auth to resolve, then redirect
+      // This eliminates the exams.html flash — we never go there directly
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          // Logged in — go straight to exams
+          window.location.replace("exams.html");
+        } else {
+          // Not logged in — go to login
+          window.location.replace("login.html");
+        }
+      });
+
+      // Fallback: if Firebase takes too long (slow network), redirect after 4s
+      setTimeout(() => {
+        if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
+          window.location.replace("login.html");
+        }
+      }, 4000);
+    </script>
+  </body>
 </html>

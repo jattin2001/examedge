@@ -2663,6 +2663,45 @@
         localStorage.setItem("ee-pwa-dismissed", "1");
       }
       window.addEventListener("appinstalled", () => dismissPWA());
+
+      // Show banner when user opens site in Safari browser (not from home screen)
+      function showSafariBrowserHint() {
+        const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        const isStandalone = window.navigator.standalone === true;
+        if (!isIOS || !isSafari || isStandalone) return;
+
+        const style = document.createElement("style");
+        style.textContent = "@keyframes slideDown{from{transform:translateY(-100%)}to{transform:translateY(0)}}";
+        document.head.appendChild(style);
+
+        const banner = document.createElement("div");
+        banner.id = "safari-hint-banner";
+        banner.style.cssText = [
+          "position:fixed","top:0","left:0","right:0",
+          "z-index:9999",
+          "background:linear-gradient(135deg,#1e3a8a,#0e7490)",
+          "color:#fff",
+          "padding:10px 16px",
+          "display:flex","align-items:center","gap:10px",
+          "font-family:sans-serif","font-size:13px",
+          "box-shadow:0 2px 12px rgba(0,0,0,0.3)",
+          "animation:slideDown 0.3s ease",
+        ].join(";");
+        banner.innerHTML = `
+          <span style="font-size:22px;flex-shrink:0">📲</span>
+          <span style="flex:1;line-height:1.4">
+            <strong>Better on home screen!</strong><br>
+            <span style="opacity:0.8;font-size:12px">Tap Share ⬆️ then "Add to Home Screen"</span>
+          </span>
+          <button onclick="document.getElementById('safari-hint-banner').remove()"
+            style="background:rgba(255,255,255,0.15);border:none;color:#fff;border-radius:8px;padding:6px 10px;cursor:pointer;font-size:12px;font-weight:700;flex-shrink:0">✕</button>
+        `;
+        document.body.prepend(banner);
+        setTimeout(() => { const b = document.getElementById("safari-hint-banner"); if(b) b.remove(); }, 8000);
+      }
+      setTimeout(showSafariBrowserHint, 1500);
+
     </script>
 
     <script>
