@@ -597,7 +597,7 @@
               <span class="icon">📧</span>
               <input
                 type="email"
-                id="loginEmail"
+                id="loginEmailInput"
                 placeholder="you@example.com"
                 autocomplete="email"
               />
@@ -976,7 +976,7 @@
 
       // ── EMAIL LOGIN ─────────────────────────
       async function loginEmail() {
-        const email = document.getElementById("loginEmail").value.trim();
+        const email = document.getElementById("loginEmailInput").value.trim();
         const pass = document.getElementById("loginPassword").value;
         if (!email || !pass) return showMsg("Please fill all fields.");
         handlingAuth = true;
