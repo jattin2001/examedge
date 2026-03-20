@@ -2,6 +2,11 @@
 <html data-theme="light">
   <head>
     <meta charset="UTF-8" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="ExamEdge" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ExamEdge — Mock Test</title>
     <link
@@ -248,6 +253,7 @@
             🔖 Mark Review
           </button>
           <button class="btn-danger" onclick="clearResponse()">✖ Clear</button>
+          <button class="btn-flag" onclick="openFlagModal()" title="Report a problem with this question">🚩</button>
           <button class="btn-primary" onclick="saveNext()">
             Save &amp; Next →
           </button>
@@ -559,17 +565,51 @@
       </button>
     </div>
 
+    <!-- FLAG / REPORT MODAL -->
+    <div id="flagModal" class="modal-overlay" onclick="closeFlagModal()">
+      <div class="modal-box" onclick="event.stopPropagation()" style="text-align:center">
+        <div style="font-size:42px;margin-bottom:10px">🚩</div>
+        <h3 style="margin-bottom:6px">Report a Problem</h3>
+        <p style="color:var(--text2);font-size:13px;margin-bottom:18px" id="flagQRef">Q—</p>
+        <div id="flagOptions" style="display:flex;flex-direction:column;gap:8px;margin-bottom:18px;text-align:left">
+          <label class="flag-option"><input type="radio" name="flagReason" value="Wrong answer key"> Wrong answer key</label>
+          <label class="flag-option"><input type="radio" name="flagReason" value="Typo / spelling error"> Typo / spelling error</label>
+          <label class="flag-option"><input type="radio" name="flagReason" value="Wrong question"> Wrong / irrelevant question</label>
+          <label class="flag-option"><input type="radio" name="flagReason" value="Image/passage missing"> Image or passage missing</label>
+          <label class="flag-option"><input type="radio" name="flagReason" value="Other"> Other</label>
+        </div>
+        <textarea id="flagNote" placeholder="Add details (optional)..." style="width:100%;border-radius:10px;border:1.5px solid var(--border);background:var(--bg);color:var(--text);padding:10px 12px;font-size:13px;font-family:inherit;resize:vertical;min-height:64px;outline:none;box-sizing:border-box"></textarea>
+        <div style="display:flex;gap:10px;margin-top:14px">
+          <button class="btn-secondary" style="flex:1;padding:12px;border-radius:12px" onclick="closeFlagModal()">Cancel</button>
+          <button class="btn-primary" style="flex:1;padding:12px;border-radius:12px" onclick="submitFlag()">🚩 Submit Report</button>
+        </div>
+      </div>
+    </div>
+
     <!-- SHARE MODAL -->
     <div id="shareModal" class="modal-overlay" onclick="closeShare()">
-      <div class="modal-box" onclick="event.stopPropagation()">
-        <h3>📤 Share Your Score</h3>
+      <div class="modal-box" onclick="event.stopPropagation()" style="padding:20px">
+        <h3 style="margin-bottom:14px;text-align:center">📤 Share Your Score</h3>
+        <!-- This card gets rendered to image -->
         <div id="shareCard">
-          <div class="share-logo">📋 ExamEdge — SSC Mock</div>
-          <div class="share-score-big" id="shareScoreBig">—</div>
-          <div class="share-stats" id="shareStats">—</div>
-          <div class="share-date" id="shareDate">—</div>
+          <div class="sc-brand">📋 ExamEdge</div>
+          <div class="sc-exam" id="scExamName">SSC CGL Tier 1 — Mock 1</div>
+          <div class="sc-score" id="scScore">—</div>
+          <div class="sc-max" id="scMax">out of —</div>
+          <div class="sc-chips">
+            <div class="sc-chip sc-correct">✅ <span id="scCorrect">—</span> Correct</div>
+            <div class="sc-chip sc-wrong">❌ <span id="scWrong">—</span> Wrong</div>
+            <div class="sc-chip sc-skip">⏭ <span id="scSkip">—</span> Skipped</div>
+            <div class="sc-chip sc-acc">🎯 <span id="scAcc">—</span> Accuracy</div>
+          </div>
+          <div class="sc-rank-row">
+            <span class="sc-rank" id="scRank">#—</span>
+            <span class="sc-pct" id="scPct">—% Percentile</span>
+          </div>
+          <div class="sc-footer">examedge.onrender.com &nbsp;·&nbsp; <span id="scDate">—</span></div>
         </div>
-        <div class="share-actions">
+        <div class="share-actions" style="margin-top:14px">
+          <button onclick="downloadShareImage()">📥 Save Image</button>
           <button onclick="copyShareText()">📋 Copy Text</button>
           <button onclick="closeShare()">✖ Close</button>
         </div>
@@ -639,6 +679,7 @@
       </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="script.js"></script>
 
     <!-- FOOTER -->
@@ -657,5 +698,55 @@
       Made with ❤️ by
       <strong style="color: var(--text2)">Jattin Khajuria</strong>
     </footer>
+
+    <script>
+      // PWA install prompt
+      let _pwaPrompt = null;
+      window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        _pwaPrompt = e;
+        // Show install banner after 5 seconds if not dismissed before
+        const dismissed = localStorage.getItem("ee-pwa-dismissed");
+        if (!dismissed) setTimeout(showInstallBanner, 5000);
+      });
+      function showInstallBanner() {
+        if (!_pwaPrompt) return;
+        let banner = document.getElementById("pwa-banner");
+        if (banner) return;
+        banner = document.createElement("div");
+        banner.id = "pwa-banner";
+        banner.style.cssText = [
+          "position:fixed","bottom:20px","left:50%","transform:translateX(-50%)",
+          "z-index:9998","background:var(--surface,#fff)","color:var(--text,#0f1117)",
+          "border:1.5px solid var(--border,#e2e6f0)","border-radius:16px",
+          "padding:14px 18px","display:flex","align-items:center","gap:12px",
+          "box-shadow:0 8px 32px rgba(0,0,0,0.15)","font-family:sans-serif",
+          "max-width:340px","width:90%"
+        ].join(";");
+        banner.innerHTML = `
+          <span style="font-size:28px">📋</span>
+          <div style="flex:1">
+            <div style="font-weight:800;font-size:14px">Install ExamEdge</div>
+            <div style="font-size:12px;color:#64748b;margin-top:2px">Add to home screen for quick access</div>
+          </div>
+          <button onclick="installPWA()" style="padding:8px 14px;border-radius:10px;border:none;background:#2563eb;color:#fff;font-weight:700;font-size:13px;cursor:pointer">Install</button>
+          <button onclick="dismissPWA()" style="padding:6px;border:none;background:transparent;color:#94a3b8;cursor:pointer;font-size:16px">✕</button>
+        `;
+        document.body.appendChild(banner);
+      }
+      async function installPWA() {
+        if (!_pwaPrompt) return;
+        _pwaPrompt.prompt();
+        const { outcome } = await _pwaPrompt.userChoice;
+        _pwaPrompt = null;
+        dismissPWA();
+      }
+      function dismissPWA() {
+        const b = document.getElementById("pwa-banner");
+        if (b) b.remove();
+        localStorage.setItem("ee-pwa-dismissed", "1");
+      }
+      window.addEventListener("appinstalled", () => dismissPWA());
+    </script>
   </body>
 </html>

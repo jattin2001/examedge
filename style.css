@@ -1974,3 +1974,168 @@ header {
   font-size: 20px;
   color: rgba(255, 255, 255, 0.45);
 }
+
+/* ── FLAG BUTTON ─────────────────────────── */
+.btn-flag {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(239, 68, 68, 0.25);
+  background: rgba(239, 68, 68, 0.07);
+  color: var(--red, #ef4444);
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.18s;
+  flex-shrink: 0;
+}
+.btn-flag:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: var(--red, #ef4444);
+  transform: translateY(-1px);
+}
+.flag-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1.5px solid var(--border);
+  background: var(--bg);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  transition: all 0.15s;
+}
+.flag-option:has(input:checked) {
+  border-color: var(--primary);
+  background: rgba(37, 99, 235, 0.06);
+  color: var(--primary);
+}
+.flag-option input {
+  accent-color: var(--primary);
+}
+
+/* ── SHARE CARD (image export) ───────────── */
+#shareCard {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #0e7490 100%);
+  border-radius: 16px;
+  padding: 28px 24px 20px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#shareCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+  pointer-events: none;
+}
+.sc-brand {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 4px;
+}
+.sc-exam {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 16px;
+}
+.sc-score {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 52px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+.sc-max {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 18px;
+}
+.sc-chips {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.sc-chip {
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.sc-correct {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+}
+.sc-wrong {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+}
+.sc-skip {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fcd34d;
+}
+.sc-acc {
+  background: rgba(99, 102, 241, 0.2);
+  color: #c4b5fd;
+}
+.sc-rank-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.sc-rank {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: #38bdf8;
+}
+.sc-pct {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+}
+.sc-footer {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 4px;
+}
+.share-actions {
+  display: flex;
+  gap: 8px;
+}
+.share-actions button {
+  flex: 1;
+  padding: 11px 8px;
+  border-radius: 10px;
+  border: 1.5px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.share-actions button:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}

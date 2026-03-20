@@ -831,6 +831,85 @@
           grid-template-columns: 1fr;
         }
       }
+
+      /* GLOBAL LEADERBOARD */
+      .global-lb-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        margin-bottom: 4px;
+      }
+      .glb-tabs {
+        display: flex;
+        background: var(--surface2);
+        border-bottom: 1px solid var(--border);
+      }
+      .glb-tab {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        background: transparent;
+        color: var(--text3);
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.15s;
+        border-bottom: 2px solid transparent;
+      }
+      .glb-tab.active {
+        color: var(--primary);
+        background: var(--surface);
+        border-bottom-color: var(--primary);
+      }
+      .glb-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 18px;
+        border-bottom: 1px solid var(--border);
+        transition: background 0.15s;
+      }
+      .glb-row:last-child { border-bottom: none; }
+      .glb-row:hover { background: var(--surface2); }
+      .glb-row.is-me { background: rgba(37,99,235,0.05); }
+      .glb-rank {
+        width: 28px; height: 28px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 12px; font-weight: 800; color: var(--text3);
+        background: var(--surface2); border: 1.5px solid var(--border);
+        flex-shrink: 0;
+      }
+      .glb-rank.gold   { background: linear-gradient(135deg,#fbbf24,#f59e0b); color:#fff; border:none; }
+      .glb-rank.silver { background: linear-gradient(135deg,#94a3b8,#64748b); color:#fff; border:none; }
+      .glb-rank.bronze { background: linear-gradient(135deg,#d97706,#b45309); color:#fff; border:none; }
+      .glb-info { flex: 1; min-width: 0; }
+      .glb-name { font-size: 13px; font-weight: 700; color: var(--text); }
+      .glb-meta { font-size: 11px; color: var(--text3); margin-top: 2px; }
+      .glb-score {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 18px; font-weight: 900; color: var(--primary);
+        flex-shrink: 0;
+      }
+      .glb-empty {
+        text-align: center; padding: 24px; color: var(--text3); font-size: 13px;
+      }
+      .glb-exam-tabs {
+        display: flex; gap: 6px; flex-wrap: wrap;
+        padding: 12px 18px; border-bottom: 1px solid var(--border);
+        background: var(--surface2);
+      }
+      .glb-exam-tab {
+        padding: 5px 12px; border-radius: 999px;
+        border: 1.5px solid var(--border);
+        background: var(--surface); color: var(--text2);
+        font-size: 11px; font-weight: 700; cursor: pointer;
+        transition: all 0.15s;
+      }
+      .glb-exam-tab.active {
+        background: var(--primary); color: #fff; border-color: var(--primary);
+      }
     </style>
   </head>
   <body>
@@ -953,6 +1032,19 @@
           <h5>💪 Strong Topics</h5>
           <div class="topic-list" id="strongTopics"></div>
         </div>
+      </div>
+
+
+      <!-- GLOBAL LEADERBOARD -->
+      <div class="sec-hdr">🌍 Global Leaderboard</div>
+      <div class="global-lb-card">
+        <div class="glb-exam-tabs" id="glbExamTabs"></div>
+        <div class="glb-tabs">
+          <button class="glb-tab active" onclick="switchGlbTab('global', this)">🌍 Global Top 10</button>
+          <button class="glb-tab" onclick="switchGlbTab('mine', this)">🙋 My Best Scores</button>
+        </div>
+        <div id="glbGlobal"><div class="glb-empty">⏳ Loading leaderboard...</div></div>
+        <div id="glbMine" style="display:none"><div class="glb-empty">⏳ Loading...</div></div>
       </div>
 
       <!-- ATTEMPT HISTORY -->
@@ -1547,6 +1639,134 @@
           })
           .join("");
       }
+
+
+      // ── GLOBAL LEADERBOARD ON PROFILE ────────────
+      const PROFILE_EXAM_CONFIG = {
+        cgl:        { label: "SSC CGL Tier 1",           short: "CGL" },
+        chsl:       { label: "SSC CHSL Tier 1",          short: "CHSL" },
+        rrb_ntpc_g: { label: "RRB NTPC Graduate",        short: "RRB G" },
+        rrb_ntpc_ug:{ label: "RRB NTPC Undergraduate",   short: "RRB UG" },
+        jkp_si:     { label: "JKSSB Sub Inspector",      short: "JKP SI" },
+        jkp_ja:     { label: "JKSSB Junior Assistant",   short: "JKP JA" },
+        jkssb_finance:{ label: "JKSSB Accounts Assistant (Finance)", short: "Finance" },
+        ssc_gd:     { label: "SSC GD Constable",         short: "SSC GD" },
+        jkp_constable:{ label: "JKP Constable",          short: "JKP Con" },
+        ssc_mts:    { label: "SSC MTS",                  short: "MTS" },
+        ssc_cpo:    { label: "SSC CPO",                  short: "CPO" },
+      };
+      let glbCurrentExam = "cgl";
+      let glbCurrentTab  = "global";
+      let glbCache = {};
+
+      function buildGlbExamTabs() {
+        const el = document.getElementById("glbExamTabs");
+        if (!el) return;
+        el.innerHTML = Object.entries(PROFILE_EXAM_CONFIG).map(([key, cfg]) =>
+          `<button class="glb-exam-tab ${key === glbCurrentExam ? "active" : ""}"
+            onclick="switchGlbExam('${key}', this)">${cfg.short}</button>`
+        ).join("");
+      }
+
+      function switchGlbExam(key, btn) {
+        glbCurrentExam = key;
+        document.querySelectorAll(".glb-exam-tab").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        loadGlbData();
+      }
+
+      function switchGlbTab(tab, btn) {
+        glbCurrentTab = tab;
+        document.querySelectorAll(".glb-tab").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById("glbGlobal").style.display = tab === "global" ? "block" : "none";
+        document.getElementById("glbMine").style.display   = tab === "mine"   ? "block" : "none";
+        renderGlbCurrentTab();
+      }
+
+      async function loadGlbData() {
+        const key = glbCurrentExam;
+        if (glbCache[key]) { renderGlbCurrentTab(); return; }
+        try {
+          const label = PROFILE_EXAM_CONFIG[key]?.label || key;
+          const snap = await db.collection("leaderboard")
+            .where("examType", "==", label).get();
+          // Keep best score per user per mock, group by mock
+          const byMock = {};
+          snap.docs.forEach(doc => {
+            const d = doc.data();
+            const mk = Number(d.mockNumber || 0);
+            const uid = d.userId || doc.id;
+            if (!byMock[mk]) byMock[mk] = {};
+            if (!byMock[mk][uid] || d.score > byMock[mk][uid].score)
+              byMock[mk][uid] = d;
+          });
+          // Flatten: keep overall best per user across all mocks for global view
+          const best = {};
+          Object.values(byMock).forEach(mockUsers => {
+            Object.entries(mockUsers).forEach(([uid, d]) => {
+              if (!best[uid] || d.score > best[uid].score) best[uid] = d;
+            });
+          });
+          glbCache[key] = Object.values(best).sort((a, b) => b.score - a.score);
+          renderGlbCurrentTab();
+        } catch(e) {
+          document.getElementById("glbGlobal").innerHTML =
+            '<div class="glb-empty">⚠️ Could not load leaderboard</div>';
+        }
+      }
+
+      function renderGlbCurrentTab() {
+        const data = glbCache[glbCurrentExam] || [];
+        const myUid = auth.currentUser?.uid;
+
+        // Global top 10
+        const globalEl = document.getElementById("glbGlobal");
+        if (!data.length) {
+          globalEl.innerHTML = '<div class="glb-empty">No scores yet for this exam.</div>';
+        } else {
+          globalEl.innerHTML = data.slice(0, 10).map((d, i) => {
+            const rc = i === 0 ? "gold" : i === 1 ? "silver" : i === 2 ? "bronze" : "";
+            const isMe = d.userId === myUid;
+            const sc = typeof d.score === "number"
+              ? d.score % 1 === 0 ? d.score : d.score.toFixed(1)
+              : d.score;
+            return `<div class="glb-row ${isMe ? "is-me" : ""}">
+              <div class="glb-rank ${rc}">${i + 1}</div>
+              <div class="glb-info">
+                <div class="glb-name">${isMe ? "👤 You" : "🎓 " + (d.userName || "Anonymous")}</div>
+                <div class="glb-meta">✅${d.correct} ❌${d.wrong} · ${d.accuracy}% acc · Mock ${d.mockNumber || "—"}</div>
+              </div>
+              <div class="glb-score">${sc}</div>
+            </div>`;
+          }).join("");
+        }
+
+        // My best scores
+        const mineEl = document.getElementById("glbMine");
+        const mine = data.filter(d => d.userId === myUid);
+        if (!mine.length) {
+          mineEl.innerHTML = '<div class="glb-empty">You haven\'t attempted this exam yet.</div>';
+        } else {
+          mineEl.innerHTML = mine.map(d => {
+            const sc = typeof d.score === "number"
+              ? d.score % 1 === 0 ? d.score : d.score.toFixed(1)
+              : d.score;
+            return `<div class="glb-row is-me">
+              <div class="glb-rank gold">🏅</div>
+              <div class="glb-info">
+                <div class="glb-name">Mock ${d.mockNumber || "—"} · ${d.accuracy}% accuracy</div>
+                <div class="glb-meta">✅${d.correct} ❌${d.wrong} ⏭${d.skipped}</div>
+              </div>
+              <div class="glb-score">${sc}</div>
+            </div>`;
+          }).join("");
+        }
+      }
+
+      // Initialize leaderboard section
+      buildGlbExamTabs();
+      loadGlbData();
 
       // ── STREAK ───────────────────────────────────
       function calcStreak(attempts) {

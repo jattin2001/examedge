@@ -4,12 +4,7 @@
     "subject": "Reasoning",
     "qno": 1,
     "question": "Select the related word: Watt : Power :: Pascal : ?",
-    "options": [
-      "Energy",
-      "Temperature",
-      "Pressure",
-      "Force"
-    ],
+    "options": ["Energy", "Temperature", "Pressure", "Force"],
     "answer": 2,
     "explanation": "Watt is the unit of Power; Pascal is the unit of Pressure.",
     "topic": "analogy"
@@ -19,12 +14,7 @@
     "subject": "Reasoning",
     "qno": 2,
     "question": "Select the related word: Mekong : Tibet :: Amazon : ?",
-    "options": [
-      "Chile",
-      "Peru",
-      "Colombia",
-      "Ecuador"
-    ],
+    "options": ["Chile", "Peru", "Colombia", "Ecuador"],
     "answer": 1,
     "explanation": "The Mekong originates in Tibet; the Amazon originates in Peru.",
     "topic": "analogy"
@@ -34,12 +24,7 @@
     "subject": "Reasoning",
     "qno": 3,
     "question": "Select the letter-cluster to replace (?): CGK, GKO, KOS, OSW, ?",
-    "options": [
-      "SDA",
-      "KNB",
-      "SWA",
-      "KJH"
-    ],
+    "options": ["SDA", "KNB", "SWA", "KJH"],
     "answer": 2,
     "explanation": "Each group shifts +4 alphabetically: OSW → SWA.",
     "topic": "letter_series"
@@ -49,12 +34,7 @@
     "subject": "Reasoning",
     "qno": 4,
     "question": "Select the letter-cluster to replace (?): MIN, NJM, OKL, PLK, ?",
-    "options": [
-      "QWS",
-      "HGF",
-      "QMJ",
-      "UJH"
-    ],
+    "options": ["QWS", "HGF", "QMJ", "UJH"],
     "answer": 2,
     "explanation": "1st letter +1, 2nd +1, 3rd −1 each step: PLK → QMJ.",
     "topic": "letter_series"
@@ -64,12 +44,7 @@
     "subject": "Reasoning",
     "qno": 5,
     "question": "Select the letter-cluster to replace (?): BRF, EUH, HXJ, KAL, ?",
-    "options": [
-      "NMB",
-      "NKH",
-      "NHG",
-      "NDN"
-    ],
+    "options": ["NMB", "NKH", "NHG", "NDN"],
     "answer": 3,
     "explanation": "Each letter advances +3 each step: KAL → NDN.",
     "topic": "letter_series"
@@ -79,12 +54,7 @@
     "subject": "Reasoning",
     "qno": 6,
     "question": "Select the letter-cluster to replace (?): WZWT, WVOH, WRGV, WNYJ, ?",
-    "options": [
-      "WJQX",
-      "WJQW",
-      "WHPX",
-      "WJPX"
-    ],
+    "options": ["WJQX", "WJQW", "WHPX", "WJPX"],
     "answer": 0,
     "explanation": "2nd letter decreases by 4 (Z,V,R,N,J); rest follow offset pattern → WJQX.",
     "topic": "letter_series"
@@ -94,12 +64,7 @@
     "subject": "Reasoning",
     "qno": 7,
     "question": "Select the letter-cluster to replace (?): MCFI, NEKP, OGPW, PIUD, ?",
-    "options": [
-      "NKYD",
-      "QLYL",
-      "QKZK",
-      "QKZL"
-    ],
+    "options": ["NKYD", "QLYL", "QKZK", "QKZL"],
     "answer": 2,
     "explanation": "Each position advances by +1,+1,+1,+7 cyclically: PIUD → QKZK.",
     "topic": "letter_series"
@@ -109,12 +74,7 @@
     "subject": "Reasoning",
     "qno": 8,
     "question": "What comes next? 3, 12, 7, 16, 11, 20, 15, ?",
-    "options": [
-      "16",
-      "24",
-      "14",
-      "18"
-    ],
+    "options": ["16", "24", "14", "18"],
     "answer": 1,
     "explanation": "Two interleaved series: 3,7,11,15(+4) and 12,16,20,24(+4). Answer: 24.",
     "topic": "number_series"
@@ -124,12 +84,7 @@
     "subject": "Reasoning",
     "qno": 9,
     "question": "Word STUDENT arranged alphabetically. How many letters lie between the 2nd from left and 4th from right in the new arrangement?",
-    "options": [
-      "17",
-      "13",
-      "11",
-      "15"
-    ],
+    "options": ["17", "13", "11", "15"],
     "answer": 1,
     "explanation": "STUDENT → DENNSTU. 2nd from left = E (5th in alphabet), 4th from right = S (19th). Letters between E and S = F,G,H,I,J,K,L,M,N,O,P,Q,R = 13.",
     "topic": "letter_series"
@@ -138,13 +93,8 @@
     "id": "m1_q10",
     "subject": "Reasoning",
     "qno": 10,
-    "question": "Which two addresses are identical? (1) Arjun Mehta, Emerald Tower, Flat 4B, MG Road, Surat–395007 (2) Arjun Mehta, Emerald Tower, Flat 4B, MG Road, Surat–395007 (3) Arjun Metha, Emerald Tower, Flat 4B, MG Road, Surat–395007 (4) Arjun Mehta, Emerald Tower, Flat 4B, MG Road, Surat–395007",
-    "options": [
-      "1 and 2",
-      "1 and 3",
-      "2 and 4",
-      "3 and 4"
-    ],
+    "question": "Which two addresses are identical? (1) Arjun Mehta, Emerald Tower, Flat 4B, MG Road, Surat–395007 (2) Arjun Mehta, Emerald Tower, Flat 4B, MG Road, Surat–395007 (3) Arjun Metha, Emerald Tower, Flat 4B, MG Road, Surat–395007 (4) Arjun Mehta, Emerald Tower, Flait 4B, MG Road, Surat–395007",
+    "options": ["1 and 2", "1 and 3", "2 and 4", "3 and 4"],
     "answer": 2,
     "explanation": "Addresses 2 and 4 are identical; address 3 has a typo 'Metha'.",
     "topic": "address_matching"
@@ -154,12 +104,7 @@
     "subject": "Reasoning",
     "qno": 11,
     "question": "Which option is identical to: Meenal Gupta, 102 Silver Oaks, Sector 12, Noida, 201301? (1) Meenal Gupta, 102 Silver Oaks, Sector 12, Noida, 201301 (2) Meenal Gupta, 102 Silver Oak, Sector 12, Noida, 201301 (3) Menal Gupta, 102 Silver Oaks, Sector 12, Noida, 201301 (4) Meenal Gupta, 102 Silver Oaks, Sector 21, Noida, 201301",
-    "options": [
-      "1",
-      "3",
-      "2",
-      "4"
-    ],
+    "options": ["1", "3", "2", "4"],
     "answer": 0,
     "explanation": "Only option 1 is identical to the given address.",
     "topic": "address_matching"
@@ -169,12 +114,7 @@
     "subject": "Reasoning",
     "qno": 12,
     "question": "Find the option that best completes the analogy: AG : IO :: CM : ?",
-    "options": [
-      "KO",
-      "KU",
-      "KS",
-      "KW"
-    ],
+    "options": ["KO", "KU", "KS", "KW"],
     "answer": 1,
     "explanation": "A+8=I, G+8=O; similarly C+8=K, M+8=U → KU.",
     "topic": "analogy"
@@ -199,12 +139,7 @@
     "subject": "Reasoning",
     "qno": 14,
     "question": "Letter transformation pattern: TIME : VJOG :: WORD : ?",
-    "options": [
-      "YPTF",
-      "YQTG",
-      "YPSF",
-      "ZPSF"
-    ],
+    "options": ["YPTF", "YQTG", "YPSF", "ZPSF"],
     "answer": 0,
     "explanation": "T+2=V, I+1=J, M+2=O, E+2=G. Apply same to WORD: W+2=Y, O+1=P, R+2=T, D+2=F → YPTF.",
     "topic": "alphabet_series"
@@ -214,12 +149,7 @@
     "subject": "Reasoning",
     "qno": 15,
     "question": "Pattern applied: GNIDAER : READING :: NOITULOS : ?",
-    "options": [
-      "SOLUTION",
-      "SOLUNOIT",
-      "NOILOSUT",
-      "POLLUTION"
-    ],
+    "options": ["SOLUTION", "SOLUNOIT", "NOILOSUT", "POLLUTION"],
     "answer": 0,
     "explanation": "GNIDAER reversed = READING; NOITULOS reversed = SOLUTION.",
     "topic": "analogy"
@@ -229,12 +159,7 @@
     "subject": "Reasoning",
     "qno": 16,
     "question": "Coding rule: AYRRJC : CATTLE :: NCPDCAR : ?",
-    "options": [
-      "SUBJECTS",
-      "NEGLECT",
-      "PERFECT",
-      "OPERATE"
-    ],
+    "options": ["SUBJECTS", "NEGLECT", "PERFECT", "OPERATE"],
     "answer": 2,
     "explanation": "Using the cipher pattern, NCPDCAR decodes to PERFECT.",
     "topic": "coding_decoding"
@@ -244,12 +169,7 @@
     "subject": "Reasoning",
     "qno": 17,
     "question": "Identify the odd one: 2, 3, 5, 7, 11, 13, 17, 20",
-    "options": [
-      "17",
-      "13",
-      "20",
-      "11"
-    ],
+    "options": ["17", "13", "20", "11"],
     "answer": 2,
     "explanation": "All others are prime numbers; 20 is not a prime number.",
     "topic": "syllogism"
@@ -259,12 +179,7 @@
     "subject": "Reasoning",
     "qno": 18,
     "question": "Which of the following is the odd group out?",
-    "options": [
-      "2, 3, 5",
-      "11, 13, 17",
-      "4, 6, 8",
-      "7, 19, 23"
-    ],
+    "options": ["2, 3, 5", "11, 13, 17", "4, 6, 8", "7, 19, 23"],
     "answer": 2,
     "explanation": "All other groups contain only prime numbers; 4, 6, 8 are composite numbers.",
     "topic": "syllogism"
@@ -274,12 +189,7 @@
     "subject": "Reasoning",
     "qno": 19,
     "question": "Rani said, 'The man in the photo is my mother's son-in-law.' Who is the man to Rani?",
-    "options": [
-      "Husband",
-      "Father",
-      "Uncle",
-      "Cousin"
-    ],
+    "options": ["Husband", "Father", "Uncle", "Cousin"],
     "answer": 0,
     "explanation": "Rani's mother's son-in-law is Rani's husband.",
     "topic": "blood_relation"
@@ -289,12 +199,7 @@
     "subject": "Reasoning",
     "qno": 20,
     "question": "Identify the group that does NOT follow the same pattern: K11:I9:G7 / M13:K11:I9 / O15:M13:K11 / N14:K11:H8",
-    "options": [
-      "K11:I9:G7",
-      "M13:K11:I9",
-      "O15:M13:K11",
-      "N14:K11:H8"
-    ],
+    "options": ["K11:I9:G7", "M13:K11:I9", "O15:M13:K11", "N14:K11:H8"],
     "answer": 3,
     "explanation": "Pattern: letter decreases by 2, number decreases by 2. N14:K11 skips a letter (should be L12), breaking the pattern.",
     "topic": "venn_diagram"
@@ -304,12 +209,7 @@
     "subject": "Reasoning",
     "qno": 21,
     "question": "Identify the group that does NOT follow the same pattern: A1@:B2#:C3$ / D4%:E5^:F6& / G7*:H8(:I9) / J10_:K11@:L12@",
-    "options": [
-      "A1@:B2#:C3$",
-      "D4%:E5^:F6&",
-      "G7*:H8(:I9)",
-      "J10_:K11@:L12@"
-    ],
+    "options": ["A1@:B2#:C3$", "D4%:E5^:F6&", "G7*:H8(:I9)", "J10_:K11@:L12@"],
     "answer": 3,
     "explanation": "Each position should have a unique symbol. J10_:K11@ reuses '@', breaking the pattern.",
     "topic": "ranking"
@@ -319,12 +219,7 @@
     "subject": "Reasoning",
     "qno": 22,
     "question": "A woman said pointing to a man, 'His mother is the only daughter of my father.' How is the man related to the woman?",
-    "options": [
-      "Son",
-      "Nephew",
-      "Cousin",
-      "Grandson"
-    ],
+    "options": ["Son", "Nephew", "Cousin", "Grandson"],
     "answer": 0,
     "explanation": "Only daughter of my father = me. His mother is me → he is my Son.",
     "topic": "blood_relation"
@@ -334,12 +229,7 @@
     "subject": "Reasoning",
     "qno": 23,
     "question": "John says pointing to a woman, 'She is the wife of my uncle's only son.' How is the woman related to John?",
-    "options": [
-      "Sister",
-      "Cousin",
-      "Sister-in-law",
-      "Niece"
-    ],
+    "options": ["Sister", "Cousin", "Sister-in-law", "Niece"],
     "answer": 2,
     "explanation": "Uncle's only son = John's cousin. His wife is John's sister-in-law (cousin's wife).",
     "topic": "blood_relation"
@@ -349,12 +239,7 @@
     "subject": "Reasoning",
     "qno": 24,
     "question": "A man said, 'My mother's husband's only son is the father of your sister's brother.' How is the man related to you?",
-    "options": [
-      "Uncle",
-      "Father",
-      "Grandfather",
-      "Brother"
-    ],
+    "options": ["Uncle", "Father", "Grandfather", "Brother"],
     "answer": 1,
     "explanation": "My mother's husband's only son = me. Your sister's brother = you. I am your father → Father.",
     "topic": "blood_relation"
@@ -364,12 +249,7 @@
     "subject": "Reasoning",
     "qno": 25,
     "question": "If # = ×, @ = −, $ = +, then evaluate: 9 # 2 @ 3 $ 1",
-    "options": [
-      "18",
-      "14",
-      "16",
-      "17"
-    ],
+    "options": ["18", "14", "16", "17"],
     "answer": 2,
     "explanation": "9×2 − 3 + 1 = 18 − 3 + 1 = 16.",
     "topic": "mathematical_operations"
@@ -409,12 +289,7 @@
     "subject": "GS",
     "qno": 28,
     "question": "In Carnatic music, a laghu with five beats is known as ___ jaati.",
-    "options": [
-      "Tishra",
-      "Chaturashra",
-      "Khanda",
-      "Mishra"
-    ],
+    "options": ["Tishra", "Chaturashra", "Khanda", "Mishra"],
     "answer": 2,
     "explanation": "Khanda jaati laghu has 5 beats.",
     "topic": "arts_culture"
@@ -469,12 +344,7 @@
     "subject": "GS",
     "qno": 32,
     "question": "The Santosh Trophy 2022–23 final was uniquely held in _____, where Karnataka defeated Meghalaya.",
-    "options": [
-      "Dubai",
-      "Riyadh",
-      "Doha",
-      "Muscat"
-    ],
+    "options": ["Dubai", "Riyadh", "Doha", "Muscat"],
     "answer": 1,
     "explanation": "The Santosh Trophy 2022-23 final was held in Riyadh, Saudi Arabia.",
     "topic": "sports"
@@ -499,12 +369,7 @@
     "subject": "GS",
     "qno": 34,
     "question": "Consider statements about glacial landforms. (1) Hanging valleys open into main glacial valleys at higher elevations. (2) Spurs of hanging valleys are frequently truncated into triangular facets. Which are correct?",
-    "options": [
-      "Only 1",
-      "Only 2",
-      "1 and 2 are correct",
-      "Neither 1 nor 2"
-    ],
+    "options": ["Only 1", "Only 2", "1 and 2 are correct", "Neither 1 nor 2"],
     "answer": 2,
     "explanation": "Both statements correctly describe glacial landform features.",
     "topic": "geography"
@@ -574,12 +439,7 @@
     "subject": "GS",
     "qno": 39,
     "question": "Arrange in chronological order: (a) Eastern Zonal Council meeting 2022, (b) States Reorganisation Act passed, (c) First Central Zonal Council meeting.",
-    "options": [
-      "b-c-a",
-      "c-b-a",
-      "a-b-c",
-      "b-a-c"
-    ],
+    "options": ["b-c-a", "c-b-a", "a-b-c", "b-a-c"],
     "answer": 0,
     "explanation": "States Reorganisation Act (1956) → First Zonal Council meeting → Recent 2022 meeting: b-c-a.",
     "topic": "geography"
@@ -649,12 +509,7 @@
     "subject": "GS",
     "qno": 44,
     "question": "Cheraw, the bamboo dance performed using crossed bamboo sticks, is a folk dance of which state?",
-    "options": [
-      "Mizoram",
-      "Meghalaya",
-      "Arunachal Pradesh",
-      "Sikkim"
-    ],
+    "options": ["Mizoram", "Meghalaya", "Arunachal Pradesh", "Sikkim"],
     "answer": 0,
     "explanation": "Cheraw (bamboo dance) is the traditional folk dance of Mizoram.",
     "topic": "arts_culture"
@@ -694,12 +549,7 @@
     "subject": "GS",
     "qno": 47,
     "question": "Education is placed under which list after the 42nd Amendment?",
-    "options": [
-      "Union List",
-      "State List",
-      "Concurrent List",
-      "Judicial List"
-    ],
+    "options": ["Union List", "State List", "Concurrent List", "Judicial List"],
     "answer": 2,
     "explanation": "The 42nd Amendment (1976) moved Education from State List to the Concurrent List.",
     "topic": "geography"
@@ -724,12 +574,7 @@
     "subject": "GS",
     "qno": 49,
     "question": "Argon in Earth's atmosphere is primarily produced via:",
-    "options": [
-      "Decay of K-40",
-      "Volcanoes",
-      "Photosynthesis",
-      "Cosmic rays"
-    ],
+    "options": ["Decay of K-40", "Volcanoes", "Photosynthesis", "Cosmic rays"],
     "answer": 0,
     "explanation": "Most atmospheric argon (Ar-40) comes from radioactive decay of K-40 in Earth's crust.",
     "topic": "arts_culture"
@@ -769,12 +614,7 @@
     "subject": "Quant",
     "qno": 52,
     "question": "Simplify: (2½ + 3.6) − 1.9",
-    "options": [
-      "4.2",
-      "5.2",
-      "6.2",
-      "7.2"
-    ],
+    "options": ["4.2", "5.2", "6.2", "7.2"],
     "answer": 0,
     "explanation": "2.5 + 3.6 = 6.1; 6.1 − 1.9 = 4.2.",
     "topic": "fractions"
@@ -784,12 +624,7 @@
     "subject": "Quant",
     "qno": 53,
     "question": "Evaluate: 7¼ − [5/6 ÷ {1/3 − (1/2 × (3/4 − 1/4))}]",
-    "options": [
-      "−3¼",
-      "3¼",
-      "−2¾",
-      "2¾"
-    ],
+    "options": ["−3¼", "3¼", "−2¾", "2¾"],
     "answer": 2,
     "explanation": "3/4−1/4=1/2; 1/2×1/2=1/4; 1/3−1/4=1/12; 5/6÷(1/12)=10; 7.25−10=−2.75=−2¾.",
     "topic": "fractions"
@@ -799,12 +634,7 @@
     "subject": "Quant",
     "qno": 54,
     "question": "From 200 software engineers: 50 know both Python & Java, 70 Python only, 60 Java only, 20 neither. Find ratio of Python proficient to Java proficient.",
-    "options": [
-      "11:12",
-      "12:11",
-      "7:6",
-      "6:7"
-    ],
+    "options": ["11:12", "12:11", "7:6", "6:7"],
     "answer": 1,
     "explanation": "Python = 70+50 = 120. Java = 60+50 = 110. Ratio = 120:110 = 12:11.",
     "topic": "ratio_and_proportion"
@@ -814,12 +644,7 @@
     "subject": "Quant",
     "qno": 55,
     "question": "Arvind invested ₹80,000. After 4 months Bhavin joined with ₹1,20,000. After 8 months Chandan joined with ₹1,60,000. Total profit ₹1,05,000. Find Chandan's share.",
-    "options": [
-      "₹26,500",
-      "₹26,000",
-      "₹26,200",
-      "₹26,250"
-    ],
+    "options": ["₹26,500", "₹26,000", "₹26,200", "₹26,250"],
     "answer": 3,
     "explanation": "Effective capitals: A=80k×12=960k, B=120k×8=960k, C=160k×4=640k. Ratio=3:3:2. Chandan=(2/8)×105000=₹26,250.",
     "topic": "profit_and_loss"
@@ -829,12 +654,7 @@
     "subject": "Quant",
     "qno": 56,
     "question": "A invests ₹80,000 for 9 months, B invests ₹1,20,000 for 6 months. What is B's share of ₹45,000 profit?",
-    "options": [
-      "₹26,500",
-      "₹28,000",
-      "₹36,000",
-      "₹22,500"
-    ],
+    "options": ["₹26,500", "₹28,000", "₹36,000", "₹22,500"],
     "answer": 3,
     "explanation": "A=80k×9=720k, B=120k×6=720k. Equal ratio 1:1. B's share=45000/2=₹22,500.",
     "topic": "profit_and_loss"
@@ -844,12 +664,7 @@
     "subject": "Quant",
     "qno": 57,
     "question": "What is the average of all integers between 100 and 250 that are exactly divisible by 11?",
-    "options": [
-      "176",
-      "186",
-      "196",
-      "146"
-    ],
+    "options": ["176", "186", "196", "146"],
     "answer": 0,
     "explanation": "Multiples of 11 from 110 to 242: first=110, last=242, n=13. Average=(110+242)/2=176.",
     "topic": "average"
@@ -859,12 +674,7 @@
     "subject": "Quant",
     "qno": 58,
     "question": "Average of 15 numbers is 80. First 6 average is 72, next 6 is 25% more than first 6. 13th number is 8 more than 15th, 14th is 10 less than 15th. Find average of 13th and 14th numbers.",
-    "options": [
-      "70.89",
-      "85",
-      "75.67",
-      "80.65"
-    ],
+    "options": ["70.89", "85", "75.67", "80.65"],
     "answer": 2,
     "explanation": "Sum=1200. First 6 sum=432. Next 6=72×1.25=90, sum=540. Last 3 sum=1200−432−540=228. Let 15th=x; 13th=x+8, 14th=x−10. 3x−2=228 → x=76.67. Avg of 13th,14th = (84.67+66.67)/2 = 75.67.",
     "topic": "average"
@@ -874,12 +684,7 @@
     "subject": "Quant",
     "qno": 59,
     "question": "A landlord bought a flat for ₹8,00,000. He wants 9% annual return after paying ₹2,000/month maintenance. What should be the monthly rent?",
-    "options": [
-      "₹7,000",
-      "₹7,500",
-      "₹8,000",
-      "₹8,500"
-    ],
+    "options": ["₹7,000", "₹7,500", "₹8,000", "₹8,500"],
     "answer": 2,
     "explanation": "Annual return needed = 9% of 8,00,000 = ₹72,000. Monthly income needed = ₹6,000. Add maintenance ₹2,000 → Monthly rent = ₹8,000.",
     "topic": "percentage"
@@ -889,12 +694,7 @@
     "subject": "Quant",
     "qno": 60,
     "question": "An amount doubles in 5 years with compound interest. How many years will it take to grow 8 times?",
-    "options": [
-      "15",
-      "16",
-      "17",
-      "18"
-    ],
+    "options": ["15", "16", "17", "18"],
     "answer": 0,
     "explanation": "Doubles in 5 years → 4× in 10 years → 8× (=2³) in 15 years.",
     "topic": "profit_and_loss"
@@ -904,12 +704,7 @@
     "subject": "Quant",
     "qno": 61,
     "question": "A sum becomes ₹6,600 in 2 years and ₹7,920 in 3 years at compound interest. What is the original principal?",
-    "options": [
-      "₹4,000.33",
-      "₹5,583.33",
-      "₹4,583.33",
-      "₹6,583.33"
-    ],
+    "options": ["₹4,000.33", "₹5,583.33", "₹4,583.33", "₹6,583.33"],
     "answer": 2,
     "explanation": "Rate = (7920−6600)/6600×100 = 20%. P×(1.2)²=6600 → P=6600/1.44 ≈ ₹4,583.33.",
     "topic": "percentage"
@@ -919,12 +714,7 @@
     "subject": "Quant",
     "qno": 62,
     "question": "Suman purchased 25 litres of milk at ₹45/litre and 15 litres at ₹50/litre. Sold entire mixture at ₹48/litre. Total profit or loss?",
-    "options": [
-      "Loss of ₹45",
-      "Profit of ₹45",
-      "Profit of ₹90",
-      "Loss of ₹90"
-    ],
+    "options": ["Loss of ₹45", "Profit of ₹45", "Profit of ₹90", "Loss of ₹90"],
     "answer": 1,
     "explanation": "CP = 25×45 + 15×50 = 1125+750 = ₹1875. SP = 40×48 = ₹1920. Profit = ₹45.",
     "topic": "profit_and_loss"
@@ -934,12 +724,7 @@
     "subject": "Quant",
     "qno": 63,
     "question": "Toy manufacturer produced 1200 cars at ₹90,000 total cost. Donated 200 to charity. For rest: 10% discount on ₹120 MRP, 2 free cars given for every 8 purchased. Overall gain/loss%?",
-    "options": [
-      "4% loss",
-      "4% profit",
-      "5% loss",
-      "5% profit"
-    ],
+    "options": ["4% loss", "4% profit", "5% loss", "5% profit"],
     "answer": 0,
     "explanation": "Effective SP per car after discount = ₹108. Free cars mean 2 free per 8 = 10 sold for price of 8. SP of 1000 cars in groups of 10: 100 groups × 8×108 = ₹86,400. CP = ₹90,000. Loss% = (3600/90000)×100 = 4% loss.",
     "topic": "average"
@@ -949,12 +734,7 @@
     "subject": "Quant",
     "qno": 64,
     "question": "Retailer marks AC 80% above cost. Gives 25% discount then additional 10% festive discount. Final price is ₹15,552. Approximate cost price?",
-    "options": [
-      "₹9,000",
-      "₹9,200",
-      "₹12,800",
-      "₹10,000"
-    ],
+    "options": ["₹9,000", "₹9,200", "₹12,800", "₹10,000"],
     "answer": 2,
     "explanation": "MP = 1.8×CP. SP = 1.8CP × 0.75 × 0.90 = 1.215CP. 1.215CP = 15552 → CP = ₹12,800.",
     "topic": "percentage"
@@ -964,12 +744,7 @@
     "subject": "Quant",
     "qno": 65,
     "question": "A 40-litre mixture has juice and water in ratio 5:3. How much water must be added to make ratio 2:3?",
-    "options": [
-      "15.5 litres",
-      "22.5 litres",
-      "25 litres",
-      "30 litres"
-    ],
+    "options": ["15.5 litres", "22.5 litres", "25 litres", "30 litres"],
     "answer": 1,
     "explanation": "Juice=25L, Water=15L. New ratio 2:3: 25/(15+x)=2/3 → 75=30+2x → x=22.5 litres.",
     "topic": "ratio_and_proportion"
@@ -979,12 +754,7 @@
     "subject": "Quant",
     "qno": 66,
     "question": "A completes a task in 15 days, B in 20 days. They work together for 4 days. What fraction of work remains?",
-    "options": [
-      "1/4",
-      "7/15",
-      "8/15",
-      "11/15"
-    ],
+    "options": ["1/4", "7/15", "8/15", "11/15"],
     "answer": 2,
     "explanation": "Together per day: 1/15+1/20=7/60. In 4 days: 28/60=7/15. Remaining = 1−7/15 = 8/15.",
     "topic": "fractions"
@@ -994,12 +764,7 @@
     "subject": "Quant",
     "qno": 67,
     "question": "Two oils at ₹90/kg and ₹150/kg are blended and sold at ₹144/kg with 20% profit. Find ratio of the two oils.",
-    "options": [
-      "1:1",
-      "2:1",
-      "3:2",
-      "4:1"
-    ],
+    "options": ["1:1", "2:1", "3:2", "4:1"],
     "answer": 0,
     "explanation": "Cost price of blend = 144/1.2 = ₹120/kg. Allegation: (150−120):(120−90) = 30:30 = 1:1.",
     "topic": "percentage"
@@ -1009,12 +774,7 @@
     "subject": "Quant",
     "qno": 68,
     "question": "Pipes A, B, C fill a tank in 6, 8, 12 hours. All three open for 2 hours, then C closed. Additional time to fill?",
-    "options": [
-      "6/7 hours",
-      "2/6 hours",
-      "3/5 hours",
-      "9/2 hours"
-    ],
+    "options": ["6/7 hours", "2/6 hours", "3/5 hours", "9/2 hours"],
     "answer": 0,
     "explanation": "In 2h: 2(1/6+1/8+1/12)=2×9/24=3/4 filled. Remaining=1/4. Rate A+B=7/24. Time=1/4 ÷ 7/24 = 6/7 hours.",
     "topic": "time_and_work"
@@ -1024,12 +784,7 @@
     "subject": "Quant",
     "qno": 69,
     "question": "A bullet train covers a fixed distance in 30 min at 240 km/h. Due to diversion, distance increases 20%. New speed to arrive on time?",
-    "options": [
-      "280 km/h",
-      "300 km/h",
-      "288 km/h",
-      "320 km/h"
-    ],
+    "options": ["280 km/h", "300 km/h", "288 km/h", "320 km/h"],
     "answer": 2,
     "explanation": "Old distance = 120 km. New distance = 144 km. New speed = 144/0.5 = 288 km/h.",
     "topic": "percentage"
@@ -1039,12 +794,7 @@
     "subject": "Quant",
     "qno": 70,
     "question": "Cars X and Y are 360 km apart. Moving towards each other, they meet in 4 hours. Moving same direction, X catches Y in 12 hours. Speed of faster car X?",
-    "options": [
-      "60 km/h",
-      "75 km/h",
-      "45 km/h",
-      "90 km/h"
-    ],
+    "options": ["60 km/h", "75 km/h", "45 km/h", "90 km/h"],
     "answer": 0,
     "explanation": "X+Y=90, X−Y=30. Solving: X=60 km/h, Y=30 km/h.",
     "topic": "profit_and_loss"
@@ -1054,12 +804,7 @@
     "subject": "Quant",
     "qno": 71,
     "question": "Circular pizza with radius 21 cm. 75% is eaten. What is the remaining area?",
-    "options": [
-      "173.25 cm²",
-      "346.36 cm²",
-      "432.25 cm²",
-      "115.5 cm²"
-    ],
+    "options": ["173.25 cm²", "346.36 cm²", "432.25 cm²", "115.5 cm²"],
     "answer": 1,
     "explanation": "Total area = π×21² = 22/7×441 = 1386 cm². Remaining 25% = 0.25×1386 = 346.5 ≈ 346.36 cm².",
     "topic": "percentage"
@@ -1069,12 +814,7 @@
     "subject": "Quant",
     "qno": 72,
     "question": "A ring-shaped disc has outer radius 10 cm and inner radius 7 cm. Find ratio of ring's area to the whole outer circle's area.",
-    "options": [
-      "1:2",
-      "2:3",
-      "51:100",
-      "4:5"
-    ],
+    "options": ["1:2", "2:3", "51:100", "4:5"],
     "answer": 2,
     "explanation": "Ring area = π(100−49) = 51π. Outer circle = 100π. Ratio = 51:100.",
     "topic": "ratio_and_proportion"
@@ -1084,12 +824,7 @@
     "subject": "Quant",
     "qno": 73,
     "question": "A bicycle wheel has radius 35 cm. What percentage of its full circumference is covered in a quarter turn? (π=22/7)",
-    "options": [
-      "15%",
-      "25%",
-      "30%",
-      "35%"
-    ],
+    "options": ["15%", "25%", "30%", "35%"],
     "answer": 1,
     "explanation": "A quarter turn covers 1/4 of the full circumference = 25%.",
     "topic": "percentage"
@@ -1099,12 +834,7 @@
     "subject": "Quant",
     "qno": 74,
     "question": "The line y = mx + 5 passes through the point (1, 8). Find the value of m.",
-    "options": [
-      "5",
-      "4",
-      "3",
-      "2"
-    ],
+    "options": ["5", "4", "3", "2"],
     "answer": 2,
     "explanation": "8 = m(1) + 5 → m = 3.",
     "topic": "algebra"
@@ -1114,12 +844,7 @@
     "subject": "Quant",
     "qno": 75,
     "question": "31³ + 18³ − 37³ + 210 is equal to:",
-    "options": [
-      "−36810",
-      "−14820",
-      "−45670",
-      "−23450"
-    ],
+    "options": ["−36810", "−14820", "−45670", "−23450"],
     "answer": 1,
     "explanation": "31³=29791, 18³=5832, 37³=50653. 29791+5832−50653+210 = −14820.",
     "topic": "simplification"
@@ -1129,12 +854,7 @@
     "subject": "English",
     "qno": 76,
     "question": "Select the most appropriate synonym of: PERFIDIOUS",
-    "options": [
-      "Honest",
-      "Faithful",
-      "Treacherous",
-      "Loyal"
-    ],
+    "options": ["Honest", "Faithful", "Treacherous", "Loyal"],
     "answer": 2,
     "explanation": "Perfidious means deceitful and untrustworthy; Treacherous is the closest synonym.",
     "topic": "synonym"
@@ -1159,12 +879,7 @@
     "subject": "English",
     "qno": 78,
     "question": "Select the most appropriate antonym of: Perfidious",
-    "options": [
-      "Betraying",
-      "Faithless",
-      "Loyal",
-      "Treacherous"
-    ],
+    "options": ["Betraying", "Faithless", "Loyal", "Treacherous"],
     "answer": 2,
     "explanation": "The antonym of perfidious (disloyal) is Loyal.",
     "topic": "antonym"
@@ -1204,12 +919,7 @@
     "subject": "English",
     "qno": 81,
     "question": "Choose the correct one-word substitute for: 'An official reprimand or strong criticism'.",
-    "options": [
-      "Accusation",
-      "Denunciation",
-      "Censure",
-      "Indictment"
-    ],
+    "options": ["Accusation", "Denunciation", "Censure", "Indictment"],
     "answer": 2,
     "explanation": "Censure means an official expression of strong disapproval or reprimand.",
     "topic": "one_word_substitution"
@@ -1219,12 +929,7 @@
     "subject": "English",
     "qno": 82,
     "question": "Fill in the blank: The startup scaled so rapidly that its infrastructure could ___ keep pace.",
-    "options": [
-      "barely",
-      "merely",
-      "scarcely",
-      "all but"
-    ],
+    "options": ["barely", "merely", "scarcely", "all but"],
     "answer": 0,
     "explanation": "'Barely' correctly indicates the infrastructure was almost unable to keep pace.",
     "topic": "grammar"
@@ -1234,12 +939,7 @@
     "subject": "English",
     "qno": 83,
     "question": "Fill in the blank: Rare though the phenomenon is, it can occur ___ prolonged drought conditions.",
-    "options": [
-      "towards",
-      "amid",
-      "among",
-      "under"
-    ],
+    "options": ["towards", "amid", "among", "under"],
     "answer": 3,
     "explanation": "Correct preposition: 'under prolonged drought conditions'.",
     "topic": "grammar"
@@ -1249,12 +949,7 @@
     "subject": "English",
     "qno": 84,
     "question": "Fill in the blank: While the proposal appeared pragmatic on paper, its implementation proved ___ complicated than expected.",
-    "options": [
-      "less",
-      "more",
-      "much",
-      "rather"
-    ],
+    "options": ["less", "more", "much", "rather"],
     "answer": 1,
     "explanation": "Comparative 'more' is required before 'complicated than'.",
     "topic": "grammar"
@@ -1264,12 +959,7 @@
     "subject": "English",
     "qno": 85,
     "question": "Find the part containing an error: That the report failed to address the root causes (1)/ of the community unrest were surprising (2)/ given the exhaustive data (3)/ compiled over several months. (4)",
-    "options": [
-      "(1)",
-      "(2)",
-      "(3)",
-      "(4)"
-    ],
+    "options": ["(1)", "(2)", "(3)", "(4)"],
     "answer": 1,
     "explanation": "'News/that-clause' takes singular verb. 'were' should be 'was'. Error in part (2).",
     "topic": "error_detection"
@@ -1279,12 +969,7 @@
     "subject": "English",
     "qno": 86,
     "question": "Find the part containing an error: What renders the draft legislation particularly contentious is not its proposed realignment of fiscal powers per se, (1)/ but that it presumes, without empirical substantiation, (2)/ a fiscal equivalence among states whose developmental baselines are (3)/ incommensurable by any normative metric. (4)",
-    "options": [
-      "(1)",
-      "(2)",
-      "(3)",
-      "(4)"
-    ],
+    "options": ["(1)", "(2)", "(3)", "(4)"],
     "answer": 1,
     "explanation": "Part (2) has a structural error in the correlative conjunction usage 'not...but that'.",
     "topic": "error_detection"
@@ -1484,12 +1169,7 @@
     "subject": "English",
     "qno": 99,
     "question": "Rearrange sentences in correct order: (1) Media strategy framed based on outreach results. (2) Demographic metrics tracked from campaign dashboards. (3) User interactions collected across platforms. (4) Analysts segmented users by age and behaviour.",
-    "options": [
-      "3-2-4-1",
-      "2-3-1-4",
-      "3-1-4-2",
-      "4-1-2-3"
-    ],
+    "options": ["3-2-4-1", "2-3-1-4", "3-1-4-2", "4-1-2-3"],
     "answer": 0,
     "explanation": "Logical flow: Collect interactions (3) → Track metrics (2) → Segment users (4) → Frame strategy (1).",
     "topic": "para_jumble"
@@ -1499,12 +1179,7 @@
     "subject": "English",
     "qno": 100,
     "question": "Rearrange sentences: (1) Systematic investigation of subject. (2) Research is a foundational pillar. (3) Theoretical or applied. (4) Findings documented and peer-reviewed.",
-    "options": [
-      "2, 1, 3, 4",
-      "1, 2, 4, 3",
-      "4, 3, 2, 1",
-      "3, 4, 1, 2"
-    ],
+    "options": ["2, 1, 3, 4", "1, 2, 4, 3", "4, 3, 2, 1", "3, 4, 1, 2"],
     "answer": 0,
     "explanation": "Define research (2) → describe investigation (1) → nature: theoretical/applied (3) → document findings (4).",
     "topic": "para_jumble"

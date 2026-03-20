@@ -2,6 +2,11 @@
 <html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="ExamEdge" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ExamEdge — Choose Your Exam</title>
 
@@ -367,8 +372,59 @@
         color: var(--text2);
       }
 
+      /* ── MOCK PROGRESS PIPS ─────────────── */
+      .mock-progress-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin: 6px 0 10px;
+        align-items: flex-start;
+      }
+      .mock-pip {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+      }
+      .mock-pip-dot {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        font-weight: 800;
+        border: 2px solid var(--border);
+        background: var(--bg);
+        color: var(--text3);
+        transition: all 0.2s;
+        cursor: default;
+        flex-shrink: 0;
+      }
+      .mock-pip-dot.done {
+        background: linear-gradient(135deg, #10b981, #059669);
+        border-color: #10b981;
+        color: #fff;
+        font-size: 13px;
+      }
+      .mock-pip-label {
+        font-size: 9px;
+        color: var(--text3);
+        font-weight: 700;
+        text-align: center;
+        line-height: 1;
+        max-width: 30px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .mock-pip-label.done {
+        color: #10b981;
+      }
+
       .mock-count {
-        margin-bottom: 14px;
+        margin-bottom: 6px;
         font-size: 12px;
         font-weight: 700;
         color: var(--accent);
@@ -1327,6 +1383,7 @@
             { num: 4, label: "Mock 4" },
             { num: 5, label: "Mock 5" },
             { num: 6, label: "Mock 6" },
+            { num: 7, label: "Mock 7" },
           ],
           icon: "🏆",
           badge: "LIVE",
@@ -1344,7 +1401,7 @@
           desc: "Full mock — 25 Qs per subject, 60 min. +2/−0.5 marking.",
           marking: { correct: "+2 marks", wrong: "−0.5 marks" },
           prefix: "chsl_mock",
-          mocks: [],
+          mocks: [{ num: 1, label: "Mock 1" }],
           icon: "📜",
           badge: "LIVE",
           badgeClass: "badge-live",
@@ -1378,7 +1435,7 @@
           desc: "CBT 1 — 100 Qs, 1 mark each. Reasoning, Maths & GK. No English. 90 min.",
           marking: { correct: "+1 mark", wrong: "−0.33 marks" },
           prefix: "rrb_ntpc_ug_mock",
-          mocks: [],
+          mocks: [{ num: 1, label: "Mock 1" }],
           icon: "🚆",
           badge: "LIVE",
           badgeClass: "badge-live",
@@ -1412,7 +1469,10 @@
           desc: "J&K SSB JA — 4 sections × 20 marks, 80 Qs, 80 marks. 80 min.",
           marking: { correct: "+1 mark", wrong: "−0.25 marks" },
           prefix: "jkp_ja_mock",
-          mocks: [],
+          mocks: [
+            { num: 1, label: "Mock 1" },
+            { num: 2, label: "Mock 2" },
+          ],
           icon: "📋",
           badge: "LIVE",
           badgeClass: "badge-live",
@@ -1420,6 +1480,94 @@
           iconBg: "rgba(139, 92, 246, 0.1)",
           btnGradient: "linear-gradient(135deg, #8b5cf6, #06b6d4)",
           countId: "jkpJaMockCount",
+        },
+        jkssb_finance: {
+          title: "JKSSB Accounts Assistant (Finance)",
+          qs: 120,
+          time: 120,
+          subjects:
+            "GK (J&K) · Accountancy · English · Statistics · Maths · Economics · Science · Computer",
+          desc: "JKSSB Finance — 120 Qs, 120 marks, 8 sections. 120 min. Objective Type.",
+          marking: { correct: "+1 mark", wrong: "No negative marking" },
+          prefix: "jkssb_finance_mock",
+          mocks: [],
+          icon: "💰",
+          badge: "LIVE",
+          badgeClass: "badge-live",
+          cardGradient: "linear-gradient(90deg, #10b981, #f59e0b)",
+          iconBg: "rgba(16, 185, 129, 0.1)",
+          btnGradient: "linear-gradient(135deg, #10b981, #f59e0b)",
+          countId: "jkssbFinanceMockCount",
+        },
+        ssc_gd: {
+          title: "SSC GD Constable",
+          qs: 80,
+          time: 60,
+          subjects:
+            "Reasoning · General Knowledge · Mathematics · English/Hindi",
+          desc: "SSC GD — 80 Qs × 2 marks = 160 marks. 4 sections, 20 Qs each. 60 min. CBT online.",
+          marking: { correct: "+2 marks", wrong: "−0.5 marks" },
+          prefix: "ssc_gd_mock",
+          mocks: [],
+          icon: "🪖",
+          badge: "LIVE",
+          badgeClass: "badge-live",
+          cardGradient: "linear-gradient(90deg, #ef4444, #f97316)",
+          iconBg: "rgba(239, 68, 68, 0.1)",
+          btnGradient: "linear-gradient(135deg, #ef4444, #f97316)",
+          countId: "sscGdMockCount",
+        },
+        jkp_constable: {
+          title: "JKP Constable",
+          qs: 100,
+          time: 120,
+          subjects: "English · GK India · GK J&K · Maths · Reasoning",
+          desc: "JK Police Constable — 100 Qs, 100 marks. English (25), GK India (25), GK J&K (10), Maths+Reasoning (40). 120 min.",
+          marking: { correct: "+1 mark", wrong: "−0.25 marks" },
+          prefix: "jkp_constable_mock",
+          mocks: [],
+          icon: "👮",
+          badge: "LIVE",
+          badgeClass: "badge-live",
+          cardGradient: "linear-gradient(90deg, #1d4ed8, #7c3aed)",
+          iconBg: "rgba(29, 78, 216, 0.1)",
+          btnGradient: "linear-gradient(135deg, #1d4ed8, #7c3aed)",
+          countId: "jkpConstableMockCount",
+        },
+        ssc_mts: {
+          title: "SSC MTS",
+          qs: 90,
+          time: 90,
+          subjects:
+            "Numerical Ability · Reasoning · General Awareness · English",
+          desc: "SSC MTS — 90 Qs, 270 marks. 2 sessions: Session 1 (Maths+Reasoning, no −ve) · Session 2 (GK+English, −1/wrong). 45 min each.",
+          marking: { correct: "+3 marks", wrong: "−1 mark (Session 2 only)" },
+          prefix: "ssc_mts_mock",
+          mocks: [],
+          icon: "📮",
+          badge: "LIVE",
+          badgeClass: "badge-live",
+          cardGradient: "linear-gradient(90deg, #0891b2, #6366f1)",
+          iconBg: "rgba(8, 145, 178, 0.1)",
+          btnGradient: "linear-gradient(135deg, #0891b2, #6366f1)",
+          countId: "sscMtsMockCount",
+        },
+        ssc_cpo: {
+          title: "SSC CPO",
+          qs: 200,
+          time: 120,
+          subjects: "Reasoning · GK · Quant · English",
+          desc: "SSC CPO Paper 1 — 200 Qs × 1 mark = 200 marks. 50 Qs each section. 120 min. Sub-Inspector CAPF/Delhi Police.",
+          marking: { correct: "+1 mark", wrong: "−0.25 marks" },
+          prefix: "ssc_cpo_mock",
+          mocks: [],
+          icon: "🚔",
+          badge: "LIVE",
+          badgeClass: "badge-live",
+          cardGradient: "linear-gradient(90deg, #059669, #0891b2)",
+          iconBg: "rgba(5, 150, 105, 0.1)",
+          btnGradient: "linear-gradient(135deg, #059669, #0891b2)",
+          countId: "sscCpoMockCount",
         },
       };
 
@@ -1554,6 +1702,20 @@
         ).toUpperCase();
       }
 
+      function getLocalAttemptsForExam(examTypeKey) {
+        try {
+          const all = JSON.parse(localStorage.getItem("ssc-attempts") || "[]");
+          return all.filter(
+            (a) =>
+              (a.examTypeKey || "").toLowerCase() ===
+                examTypeKey.toLowerCase() &&
+              (a.examMode === "full" || !a.examMode),
+          );
+        } catch (e) {
+          return [];
+        }
+      }
+
       function renderExamCards() {
         const examGrid = $("examGrid");
         examGrid.innerHTML = "";
@@ -1602,14 +1764,49 @@
           const count = document.createElement("div");
           count.className = "mock-count";
           count.id = cfg.countId;
-          count.textContent = `🗂️ ${cfg.mocks.length || 0} Mock${cfg.mocks.length === 1 ? "" : "s"} Available`;
+          count.textContent = cfg.mocks.length
+            ? `🗂️ ${cfg.mocks.length} Mock${cfg.mocks.length === 1 ? "" : "s"} Available`
+            : `⏳ Mocks Coming Soon`;
 
           const btn = document.createElement("button");
           btn.className = "exam-btn";
-          btn.textContent = "Select Mock →";
 
-          card.append(header, title, desc, meta, count, btn);
-          card.addEventListener("click", () => openConfig(key));
+          // ── Mock progress pips ──
+          const progressRow = document.createElement("div");
+          progressRow.className = "mock-progress-row";
+          if (cfg.mocks.length > 0) {
+            const attempts = getLocalAttemptsForExam(key);
+            cfg.mocks.forEach((m) => {
+              const attempt = attempts.find(
+                (a) => Number(a.mockNumber) === Number(m.num),
+              );
+              const pip = document.createElement("div");
+              pip.className = "mock-pip";
+              const dot = document.createElement("div");
+              dot.className = "mock-pip-dot" + (attempt ? " done" : "");
+              dot.textContent = attempt ? "✓" : m.num;
+              dot.title = attempt
+                ? `Mock ${m.num}: ${attempt.score ?? "—"} pts · ${attempt.accuracy ?? "—"}% acc`
+                : `Mock ${m.num}: Not attempted`;
+              const lbl = document.createElement("div");
+              lbl.className = "mock-pip-label" + (attempt ? " done" : "");
+              lbl.textContent = "M" + m.num;
+              pip.append(dot, lbl);
+              progressRow.appendChild(pip);
+            });
+          }
+
+          if (cfg.mocks.length === 0) {
+            btn.textContent = "🔔 Coming Soon";
+            btn.disabled = true;
+            btn.style.opacity = "0.5";
+            btn.style.cursor = "not-allowed";
+            card.append(header, title, desc, meta, count, btn);
+          } else {
+            btn.textContent = "Select Mock →";
+            card.append(header, title, desc, meta, count, progressRow, btn);
+            card.addEventListener("click", () => openConfig(key));
+          }
 
           examGrid.appendChild(card);
         });
@@ -1633,6 +1830,21 @@
         }
         if (cfg.title.includes("Junior Assistant")) {
           return "J&K SSB — 4 sections × 20 marks. English, GK (J&K), Reasoning & Computer. 80 questions. 80 minutes.";
+        }
+        if (cfg.title.includes("Accounts Assistant")) {
+          return "JKSSB Finance — 120 objective questions across 8 subjects: GK J&K, Accountancy, English, Statistics, Maths, Economics, Science & Computer. 120 minutes.";
+        }
+        if (cfg.title.includes("SSC GD")) {
+          return "SSC General Duty Constable — 80 questions, 160 marks. Reasoning, GK, Elementary Maths & English/Hindi. Class 10 level. 60 minutes.";
+        }
+        if (cfg.title.includes("JKP Constable")) {
+          return "J&K Police Constable — 100 questions, 100 marks. English, GK India, GK J&K, Maths & Analytical Aptitude. Matriculation standard. 120 minutes.";
+        }
+        if (cfg.title.includes("SSC MTS")) {
+          return "SSC Multi-Tasking Staff — 90 questions, 270 marks. 2 sessions: Maths+Reasoning (no negative) & GK+English (−1/wrong). 45 min each session.";
+        }
+        if (cfg.title.includes("SSC CPO")) {
+          return "SSC Central Police Organisations — Paper 1: 200 questions, 200 marks. Reasoning, GK, Quant & English. 50 per section. 120 minutes.";
         }
         return cfg.desc;
       }
@@ -2412,6 +2624,67 @@
       }
 
       init();
+    </script>
+
+    <script>
+      // PWA install prompt
+      let _pwaPrompt = null;
+      window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        _pwaPrompt = e;
+        // Show install banner after 5 seconds if not dismissed before
+        const dismissed = localStorage.getItem("ee-pwa-dismissed");
+        if (!dismissed) setTimeout(showInstallBanner, 5000);
+      });
+      function showInstallBanner() {
+        if (!_pwaPrompt) return;
+        let banner = document.getElementById("pwa-banner");
+        if (banner) return;
+        banner = document.createElement("div");
+        banner.id = "pwa-banner";
+        banner.style.cssText = [
+          "position:fixed",
+          "bottom:20px",
+          "left:50%",
+          "transform:translateX(-50%)",
+          "z-index:9998",
+          "background:var(--surface,#fff)",
+          "color:var(--text,#0f1117)",
+          "border:1.5px solid var(--border,#e2e6f0)",
+          "border-radius:16px",
+          "padding:14px 18px",
+          "display:flex",
+          "align-items:center",
+          "gap:12px",
+          "box-shadow:0 8px 32px rgba(0,0,0,0.15)",
+          "font-family:sans-serif",
+          "max-width:340px",
+          "width:90%",
+        ].join(";");
+        banner.innerHTML = `
+          <span style="font-size:28px">📋</span>
+          <div style="flex:1">
+            <div style="font-weight:800;font-size:14px">Install ExamEdge</div>
+            <div style="font-size:12px;color:#64748b;margin-top:2px">Add to home screen for quick access</div>
+          </div>
+          <button onclick="installPWA()" style="padding:8px 14px;border-radius:10px;border:none;background:#2563eb;color:#fff;font-weight:700;font-size:13px;cursor:pointer">Install</button>
+          <button onclick="dismissPWA()" style="padding:6px;border:none;background:transparent;color:#94a3b8;cursor:pointer;font-size:16px">✕</button>
+        `;
+        document.body.appendChild(banner);
+      }
+      async function installPWA() {
+        if (!_pwaPrompt) return;
+        _pwaPrompt.prompt();
+        const { outcome } = await _pwaPrompt.userChoice;
+        _pwaPrompt = null;
+        dismissPWA();
+      }
+      function dismissPWA() {
+        const b = document.getElementById("pwa-banner");
+        if (b) b.remove();
+        localStorage.setItem("ee-pwa-dismissed", "1");
+      }
+      window.addEventListener("appinstalled", () => dismissPWA());
     </script>
   </body>
 </html>

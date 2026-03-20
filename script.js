@@ -439,6 +439,8 @@ function updateSectionTabs() {
 // ════════════════════════════════════════════
 async function loadFullMock() {
   applyStoredTheme();
+  requestNotificationPermission();
+  checkStreakReminder();
   const _aid = new URLSearchParams(window.location.search).get("analyse");
   if (_aid) {
     restoreAttemptForReview(_aid);
@@ -1268,6 +1270,7 @@ function showResult(score, a, c, w) {
   const attempts = saveAttempt(score, c, w, skipped, total);
   renderLeaderboard(attempts);
   saveToFirestoreAndRefresh(score, c, w, skipped, total, pct);
+  scheduleStreakReminder(); // record practice date for reminder
 
   document.querySelector(".container").style.display = "none";
   document.querySelector(".section-select").style.display = "none";
@@ -1696,34 +1699,171 @@ function buildSubjectCharts() {
 // ── SHARE ────────────────────────────────────
 function shareScore() {
   if (!lastResult) return;
-  const { score, maxScore, c, w, skipped, total, pct } = lastResult;
-  setText("shareScoreBig", `${score} / ${maxScore}`);
-  setText(
-    "shareStats",
-    `✅ ${c} Correct  ❌ ${w} Wrong  ⏭ ${skipped} Skipped  |  ${pct.toFixed(1)}% accuracy`,
-  );
-  setText(
-    "shareDate",
-    new Date().toLocaleDateString("en-IN", {
-      day: "2-digit",
-      month: "long",
-      year: "numeric",
-    }),
-  );
+  const { score, maxScore, c, w, skipped, pct } = lastResult;
+  const fmt = (v) => typeof v === "number" ? (v % 1 === 0 ? v : v.toFixed(1)) : v;
+  const examLabel = EXAM_CONFIG[examType]?.label || "ExamEdge Mock";
+  const mockLabel = mockNumber ? ` — Mock ${mockNumber}` : "";
+
+  setText("scExamName", examLabel + mockLabel);
+  setText("scScore", fmt(score));
+  setText("scMax", "out of " + maxScore);
+  setText("scCorrect", c);
+  setText("scWrong", w);
+  setText("scSkip", skipped);
+  setText("scAcc", pct.toFixed(1) + "%");
+
+  // Rank & percentile from last known state
+  const rankEl = document.getElementById("globalRankNum");
+  const pctEl  = document.getElementById("percentileVal");
+  setText("scRank", rankEl?.textContent || "#—");
+  setText("scPct",  (pctEl?.textContent || "—") + " Percentile");
+  setText("scDate", new Date().toLocaleDateString("en-IN", { day:"2-digit", month:"short", year:"numeric" }));
+
   document.getElementById("shareModal").classList.add("open");
 }
 function closeShare() {
   document.getElementById("shareModal").classList.remove("open");
 }
+async function downloadShareImage() {
+  if (typeof html2canvas === "undefined") {
+    alert("Image export not available. Try copying the text instead.");
+    return;
+  }
+  const card = document.getElementById("shareCard");
+  const btn = event.target;
+  btn.textContent = "⏳ Generating...";
+  btn.disabled = true;
+  try {
+    const canvas = await html2canvas(card, {
+      scale: 2,
+      backgroundColor: null,
+      useCORS: true,
+      logging: false,
+    });
+    const link = document.createElement("a");
+    link.download = "examedge-score.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+    btn.textContent = "✅ Saved!";
+  } catch(e) {
+    btn.textContent = "❌ Failed";
+    console.error(e);
+  }
+  setTimeout(() => { btn.textContent = "📥 Save Image"; btn.disabled = false; }, 2500);
+}
 function copyShareText() {
   if (!lastResult) return;
   const { score, maxScore, c, w, skipped, pct } = lastResult;
-  const text = `📋 ${EXAM_CONFIG[examType]?.label || "SSC Mock"} Result\n🏆 Score: ${score}/${maxScore}\n✅ ${c} Correct  ❌ ${w} Wrong  ⏭ ${skipped} Skipped\n📊 Accuracy: ${pct.toFixed(1)}%\n📅 ${new Date().toLocaleDateString()}`;
+  const examLabel = EXAM_CONFIG[examType]?.label || "SSC Mock";
+  const rankEl = document.getElementById("globalRankNum");
+  const pctEl  = document.getElementById("percentileVal");
+  const rank = rankEl?.textContent || "";
+  const percentile = pctEl?.textContent || "";
+  const text = [
+    `📋 ${examLabel}${mockNumber ? " — Mock " + mockNumber : ""} Result`,
+    `🏆 Score: ${score}/${maxScore}`,
+    `✅ ${c} Correct  ❌ ${w} Wrong  ⏭ ${skipped} Skipped`,
+    `📊 Accuracy: ${pct.toFixed(1)}%`,
+    rank ? `🌍 Global Rank: ${rank}  |  Percentile: ${percentile}` : "",
+    `📅 ${new Date().toLocaleDateString("en-IN")}`,
+    `\n🔗 Try ExamEdge: examedge.onrender.com`,
+  ].filter(Boolean).join("\n");
   navigator.clipboard.writeText(text).then(() => {
     const btn = event.target;
     btn.textContent = "✅ Copied!";
     setTimeout(() => (btn.textContent = "📋 Copy Text"), 2000);
   });
+}
+
+
+// ── FLAG / REPORT SYSTEM ─────────────────────
+function openFlagModal() {
+  const q = questions[currentIndex];
+  if (!q) return;
+  const ref = `Q${currentIndex + 1} — ${q.subject || ""}`;
+  const el = document.getElementById("flagQRef");
+  if (el) el.textContent = ref;
+  // Clear previous selection
+  document.querySelectorAll("input[name=flagReason]").forEach(r => r.checked = false);
+  const note = document.getElementById("flagNote");
+  if (note) note.value = "";
+  document.getElementById("flagModal").classList.add("open");
+}
+function closeFlagModal() {
+  document.getElementById("flagModal").classList.remove("open");
+}
+async function submitFlag() {
+  const q = questions[currentIndex];
+  const reasonEl = document.querySelector("input[name=flagReason]:checked");
+  if (!reasonEl) {
+    alert("Please select a reason.");
+    return;
+  }
+  const reason = reasonEl.value;
+  const note = document.getElementById("flagNote")?.value?.trim() || "";
+  const btn = document.querySelector("#flagModal .btn-primary");
+  if (btn) { btn.textContent = "⏳ Submitting..."; btn.disabled = true; }
+
+  const report = {
+    questionId: q.id || "",
+    questionText: (q.question || "").slice(0, 200),
+    subject: q.subject || "",
+    examType: EXAM_CONFIG[examType]?.label || examType,
+    mockNumber: mockNumber || 0,
+    reason,
+    note,
+    userId: currentUser?.uid || "guest",
+    userName: currentUser?.displayName || currentUser?.email || "Anonymous",
+    reportedAt: new Date().toISOString(),
+  };
+
+  // Save to Firestore if logged in, else just localStorage
+  let saved = false;
+  try {
+    if (typeof firebase !== "undefined" && firebase.apps.length && currentUser) {
+      const db = firebase.firestore();
+      await db.collection("flaggedQuestions").add({
+        ...report,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      });
+      saved = true;
+    }
+  } catch(e) { console.warn("Flag Firestore save failed:", e); }
+
+  // Always save locally as backup
+  try {
+    const flags = JSON.parse(localStorage.getItem("ee-flags") || "[]");
+    flags.unshift(report);
+    localStorage.setItem("ee-flags", JSON.stringify(flags.slice(0, 50)));
+    saved = true;
+  } catch(e) {}
+
+  closeFlagModal();
+  if (btn) { btn.textContent = "🚩 Submit Report"; btn.disabled = false; }
+
+  // Show brief toast confirmation
+  showFlagToast(saved
+    ? "🚩 Report submitted — thank you!"
+    : "❌ Could not submit report. Try again.");
+}
+function showFlagToast(msg) {
+  let toast = document.getElementById("flagToast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.id = "flagToast";
+    toast.style.cssText = [
+      "position:fixed", "bottom:24px", "left:50%", "transform:translateX(-50%)",
+      "z-index:9999", "background:#0f172a", "color:#fff", "border-radius:999px",
+      "padding:12px 24px", "font-size:14px", "font-weight:700",
+      "box-shadow:0 8px 32px rgba(0,0,0,0.3)", "display:none",
+      "white-space:nowrap"
+    ].join(";");
+    document.body.appendChild(toast);
+  }
+  toast.textContent = msg;
+  toast.style.display = "block";
+  clearTimeout(showFlagToast._t);
+  showFlagToast._t = setTimeout(() => { toast.style.display = "none"; }, 3000);
 }
 
 // ── REVIEW MODE ──────────────────────────────
@@ -1896,6 +2036,33 @@ function setText(id, val) {
   if (el) el.textContent = val;
 }
 
+
+// ── PUSH NOTIFICATION / STREAK REMINDER ──────
+async function requestNotificationPermission() {
+  if (!("Notification" in window)) return;
+  if (Notification.permission === "default") {
+    await Notification.requestPermission();
+  }
+}
+function scheduleStreakReminder() {
+  if (!("Notification" in window) || Notification.permission !== "granted") return;
+  // Store last practice date
+  localStorage.setItem("ee-lastPractice", new Date().toDateString());
+}
+function checkStreakReminder() {
+  if (!("Notification" in window) || Notification.permission !== "granted") return;
+  const last = localStorage.getItem("ee-lastPractice");
+  if (!last) return;
+  const daysSince = Math.floor((new Date() - new Date(last)) / 86400000);
+  if (daysSince >= 3) {
+    new Notification("📚 ExamEdge Reminder", {
+      body: `You haven't practiced in ${daysSince} days. Keep your streak alive! 🔥`,
+      icon: "/favicon.ico",
+      badge: "/favicon.ico",
+    });
+  }
+}
+
 // ── LEADERBOARD ──────────────────────────────
 let lbExamFilter = "cgl",
   globalLbCache = {};
@@ -1955,8 +2122,20 @@ function switchLbTab(tab, btn) {
   btn.classList.add("active");
   document.getElementById("lb-personal").style.display =
     tab === "personal" ? "block" : "none";
-  document.getElementById("lb-global").style.display =
-    tab === "global" ? "block" : "none";
+  const globalEl = document.getElementById("lb-global");
+  globalEl.style.display = tab === "global" ? "block" : "none";
+
+  if (tab === "global") {
+    // Cache key includes mockNumber so Mock 1 and Mock 2 are never mixed
+    const cacheKey = (lbExamFilter || examType) + "_" + (mockNumber || 0);
+    const cached = globalLbCache[cacheKey];
+    if (!cached) {
+      globalEl.innerHTML = '<div class="lb-empty lb-loading">⏳ Loading...</div>';
+      fetchGlobalLeaderboard(lbExamFilter || examType);
+    } else {
+      renderGlobalRows(cached);
+    }
+  }
 }
 function switchLbExam(type, btn) {
   lbExamFilter = type;
@@ -1965,23 +2144,34 @@ function switchLbExam(type, btn) {
     .forEach((b) => b.classList.remove("active"));
   btn.classList.add("active");
   renderLeaderboardRows(getAttempts());
-  if (globalLbCache[type]) renderGlobalRows(globalLbCache[type]);
+  const cacheKey = type + "_" + (mockNumber || 0);
+  if (globalLbCache[cacheKey]) renderGlobalRows(globalLbCache[cacheKey]);
   else fetchGlobalLeaderboard(type);
 }
 async function fetchGlobalLeaderboard(type) {
   type = type || lbExamFilter || examType || "cgl";
+  const el = document.getElementById("lb-global");
+
+  // Timeout promise — if Firestore takes >6s show retry button
+  const timeoutPromise = new Promise((_, reject) =>
+    setTimeout(() => reject(new Error("timeout")), 6000)
+  );
+
   try {
     if (typeof firebase === "undefined" || !firebase.apps.length) return;
     const db = firebase.firestore();
     const label =
       EXAM_CONFIG[type]?.label || EXAM_CONFIG[examType]?.label || examType;
-    // Single equality where only — no orderBy = no composite index needed
-    const snap = await db
-      .collection("leaderboard")
-      .where("examType", "==", label)
-      .get();
+
+    // Race fetch against timeout
+    const snap = await Promise.race([
+      db.collection("leaderboard").where("examType", "==", label).get(),
+      timeoutPromise,
+    ]);
+
     const thisMock = Number(mockNumber || 0);
-    // Filter mock client-side, keep best score per user, sort client-side
+    // Since we now use deterministic doc IDs (uid_examType_mock), each user
+    // already has at most one doc — but keep dedup logic as safety net
     const best = {};
     snap.docs.forEach((doc) => {
       const d = doc.data();
@@ -1990,14 +2180,25 @@ async function fetchGlobalLeaderboard(type) {
       if (!best[uid] || d.score > best[uid].score) best[uid] = d;
     });
     const ranked = Object.values(best).sort((a, b) => b.score - a.score);
-    globalLbCache[type] = ranked;
+    // Cache key includes mockNumber — prevents Mock 1 data showing on Mock 2 screen
+    const cacheKeyWithMock = type + "_" + thisMock;
+    globalLbCache[cacheKeyWithMock] = ranked;
     renderGlobalRows(ranked);
-    updateRankStats(ranked);
+    // FIX: Only call updateRankStats here if we don't already have a cache from
+    // saveToFirestoreAndRefresh — avoids overwriting a correct rank with stale data
+    // We detect this by checking if currentUser's score is already in ranked
+    const myUid = currentUser?.uid;
+    const myInRanked = myUid && ranked.some(a => a.userId === myUid);
+    if (myInRanked || !myUid) updateRankStats(ranked);
   } catch (e) {
     console.error("Global LB error:", e);
-    const el = document.getElementById("lb-global");
-    if (el)
-      el.innerHTML = '<div class="lb-empty">Could not load leaderboard.</div>';
+    const isTimeout = e.message === "timeout";
+    if (el) {
+      el.innerHTML = `<div class="lb-empty" style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+        <span>${isTimeout ? "⏱️ Took too long to load." : "⚠️ Could not load leaderboard."}</span>
+        <button onclick="fetchGlobalLeaderboard('${type}')" style="padding:6px 18px;border-radius:8px;border:1.5px solid var(--border);background:var(--surface);color:var(--primary);font-weight:700;cursor:pointer;font-size:13px;">🔄 Retry</button>
+      </div>`;
+    }
   }
 }
 function renderGlobalRows(ranked) {
@@ -2039,6 +2240,9 @@ function renderGlobalRows(ranked) {
 }
 function updateRankStats(ranked) {
   if (!lastResult) return;
+  // FIX: Don't update rank for subject/chapter practice — leaderboard not relevant
+  if (examMode !== "full") return;
+
   const fmt = (v) =>
     typeof v === "number" ? (v % 1 === 0 ? v : v.toFixed(1)) : v;
   const myUid = currentUser?.uid;
@@ -2048,7 +2252,7 @@ function updateRankStats(ranked) {
   const rankTotal = document.getElementById("rankTotal");
   const card = document.getElementById("comparisonCard");
 
-  // Always ensure current user is in the pool — guards against Firestore consistency lag
+  // Always ensure current user is in the pool even if Firestore hasn't propagated yet
   const myId = myUid || "__me__";
   let pool = ranked.filter((a) => a.userId !== myId && a.userId !== "__me__");
   pool.push({ score: myScore, userId: myId });
@@ -2063,38 +2267,83 @@ function updateRankStats(ranked) {
     return;
   }
 
-  // Find my rank by userId (always found since we injected above)
-  const myRankIdx = pool.findIndex((a) => a.userId === myId);
-  const myRank = myRankIdx === -1 ? total : myRankIdx + 1;
+  // Competition ranking: ties share the same rank
+  // e.g. if scores are [100, 95, 95, 80] → ranks are [1, 2, 2, 4]
+  let myRank = 1;
+  for (const entry of pool) {
+    if (entry.userId === myId) break;
+    if (entry.score > myScore) myRank++;
+  }
 
   const topScore = pool[0].score || 0;
   const avgScore = pool.reduce((s, a) => s + (a.score || 0), 0) / total;
-  // Percentile = % of OTHER users I scored strictly higher than
+
+  // FIX: Percentile = % of all participants I scored >= (handles ties correctly)
+  // Users with same score as me count as "beaten or tied", excluded from below
   const others = total - 1;
-  const beaten = pool.filter(
+  const scoredBelow = pool.filter(
     (a) => a.userId !== myId && (a.score || 0) < myScore,
   ).length;
+  // Percentile: what % of others did I outperform
   const percentile =
-    others > 0 ? ((beaten / others) * 100).toFixed(1) : "100.0";
+    others > 0 ? ((scoredBelow / others) * 100).toFixed(1) : "100.0";
 
-  if (rankNum) rankNum.textContent = `#${myRank}`;
-  if (rankTotal) rankTotal.textContent = `/ ${total}`;
+  if (rankNum) rankNum.textContent = "#" + myRank;
+  if (rankTotal) rankTotal.textContent = "/ " + total;
 
-  const ringPct = Math.max(5, ((total - myRank + 1) / total) * 100);
+  // Ring fill: higher rank = fuller ring. Rank 1 of 1 = 100%.
+  const ringPct = total > 1
+    ? Math.max(5, ((total - myRank) / (total - 1)) * 100)
+    : 100;
   setTimeout(() => {
     const fill = document.getElementById("rankRingFill");
     if (fill) fill.style.strokeDashoffset = 314 - (ringPct / 100) * 314;
   }, 300);
 
   setText("topperScoreVal", fmt(topScore));
-  setText("avgScoreVal", fmt(avgScore));
+  setText("avgScoreVal", fmt(avgScore.toFixed(1)));
   setText("percentileVal", percentile + "%");
   if (card) card.style.display = "block";
+  // FIX: Normalize bar widths relative to topper score (not maxScore)
+  // so bars are visually meaningful — if you ARE the topper bar = 100% width
+  const barMax = Math.max(topScore, myScore, 1);
   setTimeout(() => {
-    setCompBar("cmpYouBar", "cmpYouLbl", myScore, maxScore, fmt(myScore));
-    setCompBar("cmpTopBar", "cmpTopLbl", topScore, maxScore, fmt(topScore));
-    setCompBar("cmpAvgBar", "cmpAvgLbl", avgScore, maxScore, fmt(avgScore));
+    setCompBar("cmpYouBar", "cmpYouLbl", myScore, barMax, fmt(myScore));
+    setCompBar("cmpTopBar", "cmpTopLbl", topScore, barMax, fmt(topScore));
+    setCompBar("cmpAvgBar", "cmpAvgLbl", avgScore, barMax, fmt(avgScore.toFixed(1)));
   }, 400);
+
+  // Show/hide retake notice banner
+  // If this is a retake, the leaderboard entry stays locked to 1st attempt score
+  const myLbEntry = ranked.find(a => a.userId === myId);
+  const isRetake = myLbEntry?.isRetake === true;
+  let retakeNotice = document.getElementById("retakeNotice");
+  if (isRetake) {
+    const lbScore = myLbEntry?.score ?? myScore;
+    if (!retakeNotice) {
+      retakeNotice = document.createElement("div");
+      retakeNotice.id = "retakeNotice";
+      retakeNotice.style.cssText = [
+        "margin-top:10px",
+        "padding:10px 14px",
+        "border-radius:10px",
+        "font-size:12px",
+        "font-weight:600",
+        "text-align:center",
+        "background:rgba(245,158,11,0.1)",
+        "border:1.5px solid rgba(245,158,11,0.3)",
+        "color:#92400e",
+        "line-height:1.5",
+      ].join(";");
+      if (card) card.after(retakeNotice);
+    }
+    retakeNotice.innerHTML =
+      "🔒 <strong>Leaderboard locked to your 1st attempt</strong> — Score: <strong>" +
+      fmt(lbScore) + "</strong>. Retakes don't affect global rankings.";
+    retakeNotice.style.display = "block";
+  } else if (retakeNotice) {
+    retakeNotice.style.display = "none";
+  }
 }
 function setCompBar(barId, lblId, val, max, label) {
   const bar = document.getElementById(barId),
@@ -2116,9 +2365,16 @@ async function saveToFirestoreAndRefresh(
   try {
     if (typeof firebase === "undefined" || !firebase.apps.length) return;
     const user = currentUser;
-    if (!user) return;
-    const db = firebase.firestore(),
-      examLabel = EXAM_CONFIG[examType]?.label || examType;
+    if (!user) {
+      // Guest: still show rank #1/1 so ring is not stuck at #—
+      updateRankStats([]);
+      return;
+    }
+    const db = firebase.firestore();
+    const examLabel = EXAM_CONFIG[examType]?.label || examType;
+    const thisMock = mockNumber || 0;
+
+    // ── Save to user's personal attempts collection (always) ──
     await db
       .collection("users")
       .doc(user.uid)
@@ -2132,39 +2388,67 @@ async function saveToFirestoreAndRefresh(
         accuracy: pct.toFixed(1),
         examType: examLabel,
         examTypeKey: examType,
-        mockNumber: mockNumber || 0,
+        mockNumber: thisMock,
         userId: user.uid,
         userName: user.displayName || user.email || "Anonymous",
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       });
-    await db.collection("leaderboard").add({
-      score,
-      correct,
-      wrong,
-      skipped,
-      total,
-      accuracy: pct.toFixed(1),
+
+    // ── FIX: Only write to global leaderboard for full mock mode ──
+    // Subject/chapter practice pollutes the global board — skip them
+    if (examMode !== "full") {
+      await renderFirestoreLeaderboard(user);
+      return;
+    }
+
+    // ── Deterministic doc ID: one doc per user per exam+mock ──
+    const lbDocId = user.uid + "_" + examType + "_" + thisMock;
+    const lbRef = db.collection("leaderboard").doc(lbDocId);
+    const existing = await lbRef.get();
+    const isFirstAttempt = !existing.exists;
+
+    // ── FIRST ATTEMPT ONLY rule ──
+    // The leaderboard is locked to the very first attempt a user submits
+    // for each exam+mock combination. Retakes are saved to personal history
+    // (above) and their score is used to calculate rank/percentile display,
+    // but the leaderboard entry itself is NEVER updated after the first write.
+    if (isFirstAttempt) {
+      await lbRef.set({
+        score,
+        correct,
+        wrong,
+        skipped,
+        total,
+        accuracy: pct.toFixed(1),
+        examType: examLabel,
+        examTypeKey: examType,
+        mockNumber: thisMock,
+        userId: user.uid,
+        userName: user.displayName || user.email || "Anonymous",
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      });
+    }
+
+    // ── Build cache entry ──
+    // For rank/percentile display we always use the LEADERBOARD score
+    // (i.e. first attempt score), not the current retake score.
+    // This way the ring and percentile reflect the user's standing on
+    // the score that actually counts in the global board.
+    // Cache key includes mockNumber — isolates each mock's leaderboard from others
+    const cacheKey = examType + "_" + thisMock;
+    const lbScore = isFirstAttempt ? score : (existing.data().score || score);
+    const myEntry = {
+      score: lbScore,
+      correct: isFirstAttempt ? correct : (existing.data().correct || correct),
+      wrong: isFirstAttempt ? wrong : (existing.data().wrong || wrong),
+      skipped: isFirstAttempt ? skipped : (existing.data().skipped || skipped),
+      accuracy: isFirstAttempt ? pct.toFixed(1) : (existing.data().accuracy || pct.toFixed(1)),
       examType: examLabel,
       examTypeKey: examType,
-      mockNumber: mockNumber || 0,
+      mockNumber: thisMock,
       userId: user.uid,
       userName: user.displayName || user.email || "Anonymous",
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-    });
-    // Inject current user's score directly into cache so rank is correct
-    // even if Firestore's get() hasn't indexed the new doc yet
-    const examLabel2 = EXAM_CONFIG[examType]?.label || examType;
-    const cacheKey = lbExamFilter || examType;
-    const myEntry = {
-      score,
-      correct,
-      wrong,
-      skipped,
-      accuracy: pct.toFixed(1),
-      examType: examLabel2,
-      mockNumber: mockNumber || 0,
-      userId: user.uid,
-      userName: user.displayName || user.email || "Anonymous",
+      isRetake: !isFirstAttempt,  // flag so UI can show a note if needed
     };
     if (!globalLbCache[cacheKey]) globalLbCache[cacheKey] = [];
     globalLbCache[cacheKey] = globalLbCache[cacheKey].filter(
@@ -2172,13 +2456,43 @@ async function saveToFirestoreAndRefresh(
     );
     globalLbCache[cacheKey].push(myEntry);
     globalLbCache[cacheKey].sort((a, b) => b.score - a.score);
+
+    // Show rank immediately from cache — no flicker
     updateRankStats(globalLbCache[cacheKey]);
-    await fetchGlobalLeaderboard(cacheKey);
+
+    // Fetch fresh global data (other users) then re-render
+    await fetchGlobalLeaderboard(examType);
+    // Re-inject isRetake flag after Firestore fetch (Firestore doesn't store this flag)
+    // so the retake banner survives the cache refresh
+    const freshCache = globalLbCache[cacheKey];
+    if (freshCache) {
+      const myFreshEntry = freshCache.find(a => a.userId === user.uid);
+      if (myFreshEntry) myFreshEntry.isRetake = !isFirstAttempt;
+      updateRankStats(freshCache);
+    }
     await renderFirestoreLeaderboard(user);
   } catch (e) {
     console.error("🔴 Firestore save failed:", e.code, e.message);
   }
 }
+// Build a reverse lookup: label → examTypeKey for ALL known exams
+// FIX: was only checking for CGL/CHSL, breaking all other exam types
+function examLabelToKey(label) {
+  if (!label) return null;
+  for (const [key, cfg] of Object.entries(EXAM_CONFIG)) {
+    if (cfg.label && cfg.label === label) return key;
+  }
+  // Fallback: try loose match
+  const l = label.toLowerCase();
+  if (l.includes("cgl")) return "cgl";
+  if (l.includes("chsl")) return "chsl";
+  if (l.includes("ntpc") && l.includes("graduate")) return "rrb_ntpc_g";
+  if (l.includes("ntpc")) return "rrb_ntpc_ug";
+  if (l.includes("sub inspector")) return "jkp_si";
+  if (l.includes("junior assistant")) return "jkp_ja";
+  return null;
+}
+
 async function renderFirestoreLeaderboard(user) {
   try {
     if (typeof firebase === "undefined" || !firebase.apps.length) return;
@@ -2192,8 +2506,10 @@ async function renderFirestoreLeaderboard(user) {
       .get();
     if (snap.empty) return;
     const data = snap.docs.map((d) => {
-      const a = d.data(),
-        ts = a.createdAt?.toDate?.() || new Date();
+      const a = d.data();
+      const ts = a.createdAt?.toDate?.() || new Date();
+      // FIX: use full reverse-lookup map instead of CGL/CHSL-only hardcode
+      const resolvedKey = a.examTypeKey || examLabelToKey(a.examType) || examType;
       return {
         ...a,
         date: ts.toLocaleDateString("en-IN", {
@@ -2205,8 +2521,7 @@ async function renderFirestoreLeaderboard(user) {
           hour: "2-digit",
           minute: "2-digit",
         }),
-        examTypeKey:
-          a.examTypeKey || (a.examType?.includes("CGL") ? "cgl" : "chsl"),
+        examTypeKey: resolvedKey,
       };
     });
     const personalEl = document.getElementById("lb-personal");
